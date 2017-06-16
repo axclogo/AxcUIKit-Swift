@@ -1,0 +1,26 @@
+//
+//  AxcUIKit_PCH.pch
+//  AxcUIKit
+//
+//  Created by Axc on 2017/6/3.
+//  Copyright © 2017年 Axc_5324. All rights reserved.
+//
+
+#ifndef AxcUIKit_PCH_pch
+#define AxcUIKit_PCH_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* AxcUIKit_PCH_pch */
+
+
+#ifdef __OBJC__
+
+//#import "AxcUIKit.h"
+#import "EfficientMacroDefinition.h"
+
+
+//#import "UIImageView+WebCache.h"
+
+#endif

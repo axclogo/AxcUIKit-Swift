@@ -1,0 +1,79 @@
+//
+//  AxcUIKit.h
+//  AxcUIKit
+//
+//  Created by Axc_5324 on 17/4/19.
+//  Copyright © 2017年 Axc_5324. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+
+
+
+
+#pragma mark - 类扩展
+// MARK: UIView+
+#import "UIView+AxcExtension.h"               // 可修改属性的类扩展
+#import "UIView+AxcAutoresizingMask.h"        // 自动拉伸的类扩展
+#import "UIView+AxcShaking.h"                 // 左右晃动的动画扩展
+#import "UIView+AxcShimmeringView.h"          // 为View添加闪动效果
+
+// MARK: UIColor+
+#import "UIColor+AxcColor.h"                  // COLOR扩展颜色类
+
+// MARK: UITextField+
+#import "UITextField+AxcModifyPlaceholder.h"  // UITextField快速修改Placeholder属性
+
+// MARK: UIImage+
+#import "UIImage+AxcImageName.h"              // 为Image扩展根据图片大小来是否加入内存缓存
+
+// MARK: UIImageView+
+#import "UIImageView+AxcNetworkLoadImage.h"   // 根据AFN和SD结合简单封装的一套异步加载图片的小型框架
+#import "Axc_WebimageCache.h"                 // 清理图片缓存的工具
+#import "UIImageView+AxcImageLoader.h"        // ImageView自动添加Progress指示器扩展
+#import "UIImageView+AxcWebCache.h"           // ImageView的图片处理
+
+// MARK: UICollectionView+
+#import "UICollectionView+AxcCellRearrange.h" // UICollectionView可长摁拖动的扩展 iOS9以后可以调用系统方案
+
+// MARK: UIScrollView+
+#import "UIScrollView+AxcScrollCover.h"       // 下拉自动放大头图的扩展
+
+// MARK: UIViewController+
+#import "UIViewController+AxcSemiModal.h"     // VC推出动画效果框架扩展
+
+// MARK: UILabel+
+#import "UILabel+AxcShimmering.h"               // 文字闪动效果
+
+
+#import "UITableViewCell+AxcAnimation.h"
+
+
+
+#pragma mark - 控件类
+#import "AxcUI_Label.h" // 自定义文字内边距Label
+#import "AxcUI_Toast.h" // 弹出式提醒块
+// --------- 进度指示器
+#import "AxcUI_TranPieProgressView.h"
+#import "AxcUI_PieProgressView.h"
+#import "AxcUI_LoopProgressView.h"
+#import "AxcUI_BallProgressView.h"
+#import "AxcUI_LodingProgressView.h"
+#import "AxcUI_PieLoopProgressView.h"
+// ------------------
+#import "AxcUI_PhotoBrowser.h" // 图片预览器
+#import "AxcUI_ActivityHUD.h"  // HUD指示器
+
+
+
+
+
+
+
+
+
+
+
+@interface AxcUIKit : NSObject
+
+@end
