@@ -60,6 +60,9 @@
 		EA439E0D1EE6807300D992E7 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = EA439E021EE6807300D992E7 /* UIView+WebCacheOperation.m */; };
 		EA43A0631EE7DE9E00D992E7 /* AxcPhotoBrowserVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EA43A0621EE7DE9E00D992E7 /* AxcPhotoBrowserVC.m */; };
 		EA43A07C1EE8055100D992E7 /* AxcProgressViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EA43A07B1EE8055100D992E7 /* AxcProgressViewVC.m */; };
+		EA5252C21EF523CB0016C687 /* AxcActivityIndicatorViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EA5252C11EF523CB0016C687 /* AxcActivityIndicatorViewVC.m */; };
+		EA5252CC1EF5253F0016C687 /* AxcActivityIndicatorViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EA5252CA1EF5253F0016C687 /* AxcActivityIndicatorViewCell.m */; };
+		EA5252CD1EF5253F0016C687 /* AxcActivityIndicatorViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA5252CB1EF5253F0016C687 /* AxcActivityIndicatorViewCell.xib */; };
 		EAD084AC1EEA88C2007DE2C4 /* UILabel+AxcShimmering.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD084AB1EEA88C2007DE2C4 /* UILabel+AxcShimmering.m */; };
 		EAD085761EEAE65F007DE2C4 /* AxcActivityHUDVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD085751EEAE65F007DE2C4 /* AxcActivityHUDVC.m */; };
 		EAD0857F1EEAE851007DE2C4 /* test_4.png in Resources */ = {isa = PBXBuildFile; fileRef = EAD085781EEAE851007DE2C4 /* test_4.png */; };
@@ -264,6 +267,11 @@
 		EA43A0621EE7DE9E00D992E7 /* AxcPhotoBrowserVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcPhotoBrowserVC.m; sourceTree = "<group>"; };
 		EA43A07A1EE8055100D992E7 /* AxcProgressViewVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcProgressViewVC.h; sourceTree = "<group>"; };
 		EA43A07B1EE8055100D992E7 /* AxcProgressViewVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcProgressViewVC.m; sourceTree = "<group>"; };
+		EA5252C01EF523CB0016C687 /* AxcActivityIndicatorViewVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcActivityIndicatorViewVC.h; sourceTree = "<group>"; };
+		EA5252C11EF523CB0016C687 /* AxcActivityIndicatorViewVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcActivityIndicatorViewVC.m; sourceTree = "<group>"; };
+		EA5252C91EF5253F0016C687 /* AxcActivityIndicatorViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcActivityIndicatorViewCell.h; sourceTree = "<group>"; };
+		EA5252CA1EF5253F0016C687 /* AxcActivityIndicatorViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcActivityIndicatorViewCell.m; sourceTree = "<group>"; };
+		EA5252CB1EF5253F0016C687 /* AxcActivityIndicatorViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AxcActivityIndicatorViewCell.xib; sourceTree = "<group>"; };
 		EAD084AA1EEA88C2007DE2C4 /* UILabel+AxcShimmering.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+AxcShimmering.h"; sourceTree = "<group>"; };
 		EAD084AB1EEA88C2007DE2C4 /* UILabel+AxcShimmering.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+AxcShimmering.m"; sourceTree = "<group>"; };
 		EAD085741EEAE65F007DE2C4 /* AxcActivityHUDVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcActivityHUDVC.h; sourceTree = "<group>"; };
@@ -598,32 +606,8 @@
 		EA439CB41EE29E0100D992E7 /* SampleVC */ = {
 			isa = PBXGroup;
 			children = (
-				EA439CE21EE3C93600D992E7 /* AxcLoadImageVC.h */,
-				EA439CE31EE3C93600D992E7 /* AxcLoadImageVC.m */,
-				EA439CB51EE29E3100D992E7 /* AxcCellRearrangeVC.h */,
-				EA439CB61EE29E3100D992E7 /* AxcCellRearrangeVC.m */,
-				EA439CC51EE2F38000D992E7 /* AxcScrollCoverVC.h */,
-				EA439CC61EE2F38000D992E7 /* AxcScrollCoverVC.m */,
-				EA439CCE1EE2FAB500D992E7 /* AxcViewSharkVC.h */,
-				EA439CCF1EE2FAB500D992E7 /* AxcViewSharkVC.m */,
-				EA439CDF1EE3C1B500D992E7 /* AxcModifyPlaceholderVC.h */,
-				EA439CE01EE3C1B500D992E7 /* AxcModifyPlaceholderVC.m */,
-				EA439CF11EE3EAC900D992E7 /* AxcSemiModalVC.h */,
-				EA439CF21EE3EAC900D992E7 /* AxcSemiModalVC.m */,
-				EA439D2B1EE52A3D00D992E7 /* AxcImageLoaderVC.h */,
-				EA439D2C1EE52A3D00D992E7 /* AxcImageLoaderVC.m */,
-				EAD086241EED09B7007DE2C4 /* AxcShimmeringViewVC.h */,
-				EAD086251EED09B7007DE2C4 /* AxcShimmeringViewVC.m */,
-				EAD085741EEAE65F007DE2C4 /* AxcActivityHUDVC.h */,
-				EAD085751EEAE65F007DE2C4 /* AxcActivityHUDVC.m */,
-				EA439CEB1EE3D1CB00D992E7 /* AxcToastVC.h */,
-				EA439CEC1EE3D1CB00D992E7 /* AxcToastVC.m */,
-				EA439D0B1EE4417C00D992E7 /* AxcLabelVC.h */,
-				EA439D0C1EE4417C00D992E7 /* AxcLabelVC.m */,
-				EA43A07A1EE8055100D992E7 /* AxcProgressViewVC.h */,
-				EA43A07B1EE8055100D992E7 /* AxcProgressViewVC.m */,
-				EA43A0611EE7DE9E00D992E7 /* AxcPhotoBrowserVC.h */,
-				EA43A0621EE7DE9E00D992E7 /* AxcPhotoBrowserVC.m */,
+				EA5252CF1EF530830016C687 /* Extension */,
+				EA5252CE1EF5305D0016C687 /* Controls */,
 			);
 			path = SampleVC;
 			sourceTree = "<group>";
@@ -649,6 +633,7 @@
 		EA439CF41EE3EBE200D992E7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				EA5252C31EF525080016C687 /* AxcActivityIndicatorViewViews */,
 				EAD085D91EEAFFF7007DE2C4 /* AxcActivityHUDViews */,
 				EA439D361EE54E8400D992E7 /* AxcPhotoBrowserViews */,
 				EA439CF81EE3ECBC00D992E7 /* AxcSemiModalViews */,
@@ -708,6 +693,58 @@
 				EA439E021EE6807300D992E7 /* UIView+WebCacheOperation.m */,
 			);
 			path = Axc_WebImageDeal;
+			sourceTree = "<group>";
+		};
+		EA5252C31EF525080016C687 /* AxcActivityIndicatorViewViews */ = {
+			isa = PBXGroup;
+			children = (
+				EA5252C91EF5253F0016C687 /* AxcActivityIndicatorViewCell.h */,
+				EA5252CA1EF5253F0016C687 /* AxcActivityIndicatorViewCell.m */,
+				EA5252CB1EF5253F0016C687 /* AxcActivityIndicatorViewCell.xib */,
+			);
+			path = AxcActivityIndicatorViewViews;
+			sourceTree = "<group>";
+		};
+		EA5252CE1EF5305D0016C687 /* Controls */ = {
+			isa = PBXGroup;
+			children = (
+				EA5252C01EF523CB0016C687 /* AxcActivityIndicatorViewVC.h */,
+				EA5252C11EF523CB0016C687 /* AxcActivityIndicatorViewVC.m */,
+				EAD085741EEAE65F007DE2C4 /* AxcActivityHUDVC.h */,
+				EAD085751EEAE65F007DE2C4 /* AxcActivityHUDVC.m */,
+				EA439CEB1EE3D1CB00D992E7 /* AxcToastVC.h */,
+				EA439CEC1EE3D1CB00D992E7 /* AxcToastVC.m */,
+				EA439D0B1EE4417C00D992E7 /* AxcLabelVC.h */,
+				EA439D0C1EE4417C00D992E7 /* AxcLabelVC.m */,
+				EA43A07A1EE8055100D992E7 /* AxcProgressViewVC.h */,
+				EA43A07B1EE8055100D992E7 /* AxcProgressViewVC.m */,
+				EA43A0611EE7DE9E00D992E7 /* AxcPhotoBrowserVC.h */,
+				EA43A0621EE7DE9E00D992E7 /* AxcPhotoBrowserVC.m */,
+			);
+			name = Controls;
+			sourceTree = "<group>";
+		};
+		EA5252CF1EF530830016C687 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				EA439CE21EE3C93600D992E7 /* AxcLoadImageVC.h */,
+				EA439CE31EE3C93600D992E7 /* AxcLoadImageVC.m */,
+				EA439CB51EE29E3100D992E7 /* AxcCellRearrangeVC.h */,
+				EA439CB61EE29E3100D992E7 /* AxcCellRearrangeVC.m */,
+				EA439CC51EE2F38000D992E7 /* AxcScrollCoverVC.h */,
+				EA439CC61EE2F38000D992E7 /* AxcScrollCoverVC.m */,
+				EA439CCE1EE2FAB500D992E7 /* AxcViewSharkVC.h */,
+				EA439CCF1EE2FAB500D992E7 /* AxcViewSharkVC.m */,
+				EA439CDF1EE3C1B500D992E7 /* AxcModifyPlaceholderVC.h */,
+				EA439CE01EE3C1B500D992E7 /* AxcModifyPlaceholderVC.m */,
+				EA439CF11EE3EAC900D992E7 /* AxcSemiModalVC.h */,
+				EA439CF21EE3EAC900D992E7 /* AxcSemiModalVC.m */,
+				EA439D2B1EE52A3D00D992E7 /* AxcImageLoaderVC.h */,
+				EA439D2C1EE52A3D00D992E7 /* AxcImageLoaderVC.m */,
+				EAD086241EED09B7007DE2C4 /* AxcShimmeringViewVC.h */,
+				EAD086251EED09B7007DE2C4 /* AxcShimmeringViewVC.m */,
+			);
+			name = Extension;
 			sourceTree = "<group>";
 		};
 		EAD084A91EEA889B007DE2C4 /* UILabel+ */ = {
@@ -1041,6 +1078,7 @@
 				EAD085B61EEAFFDC007DE2C4 /* HUD_14.png in Resources */,
 				EAD085CE1EEAFFDC007DE2C4 /* HUD_36.png in Resources */,
 				093C62361EA6F85800ADAC42 /* LaunchScreen.storyboard in Resources */,
+				EA5252CD1EF5253F0016C687 /* AxcActivityIndicatorViewCell.xib in Resources */,
 				EAD085CB1EEAFFDC007DE2C4 /* HUD_33.png in Resources */,
 				EAD085C31EEAFFDC007DE2C4 /* HUD_26.png in Resources */,
 				EAD086151EED0966007DE2C4 /* AxcUI_ActivityHUD_cross.png in Resources */,
@@ -1157,7 +1195,9 @@
 				09B3149D1EBC783000083EC5 /* Axc_WebImageRequest.m in Sources */,
 				EA439CC71EE2F38000D992E7 /* AxcScrollCoverVC.m in Sources */,
 				EAD085761EEAE65F007DE2C4 /* AxcActivityHUDVC.m in Sources */,
+				EA5252C21EF523CB0016C687 /* AxcActivityIndicatorViewVC.m in Sources */,
 				EA439E031EE6807300D992E7 /* Axc_ImageCache.m in Sources */,
+				EA5252CC1EF5253F0016C687 /* AxcActivityIndicatorViewCell.m in Sources */,
 				EA439CD81EE3068300D992E7 /* SampleBaseVC.m in Sources */,
 				EA439CE41EE3C93600D992E7 /* AxcLoadImageVC.m in Sources */,
 				EA439D3A1EE54EF900D992E7 /* AxcPhotoBrowserCollectionViewCell.m in Sources */,

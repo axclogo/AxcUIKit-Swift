@@ -51,7 +51,7 @@
     
     [self createOtherControl];
     
-    self.instructionsLabel.text = @"此为借鉴SDProgressView重制扩展版本。\n其中的继承设计十分有利于相关的Progress子类扩展，能增加更多类型的进度指示器。在此感谢作者gsdios提供的使用许可";
+    self.instructionsLabel.text = @"此为借鉴SDProgressView重制扩展版本。\n其中的继承设计十分有利于相关的Progress子类扩展，能增加更多类型的进度指示器。\n在此感谢作者gsdios提供的使用许可";
 }
 
 

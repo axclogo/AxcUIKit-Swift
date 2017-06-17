@@ -100,6 +100,7 @@ UITableViewDelegate
         [Group1 addObject:@{@"controlsName":@"测试",@"describeName":@"测试",@"VCName":@"TestTwoVC"}];
 
         NSMutableArray *Group2 = [NSMutableArray array];
+        [Group2 addObject:@{@"controlsName":@"AxcUI_ActivityIndicatorView",@"describeName":@"动画View",@"VCName":@"AxcActivityIndicatorViewVC"}];
         [Group2 addObject:@{@"controlsName":@"AxcUI_ActivityHUD",@"describeName":@"加载指示器",@"VCName":@"AxcActivityHUDVC"}];
         [Group2 addObject:@{@"controlsName":@"AxcUI_Label",@"describeName":@"动态设置文字边距",@"VCName":@"AxcLabelVC"}];
         [Group2 addObject:@{@"controlsName":@"AxcUI_ProgressView",@"describeName":@"进度指示器",@"VCName":@"AxcProgressViewVC"}];
