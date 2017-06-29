@@ -5,7 +5,7 @@
 ![主界面列表说明](https://github.com/axclogo/AxcUIKit-Sample/blob/master/Images/mainUI.png)
 ![控件展示VC界面说明](https://github.com/axclogo/AxcUIKit-Sample/blob/master/Images/Interface%20specification.png)<br>
 
-AxcUI_Kit命名规范<br><br>
+## AxcUI_Kit命名规范
 
 =======枚举=======<br>
 
