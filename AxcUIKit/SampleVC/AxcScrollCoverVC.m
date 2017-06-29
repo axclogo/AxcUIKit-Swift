@@ -48,7 +48,7 @@
 
 // 调用个小动画效果
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
-    [cell AxcUI_cellAppearAnimateStyle:AxcUICellAppearAnimateStyleRightToLeft indexPath:indexPath];
+    [cell AxcUI_cellAppearAnimateStyle:AxcCellAppearAnimateStyleRightToLeft indexPath:indexPath];
 }
 
 - (NSInteger )tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{

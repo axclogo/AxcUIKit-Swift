@@ -63,6 +63,10 @@
 		EA5252C21EF523CB0016C687 /* AxcActivityIndicatorViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EA5252C11EF523CB0016C687 /* AxcActivityIndicatorViewVC.m */; };
 		EA5252CC1EF5253F0016C687 /* AxcActivityIndicatorViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EA5252CA1EF5253F0016C687 /* AxcActivityIndicatorViewCell.m */; };
 		EA5252CD1EF5253F0016C687 /* AxcActivityIndicatorViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA5252CB1EF5253F0016C687 /* AxcActivityIndicatorViewCell.xib */; };
+		EA87DA691F04D2A100452D2D /* UIImage+AxcQRCode.m in Sources */ = {isa = PBXBuildFile; fileRef = EA87DA681F04D2A100452D2D /* UIImage+AxcQRCode.m */; };
+		EA87DA6C1F04D3DF00452D2D /* AxcQRCodeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EA87DA6B1F04D3DE00452D2D /* AxcQRCodeVC.m */; };
+		EA87DA721F04F77400452D2D /* UIImageView+AxcFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = EA87DA711F04F77400452D2D /* UIImageView+AxcFilter.m */; };
+		EA87DA751F04F9F700452D2D /* AxcFilterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EA87DA741F04F9F600452D2D /* AxcFilterVC.m */; };
 		EAD084AC1EEA88C2007DE2C4 /* UILabel+AxcShimmering.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD084AB1EEA88C2007DE2C4 /* UILabel+AxcShimmering.m */; };
 		EAD085761EEAE65F007DE2C4 /* AxcActivityHUDVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD085751EEAE65F007DE2C4 /* AxcActivityHUDVC.m */; };
 		EAD0857F1EEAE851007DE2C4 /* test_4.png in Resources */ = {isa = PBXBuildFile; fileRef = EAD085781EEAE851007DE2C4 /* test_4.png */; };
@@ -272,6 +276,14 @@
 		EA5252C91EF5253F0016C687 /* AxcActivityIndicatorViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcActivityIndicatorViewCell.h; sourceTree = "<group>"; };
 		EA5252CA1EF5253F0016C687 /* AxcActivityIndicatorViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcActivityIndicatorViewCell.m; sourceTree = "<group>"; };
 		EA5252CB1EF5253F0016C687 /* AxcActivityIndicatorViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AxcActivityIndicatorViewCell.xib; sourceTree = "<group>"; };
+		EA87DA671F04D2A100452D2D /* UIImage+AxcQRCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+AxcQRCode.h"; sourceTree = "<group>"; };
+		EA87DA681F04D2A100452D2D /* UIImage+AxcQRCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+AxcQRCode.m"; sourceTree = "<group>"; };
+		EA87DA6A1F04D3DE00452D2D /* AxcQRCodeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcQRCodeVC.h; sourceTree = "<group>"; };
+		EA87DA6B1F04D3DE00452D2D /* AxcQRCodeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcQRCodeVC.m; sourceTree = "<group>"; };
+		EA87DA701F04F77400452D2D /* UIImageView+AxcFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AxcFilter.h"; sourceTree = "<group>"; };
+		EA87DA711F04F77400452D2D /* UIImageView+AxcFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AxcFilter.m"; sourceTree = "<group>"; };
+		EA87DA731F04F9F600452D2D /* AxcFilterVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcFilterVC.h; sourceTree = "<group>"; };
+		EA87DA741F04F9F600452D2D /* AxcFilterVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcFilterVC.m; sourceTree = "<group>"; };
 		EAD084AA1EEA88C2007DE2C4 /* UILabel+AxcShimmering.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+AxcShimmering.h"; sourceTree = "<group>"; };
 		EAD084AB1EEA88C2007DE2C4 /* UILabel+AxcShimmering.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+AxcShimmering.m"; sourceTree = "<group>"; };
 		EAD085741EEAE65F007DE2C4 /* AxcActivityHUDVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcActivityHUDVC.h; sourceTree = "<group>"; };
@@ -547,6 +559,8 @@
 		09B3142B1EBB226B00083EC5 /* UIImageView+ */ = {
 			isa = PBXGroup;
 			children = (
+				EA87DA701F04F77400452D2D /* UIImageView+AxcFilter.h */,
+				EA87DA711F04F77400452D2D /* UIImageView+AxcFilter.m */,
 				09B3143E1EBB3AAB00083EC5 /* UIImageView+AxcNetworkLoadImage.h */,
 				09B3143F1EBB3AAB00083EC5 /* UIImageView+AxcNetworkLoadImage.m */,
 				EA439D0E1EE4556400D992E7 /* UIImageView+AxcImageLoader.h */,
@@ -561,6 +575,8 @@
 			children = (
 				09B314331EBB293300083EC5 /* UIImage+AxcImageName.h */,
 				09B314341EBB293300083EC5 /* UIImage+AxcImageName.m */,
+				EA87DA671F04D2A100452D2D /* UIImage+AxcQRCode.h */,
+				EA87DA681F04D2A100452D2D /* UIImage+AxcQRCode.m */,
 			);
 			path = "UIImage+";
 			sourceTree = "<group>";
@@ -743,6 +759,10 @@
 				EA439D2C1EE52A3D00D992E7 /* AxcImageLoaderVC.m */,
 				EAD086241EED09B7007DE2C4 /* AxcShimmeringViewVC.h */,
 				EAD086251EED09B7007DE2C4 /* AxcShimmeringViewVC.m */,
+				EA87DA6A1F04D3DE00452D2D /* AxcQRCodeVC.h */,
+				EA87DA6B1F04D3DE00452D2D /* AxcQRCodeVC.m */,
+				EA87DA731F04F9F600452D2D /* AxcFilterVC.h */,
+				EA87DA741F04F9F600452D2D /* AxcFilterVC.m */,
 			);
 			name = Extension;
 			sourceTree = "<group>";
@@ -1182,6 +1202,7 @@
 				EAD0861D1EED0966007DE2C4 /* AxcUI_BallProgressView.m in Sources */,
 				EA439CD11EE2FAB500D992E7 /* AxcViewSharkVC.m in Sources */,
 				09B314401EBB3AAB00083EC5 /* UIImageView+AxcNetworkLoadImage.m in Sources */,
+				EA87DA6C1F04D3DF00452D2D /* AxcQRCodeVC.m in Sources */,
 				EA439CC41EE2DE8400D992E7 /* TestTwoVC.m in Sources */,
 				EA439CF31EE3EAC900D992E7 /* AxcSemiModalVC.m in Sources */,
 				EAD0861F1EED0966007DE2C4 /* AxcUI_LoopProgressView.m in Sources */,
@@ -1222,6 +1243,7 @@
 				EAD0861C1EED0966007DE2C4 /* AxcBaseProgressView.m in Sources */,
 				EAD086191EED0966007DE2C4 /* AxcUI_Label.m in Sources */,
 				EA439E041EE6807300D992E7 /* Axc_WebImageCompat.m in Sources */,
+				EA87DA691F04D2A100452D2D /* UIImage+AxcQRCode.m in Sources */,
 				EAE662EE1EE27BD4008F104E /* UICollectionView+AxcCellRearrange.m in Sources */,
 				EAD085EA1EECF8B1007DE2C4 /* UIView+AxcShimmeringView.m in Sources */,
 				EA43A0631EE7DE9E00D992E7 /* AxcPhotoBrowserVC.m in Sources */,
@@ -1229,6 +1251,7 @@
 				EA439E0D1EE6807300D992E7 /* UIView+WebCacheOperation.m in Sources */,
 				EA439D101EE4556400D992E7 /* UIImageView+AxcImageLoader.m in Sources */,
 				EA439CE11EE3C1B500D992E7 /* AxcModifyPlaceholderVC.m in Sources */,
+				EA87DA721F04F77400452D2D /* UIImageView+AxcFilter.m in Sources */,
 				EA439D2D1EE52A3D00D992E7 /* AxcImageLoaderVC.m in Sources */,
 				EA43A07C1EE8055100D992E7 /* AxcProgressViewVC.m in Sources */,
 				EA439CF01EE3D8CB00D992E7 /* UIViewController+AxcSemiModal.m in Sources */,
@@ -1237,6 +1260,7 @@
 				093C622E1EA6F85800ADAC42 /* ViewController.m in Sources */,
 				EAD086201EED0966007DE2C4 /* AxcUI_PieLoopProgressView.m in Sources */,
 				EAD0861A1EED0966007DE2C4 /* AxcUI_PhotoBrowser.m in Sources */,
+				EA87DA751F04F9F700452D2D /* AxcFilterVC.m in Sources */,
 				093C622B1EA6F85800ADAC42 /* AppDelegate.m in Sources */,
 				EA439E091EE6807300D992E7 /* NSData+ImageContentType.m in Sources */,
 				EA439E081EE6807300D992E7 /* Axc_WebImageManager.m in Sources */,

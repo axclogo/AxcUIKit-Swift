@@ -40,26 +40,26 @@ UITableViewDataSource
             // 随时可以调用，方便调试时查看各项参数 ************************************************
         case 0: // 顶部
             switch (indexPath.row) {
-                case 0:[AxcUI_Toast showTopWithText:showText];break;
-                case 1:[AxcUI_Toast showTopWithText:showText duration:_showTime];break;
-                case 2:[AxcUI_Toast showTopWithText:showText topOffset:100];break;
-                case 3:[AxcUI_Toast showTopWithText:showText topOffset:100 duration:_showTime];break;
+                case 0:[AxcUI_Toast AxcUI_showTopWithText:showText];break;
+                case 1:[AxcUI_Toast AxcUI_showTopWithText:showText duration:_showTime];break;
+                case 2:[AxcUI_Toast AxcUI_showTopWithText:showText topOffset:100];break;
+                case 3:[AxcUI_Toast AxcUI_showTopWithText:showText topOffset:100 duration:_showTime];break;
                 default:break;
             }
             break;
         case 1: // 中部
             switch (indexPath.row) {
-                case 0:[AxcUI_Toast showCenterWithText:showText];break;
-                case 1:[AxcUI_Toast showCenterWithText:showText duration:_showTime];break;
+                case 0:[AxcUI_Toast AxcUI_showCenterWithText:showText];break;
+                case 1:[AxcUI_Toast AxcUI_showCenterWithText:showText duration:_showTime];break;
                 default:break;
             }
             break;
         case 2: // 下部
             switch (indexPath.row) {
-                case 0:[AxcUI_Toast showBottomWithText:showText];break;
-                case 1:[AxcUI_Toast showBottomWithText:showText duration:_showTime];break;
-                case 2:[AxcUI_Toast showBottomWithText:showText bottomOffset:100];break;
-                case 3:[AxcUI_Toast showBottomWithText:showText bottomOffset:100 duration:_showTime];break;
+                case 0:[AxcUI_Toast AxcUI_showBottomWithText:showText];break;
+                case 1:[AxcUI_Toast AxcUI_showBottomWithText:showText duration:_showTime];break;
+                case 2:[AxcUI_Toast AxcUI_showBottomWithText:showText bottomOffset:100];break;
+                case 3:[AxcUI_Toast AxcUI_showBottomWithText:showText bottomOffset:100 duration:_showTime];break;
                 default:break;
             }
             break;

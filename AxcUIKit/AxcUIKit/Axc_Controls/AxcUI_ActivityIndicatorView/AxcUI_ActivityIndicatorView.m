@@ -31,15 +31,15 @@ static const CGFloat kAxcUI_CtivityIndicatorDefaultSize = 40.0f;
     return self;
 }
 
-- (id)initWithType:(AxcActivityIndicatorAnimationType)type {
+- (id)initWithType:(AxcActivityIndicatorAnimationStyle)type {
     return [self initWithType:type tintColor:[UIColor whiteColor] size:kAxcUI_CtivityIndicatorDefaultSize];
 }
 
-- (id)initWithType:(AxcActivityIndicatorAnimationType)type tintColor:(UIColor *)tintColor {
+- (id)initWithType:(AxcActivityIndicatorAnimationStyle)type tintColor:(UIColor *)tintColor {
     return [self initWithType:type tintColor:tintColor size:kAxcUI_CtivityIndicatorDefaultSize];
 }
 
-- (id)initWithType:(AxcActivityIndicatorAnimationType)type tintColor:(UIColor *)tintColor size:(CGFloat)size {
+- (id)initWithType:(AxcActivityIndicatorAnimationStyle)type tintColor:(UIColor *)tintColor size:(CGFloat)size {
     self = [super init];
     if (self) {
         _axcUI_type = type;
@@ -93,7 +93,7 @@ static const CGFloat kAxcUI_CtivityIndicatorDefaultSize = 40.0f;
 #pragma mark -
 #pragma mark Setters
 
-- (void)setType:(AxcActivityIndicatorAnimationType)type {
+- (void)setType:(AxcActivityIndicatorAnimationStyle)type {
     if (_axcUI_type != type) {
         _axcUI_type = type;
         
@@ -130,73 +130,73 @@ static const CGFloat kAxcUI_CtivityIndicatorDefaultSize = 40.0f;
 #pragma mark -
 #pragma mark Getters
 
-+ (id<AxcCtivityIndicatorAnimationProtocol>)activityIndicatorAnimationForAnimationType:(AxcActivityIndicatorAnimationType)type {
++ (id<AxcCtivityIndicatorAnimationProtocol>)activityIndicatorAnimationForAnimationType:(AxcActivityIndicatorAnimationStyle)type {
     switch (type) {
-        case AxcActivityIndicatorAnimationTypeNineDots:
+        case AxcActivityIndicatorAnimationStyleNineDots:
             return [[AxcUI_CtivityIndicatorNineDotsAnimation alloc] init];
-        case AxcActivityIndicatorAnimationTypeTriplePulse:
+        case AxcActivityIndicatorAnimationStyleTriplePulse:
             return [[AxcUI_CtivityIndicatorTriplePulseAnimation alloc] init];
-        case AxcActivityIndicatorAnimationTypeFiveDots:
+        case AxcActivityIndicatorAnimationStyleFiveDots:
             return [[AxcUI_CtivityIndicatorFiveDotsAnimation alloc] init];
-        case AxcActivityIndicatorAnimationTypeRotatingSquares:
+        case AxcActivityIndicatorAnimationStyleRotatingSquares:
             return [[AxcUI_CtivityIndicatorRotatingSquaresAnimation alloc] init];
-        case AxcActivityIndicatorAnimationTypeDoubleBounce:
+        case AxcActivityIndicatorAnimationStyleDoubleBounce:
             return [[AxcUI_CtivityIndicatorDoubleBounceAnimation alloc] init];
-        case AxcActivityIndicatorAnimationTypeTwoDots:
+        case AxcActivityIndicatorAnimationStyleTwoDots:
             return [[AxcUI_CtivityIndicatorTwoDotsAnimation alloc] init];
-        case AxcActivityIndicatorAnimationTypeThreeDots:
+        case AxcActivityIndicatorAnimationStyleThreeDots:
             return [[AxcUI_CtivityIndicatorThreeDotsAnimation alloc] init];
-        case AxcActivityIndicatorAnimationTypeBallPulse:
+        case AxcActivityIndicatorAnimationStyleBallPulse:
             return [[AxcUI_CtivityIndicatorBallPulseAnimation alloc] init];
-        case AxcActivityIndicatorAnimationTypeBallClipRotate:
+        case AxcActivityIndicatorAnimationStyleBallClipRotate:
             return [[AxcUI_CtivityIndicatorBallClipRotateAnimation alloc] init];
-        case AxcActivityIndicatorAnimationTypeBallClipRotatePulse:
+        case AxcActivityIndicatorAnimationStyleBallClipRotatePulse:
             return [[AxcUI_CtivityIndicatorBallClipRotatePulseAnimation alloc] init];
-        case AxcActivityIndicatorAnimationTypeBallClipRotateMultiple:
+        case AxcActivityIndicatorAnimationStyleBallClipRotateMultiple:
             return [[AxcUI_CtivityIndicatorBallClipRotateMultipleAnimation alloc] init];
-        case AxcActivityIndicatorAnimationTypeBallRotate:
+        case AxcActivityIndicatorAnimationStyleBallRotate:
             return [[AxcUI_CtivityIndicatorBallRotateAnimation alloc] init];
-        case AxcActivityIndicatorAnimationTypeBallZigZag:
+        case AxcActivityIndicatorAnimationStyleBallZigZag:
             return [[AxcUI_CtivityIndicatorBallZigZagAnimation alloc] init];
-        case AxcActivityIndicatorAnimationTypeBallZigZagDeflect:
+        case AxcActivityIndicatorAnimationStyleBallZigZagDeflect:
             return [[AxcUI_CtivityIndicatorBallZigZagDeflectAnimation alloc] init];
-        case AxcActivityIndicatorAnimationTypeBallTrianglePath:
+        case AxcActivityIndicatorAnimationStyleBallTrianglePath:
             return [[AxcUI_CtivityIndicatorBallTrianglePathAnimation alloc] init];
-        case AxcActivityIndicatorAnimationTypeBallScale:
+        case AxcActivityIndicatorAnimationStyleBallScale:
             return [[AxcUI_CtivityIndicatorBallScaleAnimation alloc] init];
-        case AxcActivityIndicatorAnimationTypeLineScale:
+        case AxcActivityIndicatorAnimationStyleLineScale:
             return [[AxcUI_CtivityIndicatorLineScaleAnimation alloc] init];
-        case AxcActivityIndicatorAnimationTypeLineScaleParty:
+        case AxcActivityIndicatorAnimationStyleLineScaleParty:
             return [[AxcUI_CtivityIndicatorLineScalePartyAnimation alloc] init];
-        case AxcActivityIndicatorAnimationTypeBallScaleMultiple:
+        case AxcActivityIndicatorAnimationStyleBallScaleMultiple:
             return [[AxcUI_CtivityIndicatorBallScaleMultipleAnimation alloc] init];
-        case AxcActivityIndicatorAnimationTypeBallPulseSync:
+        case AxcActivityIndicatorAnimationStyleBallPulseSync:
             return [[AxcUI_CtivityIndicatorBallPulseSyncAnimation alloc] init];
-        case AxcActivityIndicatorAnimationTypeBallBeat:
+        case AxcActivityIndicatorAnimationStyleBallBeat:
             return [[AxcUI_CtivityIndicatorBallBeatAnimation alloc] init];
-        case AxcActivityIndicatorAnimationTypeLineScalePulseOut:
+        case AxcActivityIndicatorAnimationStyleLineScalePulseOut:
             return [[AxcUI_CtivityIndicatorLineScalePulseOutAnimation alloc] init];
-        case AxcActivityIndicatorAnimationTypeLineScalePulseOutRapid:
+        case AxcActivityIndicatorAnimationStyleLineScalePulseOutRapid:
             return [[AxcUI_CtivityIndicatorLineScalePulseOutRapidAnimation alloc] init];
-        case AxcActivityIndicatorAnimationTypeBallScaleRipple:
+        case AxcActivityIndicatorAnimationStyleBallScaleRipple:
             return [[AxcUI_CtivityIndicatorBallScaleRippleAnimation alloc] init];
-        case AxcActivityIndicatorAnimationTypeBallScaleRippleMultiple:
+        case AxcActivityIndicatorAnimationStyleBallScaleRippleMultiple:
             return [[AxcUI_CtivityIndicatorBallScaleRippleMultipleAnimation alloc] init];
-        case AxcActivityIndicatorAnimationTypeTriangleSkewSpin:
+        case AxcActivityIndicatorAnimationStyleTriangleSkewSpin:
             return [[AxcUI_CtivityIndicatorTriangleSkewSpinAnimation alloc] init];
-        case AxcActivityIndicatorAnimationTypeBallGridBeat:
+        case AxcActivityIndicatorAnimationStyleBallGridBeat:
             return [[AxcUI_CtivityIndicatorBallGridBeatAnimation alloc] init];
-        case AxcActivityIndicatorAnimationTypeBallGridPulse:
+        case AxcActivityIndicatorAnimationStyleBallGridPulse:
             return [[AxcUI_CtivityIndicatorBallGridPulseAnimation alloc] init];
-        case AxcActivityIndicatorAnimationTypeRotatingSandglass:
+        case AxcActivityIndicatorAnimationStyleRotatingSandglass:
             return [[AxcUI_CtivityIndicatorRotatingSandglassAnimation alloc]init];
-        case AxcActivityIndicatorAnimationTypeRotatingTrigons:
+        case AxcActivityIndicatorAnimationStyleRotatingTrigons:
             return [[AxcUI_CtivityIndicatorRotatingTrigonAnimation alloc]init];
-        case AxcActivityIndicatorAnimationTypeTripleRings:
+        case AxcActivityIndicatorAnimationStyleTripleRings:
             return [[AxcUI_CtivityIndicatorTripleRingsAnimation alloc]init];
-        case AxcActivityIndicatorAnimationTypeCookieTerminator:
+        case AxcActivityIndicatorAnimationStyleCookieTerminator:
             return [[AxcUI_CtivityIndicatorCookieTerminatorAnimation alloc]init];
-        case AxcActivityIndicatorAnimationTypeBallSpinFadeLoader:
+        case AxcActivityIndicatorAnimationStyleBallSpinFadeLoader:
             return [[AxcUI_CtivityIndicatorBallSpinFadeLoaderAnimation alloc] init];
     }
     return nil;

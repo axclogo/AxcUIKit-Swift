@@ -70,9 +70,9 @@
     }
 }
 // 设置保存风格
-- (void)setAxcUI_saveType:(AxcUIBrowserSaveTypeMode)axcUI_saveType{
+- (void)setAxcUI_saveType:(AxcPhotoBrowserSaveStyle)axcUI_saveType{
     _axcUI_saveType = axcUI_saveType;
-    if (_axcUI_saveType != AxcUIBrowserLongTapSaveType) {
+    if (_axcUI_saveType != AxcPhotoBrowserStyleLongTapSave) {
         [self removeGestureRecognizer:self.longTap];
         self.saveButton.hidden = NO;
     }

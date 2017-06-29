@@ -9,7 +9,6 @@
 #import "AxcSemiModalHeaderView.h"
 #import "UIViewController+AxcSemiModal.h"
 
-#import <Masonry.h>
 
 @implementation AxcSemiModalHeaderView
 

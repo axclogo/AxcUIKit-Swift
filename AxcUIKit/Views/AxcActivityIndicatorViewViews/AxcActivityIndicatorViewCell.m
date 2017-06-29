@@ -17,10 +17,10 @@
 
 }
 
-- (void)setActivityIndicatorViewType:(AxcActivityIndicatorAnimationType )type{
+- (void)setActivityIndicatorViewType:(AxcActivityIndicatorAnimationStyle )type{
     if (!self.axcUI_activityIndicatorView) {
         self.axcUI_activityIndicatorView = [[AxcUI_ActivityIndicatorView alloc]
-                                            initWithType:(AxcActivityIndicatorAnimationType)type
+                                            initWithType:(AxcActivityIndicatorAnimationStyle)type
                                             tintColor:[UIColor whiteColor]];
         CGFloat width = self.bounds.size.width ;
         CGFloat height = self.bounds.size.height ;

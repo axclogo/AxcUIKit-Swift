@@ -46,10 +46,10 @@
 
 #pragma mark - 业务逻辑
 - (void)AxcUI_photoBrowser:(AxcUI_PhotoBrowser *)browser
-              saveTypeMode:(AxcUIBrowserSaveTypeMode)saveTypeMode
+              saveTypeMode:(AxcPhotoBrowserSaveStyle)saveTypeMode
                      Image:(UIImage *)saveImage{
     // 当图片发生互动（长摁/按钮）保存时发生的回调。saveTypeMode根据之前设定的互动模式来反馈相应的操作
-    if (saveTypeMode == AxcUIBrowserLongTapSaveType) {
+    if (saveTypeMode == AxcPhotoBrowserStyleLongTapSave) {
         NSLog(@"长摁");
     }else{
         NSLog(@"按钮");
@@ -67,8 +67,8 @@
     browser.axcUI_convertRectView = cell;                                       // 设置扩展动画/放大效果的View
     browser.axcUI_progressSize = CGSizeMake(70, 70);                            // 设置加载指示器大小
     browser.axcUI_progressViewStyle = self.progressSegmented.selectedSegmentIndex;    // 设置加载指示器风格
-    browser.axcUI_pageTypeMode = AxcUIBrowserNumPageType;                                // 设置索引展示模式
-    browser.axcUI_saveType = AxcUIBrowserButtonSaveType;                     // 设置互动模式：按钮保存/长摁保存
+    browser.axcUI_pageTypeMode = AxcPhotoBrowserPageControlStyleNumPage;                                // 设置索引展示模式
+    browser.axcUI_saveType = AxcPhotoBrowserStyleButtonSave;                     // 设置互动模式：按钮保存/长摁保存
                                                                                 // 如果带有高度适配参数则需要调整适应
     browser.axcUI_automaticallyAdjustsScrollViewInsets = self.automaticallyAdjustsScrollViewInsets;
     [browser AxcUI_show];                                                       // 展示
@@ -91,7 +91,7 @@
 - (void)click_clearCacheButton{
     [Axc_WebimageCache AxcUI_imageCachePurge];
     [self.collectionView reloadData];
-    [AxcUI_Toast showCenterWithText:@"释放缓存成功！"];
+    [AxcUI_Toast AxcUI_showCenterWithText:@"释放缓存成功！"];
 }
 
 

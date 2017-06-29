@@ -92,9 +92,12 @@ UITableViewDelegate
         [Group1 addObject:@{@"controlsName":@"View+",@"describeName":@"添加文字闪动效果",@"VCName":@"AxcShimmeringViewVC"}];
         [Group1 addObject:@{@"controlsName":@"ImageView+",@"describeName":@"轻量加载图片",@"VCName":@"AxcLoadImageVC"}];
         [Group1 addObject:@{@"controlsName":@"ImageView+",@"describeName":@"添加Progress",@"VCName":@"AxcImageLoaderVC"}];
+        [Group1 addObject:@{@"controlsName":@"ImageView+",@"describeName":@"基础滤镜渲染",@"VCName":@"AxcFilterVC"}];
+        [Group1 addObject:@{@"controlsName":@"Image+",@"describeName":@"快速生成二维码",@"VCName":@"AxcQRCodeVC"}];
         [Group1 addObject:@{@"controlsName":@"CollectionView+",@"describeName":@"长摁拖动排序",@"VCName":@"AxcCellRearrangeVC"}];
         [Group1 addObject:@{@"controlsName":@"TableView+",@"describeName":@"下拉放大头图",@"VCName":@"AxcScrollCoverVC"}];
         [Group1 addObject:@{@"controlsName":@"TextField+",@"describeName":@"占位符参数修改",@"VCName":@"AxcModifyPlaceholderVC"}];
+        
         [Group1 addObject:@{@"controlsName":@"ViewController+",@"describeName":@"动画推出View/VC",@"VCName":@"AxcSemiModalVC"}];
 
         [Group1 addObject:@{@"controlsName":@"测试",@"describeName":@"测试",@"VCName":@"TestTwoVC"}];

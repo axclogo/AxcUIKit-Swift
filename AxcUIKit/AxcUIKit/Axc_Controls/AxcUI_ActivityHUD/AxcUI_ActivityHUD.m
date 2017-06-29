@@ -71,7 +71,7 @@
 @property (strong, nonatomic) UIImageView *imageView;
 
 // 当前风格的设置
-@property AxcUIActivityHUDIndicatorType currentTpye;
+@property AxcActivityHUDIndicatorStyle currentTpye;
 
 // 开启指标
 @property BOOL useProvidedIndicator;
@@ -91,8 +91,8 @@
         self.layer.cornerRadius = 5.0;
         self.axcUI_isTheOnlyActiveView = YES;
         self.axcUI_indicatorColor = [UIColor whiteColor];
-        self.axcUI_appearAnimationType = AxcActivityHUDaxcUI_appearAnimationTypeFadeIn;
-        self.axcUI_disappearAnimationType = AxcActivityHUDaxcUI_disappearAnimationTypeFadeOut;
+        self.axcUI_appearAnimationType = AxcActivityHUDAppearAnimationTypeFadeIn;
+        self.axcUI_disappearAnimationType = AxcActivityHUDDisappearAnimationTypeFadeOut;
         self.overlay = AxcActivityHUDOverlayTypeNone;
         [self addNotificationObserver];
     }
@@ -111,97 +111,97 @@
 
 
 #pragma mark - 预设动画区
-- (void)initializeIndicatoeLayerWithType:(AxcUIActivityHUDIndicatorType)type {
+- (void)initializeIndicatoeLayerWithType:(AxcActivityHUDIndicatorStyle)type {
     switch (type) {
-        case AxcUIActivityHUDIndicatorTypeScalingDots:[self initializeScalingDots];break;
-        case AxcUIActivityHUDIndicatorTypeLeadingDots:[self initializeLeadingDots];break;
-        case AxcUIActivityHUDIndicatorTypeMinorArc:[self initializeMinorArc];break;
-        case AxcUIActivityHUDIndicatorTypeDynamicArc:[self initializeDynamicArc];break;
-        case AxcUIActivityHUDIndicatorTypeArcInCircle:[self initializeArcInCircle];break;
-        case AxcUIActivityHUDIndicatorTypeSpringBall:[self initializeSpringBall];break;
+        case AxcActivityHUDIndicatorStyleScalingDots:[self initializeScalingDots];break;
+        case AxcActivityHUDIndicatorStyleLeadingDots:[self initializeLeadingDots];break;
+        case AxcActivityHUDIndicatorStyleMinorArc:[self initializeMinorArc];break;
+        case AxcActivityHUDIndicatorStyleDynamicArc:[self initializeDynamicArc];break;
+        case AxcActivityHUDIndicatorStyleArcInCircle:[self initializeArcInCircle];break;
+        case AxcActivityHUDIndicatorStyleSpringBall:[self initializeSpringBall];break;
             
-        case AxcUIActivityHUDIndicatorTypeScalingBars:[self initializeScalingBars];break;
-        case AxcUIActivityHUDIndicatorTypeTriangleCircle:[self initializeTriangleCircle];break;
+        case AxcActivityHUDIndicatorStyleScalingBars:[self initializeScalingBars];break;
+        case AxcActivityHUDIndicatorStyleTriangleCircle:[self initializeTriangleCircle];break;
             // 扩展
-        case  AxcUIActivityHUDIndicatorTypeTypeNineDots:
-            [self activityType:AxcUIActivityHUDIndicatorTypeTypeNineDots - DefaultEnum];break;                // 九个点
-        case  AxcUIActivityHUDIndicatorTypeTypeTriplePulse:
-            [self activityType:AxcUIActivityHUDIndicatorTypeTypeTriplePulse - DefaultEnum];break;             // 频繁水波
-        case  AxcUIActivityHUDIndicatorTypeTypeFiveDots:
-            [self activityType:AxcUIActivityHUDIndicatorTypeTypeFiveDots - DefaultEnum];break;                // 奥运五环上上下下
-        case  AxcUIActivityHUDIndicatorTypeTypeRotatingSquares:
-            [self activityType:AxcUIActivityHUDIndicatorTypeTypeRotatingSquares - DefaultEnum];break;         // 旋转方块
-        case  AxcUIActivityHUDIndicatorTypeTypeDoubleBounce:
-           [self activityType:AxcUIActivityHUDIndicatorTypeTypeDoubleBounce - DefaultEnum];break;             // 同心大小水波圆
+        case  AxcActivityHUDIndicatorStyleNineDots:
+            [self activityType:AxcActivityHUDIndicatorStyleNineDots - DefaultEnum];break;                // 九个点
+        case  AxcActivityHUDIndicatorStyleTriplePulse:
+            [self activityType:AxcActivityHUDIndicatorStyleTriplePulse - DefaultEnum];break;             // 频繁水波
+        case  AxcActivityHUDIndicatorStyleFiveDots:
+            [self activityType:AxcActivityHUDIndicatorStyleFiveDots - DefaultEnum];break;                // 奥运五环上上下下
+        case  AxcActivityHUDIndicatorStyleRotatingSquares:
+            [self activityType:AxcActivityHUDIndicatorStyleRotatingSquares - DefaultEnum];break;         // 旋转方块
+        case  AxcActivityHUDIndicatorStyleDoubleBounce:
+           [self activityType:AxcActivityHUDIndicatorStyleDoubleBounce - DefaultEnum];break;             // 同心大小水波圆
             
-        case AxcUIActivityHUDIndicatorTypeTypeTwoDots:
-            [self activityType:AxcUIActivityHUDIndicatorTypeTypeTwoDots - DefaultEnum];break;                 // 左右大小圆
-        case AxcUIActivityHUDIndicatorTypeTypeThreeDots:
-            [self activityType:AxcUIActivityHUDIndicatorTypeTypeThreeDots - DefaultEnum];break;               // 三个点同时渐入渐出
-        case AxcUIActivityHUDIndicatorTypeTypeBallPulse:
-            [self activityType:AxcUIActivityHUDIndicatorTypeTypeBallPulse - DefaultEnum];break;               // 三个点从左到右依次大小
-        case AxcUIActivityHUDIndicatorTypeTypeBallClipRotate:
-            [self activityType:AxcUIActivityHUDIndicatorTypeTypeBallClipRotate - DefaultEnum];break;          // 缺口圆转圈大小
-        case AxcUIActivityHUDIndicatorTypeTypeBallClipRotatePulse:
-            [self activityType:AxcUIActivityHUDIndicatorTypeTypeBallClipRotatePulse - DefaultEnum];break;     // 中心实心圆大小，外圆双圆弧转
+        case AxcActivityHUDIndicatorStyleTwoDots:
+            [self activityType:AxcActivityHUDIndicatorStyleTwoDots - DefaultEnum];break;                 // 左右大小圆
+        case AxcActivityHUDIndicatorStyleThreeDots:
+            [self activityType:AxcActivityHUDIndicatorStyleThreeDots - DefaultEnum];break;               // 三个点同时渐入渐出
+        case AxcActivityHUDIndicatorStyleBallPulse:
+            [self activityType:AxcActivityHUDIndicatorStyleBallPulse - DefaultEnum];break;               // 三个点从左到右依次大小
+        case AxcActivityHUDIndicatorStyleBallClipRotate:
+            [self activityType:AxcActivityHUDIndicatorStyleBallClipRotate - DefaultEnum];break;          // 缺口圆转圈大小
+        case AxcActivityHUDIndicatorStyleBallClipRotatePulse:
+            [self activityType:AxcActivityHUDIndicatorStyleBallClipRotatePulse - DefaultEnum];break;     // 中心实心圆大小，外圆双圆弧转
             
-        case AxcUIActivityHUDIndicatorTypeTypeBallClipRotateMultiple:
-            [self activityType:AxcUIActivityHUDIndicatorTypeTypeBallClipRotateMultiple - DefaultEnum];break;  // 中心空心圆大小，外圆双圆弧转
-        case AxcUIActivityHUDIndicatorTypeTypeBallRotate:
-            [self activityType:AxcUIActivityHUDIndicatorTypeTypeBallRotate - DefaultEnum];break;              // 类似百度加载
-        case AxcUIActivityHUDIndicatorTypeTypeBallZigZag:
-            [self activityType:AxcUIActivityHUDIndicatorTypeTypeBallZigZag - DefaultEnum];break;              // 双圆画沙漏
-        case AxcUIActivityHUDIndicatorTypeTypeBallZigZagDeflect:
-            [self activityType:AxcUIActivityHUDIndicatorTypeTypeBallZigZagDeflect - DefaultEnum];break;       // 双圆画三角
-        case AxcUIActivityHUDIndicatorTypeTypeBallTrianglePath:
-            [self activityType:AxcUIActivityHUDIndicatorTypeTypeBallTrianglePath - DefaultEnum];break;        // 顺时针三空心圆三角画圆
+        case AxcActivityHUDIndicatorStyleBallClipRotateMultiple:
+            [self activityType:AxcActivityHUDIndicatorStyleBallClipRotateMultiple - DefaultEnum];break;  // 中心空心圆大小，外圆双圆弧转
+        case AxcActivityHUDIndicatorStyleBallRotate:
+            [self activityType:AxcActivityHUDIndicatorStyleBallRotate - DefaultEnum];break;              // 类似百度加载
+        case AxcActivityHUDIndicatorStyleBallZigZag:
+            [self activityType:AxcActivityHUDIndicatorStyleBallZigZag - DefaultEnum];break;              // 双圆画沙漏
+        case AxcActivityHUDIndicatorStyleBallZigZagDeflect:
+            [self activityType:AxcActivityHUDIndicatorStyleBallZigZagDeflect - DefaultEnum];break;       // 双圆画三角
+        case AxcActivityHUDIndicatorStyleBallTrianglePath:
+            [self activityType:AxcActivityHUDIndicatorStyleBallTrianglePath - DefaultEnum];break;        // 顺时针三空心圆三角画圆
             
-        case AxcUIActivityHUDIndicatorTypeTypeBallScale:
-            [self activityType:AxcUIActivityHUDIndicatorTypeTypeBallScale - DefaultEnum];break;               // 单圆从小到大
-        case AxcUIActivityHUDIndicatorTypeTypeLineScale:
-            [self activityType:AxcUIActivityHUDIndicatorTypeTypeLineScale - DefaultEnum];break;               // 竖条从左到右依次变长
-        case AxcUIActivityHUDIndicatorTypeTypeLineScaleParty:
-            [self activityType:AxcUIActivityHUDIndicatorTypeTypeLineScaleParty - DefaultEnum];break;          // 竖条随机长短
-        case AxcUIActivityHUDIndicatorTypeTypeBallScaleMultiple:
-            [self activityType:AxcUIActivityHUDIndicatorTypeTypeBallScaleMultiple - DefaultEnum];break;       // 三圆呼吸
-        case AxcUIActivityHUDIndicatorTypeTypeBallPulseSync:
-            [self activityType:AxcUIActivityHUDIndicatorTypeTypeBallPulseSync - DefaultEnum];break;           // 波浪三圆
+        case AxcActivityHUDIndicatorStyleBallScale:
+            [self activityType:AxcActivityHUDIndicatorStyleBallScale - DefaultEnum];break;               // 单圆从小到大
+        case AxcActivityHUDIndicatorStyleLineScale:
+            [self activityType:AxcActivityHUDIndicatorStyleLineScale - DefaultEnum];break;               // 竖条从左到右依次变长
+        case AxcActivityHUDIndicatorStyleLineScaleParty:
+            [self activityType:AxcActivityHUDIndicatorStyleLineScaleParty - DefaultEnum];break;          // 竖条随机长短
+        case AxcActivityHUDIndicatorStyleBallScaleMultiple:
+            [self activityType:AxcActivityHUDIndicatorStyleBallScaleMultiple - DefaultEnum];break;       // 三圆呼吸
+        case AxcActivityHUDIndicatorStyleBallPulseSync:
+            [self activityType:AxcActivityHUDIndicatorStyleBallPulseSync - DefaultEnum];break;           // 波浪三圆
             
-        case AxcUIActivityHUDIndicatorTypeTypeBallBeat:
-            [self activityType:AxcUIActivityHUDIndicatorTypeTypeBallBeat - DefaultEnum];break;                // 呼吸三圆
-        case AxcUIActivityHUDIndicatorTypeTypeLineScalePulseOut:
-            [self activityType:AxcUIActivityHUDIndicatorTypeTypeLineScalePulseOut - DefaultEnum];break;       // 竖条从中向两边扩展
-        case AxcUIActivityHUDIndicatorTypeTypeScalePulseOutRapid:
-            [self activityType:AxcUIActivityHUDIndicatorTypeTypeScalePulseOutRapid - DefaultEnum];break;      // 竖条从中向两边扩展2
-        case AxcUIActivityHUDIndicatorTypeTypeBallScaleRipple:
-            [self activityType:AxcUIActivityHUDIndicatorTypeTypeBallScaleRipple - DefaultEnum];break;         // 空心圆从小变大渐出
-        case AxcUIActivityHUDIndicatorTypeTypeBallScaleRippleMultiple:
-            [self activityType:AxcUIActivityHUDIndicatorTypeTypeBallScaleRippleMultiple - DefaultEnum];break; // 多个空心圆从小变大渐出
+        case AxcActivityHUDIndicatorStyleBallBeat:
+            [self activityType:AxcActivityHUDIndicatorStyleBallBeat - DefaultEnum];break;                // 呼吸三圆
+        case AxcActivityHUDIndicatorStyleLineScalePulseOut:
+            [self activityType:AxcActivityHUDIndicatorStyleLineScalePulseOut - DefaultEnum];break;       // 竖条从中向两边扩展
+        case AxcActivityHUDIndicatorStyleScalePulseOutRapid:
+            [self activityType:AxcActivityHUDIndicatorStyleScalePulseOutRapid - DefaultEnum];break;      // 竖条从中向两边扩展2
+        case AxcActivityHUDIndicatorStyleBallScaleRipple:
+            [self activityType:AxcActivityHUDIndicatorStyleBallScaleRipple - DefaultEnum];break;         // 空心圆从小变大渐出
+        case AxcActivityHUDIndicatorStyleBallScaleRippleMultiple:
+            [self activityType:AxcActivityHUDIndicatorStyleBallScaleRippleMultiple - DefaultEnum];break; // 多个空心圆从小变大渐出
             
-        case AxcUIActivityHUDIndicatorTypeTypeTriangleSkewSpin:
-            [self activityType:AxcUIActivityHUDIndicatorTypeTypeTriangleSkewSpin - DefaultEnum];break;        // 三角翻转
-        case AxcUIActivityHUDIndicatorTypeTypeBallGridBeat:
-            [self activityType:AxcUIActivityHUDIndicatorTypeTypeBallGridBeat - DefaultEnum];break;            // 九个点随机透明
-        case AxcUIActivityHUDIndicatorTypeTypeBallGridPulse:
-            [self activityType:AxcUIActivityHUDIndicatorTypeTypeBallGridPulse - DefaultEnum];break;           // 九个点随机大小
-        case AxcUIActivityHUDIndicatorTypeTypeRotatingSandglass:
-            [self activityType:AxcUIActivityHUDIndicatorTypeTypeRotatingSandglass - DefaultEnum];break;       // 双圆慢速画沙漏
-        case AxcUIActivityHUDIndicatorTypeTypeRotatingTrigons:
-            [self activityType:AxcUIActivityHUDIndicatorTypeTypeRotatingTrigons - DefaultEnum];break;         // 逆时针三空心圆三角画圆
+        case AxcActivityHUDIndicatorStyleTriangleSkewSpin:
+            [self activityType:AxcActivityHUDIndicatorStyleTriangleSkewSpin - DefaultEnum];break;        // 三角翻转
+        case AxcActivityHUDIndicatorStyleBallGridBeat:
+            [self activityType:AxcActivityHUDIndicatorStyleBallGridBeat - DefaultEnum];break;            // 九个点随机透明
+        case AxcActivityHUDIndicatorStyleBallGridPulse:
+            [self activityType:AxcActivityHUDIndicatorStyleBallGridPulse - DefaultEnum];break;           // 九个点随机大小
+        case AxcActivityHUDIndicatorStyleRotatingSandglass:
+            [self activityType:AxcActivityHUDIndicatorStyleRotatingSandglass - DefaultEnum];break;       // 双圆慢速画沙漏
+        case AxcActivityHUDIndicatorStyleRotatingTrigons:
+            [self activityType:AxcActivityHUDIndicatorStyleRotatingTrigons - DefaultEnum];break;         // 逆时针三空心圆三角画圆
             
-        case AxcUIActivityHUDIndicatorTypeTypeTripleRings:
-            [self activityType:AxcUIActivityHUDIndicatorTypeTypeTripleRings - DefaultEnum];break;             // 慢速多个空心圆从小变大渐出
-        case AxcUIActivityHUDIndicatorTypeTypeCookieTerminator:
-            [self activityType:AxcUIActivityHUDIndicatorTypeTypeCookieTerminator - DefaultEnum];break;        // 吃豆人
-        case AxcUIActivityHUDIndicatorTypeTypeBallSpinFadeLoader:
-            [self activityType:AxcUIActivityHUDIndicatorTypeTypeBallSpinFadeLoader - DefaultEnum];break;      // 环形圆loader
+        case AxcActivityHUDIndicatorStyleTripleRings:
+            [self activityType:AxcActivityHUDIndicatorStyleTripleRings - DefaultEnum];break;             // 慢速多个空心圆从小变大渐出
+        case AxcActivityHUDIndicatorStyleCookieTerminator:
+            [self activityType:AxcActivityHUDIndicatorStyleCookieTerminator - DefaultEnum];break;        // 吃豆人
+        case AxcActivityHUDIndicatorStyleBallSpinFadeLoader:
+            [self activityType:AxcActivityHUDIndicatorStyleBallSpinFadeLoader - DefaultEnum];break;      // 环形圆loader
       
     }
 }
 ////////////////////////////
-- (void)activityType:(AxcActivityIndicatorAnimationType)type{
+- (void)activityType:(AxcActivityIndicatorAnimationStyle)type{
     self.axcUI_activityIndicatorView = [[AxcUI_ActivityIndicatorView alloc]
-                                        initWithType:(AxcActivityIndicatorAnimationType)type
+                                        initWithType:(AxcActivityIndicatorAnimationStyle)type
                                         tintColor:[UIColor whiteColor]];
     CGFloat width = self.bounds.size.width ;
     CGFloat height = self.bounds.size.height ;
@@ -303,10 +303,10 @@
 #pragma mark - 公开的SHOW方法重载
 //MARK: 默认展示
 - (void)AxcUI_show {
-    [self AxcUI_showWithType:AxcUIActivityHUDIndicatorTypeScalingDots];
+    [self AxcUI_showWithType:AxcActivityHUDIndicatorStyleScalingDots];
 }
 //MARK: 根据风格展示
-- (void)AxcUI_showWithType:(AxcUIActivityHUDIndicatorType)type {
+- (void)AxcUI_showWithType:(AxcActivityHUDIndicatorStyle)type {
     if (!self.superview) {
         [self initializeReplicatorLayer];
         [self initializeIndicatoeLayerWithType:type];
@@ -511,37 +511,38 @@
 - (void)addAnimation {
     [self.indicatorCAShapeLayer removeAllAnimations];
     switch (self.currentTpye) {
-        case AxcUIActivityHUDIndicatorTypeScalingDots:
+        case AxcActivityHUDIndicatorStyleScalingDots:
             [self addScalingDotsAnimation];
             break;
             
-        case AxcUIActivityHUDIndicatorTypeLeadingDots:
+        case AxcActivityHUDIndicatorStyleLeadingDots:
             [self addLeadingDotsAnimation];
             break;
             
-        case AxcUIActivityHUDIndicatorTypeMinorArc:
+        case AxcActivityHUDIndicatorStyleMinorArc:
             [self addMinorArcAnimation];
             break;
             
-        case AxcUIActivityHUDIndicatorTypeDynamicArc:
+        case AxcActivityHUDIndicatorStyleDynamicArc:
             [self addDynamicArcAnimation];
             break;
             
-        case AxcUIActivityHUDIndicatorTypeArcInCircle:
+        case AxcActivityHUDIndicatorStyleArcInCircle:
             [self addArcInCircleAnimation];
             break;
             
-        case AxcUIActivityHUDIndicatorTypeSpringBall:
+        case AxcActivityHUDIndicatorStyleSpringBall:
             [self addSpringBallAnimation];
             break;
             
-        case AxcUIActivityHUDIndicatorTypeScalingBars:
+        case AxcActivityHUDIndicatorStyleScalingBars:
             [self addScalingBarsAnimation];
             break;
             
-        case AxcUIActivityHUDIndicatorTypeTriangleCircle:
+        case AxcActivityHUDIndicatorStyleTriangleCircle:
             [self addTriangleCircleAnimation];
             break;
+        default:break;
     }
 }
 
@@ -731,27 +732,27 @@
 #pragma mark - 入场动画 animation
 - (void)addAppearAnimation {
     switch (self.axcUI_appearAnimationType) {
-        case AxcActivityHUDaxcUI_appearAnimationTypeSlideFromTop:
+        case AxcActivityHUDAppearAnimationTypeSlideFromTop:
             [self addSlideFromTopAppearAnimation];
             break;
             
-        case AxcActivityHUDaxcUI_appearAnimationTypeSlideFromBottom:
+        case AxcActivityHUDAppearAnimationTypeSlideFromBottom:
             [self addSlideFromBottomAppearAnimation];
             break;
             
-        case AxcActivityHUDaxcUI_appearAnimationTypeSlideFromLeft:
+        case AxcActivityHUDAppearAnimationTypeSlideFromLeft:
             [self addSlideFromLeftAppearAnimation];
             break;
             
-        case AxcActivityHUDaxcUI_appearAnimationTypeSlideFromRight:
+        case AxcActivityHUDAppearAnimationTypeSlideFromRight:
             [self addSlideFromRightAppearAnimation];
             break;
             
-        case AxcActivityHUDaxcUI_appearAnimationTypeZoomIn:
+        case AxcActivityHUDAppearAnimationTypeZoomIn:
             [self addZoomInAppearAnimation];
             break;
             
-        case AxcActivityHUDaxcUI_appearAnimationTypeFadeIn:
+        case AxcActivityHUDAppearAnimationTypeFadeIn:
             [self addFadeInAppearAnimation];
             break;
     }
@@ -844,27 +845,27 @@
 #pragma mark - 离场动画 animation
 - (void)addDisappearAnimationWithDelay:(CGFloat)delay {
     switch (self.axcUI_disappearAnimationType) {
-        case AxcActivityHUDaxcUI_disappearAnimationTypeSlideToTop:
+        case AxcActivityHUDDisappearAnimationTypeSlideToTop:
             [self addSlideToTopDissappearAnimationWithDelay:delay];
             break;
             
-        case AxcActivityHUDaxcUI_disappearAnimationTypeSlideToBottom:
+        case AxcActivityHUDDisappearAnimationTypeSlideToBottom:
             [self addSlideToBottomDissappearAnimationWithDelay:delay];
             break;
             
-        case AxcActivityHUDaxcUI_disappearAnimationTypeSlideToLeft:
+        case AxcActivityHUDDisappearAnimationTypeSlideToLeft:
             [self addSlideToLeftDissappearAnimationWithDelay:delay];
             break;
             
-        case AxcActivityHUDaxcUI_disappearAnimationTypeSlideToRight:
+        case AxcActivityHUDDisappearAnimationTypeSlideToRight:
             [self addSlideToRightDissappearAnimationWithDelay:delay];
             break;
             
-        case AxcActivityHUDaxcUI_disappearAnimationTypeZoomOut:
+        case AxcActivityHUDDisappearAnimationTypeZoomOut:
             [self addZoomOutDisappearAnimationWithDelay:delay];
             break;
             
-        case AxcActivityHUDaxcUI_disappearAnimationTypeFadeOut:
+        case AxcActivityHUDDisappearAnimationTypeFadeOut:
             [self addFadeOutDisappearAnimationWithDelay:delay];
             break;
     }

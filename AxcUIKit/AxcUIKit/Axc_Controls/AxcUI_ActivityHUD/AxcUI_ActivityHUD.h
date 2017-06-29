@@ -5,76 +5,79 @@
 
 
 // 动画指示器效果
-typedef NS_ENUM(NSInteger, AxcUIActivityHUDIndicatorType) {
-    AxcUIActivityHUDIndicatorTypeScalingDots,                 // 环形圆loader
-    AxcUIActivityHUDIndicatorTypeLeadingDots,                 // 环形圆loader
-    AxcUIActivityHUDIndicatorTypeMinorArc,                    // 双圆弧旋转
-    AxcUIActivityHUDIndicatorTypeDynamicArc,                  // 单圆弧长度递增递减旋转
-    AxcUIActivityHUDIndicatorTypeArcInCircle,                 // 单圆弧固长旋转
+typedef NS_ENUM(NSInteger, AxcActivityHUDIndicatorStyle) {
+    AxcActivityHUDIndicatorStyleScalingDots,                 // 环形圆loader
+    AxcActivityHUDIndicatorStyleLeadingDots,                 // 环形圆loader
+    AxcActivityHUDIndicatorStyleMinorArc,                    // 双圆弧旋转
+    AxcActivityHUDIndicatorStyleDynamicArc,                  // 单圆弧长度递增递减旋转
+    AxcActivityHUDIndicatorStyleArcInCircle,                 // 单圆弧固长旋转
     
-    AxcUIActivityHUDIndicatorTypeSpringBall,                  // 上下大小弹球
-    AxcUIActivityHUDIndicatorTypeScalingBars,                 // 粗竖条从左到右依次变长
-    AxcUIActivityHUDIndicatorTypeTriangleCircle,              // 三实心球顺时针三角旋转
+    AxcActivityHUDIndicatorStyleSpringBall,                  // 上下大小弹球
+    AxcActivityHUDIndicatorStyleScalingBars,                 // 粗竖条从左到右依次变长
+    AxcActivityHUDIndicatorStyleTriangleCircle,              // 三实心球顺时针三角旋转
     // 从此扩展
-    AxcUIActivityHUDIndicatorTypeTypeNineDots,                // 九个点
-    AxcUIActivityHUDIndicatorTypeTypeTriplePulse,             // 频繁水波
-    AxcUIActivityHUDIndicatorTypeTypeFiveDots,                // 奥运五环上上下下
-    AxcUIActivityHUDIndicatorTypeTypeRotatingSquares,         // 旋转方块
-    AxcUIActivityHUDIndicatorTypeTypeDoubleBounce,            // 同心大小水波圆
+    AxcActivityHUDIndicatorStyleNineDots,                // 九个点
+    AxcActivityHUDIndicatorStyleTriplePulse,             // 频繁水波
+    AxcActivityHUDIndicatorStyleFiveDots,                // 奥运五环上上下下
+    AxcActivityHUDIndicatorStyleRotatingSquares,         // 旋转方块
+    AxcActivityHUDIndicatorStyleDoubleBounce,            // 同心大小水波圆
     
-    AxcUIActivityHUDIndicatorTypeTypeTwoDots,                 // 左右大小圆
-    AxcUIActivityHUDIndicatorTypeTypeThreeDots,               // 三个点同时渐入渐出
-    AxcUIActivityHUDIndicatorTypeTypeBallPulse,               // 三个点从左到右依次大小
-    AxcUIActivityHUDIndicatorTypeTypeBallClipRotate,          // 缺口圆转圈大小
-    AxcUIActivityHUDIndicatorTypeTypeBallClipRotatePulse,     // 中心实心圆大小，外圆双圆弧转
+    AxcActivityHUDIndicatorStyleTwoDots,                 // 左右大小圆
+    AxcActivityHUDIndicatorStyleThreeDots,               // 三个点同时渐入渐出
+    AxcActivityHUDIndicatorStyleBallPulse,               // 三个点从左到右依次大小
+    AxcActivityHUDIndicatorStyleBallClipRotate,          // 缺口圆转圈大小
+    AxcActivityHUDIndicatorStyleBallClipRotatePulse,     // 中心实心圆大小，外圆双圆弧转
     
-    AxcUIActivityHUDIndicatorTypeTypeBallClipRotateMultiple,  // 中心空心圆大小，外圆双圆弧转
-    AxcUIActivityHUDIndicatorTypeTypeBallRotate,              // 类似百度加载
-    AxcUIActivityHUDIndicatorTypeTypeBallZigZag,              // 双圆画沙漏
-    AxcUIActivityHUDIndicatorTypeTypeBallZigZagDeflect,       // 双圆画三角
-    AxcUIActivityHUDIndicatorTypeTypeBallTrianglePath,        // 顺时针三空心圆三角画圆
+    AxcActivityHUDIndicatorStyleBallClipRotateMultiple,  // 中心空心圆大小，外圆双圆弧转
+    AxcActivityHUDIndicatorStyleBallRotate,              // 类似百度加载
+    AxcActivityHUDIndicatorStyleBallZigZag,              // 双圆画沙漏
+    AxcActivityHUDIndicatorStyleBallZigZagDeflect,       // 双圆画三角
+    AxcActivityHUDIndicatorStyleBallTrianglePath,        // 顺时针三空心圆三角画圆
     
-    AxcUIActivityHUDIndicatorTypeTypeBallScale,               // 单圆从小到大
-    AxcUIActivityHUDIndicatorTypeTypeLineScale,               // 竖条从左到右依次变长
-    AxcUIActivityHUDIndicatorTypeTypeLineScaleParty,          // 竖条随机长短
-    AxcUIActivityHUDIndicatorTypeTypeBallScaleMultiple,       // 三圆呼吸
-    AxcUIActivityHUDIndicatorTypeTypeBallPulseSync,           // 波浪三圆
+    AxcActivityHUDIndicatorStyleBallScale,               // 单圆从小到大
+    AxcActivityHUDIndicatorStyleLineScale,               // 竖条从左到右依次变长
+    AxcActivityHUDIndicatorStyleLineScaleParty,          // 竖条随机长短
+    AxcActivityHUDIndicatorStyleBallScaleMultiple,       // 三圆呼吸
+    AxcActivityHUDIndicatorStyleBallPulseSync,           // 波浪三圆
     
-    AxcUIActivityHUDIndicatorTypeTypeBallBeat,                // 呼吸三圆
-    AxcUIActivityHUDIndicatorTypeTypeLineScalePulseOut,       // 竖条从中向两边扩展
-    AxcUIActivityHUDIndicatorTypeTypeScalePulseOutRapid,      // 竖条从中向两边扩展2
-    AxcUIActivityHUDIndicatorTypeTypeBallScaleRipple,         // 空心圆从小变大渐出
-    AxcUIActivityHUDIndicatorTypeTypeBallScaleRippleMultiple, // 多个空心圆从小变大渐出
+    AxcActivityHUDIndicatorStyleBallBeat,                // 呼吸三圆
+    AxcActivityHUDIndicatorStyleLineScalePulseOut,       // 竖条从中向两边扩展
+    AxcActivityHUDIndicatorStyleScalePulseOutRapid,      // 竖条从中向两边扩展2
+    AxcActivityHUDIndicatorStyleBallScaleRipple,         // 空心圆从小变大渐出
+    AxcActivityHUDIndicatorStyleBallScaleRippleMultiple, // 多个空心圆从小变大渐出
     
-    AxcUIActivityHUDIndicatorTypeTypeTriangleSkewSpin,        // 三角翻转
-    AxcUIActivityHUDIndicatorTypeTypeBallGridBeat,            // 九个点随机透明
-    AxcUIActivityHUDIndicatorTypeTypeBallGridPulse,           // 九个点随机大小
-    AxcUIActivityHUDIndicatorTypeTypeRotatingSandglass,       // 双圆慢速画沙漏
-    AxcUIActivityHUDIndicatorTypeTypeRotatingTrigons,         // 逆时针三空心圆三角画圆
+    AxcActivityHUDIndicatorStyleTriangleSkewSpin,        // 三角翻转
+    AxcActivityHUDIndicatorStyleBallGridBeat,            // 九个点随机透明
+    AxcActivityHUDIndicatorStyleBallGridPulse,           // 九个点随机大小
+    AxcActivityHUDIndicatorStyleRotatingSandglass,       // 双圆慢速画沙漏
+    AxcActivityHUDIndicatorStyleRotatingTrigons,         // 逆时针三空心圆三角画圆
     
-    AxcUIActivityHUDIndicatorTypeTypeTripleRings,             // 慢速多个空心圆从小变大渐出
-    AxcUIActivityHUDIndicatorTypeTypeCookieTerminator,        // 吃豆人
-    AxcUIActivityHUDIndicatorTypeTypeBallSpinFadeLoader       // 环形圆loader
+    AxcActivityHUDIndicatorStyleTripleRings,             // 慢速多个空心圆从小变大渐出
+    AxcActivityHUDIndicatorStyleCookieTerminator,        // 吃豆人
+    AxcActivityHUDIndicatorStyleBallSpinFadeLoader       // 环形圆loader
 };
 
-typedef NS_ENUM(NSInteger, AxcActivityHUDaxcUI_appearAnimationType) {
-    AxcActivityHUDaxcUI_appearAnimationTypeSlideFromTop,
-    AxcActivityHUDaxcUI_appearAnimationTypeSlideFromBottom,
-    AxcActivityHUDaxcUI_appearAnimationTypeSlideFromLeft,
-    AxcActivityHUDaxcUI_appearAnimationTypeSlideFromRight,
-    AxcActivityHUDaxcUI_appearAnimationTypeZoomIn,
-    AxcActivityHUDaxcUI_appearAnimationTypeFadeIn
+// 入场特效
+typedef NS_ENUM(NSInteger, AxcActivityHUDAppearAnimationType) {
+    AxcActivityHUDAppearAnimationTypeSlideFromTop,
+    AxcActivityHUDAppearAnimationTypeSlideFromBottom,
+    AxcActivityHUDAppearAnimationTypeSlideFromLeft,
+    AxcActivityHUDAppearAnimationTypeSlideFromRight,
+    AxcActivityHUDAppearAnimationTypeZoomIn,
+    AxcActivityHUDAppearAnimationTypeFadeIn
 };
 
-typedef NS_ENUM(NSInteger, AxcActivityHUDaxcUI_disappearAnimationType) {
-    AxcActivityHUDaxcUI_disappearAnimationTypeSlideToTop,
-    AxcActivityHUDaxcUI_disappearAnimationTypeSlideToBottom,
-    AxcActivityHUDaxcUI_disappearAnimationTypeSlideToLeft,
-    AxcActivityHUDaxcUI_disappearAnimationTypeSlideToRight,
-    AxcActivityHUDaxcUI_disappearAnimationTypeZoomOut,
-    AxcActivityHUDaxcUI_disappearAnimationTypeFadeOut
+// 出场特效
+typedef NS_ENUM(NSInteger, AxcActivityHUDDisappearAnimationType) {
+    AxcActivityHUDDisappearAnimationTypeSlideToTop,
+    AxcActivityHUDDisappearAnimationTypeSlideToBottom,
+    AxcActivityHUDDisappearAnimationTypeSlideToLeft,
+    AxcActivityHUDDisappearAnimationTypeSlideToRight,
+    AxcActivityHUDDisappearAnimationTypeZoomOut,
+    AxcActivityHUDDisappearAnimationTypeFadeOut
 };
 
+// 其他特效
 typedef NS_ENUM(NSInteger, AxcActivityHUDOverlayType) {
     AxcActivityHUDOverlayTypeNone,
     AxcActivityHUDOverlayTypeBlur,
@@ -118,12 +121,12 @@ typedef NS_ENUM(NSInteger, AxcActivityHUDOverlayType) {
 /**
  *  入场动画风格
  */
-@property AxcActivityHUDaxcUI_appearAnimationType axcUI_appearAnimationType;
+@property AxcActivityHUDAppearAnimationType axcUI_appearAnimationType;
 
 /**
  *  退场动画风格
  */
-@property AxcActivityHUDaxcUI_disappearAnimationType axcUI_disappearAnimationType;
+@property AxcActivityHUDDisappearAnimationType axcUI_disappearAnimationType;
 
 /**
  *  动画指示控件
@@ -141,7 +144,7 @@ typedef NS_ENUM(NSInteger, AxcActivityHUDOverlayType) {
 /**
  *  根据风格展示
  */
-- (void)AxcUI_showWithType:(AxcUIActivityHUDIndicatorType)type;
+- (void)AxcUI_showWithType:(AxcActivityHUDIndicatorStyle)type;
 /**
  *  自定义动画展示
  */

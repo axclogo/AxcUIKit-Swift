@@ -22,7 +22,8 @@
 
 
 @property (nonatomic, strong) UITableView *tableView;
-
+@property(nonatomic, strong)UIImageView *imageView;
+@property(nonatomic, strong)UISlider *parentScale;
 
 @end
 
@@ -31,58 +32,37 @@
 - (void)viewDidLoad{
     [super viewDidLoad];
     
-    self.automaticallyAdjustsScrollViewInsets = YES;
-    [self.view addSubview:self.tableView];
-
+    [self.parentScale mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(200);
+        make.left.mas_equalTo(10);
+        make.right.mas_equalTo(-130);
+    }];
+    
+    _imageView = [[UIImageView alloc] initWithImage:[UIImage AxcUI_setImageNamed:@"test_4"]];
+    _imageView.frame = CGRectMake(100, 100, 100, 100);
+    _imageView.axcUI_filterDynamicRendering = YES;
+    [self.view addSubview:_imageView];
+    
+    
+    
     
 }
-
-- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
-
+- (void)controllAction:(UISlider *)sender{
+    _imageView.axcUI_filterStaturation = sender.value;
+//    _imageView.axcUI_filterBrightness = sender.value;
+    _imageView.axcUI_filterContrast = sender.value;
 }
-
-
-- (UITableView *)tableView{
-    if (!_tableView) {
-        _tableView = [[UITableView alloc]initWithFrame:self.view.frame];
-        _tableView.dataSource = self;
-        _tableView.delegate = self;
-        _tableView.userInteractionEnabled = YES;
-        
-        
+- (UISlider *)parentScale{
+    if (!_parentScale) {
+        _parentScale = [[UISlider alloc] init];
+        [_parentScale addTarget:self action:@selector(controllAction:) forControlEvents:UIControlEventValueChanged];
+        _parentScale.minimumValue = 0;
+        _parentScale.maximumValue = 2;
+        _parentScale.value = 0.8;
+        _parentScale.tag = 100 + 2;
+        [self.view addSubview:_parentScale];
     }
-    return _tableView;
-}
-- (NSInteger )tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 100;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    static NSString *ID=@"cellID";
-    UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:ID];
-    if (cell==nil) {
-        cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:ID];
-    }
-    cell.textLabel.text=@"首标题";
-    cell.detailTextLabel.text = @"副标题";
-    cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
-    return cell;
-}
-
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
-    UILabel *label =   [[UILabel alloc] init];
-    label.text = @"我是HeaderView";
-    label.textColor = [UIColor whiteColor];
-    label.textAlignment = NSTextAlignmentCenter;
-    label.backgroundColor = [UIColor AxcUI_AsbestosColor];
-    return label;
-}
-
-- (CGFloat )tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    return 40;
-}
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    return _parentScale;
 }
 
 

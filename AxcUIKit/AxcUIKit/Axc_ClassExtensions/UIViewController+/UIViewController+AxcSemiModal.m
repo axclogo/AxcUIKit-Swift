@@ -64,7 +64,7 @@ const struct AxcSemiModalOption AxcUISemiModalOptionKeys = {
      AxcUISemiModalOptionKeys.axcUI_parentAlpha : @(0.5),
      AxcUISemiModalOptionKeys.axcUI_parentScale : @(0.8),
      AxcUISemiModalOptionKeys.axcUI_shadowOpacity : @(0.8),
-     AxcUISemiModalOptionKeys.axcUI_transitionStyle : @(AxcUISemiModalTransitionStyleSlideUp),
+     AxcUISemiModalOptionKeys.axcUI_transitionStyle : @(AxcSemiModalTransitionStyleSlideUp),
      AxcUISemiModalOptionKeys.axcUI_disableCancel : @(NO),
 	 }];
 }
@@ -267,10 +267,10 @@ const struct AxcSemiModalOption AxcUISemiModalOptionKeys = {
         }];
         
         // 推出View动画
-        view.frame = (transitionStyle == AxcUISemiModalTransitionStyleSlideUp
+        view.frame = (transitionStyle == AxcSemiModalTransitionStyleSlideUp
                       ? CGRectOffset(semiViewFrame, 0, +semiViewHeight)
                       : semiViewFrame);
-        if (transitionStyle == AxcUISemiModalTransitionStyleFadeIn || transitionStyle == AxcUISemiModalTransitionStyleFadeInOut) {
+        if (transitionStyle == AxcSemiModalTransitionStyleFadeIn || transitionStyle == AxcSemiModalTransitionStyleFadeInOut) {
             view.alpha = 0.0;
         }
         
@@ -291,9 +291,9 @@ const struct AxcSemiModalOption AxcUISemiModalOptionKeys = {
         view.layer.rasterizationScale = [[UIScreen mainScreen] scale];
         
         [UIView animateWithDuration:duration animations:^{
-            if (transitionStyle == AxcUISemiModalTransitionStyleSlideUp) {
+            if (transitionStyle == AxcSemiModalTransitionStyleSlideUp) {
                 view.frame = semiViewFrame;
-            } else if (transitionStyle == AxcUISemiModalTransitionStyleFadeIn || transitionStyle == AxcUISemiModalTransitionStyleFadeInOut) {
+            } else if (transitionStyle == AxcSemiModalTransitionStyleFadeIn || transitionStyle == AxcSemiModalTransitionStyleFadeInOut) {
                 view.alpha = 1.0;
             }
         } completion:^(BOOL finished) {
@@ -345,14 +345,14 @@ const struct AxcSemiModalOption AxcUISemiModalOptionKeys = {
 	}
 	
     [UIView animateWithDuration:duration animations:^{
-        if (transitionStyle == AxcUISemiModalTransitionStyleSlideUp) {
+        if (transitionStyle == AxcSemiModalTransitionStyleSlideUp) {
             if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad){
                 // 作为视图为中心/焦点
                 modal.frame = CGRectMake((target.bounds.size.width - modal.frame.size.width) / 2.0, target.bounds.size.height, modal.frame.size.width, modal.frame.size.height);
             } else {
                 modal.frame = CGRectMake(0, target.bounds.size.height, modal.frame.size.width, modal.frame.size.height);
             }
-        } else if (transitionStyle == AxcUISemiModalTransitionStyleFadeOut || transitionStyle == AxcUISemiModalTransitionStyleFadeInOut) {
+        } else if (transitionStyle == AxcSemiModalTransitionStyleFadeOut || transitionStyle == AxcSemiModalTransitionStyleFadeInOut) {
             modal.alpha = 0.0;
         }
     } completion:^(BOOL finished) {

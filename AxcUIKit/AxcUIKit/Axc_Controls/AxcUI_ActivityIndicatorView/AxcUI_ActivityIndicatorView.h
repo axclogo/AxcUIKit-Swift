@@ -8,52 +8,52 @@
 
 #import <UIKit/UIKit.h>
 
-typedef NS_ENUM(NSUInteger, AxcActivityIndicatorAnimationType) {
-    AxcActivityIndicatorAnimationTypeNineDots,
-    AxcActivityIndicatorAnimationTypeTriplePulse,
-    AxcActivityIndicatorAnimationTypeFiveDots,
-    AxcActivityIndicatorAnimationTypeRotatingSquares,
-    AxcActivityIndicatorAnimationTypeDoubleBounce,
-    AxcActivityIndicatorAnimationTypeTwoDots,
-    AxcActivityIndicatorAnimationTypeThreeDots,
-    AxcActivityIndicatorAnimationTypeBallPulse,
-    AxcActivityIndicatorAnimationTypeBallClipRotate,
-    AxcActivityIndicatorAnimationTypeBallClipRotatePulse,
+typedef NS_ENUM(NSUInteger, AxcActivityIndicatorAnimationStyle) {
+    AxcActivityIndicatorAnimationStyleNineDots,
+    AxcActivityIndicatorAnimationStyleTriplePulse,
+    AxcActivityIndicatorAnimationStyleFiveDots,
+    AxcActivityIndicatorAnimationStyleRotatingSquares,
+    AxcActivityIndicatorAnimationStyleDoubleBounce,
+    AxcActivityIndicatorAnimationStyleTwoDots,
+    AxcActivityIndicatorAnimationStyleThreeDots,
+    AxcActivityIndicatorAnimationStyleBallPulse,
+    AxcActivityIndicatorAnimationStyleBallClipRotate,
+    AxcActivityIndicatorAnimationStyleBallClipRotatePulse,
     
-    AxcActivityIndicatorAnimationTypeBallClipRotateMultiple,
-    AxcActivityIndicatorAnimationTypeBallRotate,
-    AxcActivityIndicatorAnimationTypeBallZigZag,
-    AxcActivityIndicatorAnimationTypeBallZigZagDeflect,
-    AxcActivityIndicatorAnimationTypeBallTrianglePath,
-    AxcActivityIndicatorAnimationTypeBallScale,
-    AxcActivityIndicatorAnimationTypeLineScale,
-    AxcActivityIndicatorAnimationTypeLineScaleParty,
-    AxcActivityIndicatorAnimationTypeBallScaleMultiple,
-    AxcActivityIndicatorAnimationTypeBallPulseSync,
+    AxcActivityIndicatorAnimationStyleBallClipRotateMultiple,
+    AxcActivityIndicatorAnimationStyleBallRotate,
+    AxcActivityIndicatorAnimationStyleBallZigZag,
+    AxcActivityIndicatorAnimationStyleBallZigZagDeflect,
+    AxcActivityIndicatorAnimationStyleBallTrianglePath,
+    AxcActivityIndicatorAnimationStyleBallScale,
+    AxcActivityIndicatorAnimationStyleLineScale,
+    AxcActivityIndicatorAnimationStyleLineScaleParty,
+    AxcActivityIndicatorAnimationStyleBallScaleMultiple,
+    AxcActivityIndicatorAnimationStyleBallPulseSync,
     
-    AxcActivityIndicatorAnimationTypeBallBeat,
-    AxcActivityIndicatorAnimationTypeLineScalePulseOut,
-    AxcActivityIndicatorAnimationTypeLineScalePulseOutRapid,
-    AxcActivityIndicatorAnimationTypeBallScaleRipple,
-    AxcActivityIndicatorAnimationTypeBallScaleRippleMultiple,
-    AxcActivityIndicatorAnimationTypeTriangleSkewSpin,
-    AxcActivityIndicatorAnimationTypeBallGridBeat,
-    AxcActivityIndicatorAnimationTypeBallGridPulse,
-    AxcActivityIndicatorAnimationTypeRotatingSandglass,
-    AxcActivityIndicatorAnimationTypeRotatingTrigons,
+    AxcActivityIndicatorAnimationStyleBallBeat,
+    AxcActivityIndicatorAnimationStyleLineScalePulseOut,
+    AxcActivityIndicatorAnimationStyleLineScalePulseOutRapid,
+    AxcActivityIndicatorAnimationStyleBallScaleRipple,
+    AxcActivityIndicatorAnimationStyleBallScaleRippleMultiple,
+    AxcActivityIndicatorAnimationStyleTriangleSkewSpin,
+    AxcActivityIndicatorAnimationStyleBallGridBeat,
+    AxcActivityIndicatorAnimationStyleBallGridPulse,
+    AxcActivityIndicatorAnimationStyleRotatingSandglass,
+    AxcActivityIndicatorAnimationStyleRotatingTrigons,
     
-    AxcActivityIndicatorAnimationTypeTripleRings,
-    AxcActivityIndicatorAnimationTypeCookieTerminator,
-    AxcActivityIndicatorAnimationTypeBallSpinFadeLoader
+    AxcActivityIndicatorAnimationStyleTripleRings,
+    AxcActivityIndicatorAnimationStyleCookieTerminator,
+    AxcActivityIndicatorAnimationStyleBallSpinFadeLoader
 };
 
 @interface AxcUI_ActivityIndicatorView : UIView
 
-- (id)initWithType:(AxcActivityIndicatorAnimationType)type;
-- (id)initWithType:(AxcActivityIndicatorAnimationType)type tintColor:(UIColor *)tintColor;
-- (id)initWithType:(AxcActivityIndicatorAnimationType)type tintColor:(UIColor *)tintColor size:(CGFloat)size;
+- (id)initWithType:(AxcActivityIndicatorAnimationStyle)type;
+- (id)initWithType:(AxcActivityIndicatorAnimationStyle)type tintColor:(UIColor *)tintColor;
+- (id)initWithType:(AxcActivityIndicatorAnimationStyle)type tintColor:(UIColor *)tintColor size:(CGFloat)size;
 
-@property (nonatomic) AxcActivityIndicatorAnimationType axcUI_type;
+@property (nonatomic) AxcActivityIndicatorAnimationStyle axcUI_type;
 @property (nonatomic, strong) UIColor *axcUI_tintColor;
 @property (nonatomic) CGFloat axcUI_size;
 

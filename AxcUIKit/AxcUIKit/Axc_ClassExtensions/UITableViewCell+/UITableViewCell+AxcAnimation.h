@@ -8,20 +8,20 @@
 
 #import <UIKit/UIKit.h>
 
-typedef NS_ENUM(NSUInteger, AxcUICellAppearAnimateStyle) {
-    AxcUICellAppearAnimateStyleRightToLeft,   // 从左往右
-    AxcUICellAppearAnimateStyleLeftToRight,   // 从右往左
-    AxcUICellAppearAnimateStyleUnfoldRightLeft,    // 左右展开
-    AxcUICellAppearAnimateStyleLeftAndRightInsert,    // 左右插入
-    AxcUICellAppearAnimateStyleBottomToTop ,   // 从下往上
-    AxcUICellAppearAnimateStyleTopToBottom,    // 从上往下
-    AxcUICellAppearAnimateStyleOverturn,    // 翻转
-    AxcUICellAppearAnimateStyleFanShape    // 扇形
+typedef NS_ENUM(NSUInteger, AxcCellAppearAnimateStyle) {
+    AxcCellAppearAnimateStyleRightToLeft,   // 从左往右
+    AxcCellAppearAnimateStyleLeftToRight,   // 从右往左
+    AxcCellAppearAnimateStyleUnfoldRightLeft,    // 左右展开
+    AxcCellAppearAnimateStyleLeftAndRightInsert,    // 左右插入
+    AxcCellAppearAnimateStyleBottomToTop ,   // 从下往上
+    AxcCellAppearAnimateStyleTopToBottom,    // 从上往下
+    AxcCellAppearAnimateStyleOverturn,    // 翻转
+    AxcCellAppearAnimateStyleFanShape    // 扇形
     
 };
 
 @interface UITableViewCell (AxcAnimation)
 
-- (void)AxcUI_cellAppearAnimateStyle:(AxcUICellAppearAnimateStyle )type indexPath:(NSIndexPath *)indexPath;
+- (void)AxcUI_cellAppearAnimateStyle:(AxcCellAppearAnimateStyle )type indexPath:(NSIndexPath *)indexPath;
 
 @end

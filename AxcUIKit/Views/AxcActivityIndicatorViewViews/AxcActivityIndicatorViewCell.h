@@ -15,6 +15,6 @@
 @property(nonatomic, strong)AxcUI_ActivityIndicatorView *axcUI_activityIndicatorView;
 
 
-- (void)setActivityIndicatorViewType:(AxcActivityIndicatorAnimationType )type;
+- (void)setActivityIndicatorViewType:(AxcActivityIndicatorAnimationStyle )type;
 
 @end

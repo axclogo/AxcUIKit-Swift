@@ -28,11 +28,11 @@ extern const struct AxcSemiModalOption {
     __unsafe_unretained NSString *axcUI_backgroundView;    // 同名.
 } AxcUISemiModalOptionKeys;
 
-typedef NS_ENUM(NSUInteger, AxcUISemiModalTransitionStyle) {
-	AxcUISemiModalTransitionStyleSlideUp,
-	AxcUISemiModalTransitionStyleFadeInOut,
-	AxcUISemiModalTransitionStyleFadeIn,
-	AxcUISemiModalTransitionStyleFadeOut,
+typedef NS_ENUM(NSUInteger, AxcSemiModalTransitionStyle) {
+	AxcSemiModalTransitionStyleSlideUp,
+	AxcSemiModalTransitionStyleFadeInOut,
+	AxcSemiModalTransitionStyleFadeIn,
+	AxcSemiModalTransitionStyleFadeOut,
 };
 
 typedef void (^AxcTransitionCompletionBlock)(void);

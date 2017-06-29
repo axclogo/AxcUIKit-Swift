@@ -11,9 +11,9 @@
 #import "AxcUI_PhotoBrowserView.h"
 
 typedef enum {
-    AxcUIBrowserNumPageType,     //数字展示图片数量   Digital display graphics
-    AxcUIBrowserPageControlType  //系统默认 分页条UIPageControl   The system default paging UIPageControl
-} AxcUIBrowserPageTypeMode;
+    AxcPhotoBrowserPageControlStyleNumPage,     //数字展示图片数量   Digital display graphics
+    AxcPhotoBrowserPageControlStyleDefault  //系统默认 分页条UIPageControl   The system default paging UIPageControl
+} AxcPhotoBrowserPageControlStyle;
 
 @class AxcUI_PhotoBrowser;
 
@@ -22,7 +22,7 @@ typedef enum {
 // 长按/点击保存按钮 图片后的回调
 // 回调根据长摁 或者 点击按钮来处理
 - (void)AxcUI_photoBrowser:(AxcUI_PhotoBrowser *)browser
-              saveTypeMode:(AxcUIBrowserSaveTypeMode )saveTypeMode
+              saveTypeMode:(AxcPhotoBrowserSaveStyle )saveTypeMode
                      Image:(UIImage *)saveImage;
 @required
 
@@ -70,7 +70,7 @@ typedef enum {
 /**
  *  分页模式
  */
-@property(nonatomic, assign)AxcUIBrowserPageTypeMode axcUI_pageTypeMode;
+@property(nonatomic, assign)AxcPhotoBrowserPageControlStyle axcUI_pageTypeMode;
 /**
  * 加载进度指示器大小
  */
@@ -98,7 +98,7 @@ typedef enum {
 /**
  * 保存的方式：长摁or按钮式
  */
-@property(nonatomic, assign)AxcUIBrowserSaveTypeMode  axcUI_saveType;
+@property(nonatomic, assign)AxcPhotoBrowserSaveStyle  axcUI_saveType;
 /**
  * 是否带有VC的适配参数
  */

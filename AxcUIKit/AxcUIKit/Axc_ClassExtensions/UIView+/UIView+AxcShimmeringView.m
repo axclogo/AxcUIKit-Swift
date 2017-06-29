@@ -18,6 +18,7 @@ static NSString * const kshimmeringForeColor = @"axcUI_shimmeringForeColor";
 static NSString * const kshimmeringTextAlignment = @"axcUI_shimmeringTextAlignment";
 static NSString * const kAxcBackLabel = @"AxcBackLabel";
 static NSString * const kAxcfrontLabel = @"AxcfrontLabel";
+static NSString * const ktextEdgeInsets = @"axcUI_textEdgeInsets";
 
 
 @implementation UIView (AxcShimmeringView)
@@ -173,6 +174,15 @@ static NSString * const kAxcfrontLabel = @"AxcfrontLabel";
 - (void)setAxcUI_textEdgeInsets:(UIEdgeInsets)axcUI_textEdgeInsets{
     self.AxcfrontLabel.axcUI_textEdgeInsets = axcUI_textEdgeInsets;
     self.AxcBackLabel.axcUI_textEdgeInsets = axcUI_textEdgeInsets;
+    [self willChangeValueForKey:kshimmeringBackColor];
+    objc_setAssociatedObject(self, &ktextEdgeInsets,
+                             [NSValue valueWithUIEdgeInsets:axcUI_textEdgeInsets],
+                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    [self didChangeValueForKey:ktextEdgeInsets];
+}
+
+- (UIEdgeInsets)axcUI_textEdgeInsets{
+    return [objc_getAssociatedObject(self, &ktextEdgeInsets) UIEdgeInsetsValue];
 }
 
 @end

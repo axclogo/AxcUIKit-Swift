@@ -11,9 +11,9 @@
 
 
 typedef enum {
-    AxcUIBrowserLongTapSaveType,     // 长摁保存
-    AxcUIBrowserButtonSaveType  // 按钮保存
-} AxcUIBrowserSaveTypeMode;
+    AxcPhotoBrowserStyleLongTapSave,     // 长摁保存
+    AxcPhotoBrowserStyleButtonSave  // 按钮保存
+} AxcPhotoBrowserSaveStyle;
 
 
 @interface AxcUI_PhotoBrowserView : UIView
@@ -28,7 +28,7 @@ typedef enum {
 // 照片浏览器中 屏幕旋转时 使用这个时间 来做动画修改图片的展示
 @property(nonatomic, assign)float axcUI_rotatingAnimationDuration;
 
-@property(nonatomic, assign)AxcUIBrowserSaveTypeMode  axcUI_saveType;
+@property(nonatomic, assign)AxcPhotoBrowserSaveStyle  axcUI_saveType;
 
 
 @property (nonatomic, assign) BOOL beginLoadingImage;

@@ -87,7 +87,7 @@
     if (self.axcUI_imageCount == 1) {
         _pageControl.hidden = YES;
     }
-    BOOL showNumPage = self.axcUI_pageTypeMode == AxcUIBrowserNumPageType ? YES : NO;
+    BOOL showNumPage = self.axcUI_pageTypeMode == AxcPhotoBrowserPageControlStyleNumPage ? YES : NO;
     if (showNumPage) {
         [_pageControl removeFromSuperview];
         _pageControl = nil;
@@ -133,7 +133,7 @@
             __strong __typeof(weakSelf)strongSelf = weakSelf;
             if ([strongSelf.axcUI_photoBrowserDelegate respondsToSelector:@selector(AxcUI_photoBrowser:saveTypeMode:Image:)]) {
                 [strongSelf.axcUI_photoBrowserDelegate AxcUI_photoBrowser:strongSelf
-                                                        saveTypeMode:AxcUIBrowserButtonSaveType
+                                                        saveTypeMode:AxcPhotoBrowserStyleButtonSave
                                                                Image:[self saveImageWithImage]];
             }
         };
@@ -387,7 +387,7 @@
 -(void)photoLongClick:(UILongPressGestureRecognizer *)recognizer {
     if ([_axcUI_photoBrowserDelegate respondsToSelector:@selector(AxcUI_photoBrowser:saveTypeMode:Image:)]) {
         [_axcUI_photoBrowserDelegate AxcUI_photoBrowser:self
-                                      saveTypeMode:AxcUIBrowserLongTapSaveType
+                                      saveTypeMode:AxcPhotoBrowserStyleLongTapSave
                                              Image:[self saveImageWithImage]];
     }
 }

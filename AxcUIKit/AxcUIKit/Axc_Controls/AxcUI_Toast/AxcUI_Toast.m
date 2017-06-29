@@ -115,47 +115,47 @@
 }
 
 #pragma mark-中间显示
-+ (void)showCenterWithText:(NSString *)text{
-    [AxcUI_Toast showCenterWithText:text duration:ToastDispalyDuration];
++ (void)AxcUI_showCenterWithText:(NSString *)text{
+    [AxcUI_Toast AxcUI_showCenterWithText:text duration:ToastDispalyDuration];
 }
 
-+ (void)showCenterWithText:(NSString *)text duration:(CGFloat)duration{
++ (void)AxcUI_showCenterWithText:(NSString *)text duration:(CGFloat)duration{
     AxcUI_Toast *toast = [[AxcUI_Toast alloc] initWithText:text];
     [toast setDuration:duration];
     [toast show];
 }
 #pragma mark-上方显示
-+ (void)showTopWithText:(NSString *)text{
++ (void)AxcUI_showTopWithText:(NSString *)text{
     
-    [AxcUI_Toast showTopWithText:text  topOffset:ToastSpace duration:ToastDispalyDuration];
+    [AxcUI_Toast AxcUI_showTopWithText:text  topOffset:ToastSpace duration:ToastDispalyDuration];
 }
-+ (void)showTopWithText:(NSString *)text duration:(CGFloat)duration
++ (void)AxcUI_showTopWithText:(NSString *)text duration:(CGFloat)duration
 {
-     [AxcUI_Toast showTopWithText:text  topOffset:ToastSpace duration:duration];
+     [AxcUI_Toast AxcUI_showTopWithText:text  topOffset:ToastSpace duration:duration];
 }
-+ (void)showTopWithText:(NSString *)text topOffset:(CGFloat)topOffset{
-    [AxcUI_Toast showTopWithText:text  topOffset:topOffset duration:ToastDispalyDuration];
++ (void)AxcUI_showTopWithText:(NSString *)text topOffset:(CGFloat)topOffset{
+    [AxcUI_Toast AxcUI_showTopWithText:text  topOffset:topOffset duration:ToastDispalyDuration];
 }
 
-+ (void)showTopWithText:(NSString *)text topOffset:(CGFloat)topOffset duration:(CGFloat)duration{
++ (void)AxcUI_showTopWithText:(NSString *)text topOffset:(CGFloat)topOffset duration:(CGFloat)duration{
     AxcUI_Toast *toast = [[AxcUI_Toast alloc] initWithText:text];
     [toast setDuration:duration];
     [toast showFromTopOffset:topOffset];
 }
 #pragma mark-下方显示
-+ (void)showBottomWithText:(NSString *)text{
++ (void)AxcUI_showBottomWithText:(NSString *)text{
     
-    [AxcUI_Toast showBottomWithText:text  bottomOffset:ToastSpace duration:ToastDispalyDuration];
+    [AxcUI_Toast AxcUI_showBottomWithText:text  bottomOffset:ToastSpace duration:ToastDispalyDuration];
 }
-+ (void)showBottomWithText:(NSString *)text duration:(CGFloat)duration
++ (void)AxcUI_showBottomWithText:(NSString *)text duration:(CGFloat)duration
 {
-      [AxcUI_Toast showBottomWithText:text  bottomOffset:ToastSpace duration:duration];
+      [AxcUI_Toast AxcUI_showBottomWithText:text  bottomOffset:ToastSpace duration:duration];
 }
-+ (void)showBottomWithText:(NSString *)text bottomOffset:(CGFloat)bottomOffset{
-    [AxcUI_Toast showBottomWithText:text  bottomOffset:bottomOffset duration:ToastDispalyDuration];
++ (void)AxcUI_showBottomWithText:(NSString *)text bottomOffset:(CGFloat)bottomOffset{
+    [AxcUI_Toast AxcUI_showBottomWithText:text  bottomOffset:bottomOffset duration:ToastDispalyDuration];
 }
 
-+ (void)showBottomWithText:(NSString *)text bottomOffset:(CGFloat)bottomOffset duration:(CGFloat)duration{
++ (void)AxcUI_showBottomWithText:(NSString *)text bottomOffset:(CGFloat)bottomOffset duration:(CGFloat)duration{
     AxcUI_Toast *toast = [[AxcUI_Toast alloc] initWithText:text];
     [toast setDuration:duration];
     [toast showFromBottomOffset:bottomOffset];
