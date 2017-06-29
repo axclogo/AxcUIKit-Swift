@@ -15,7 +15,7 @@
  */
 @property(nonatomic,assign)CGFloat axcUI_filterStaturation;
 /**
- *  滤镜亮度0 - 1 默认 0
+ *  滤镜亮度-1 - 1 默认 0
  */
 @property(nonatomic,assign)CGFloat axcUI_filterBrightness;
 /**

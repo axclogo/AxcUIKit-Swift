@@ -51,19 +51,22 @@ static NSString * const kfilterDynamicRendering = @"axcUI_filterDynamicRendering
 - (CIFilter *)axcUI_filterColorControlsFilter{
     CIFilter *_colorControlsFilter = objc_getAssociatedObject(self, &kfilterColorControlsFilter);
     if (!_colorControlsFilter) {
-        _colorControlsFilter=[CIFilter filterWithName:@"CIColorControls"];
-        CIImage *CIimage=[CIImage imageWithCGImage:self.image.CGImage];
+        _colorControlsFilter = [CIFilter filterWithName:@"CIColorControls"];
+        CIImage *CIimage = [CIImage imageWithCGImage:self.image.CGImage];
         [_colorControlsFilter setValue:CIimage forKey:@"inputImage"];
         [self setAxcUI_filterColorControlsFilter:_colorControlsFilter];
     }
     return _colorControlsFilter;
 }
 
+
 - (void)AxcUI_SetFilterImage{
-    CIImage *outputImage= [self.axcUI_filterColorControlsFilter outputImage];//取得输出图像
-    CGImageRef temp=[self.axcUI_filterContext createCGImage:outputImage fromRect:[outputImage extent]];
-    self.image = [UIImage imageWithCGImage:temp];//转化为CGImage显示在界面中
-    CGImageRelease(temp);//释放CGImage对象
+    dispatch_async(dispatch_get_main_queue(), ^{
+        CIImage *outputImage= [self.axcUI_filterColorControlsFilter outputImage];//取得输出图像
+        CGImageRef temp=[self.axcUI_filterContext createCGImage:outputImage fromRect:[outputImage extent]];
+        self.image = [UIImage imageWithCGImage:temp];//转化为CGImage显示在界面中
+        CGImageRelease(temp);//释放CGImage对象
+    });
 }
 
 
@@ -107,7 +110,7 @@ static NSString * const kfilterDynamicRendering = @"axcUI_filterDynamicRendering
                              @(axcUI_filterBrightness),
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     [self didChangeValueForKey:kfilterBrightness];
-    [self.axcUI_filterColorControlsFilter setValue:[NSNumber numberWithFloat:self.axcUI_filterStaturation]
+    [self.axcUI_filterColorControlsFilter setValue:[NSNumber numberWithFloat:self.axcUI_filterBrightness]
                                             forKey:@"inputBrightness"];
     if (!self.axcUI_filterDynamicRendering) {
         [self AxcUI_SetFilterImage];
@@ -125,7 +128,7 @@ static NSString * const kfilterDynamicRendering = @"axcUI_filterDynamicRendering
                              @(axcUI_filterContrast),
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     [self didChangeValueForKey:kfilterContrast];
-    [self.axcUI_filterColorControlsFilter setValue:[NSNumber numberWithFloat:self.axcUI_filterStaturation]
+    [self.axcUI_filterColorControlsFilter setValue:[NSNumber numberWithFloat:self.axcUI_filterContrast]
                                             forKey:@"inputContrast"];
     if (!self.axcUI_filterDynamicRendering) {
         [self AxcUI_SetFilterImage];

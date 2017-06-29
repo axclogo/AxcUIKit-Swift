@@ -40,7 +40,7 @@
     
     _imageView = [[UIImageView alloc] initWithImage:[UIImage AxcUI_setImageNamed:@"test_4"]];
     _imageView.frame = CGRectMake(100, 100, 100, 100);
-    _imageView.axcUI_filterDynamicRendering = YES;
+//    _imageView.axcUI_filterDynamicRendering = YES;
     [self.view addSubview:_imageView];
     
     

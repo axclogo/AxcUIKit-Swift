@@ -67,6 +67,7 @@
 		EA87DA6C1F04D3DF00452D2D /* AxcQRCodeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EA87DA6B1F04D3DE00452D2D /* AxcQRCodeVC.m */; };
 		EA87DA721F04F77400452D2D /* UIImageView+AxcFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = EA87DA711F04F77400452D2D /* UIImageView+AxcFilter.m */; };
 		EA87DA751F04F9F700452D2D /* AxcFilterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EA87DA741F04F9F600452D2D /* AxcFilterVC.m */; };
+		EA87DA771F04FCCB00452D2D /* add_Image.png in Resources */ = {isa = PBXBuildFile; fileRef = EA87DA761F04FCCB00452D2D /* add_Image.png */; };
 		EAD084AC1EEA88C2007DE2C4 /* UILabel+AxcShimmering.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD084AB1EEA88C2007DE2C4 /* UILabel+AxcShimmering.m */; };
 		EAD085761EEAE65F007DE2C4 /* AxcActivityHUDVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD085751EEAE65F007DE2C4 /* AxcActivityHUDVC.m */; };
 		EAD0857F1EEAE851007DE2C4 /* test_4.png in Resources */ = {isa = PBXBuildFile; fileRef = EAD085781EEAE851007DE2C4 /* test_4.png */; };
@@ -284,6 +285,7 @@
 		EA87DA711F04F77400452D2D /* UIImageView+AxcFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AxcFilter.m"; sourceTree = "<group>"; };
 		EA87DA731F04F9F600452D2D /* AxcFilterVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcFilterVC.h; sourceTree = "<group>"; };
 		EA87DA741F04F9F600452D2D /* AxcFilterVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcFilterVC.m; sourceTree = "<group>"; };
+		EA87DA761F04FCCB00452D2D /* add_Image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add_Image.png; sourceTree = "<group>"; };
 		EAD084AA1EEA88C2007DE2C4 /* UILabel+AxcShimmering.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+AxcShimmering.h"; sourceTree = "<group>"; };
 		EAD084AB1EEA88C2007DE2C4 /* UILabel+AxcShimmering.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+AxcShimmering.m"; sourceTree = "<group>"; };
 		EAD085741EEAE65F007DE2C4 /* AxcActivityHUDVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcActivityHUDVC.h; sourceTree = "<group>"; };
@@ -788,6 +790,7 @@
 				EAD0857D1EEAE851007DE2C4 /* test_2.jpg */,
 				EAD0857E1EEAE851007DE2C4 /* test_3.jpg */,
 				EAD085E61EEB11BC007DE2C4 /* test.gif */,
+				EA87DA761F04FCCB00452D2D /* add_Image.png */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -1079,6 +1082,7 @@
 				EAD085801EEAE851007DE2C4 /* found_icons_4.png in Resources */,
 				EAD085C41EEAFFDC007DE2C4 /* HUD_27.png in Resources */,
 				EAD085B41EEAFFDC007DE2C4 /* HUD_12.png in Resources */,
+				EA87DA771F04FCCB00452D2D /* add_Image.png in Resources */,
 				EAD085B51EEAFFDC007DE2C4 /* HUD_13.png in Resources */,
 				EA439D061EE415C900D992E7 /* AxcSemiModalPresentVC.xib in Resources */,
 				EAD085C01EEAFFDC007DE2C4 /* HUD_23.png in Resources */,

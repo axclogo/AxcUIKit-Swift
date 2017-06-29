@@ -11,3 +11,8 @@
 @interface AxcFilterVC : SampleBaseVC
 
 @end
+
+
+@interface AxcFilterInstructionsLabel : UILabel
+
+@end
