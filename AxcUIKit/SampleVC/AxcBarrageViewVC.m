@@ -23,6 +23,11 @@
 @property(nonatomic, strong)UISlider *timeSlider;
 @property(nonatomic, strong)UILabel *labelTextTimeSlider;
 
+@property(nonatomic, strong)UISwitch *cycleSwitch;
+@property(nonatomic, strong)UILabel *cycleLabel;
+
+@property(nonatomic, strong)UIButton *cycleBtn;
+
 @end
 
 @implementation AxcBarrageViewVC
@@ -36,7 +41,26 @@
     [self.view addSubview:self.labelTextTimeSlider];
     [self.view addSubview:self.timeSlider];
 
+    __weak typeof(self) WeakSelf = self;
 
+    [self.cycleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(WeakSelf.timeSlider.mas_bottom).offset(10);
+        make.left.mas_equalTo(10);
+        make.width.mas_equalTo(100);
+    }];
+    
+    [self.cycleSwitch mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(WeakSelf.cycleLabel.mas_top).offset(0);
+        make.left.mas_equalTo(WeakSelf.cycleLabel.mas_right).offset(5);
+    }];
+    
+    [self.cycleBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(WeakSelf.cycleLabel.mas_top).offset(0);
+        make.left.mas_equalTo(WeakSelf.cycleSwitch.mas_right).offset(10);
+        make.right.mas_equalTo(-10);
+        make.bottom.mas_equalTo(WeakSelf.cycleLabel.mas_bottom).offset(0);
+    }];
+    
     self.instructionsLabel.text = @"该容器的层级结构为：容器承载层和展示层，承载层使用动画来将展示层推动。\n其中展示层可以自定义，不局限于Label组成的弹幕效果和跑马灯效果，也支持多元素动画效果。";
     
     [self createBarrageImage];
@@ -63,7 +87,14 @@
     self.ordinaryBarrage.axcUI_barrageSpeed = self.timeSlider.value;  // 速度
     self.imageOrdinaryBarrage.axcUI_barrageSpeed = self.timeSlider.value;  // 速度
 }
-
+- (void)controllActionSwitch{ // 是否循环展示
+    self.ordinaryBarrage.axcUI_barrageCycle = self.cycleSwitch.on;  // 速度
+    self.imageOrdinaryBarrage.axcUI_barrageCycle = self.cycleSwitch.on;  // 速度
+}
+- (void)click_cycleBtn{ // 开始动画
+    [self.ordinaryBarrage AxcUI_startAnimation];
+    [self.imageOrdinaryBarrage AxcUI_startAnimation];
+}
 
 #pragma mark - 容器回调代理
 - (void)AxcUI_barrageView:(AxcUI_BarrageView *)drawMarqueeView
@@ -171,6 +202,43 @@
     }
     return _labelTextTimeSlider;
 }
+- (UIButton *)cycleBtn{
+    if (!_cycleBtn) {
+        _cycleBtn = [[UIButton alloc] initWithFrame:CGRectMake(200, 500, 250, 30)];
+        [_cycleBtn setTitle:@"点击开始展示" forState:UIControlStateNormal];
+        [_cycleBtn setTitleColor:[UIColor AxcUI_BelizeHoleColor] forState:UIControlStateNormal];
+        _cycleBtn.titleLabel.textAlignment = NSTextAlignmentCenter;
+        _cycleBtn.backgroundColor = [UIColor AxcUI_CloudColor];
+        _cycleBtn.titleLabel.font = [UIFont systemFontOfSize:14];
+        [_cycleBtn addTarget:self action:@selector(click_cycleBtn) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:_cycleBtn];
+    }
+    return _cycleBtn;
+}
 
+- (UILabel *)cycleLabel{
+    if (!_cycleLabel) {
+        _cycleLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 500, 0, 0)];
+        _cycleLabel.text = @"是否开启循环";
+        _cycleLabel.font = [UIFont systemFontOfSize:14];
+        _cycleLabel.textAlignment = NSTextAlignmentCenter;
+        _cycleLabel.textColor = [UIColor AxcUI_AmethystColor];
+        _cycleLabel.axcUI_Width = 100;
+        _cycleLabel.axcUI_Height = 40;
+        [self.view addSubview:_cycleLabel];
+    }
+    return _cycleLabel;
+}
+
+- (UISwitch *)cycleSwitch{
+    if (!_cycleSwitch) {
+        _cycleSwitch = [[UISwitch alloc] initWithFrame:CGRectMake(110, 500, 50, 30)];
+        [_cycleSwitch addTarget:self action:@selector(controllActionSwitch) forControlEvents:UIControlEventValueChanged];
+        _cycleSwitch.tag = 100 + 3;
+        _cycleSwitch.on = YES;
+        [self.view addSubview:_cycleSwitch];
+    }
+    return _cycleSwitch;
+}
 
 @end
