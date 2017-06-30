@@ -184,7 +184,7 @@
 }
 - (UISlider *)timeSlider{
     if (!_timeSlider) {
-        _timeSlider = [[UISlider alloc] initWithFrame:CGRectMake(10,460, self.view.axcUI_Width - 20, 30)];
+        _timeSlider = [[UISlider alloc] initWithFrame:CGRectMake(10,450, self.view.axcUI_Width - 20, 30)];
         [_timeSlider addTarget:self action:@selector(click_refreshTime) forControlEvents:UIControlEventValueChanged];
         _timeSlider.minimumValue = 1;
         _timeSlider.maximumValue = 5;
