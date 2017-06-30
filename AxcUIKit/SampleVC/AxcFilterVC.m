@@ -41,8 +41,7 @@ UIImagePickerControllerDelegate
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    _imagePickerController=[[UIImagePickerController alloc]init];
-    _imagePickerController.delegate =self;
+    
     
     [self.view addSubview:self.MainImageView];
     
@@ -130,11 +129,12 @@ UIImagePickerControllerDelegate
         make.right.mas_equalTo(-10);
         make.bottom.mas_equalTo(WeakSelf.dynamicRenderingLabel.mas_bottom).offset(0);
     }];
+    
 }
 
 
 - (void)SelectImage{
-    [self presentViewController:_imagePickerController animated:YES completion:nil];
+    [self presentViewController:self.imagePickerController animated:YES completion:nil];
 }
 
 #pragma mark - 图片选择器选择图片代理方法
@@ -155,6 +155,15 @@ UIImagePickerControllerDelegate
 }
 
 #pragma mark - 懒加载
+- (UIImagePickerController *)imagePickerController{
+    if (!_imagePickerController) {
+        [AxcUI_Toast AxcUI_showCenterWithText:@"正在打开相册..."];
+        _imagePickerController=[[UIImagePickerController alloc]init];
+        _imagePickerController.delegate =self;
+    }
+    return _imagePickerController;
+}
+
 - (UIButton *)ModifyOneBtn{
     if (!_ModifyOneBtn) {
         _ModifyOneBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 250, 30)];

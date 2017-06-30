@@ -68,6 +68,9 @@
 		EA87DA721F04F77400452D2D /* UIImageView+AxcFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = EA87DA711F04F77400452D2D /* UIImageView+AxcFilter.m */; };
 		EA87DA751F04F9F700452D2D /* AxcFilterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EA87DA741F04F9F600452D2D /* AxcFilterVC.m */; };
 		EA87DA771F04FCCB00452D2D /* add_Image.png in Resources */ = {isa = PBXBuildFile; fileRef = EA87DA761F04FCCB00452D2D /* add_Image.png */; };
+		EA87DA811F062C2400452D2D /* AxcUI_BarrageView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA87DA801F062C2400452D2D /* AxcUI_BarrageView.m */; };
+		EA87DA851F062E2300452D2D /* NSString+AxcTextCalculation.m in Sources */ = {isa = PBXBuildFile; fileRef = EA87DA841F062E2300452D2D /* NSString+AxcTextCalculation.m */; };
+		EA87DA881F063A2200452D2D /* AxcBarrageViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EA87DA871F063A2200452D2D /* AxcBarrageViewVC.m */; };
 		EAD084AC1EEA88C2007DE2C4 /* UILabel+AxcShimmering.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD084AB1EEA88C2007DE2C4 /* UILabel+AxcShimmering.m */; };
 		EAD085761EEAE65F007DE2C4 /* AxcActivityHUDVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD085751EEAE65F007DE2C4 /* AxcActivityHUDVC.m */; };
 		EAD0857F1EEAE851007DE2C4 /* test_4.png in Resources */ = {isa = PBXBuildFile; fileRef = EAD085781EEAE851007DE2C4 /* test_4.png */; };
@@ -286,6 +289,12 @@
 		EA87DA731F04F9F600452D2D /* AxcFilterVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcFilterVC.h; sourceTree = "<group>"; };
 		EA87DA741F04F9F600452D2D /* AxcFilterVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcFilterVC.m; sourceTree = "<group>"; };
 		EA87DA761F04FCCB00452D2D /* add_Image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add_Image.png; sourceTree = "<group>"; };
+		EA87DA7F1F062C2400452D2D /* AxcUI_BarrageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcUI_BarrageView.h; sourceTree = "<group>"; };
+		EA87DA801F062C2400452D2D /* AxcUI_BarrageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcUI_BarrageView.m; sourceTree = "<group>"; };
+		EA87DA831F062E2300452D2D /* NSString+AxcTextCalculation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+AxcTextCalculation.h"; sourceTree = "<group>"; };
+		EA87DA841F062E2300452D2D /* NSString+AxcTextCalculation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+AxcTextCalculation.m"; sourceTree = "<group>"; };
+		EA87DA861F063A2200452D2D /* AxcBarrageViewVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcBarrageViewVC.h; sourceTree = "<group>"; };
+		EA87DA871F063A2200452D2D /* AxcBarrageViewVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcBarrageViewVC.m; sourceTree = "<group>"; };
 		EAD084AA1EEA88C2007DE2C4 /* UILabel+AxcShimmering.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+AxcShimmering.h"; sourceTree = "<group>"; };
 		EAD084AB1EEA88C2007DE2C4 /* UILabel+AxcShimmering.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+AxcShimmering.m"; sourceTree = "<group>"; };
 		EAD085741EEAE65F007DE2C4 /* AxcActivityHUDVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcActivityHUDVC.h; sourceTree = "<group>"; };
@@ -508,6 +517,7 @@
 		093C625B1EA6FDCE00ADAC42 /* Axc_ClassExtensions */ = {
 			isa = PBXGroup;
 			children = (
+				EA87DA821F062DF300452D2D /* NSString+ */,
 				EAD087141EED2AAE007DE2C4 /* UITableViewCell+ */,
 				EAD084A91EEA889B007DE2C4 /* UILabel+ */,
 				EA439CDB1EE3BD6C00D992E7 /* UIViewController+ */,
@@ -738,6 +748,8 @@
 				EA43A07B1EE8055100D992E7 /* AxcProgressViewVC.m */,
 				EA43A0611EE7DE9E00D992E7 /* AxcPhotoBrowserVC.h */,
 				EA43A0621EE7DE9E00D992E7 /* AxcPhotoBrowserVC.m */,
+				EA87DA861F063A2200452D2D /* AxcBarrageViewVC.h */,
+				EA87DA871F063A2200452D2D /* AxcBarrageViewVC.m */,
 			);
 			name = Controls;
 			sourceTree = "<group>";
@@ -767,6 +779,24 @@
 				EA87DA741F04F9F600452D2D /* AxcFilterVC.m */,
 			);
 			name = Extension;
+			sourceTree = "<group>";
+		};
+		EA87DA7E1F062C2400452D2D /* AxcUI_BarrageView */ = {
+			isa = PBXGroup;
+			children = (
+				EA87DA7F1F062C2400452D2D /* AxcUI_BarrageView.h */,
+				EA87DA801F062C2400452D2D /* AxcUI_BarrageView.m */,
+			);
+			path = AxcUI_BarrageView;
+			sourceTree = "<group>";
+		};
+		EA87DA821F062DF300452D2D /* NSString+ */ = {
+			isa = PBXGroup;
+			children = (
+				EA87DA831F062E2300452D2D /* NSString+AxcTextCalculation.h */,
+				EA87DA841F062E2300452D2D /* NSString+AxcTextCalculation.m */,
+			);
+			path = "NSString+";
 			sourceTree = "<group>";
 		};
 		EAD084A91EEA889B007DE2C4 /* UILabel+ */ = {
@@ -859,6 +889,7 @@
 		EAD085EF1EED0966007DE2C4 /* Axc_Controls */ = {
 			isa = PBXGroup;
 			children = (
+				EA87DA7E1F062C2400452D2D /* AxcUI_BarrageView */,
 				EAD085F01EED0966007DE2C4 /* AxcUI_ActivityHUD */,
 				EAD085F51EED0966007DE2C4 /* AxcUI_ActivityIndicatorView */,
 				EAD085FA1EED0966007DE2C4 /* AxcUI_Label */,
@@ -1209,6 +1240,7 @@
 				EA87DA6C1F04D3DF00452D2D /* AxcQRCodeVC.m in Sources */,
 				EA439CC41EE2DE8400D992E7 /* TestTwoVC.m in Sources */,
 				EA439CF31EE3EAC900D992E7 /* AxcSemiModalVC.m in Sources */,
+				EA87DA811F062C2400452D2D /* AxcUI_BarrageView.m in Sources */,
 				EAD0861F1EED0966007DE2C4 /* AxcUI_LoopProgressView.m in Sources */,
 				093C62631EA6FDCE00ADAC42 /* UIView+AxcExtension.m in Sources */,
 				EA439CDE1EE3BDAB00D992E7 /* UITextField+AxcModifyPlaceholder.m in Sources */,
@@ -1235,6 +1267,7 @@
 				EA439E071EE6807300D992E7 /* Axc_WebImageDownloaderOperation.m in Sources */,
 				EA439E0C1EE6807300D992E7 /* UIImageView+AxcWebCache.m in Sources */,
 				EAD086181EED0966007DE2C4 /* AxcUI_ActivityIndicatorView.m in Sources */,
+				EA87DA881F063A2200452D2D /* AxcBarrageViewVC.m in Sources */,
 				EAD085E21EEB03E4007DE2C4 /* AxcActivityHUDEffectVC.m in Sources */,
 				EAD086171EED0966007DE2C4 /* Axc_ActivityIndicator.m in Sources */,
 				EA439E0A1EE6807300D992E7 /* UIImage+AxcLoadGIF.m in Sources */,
@@ -1273,6 +1306,7 @@
 				EA439CFE1EE3ECCD00D992E7 /* AxcSemiModalPresentView.m in Sources */,
 				EAD085DD1EEB000C007DE2C4 /* AxcActivityHUDVCCollectionViewCell.m in Sources */,
 				EAD086231EED0966007DE2C4 /* AxcUI_Toast.m in Sources */,
+				EA87DA851F062E2300452D2D /* NSString+AxcTextCalculation.m in Sources */,
 				EA439CBE1EE2B0F300D992E7 /* UIView+AxcCoverEX.m in Sources */,
 				EAD086261EED09B7007DE2C4 /* AxcShimmeringViewVC.m in Sources */,
 				093C62281EA6F85800ADAC42 /* main.m in Sources */,

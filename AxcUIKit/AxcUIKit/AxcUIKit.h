@@ -13,13 +13,8 @@
 
 #pragma mark - 类扩展
 // MARK: UIView+
-#import "UIView+AxcExtension.h"               // 可修改属性的类扩展
-#import "UIView+AxcAutoresizingMask.h"        // 自动拉伸的类扩展
 #import "UIView+AxcShaking.h"                 // 左右晃动的动画扩展
 #import "UIView+AxcShimmeringView.h"          // 为View添加闪动效果
-
-// MARK: UIColor+
-#import "UIColor+AxcColor.h"                  // COLOR扩展颜色类
 
 // MARK: UITextField+
 #import "UITextField+AxcModifyPlaceholder.h"  // UITextField快速修改Placeholder属性
@@ -44,10 +39,20 @@
 #import "UIViewController+AxcSemiModal.h"     // VC推出动画效果框架扩展
 
 // MARK: UILabel+
-#import "UILabel+AxcShimmering.h"               // 文字闪动效果
+#import "UILabel+AxcShimmering.h"             // 文字闪动效果
 
 
-#import "UITableViewCell+AxcAnimation.h"
+/***********************************工具类***************************************/
+// MARK: NSString+
+#import "NSString+AxcTextCalculation.h"       // 工具类，计算文字宽和高
+// MARK: UIView+
+#import "UIView+AxcExtension.h"               // 可修改属性的类扩展
+#import "UIView+AxcAutoresizingMask.h"        // 自动拉伸的类扩展
+// MARK: UIColor+
+#import "UIColor+AxcColor.h"                  // COLOR扩展颜色类
+// MARK: UITableViewCell+
+#import "UITableViewCell+AxcAnimation.h"      // UITableViewCell预设动画
+
 
 
 
@@ -64,6 +69,7 @@
 // ------------------
 #import "AxcUI_PhotoBrowser.h" // 图片预览器
 #import "AxcUI_ActivityHUD.h"  // HUD指示器
+#import "AxcUI_BarrageView.h"  // 弹幕容器View
 
 
 

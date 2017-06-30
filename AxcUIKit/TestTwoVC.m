@@ -32,38 +32,51 @@
 - (void)viewDidLoad{
     [super viewDidLoad];
     
-    [self.parentScale mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(200);
-        make.left.mas_equalTo(10);
-        make.right.mas_equalTo(-130);
-    }];
+    AxcUI_BarrageView *drawMarqueeView0   = [[AxcUI_BarrageView alloc] initWithFrame:CGRectMake(0, 104, self.view.frame.size.width, 20)];
+    drawMarqueeView0.axcUI_barrageDelegate         = self;
+    drawMarqueeView0.axcUI_barrageMarqueeDirection  = AxcBarrageMovementStyleRightFromLeft;
+    [self.view addSubview:drawMarqueeView0];
+    [drawMarqueeView0 AxcUI_addContentView:[self createLabelWithText:@"夏天是个很好的季节, 而夏天然后是简书的推荐作者, 喜欢分享!"
+                                                           textColor:[UIColor blackColor]]];
+    [drawMarqueeView0 AxcUI_startAnimation];
     
-    _imageView = [[UIImageView alloc] initWithImage:[UIImage AxcUI_setImageNamed:@"test_4"]];
-    _imageView.frame = CGRectMake(100, 100, 100, 100);
-//    _imageView.axcUI_filterDynamicRendering = YES;
-    [self.view addSubview:_imageView];
-    
-    
+    drawMarqueeView0.axcUI_barrageSpeed = 3;
+    drawMarqueeView0.axcUI_barrageMarqueeDirection  = AxcBarrageMovementStyleLeftFromRight;
     
     
 }
-- (void)controllAction:(UISlider *)sender{
-    _imageView.axcUI_filterStaturation = sender.value;
-//    _imageView.axcUI_filterBrightness = sender.value;
-    _imageView.axcUI_filterContrast = sender.value;
+
+#pragma mark -
+- (UILabel *)createLabelWithText:(NSString *)text textColor:(UIColor *)textColor {
+    
+    NSString *string = [NSString stringWithFormat:@" %@ ", text];
+    CGFloat width = [string widthWithStringAttribute:@{NSFontAttributeName : [UIFont systemFontOfSize:14.f]}];
+    UILabel  *label  = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, width, 20)];
+    label.font       = [UIFont systemFontOfSize:14.f];
+    label.text       = string;
+    label.textColor  = textColor;
+    return label;
 }
-- (UISlider *)parentScale{
-    if (!_parentScale) {
-        _parentScale = [[UISlider alloc] init];
-        [_parentScale addTarget:self action:@selector(controllAction:) forControlEvents:UIControlEventValueChanged];
-        _parentScale.minimumValue = 0;
-        _parentScale.maximumValue = 2;
-        _parentScale.value = 0.8;
-        _parentScale.tag = 100 + 2;
-        [self.view addSubview:_parentScale];
+
+@end
+@implementation NSString (XTAdd)
+- (CGFloat)widthWithStringAttribute:(NSDictionary <NSString *, id> *)attribute {
+    
+    NSParameterAssert(attribute);
+    
+    CGFloat width = 0;
+    
+    if (self.length) {
+        
+        CGRect rect = [self boundingRectWithSize:CGSizeMake(MAXFLOAT, 0)
+                                         options:NSStringDrawingTruncatesLastVisibleLine |NSStringDrawingUsesLineFragmentOrigin |
+                       NSStringDrawingUsesFontLeading
+                                      attributes:attribute
+                                         context:nil];
+        
+        width = rect.size.width;
     }
-    return _parentScale;
+    
+    return width;
 }
-
-
 @end

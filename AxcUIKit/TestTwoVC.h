@@ -11,3 +11,7 @@
 @interface TestTwoVC : SampleBaseVC
 
 @end
+
+@interface NSString (XTAdd)
+- (CGFloat)widthWithStringAttribute:(NSDictionary <NSString *, id> *)attribute;
+@end
