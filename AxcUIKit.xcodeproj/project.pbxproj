@@ -71,6 +71,15 @@
 		EA87DA811F062C2400452D2D /* AxcUI_BarrageView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA87DA801F062C2400452D2D /* AxcUI_BarrageView.m */; };
 		EA87DA851F062E2300452D2D /* NSString+AxcTextCalculation.m in Sources */ = {isa = PBXBuildFile; fileRef = EA87DA841F062E2300452D2D /* NSString+AxcTextCalculation.m */; };
 		EA87DA881F063A2200452D2D /* AxcBarrageViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EA87DA871F063A2200452D2D /* AxcBarrageViewVC.m */; };
+		EA87DAD81F073D5F00452D2D /* AxcBarrageCanvas.m in Sources */ = {isa = PBXBuildFile; fileRef = EA87DAC71F073D5F00452D2D /* AxcBarrageCanvas.m */; };
+		EA87DAD91F073D5F00452D2D /* AxcBarrageClock.m in Sources */ = {isa = PBXBuildFile; fileRef = EA87DAC91F073D5F00452D2D /* AxcBarrageClock.m */; };
+		EA87DADA1F073D5F00452D2D /* AxcBarrageContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = EA87DACB1F073D5F00452D2D /* AxcBarrageContainer.m */; };
+		EA87DADB1F073D5F00452D2D /* AxcBarrageDisplayLink.m in Sources */ = {isa = PBXBuildFile; fileRef = EA87DACD1F073D5F00452D2D /* AxcBarrageDisplayLink.m */; };
+		EA87DADC1F073D5F00452D2D /* AxcUI_BarrageScrollEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = EA87DAD01F073D5F00452D2D /* AxcUI_BarrageScrollEngine.m */; };
+		EA87DADD1F073D5F00452D2D /* AxcUI_BaseBarrageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EA87DAD31F073D5F00452D2D /* AxcUI_BaseBarrageModel.m */; };
+		EA87DADE1F073D5F00452D2D /* AxcUI_FloatBarrageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EA87DAD51F073D5F00452D2D /* AxcUI_FloatBarrageModel.m */; };
+		EA87DADF1F073D5F00452D2D /* AxcUI_ScrollBarrageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EA87DAD71F073D5F00452D2D /* AxcUI_ScrollBarrageModel.m */; };
+		EA87DAE21F073D8000452D2D /* AxcBarrageScrollEngineVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EA87DAE11F073D8000452D2D /* AxcBarrageScrollEngineVC.m */; };
 		EAD084AC1EEA88C2007DE2C4 /* UILabel+AxcShimmering.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD084AB1EEA88C2007DE2C4 /* UILabel+AxcShimmering.m */; };
 		EAD085761EEAE65F007DE2C4 /* AxcActivityHUDVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD085751EEAE65F007DE2C4 /* AxcActivityHUDVC.m */; };
 		EAD0857F1EEAE851007DE2C4 /* test_4.png in Resources */ = {isa = PBXBuildFile; fileRef = EAD085781EEAE851007DE2C4 /* test_4.png */; };
@@ -295,6 +304,25 @@
 		EA87DA841F062E2300452D2D /* NSString+AxcTextCalculation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+AxcTextCalculation.m"; sourceTree = "<group>"; };
 		EA87DA861F063A2200452D2D /* AxcBarrageViewVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcBarrageViewVC.h; sourceTree = "<group>"; };
 		EA87DA871F063A2200452D2D /* AxcBarrageViewVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcBarrageViewVC.m; sourceTree = "<group>"; };
+		EA87DAC61F073D5F00452D2D /* AxcBarrageCanvas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcBarrageCanvas.h; sourceTree = "<group>"; };
+		EA87DAC71F073D5F00452D2D /* AxcBarrageCanvas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcBarrageCanvas.m; sourceTree = "<group>"; };
+		EA87DAC81F073D5F00452D2D /* AxcBarrageClock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcBarrageClock.h; sourceTree = "<group>"; };
+		EA87DAC91F073D5F00452D2D /* AxcBarrageClock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcBarrageClock.m; sourceTree = "<group>"; };
+		EA87DACA1F073D5F00452D2D /* AxcBarrageContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcBarrageContainer.h; sourceTree = "<group>"; };
+		EA87DACB1F073D5F00452D2D /* AxcBarrageContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcBarrageContainer.m; sourceTree = "<group>"; };
+		EA87DACC1F073D5F00452D2D /* AxcBarrageDisplayLink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcBarrageDisplayLink.h; sourceTree = "<group>"; };
+		EA87DACD1F073D5F00452D2D /* AxcBarrageDisplayLink.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcBarrageDisplayLink.m; sourceTree = "<group>"; };
+		EA87DACE1F073D5F00452D2D /* AxcBarrageRenderHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcBarrageRenderHeader.h; sourceTree = "<group>"; };
+		EA87DACF1F073D5F00452D2D /* AxcUI_BarrageScrollEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcUI_BarrageScrollEngine.h; sourceTree = "<group>"; };
+		EA87DAD01F073D5F00452D2D /* AxcUI_BarrageScrollEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcUI_BarrageScrollEngine.m; sourceTree = "<group>"; };
+		EA87DAD21F073D5F00452D2D /* AxcUI_BaseBarrageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcUI_BaseBarrageModel.h; sourceTree = "<group>"; };
+		EA87DAD31F073D5F00452D2D /* AxcUI_BaseBarrageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcUI_BaseBarrageModel.m; sourceTree = "<group>"; };
+		EA87DAD41F073D5F00452D2D /* AxcUI_FloatBarrageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcUI_FloatBarrageModel.h; sourceTree = "<group>"; };
+		EA87DAD51F073D5F00452D2D /* AxcUI_FloatBarrageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcUI_FloatBarrageModel.m; sourceTree = "<group>"; };
+		EA87DAD61F073D5F00452D2D /* AxcUI_ScrollBarrageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcUI_ScrollBarrageModel.h; sourceTree = "<group>"; };
+		EA87DAD71F073D5F00452D2D /* AxcUI_ScrollBarrageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcUI_ScrollBarrageModel.m; sourceTree = "<group>"; };
+		EA87DAE01F073D8000452D2D /* AxcBarrageScrollEngineVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcBarrageScrollEngineVC.h; sourceTree = "<group>"; };
+		EA87DAE11F073D8000452D2D /* AxcBarrageScrollEngineVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcBarrageScrollEngineVC.m; sourceTree = "<group>"; };
 		EAD084AA1EEA88C2007DE2C4 /* UILabel+AxcShimmering.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+AxcShimmering.h"; sourceTree = "<group>"; };
 		EAD084AB1EEA88C2007DE2C4 /* UILabel+AxcShimmering.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+AxcShimmering.m"; sourceTree = "<group>"; };
 		EAD085741EEAE65F007DE2C4 /* AxcActivityHUDVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcActivityHUDVC.h; sourceTree = "<group>"; };
@@ -750,6 +778,8 @@
 				EA43A0621EE7DE9E00D992E7 /* AxcPhotoBrowserVC.m */,
 				EA87DA861F063A2200452D2D /* AxcBarrageViewVC.h */,
 				EA87DA871F063A2200452D2D /* AxcBarrageViewVC.m */,
+				EA87DAE01F073D8000452D2D /* AxcBarrageScrollEngineVC.h */,
+				EA87DAE11F073D8000452D2D /* AxcBarrageScrollEngineVC.m */,
 			);
 			name = Controls;
 			sourceTree = "<group>";
@@ -797,6 +827,38 @@
 				EA87DA841F062E2300452D2D /* NSString+AxcTextCalculation.m */,
 			);
 			path = "NSString+";
+			sourceTree = "<group>";
+		};
+		EA87DAC51F073D5F00452D2D /* AxcUI_BarrageScrollEngine */ = {
+			isa = PBXGroup;
+			children = (
+				EA87DAC61F073D5F00452D2D /* AxcBarrageCanvas.h */,
+				EA87DAC71F073D5F00452D2D /* AxcBarrageCanvas.m */,
+				EA87DAC81F073D5F00452D2D /* AxcBarrageClock.h */,
+				EA87DAC91F073D5F00452D2D /* AxcBarrageClock.m */,
+				EA87DACA1F073D5F00452D2D /* AxcBarrageContainer.h */,
+				EA87DACB1F073D5F00452D2D /* AxcBarrageContainer.m */,
+				EA87DACC1F073D5F00452D2D /* AxcBarrageDisplayLink.h */,
+				EA87DACD1F073D5F00452D2D /* AxcBarrageDisplayLink.m */,
+				EA87DACE1F073D5F00452D2D /* AxcBarrageRenderHeader.h */,
+				EA87DACF1F073D5F00452D2D /* AxcUI_BarrageScrollEngine.h */,
+				EA87DAD01F073D5F00452D2D /* AxcUI_BarrageScrollEngine.m */,
+				EA87DAD11F073D5F00452D2D /* Danmaku */,
+			);
+			path = AxcUI_BarrageScrollEngine;
+			sourceTree = "<group>";
+		};
+		EA87DAD11F073D5F00452D2D /* Danmaku */ = {
+			isa = PBXGroup;
+			children = (
+				EA87DAD21F073D5F00452D2D /* AxcUI_BaseBarrageModel.h */,
+				EA87DAD31F073D5F00452D2D /* AxcUI_BaseBarrageModel.m */,
+				EA87DAD41F073D5F00452D2D /* AxcUI_FloatBarrageModel.h */,
+				EA87DAD51F073D5F00452D2D /* AxcUI_FloatBarrageModel.m */,
+				EA87DAD61F073D5F00452D2D /* AxcUI_ScrollBarrageModel.h */,
+				EA87DAD71F073D5F00452D2D /* AxcUI_ScrollBarrageModel.m */,
+			);
+			path = Danmaku;
 			sourceTree = "<group>";
 		};
 		EAD084A91EEA889B007DE2C4 /* UILabel+ */ = {
@@ -889,6 +951,7 @@
 		EAD085EF1EED0966007DE2C4 /* Axc_Controls */ = {
 			isa = PBXGroup;
 			children = (
+				EA87DAC51F073D5F00452D2D /* AxcUI_BarrageScrollEngine */,
 				EA87DA7E1F062C2400452D2D /* AxcUI_BarrageView */,
 				EAD085F01EED0966007DE2C4 /* AxcUI_ActivityHUD */,
 				EAD085F51EED0966007DE2C4 /* AxcUI_ActivityIndicatorView */,
@@ -1235,6 +1298,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EAD0861D1EED0966007DE2C4 /* AxcUI_BallProgressView.m in Sources */,
+				EA87DAD91F073D5F00452D2D /* AxcBarrageClock.m in Sources */,
 				EA439CD11EE2FAB500D992E7 /* AxcViewSharkVC.m in Sources */,
 				09B314401EBB3AAB00083EC5 /* UIImageView+AxcNetworkLoadImage.m in Sources */,
 				EA87DA6C1F04D3DF00452D2D /* AxcQRCodeVC.m in Sources */,
@@ -1245,6 +1309,7 @@
 				093C62631EA6FDCE00ADAC42 /* UIView+AxcExtension.m in Sources */,
 				EA439CDE1EE3BDAB00D992E7 /* UITextField+AxcModifyPlaceholder.m in Sources */,
 				093C62671EA7014D00ADAC42 /* AxcUIKit.m in Sources */,
+				EA87DADE1F073D5F00452D2D /* AxcUI_FloatBarrageModel.m in Sources */,
 				EA439CED1EE3D1CB00D992E7 /* AxcToastVC.m in Sources */,
 				EAD087171EED2ACC007DE2C4 /* UITableViewCell+AxcAnimation.m in Sources */,
 				EA439CCD1EE2F9CB00D992E7 /* UIView+AxcShaking.m in Sources */,
@@ -1253,6 +1318,7 @@
 				EA439CC71EE2F38000D992E7 /* AxcScrollCoverVC.m in Sources */,
 				EAD085761EEAE65F007DE2C4 /* AxcActivityHUDVC.m in Sources */,
 				EA5252C21EF523CB0016C687 /* AxcActivityIndicatorViewVC.m in Sources */,
+				EA87DAE21F073D8000452D2D /* AxcBarrageScrollEngineVC.m in Sources */,
 				EA439E031EE6807300D992E7 /* Axc_ImageCache.m in Sources */,
 				EA5252CC1EF5253F0016C687 /* AxcActivityIndicatorViewCell.m in Sources */,
 				EA439CD81EE3068300D992E7 /* SampleBaseVC.m in Sources */,
@@ -1263,9 +1329,12 @@
 				EAD0861E1EED0966007DE2C4 /* AxcUI_LodingProgressView.m in Sources */,
 				EA439D051EE415C900D992E7 /* AxcSemiModalPresentVC.m in Sources */,
 				EA439E051EE6807300D992E7 /* Axc_WebImageDecoder.m in Sources */,
+				EA87DADC1F073D5F00452D2D /* AxcUI_BarrageScrollEngine.m in Sources */,
+				EA87DADF1F073D5F00452D2D /* AxcUI_ScrollBarrageModel.m in Sources */,
 				EAD0861B1EED0966007DE2C4 /* AxcUI_PhotoBrowserView.m in Sources */,
 				EA439E071EE6807300D992E7 /* Axc_WebImageDownloaderOperation.m in Sources */,
 				EA439E0C1EE6807300D992E7 /* UIImageView+AxcWebCache.m in Sources */,
+				EA87DADB1F073D5F00452D2D /* AxcBarrageDisplayLink.m in Sources */,
 				EAD086181EED0966007DE2C4 /* AxcUI_ActivityIndicatorView.m in Sources */,
 				EA87DA881F063A2200452D2D /* AxcBarrageViewVC.m in Sources */,
 				EAD085E21EEB03E4007DE2C4 /* AxcActivityHUDEffectVC.m in Sources */,
@@ -1283,6 +1352,7 @@
 				EA87DA691F04D2A100452D2D /* UIImage+AxcQRCode.m in Sources */,
 				EAE662EE1EE27BD4008F104E /* UICollectionView+AxcCellRearrange.m in Sources */,
 				EAD085EA1EECF8B1007DE2C4 /* UIView+AxcShimmeringView.m in Sources */,
+				EA87DADD1F073D5F00452D2D /* AxcUI_BaseBarrageModel.m in Sources */,
 				EA43A0631EE7DE9E00D992E7 /* AxcPhotoBrowserVC.m in Sources */,
 				EA439CB71EE29E3100D992E7 /* AxcCellRearrangeVC.m in Sources */,
 				EA439E0D1EE6807300D992E7 /* UIView+WebCacheOperation.m in Sources */,
@@ -1291,6 +1361,7 @@
 				EA87DA721F04F77400452D2D /* UIImageView+AxcFilter.m in Sources */,
 				EA439D2D1EE52A3D00D992E7 /* AxcImageLoaderVC.m in Sources */,
 				EA43A07C1EE8055100D992E7 /* AxcProgressViewVC.m in Sources */,
+				EA87DAD81F073D5F00452D2D /* AxcBarrageCanvas.m in Sources */,
 				EA439CF01EE3D8CB00D992E7 /* UIViewController+AxcSemiModal.m in Sources */,
 				EA439CBB1EE2B02D00D992E7 /* UIScrollView+AxcScrollCover.m in Sources */,
 				EAD086221EED0966007DE2C4 /* AxcUI_TranPieProgressView.m in Sources */,
@@ -1299,6 +1370,7 @@
 				EAD0861A1EED0966007DE2C4 /* AxcUI_PhotoBrowser.m in Sources */,
 				EA87DA751F04F9F700452D2D /* AxcFilterVC.m in Sources */,
 				093C622B1EA6F85800ADAC42 /* AppDelegate.m in Sources */,
+				EA87DADA1F073D5F00452D2D /* AxcBarrageContainer.m in Sources */,
 				EA439E091EE6807300D992E7 /* NSData+ImageContentType.m in Sources */,
 				EA439E081EE6807300D992E7 /* Axc_WebImageManager.m in Sources */,
 				EA439D0D1EE4417C00D992E7 /* AxcLabelVC.m in Sources */,

@@ -61,7 +61,7 @@
         make.bottom.mas_equalTo(WeakSelf.cycleLabel.mas_bottom).offset(0);
     }];
     
-    self.instructionsLabel.text = @"该容器的层级结构为：容器承载层和展示层，承载层使用动画来将展示层推动。\n其中展示层可以自定义，不局限于Label组成的弹幕效果和跑马灯效果，也支持多元素动画效果。";
+    self.instructionsLabel.text = @"AxcUI_BarrageScrollEngine的简约版\n层级结构与其无异，绘制方式上有差别。\n承载层使用动画来将展示层推动。\n其中展示层可以自定义，不局限于Label组成的弹幕效果和跑马灯效果，也支持多元素视图效果。";
     
     [self createBarrageImage];
 }

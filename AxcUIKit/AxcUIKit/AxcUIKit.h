@@ -70,7 +70,7 @@
 #import "AxcUI_PhotoBrowser.h" // 图片预览器
 #import "AxcUI_ActivityHUD.h"  // HUD指示器
 #import "AxcUI_BarrageView.h"  // 弹幕容器View
-
+#import "AxcBarrageRenderHeader.h" // 弹幕动态渲染引擎
 
 
 

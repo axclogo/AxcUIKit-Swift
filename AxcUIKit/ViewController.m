@@ -105,7 +105,8 @@ UITableViewDelegate
         NSMutableArray *Group2 = [NSMutableArray array];
         [Group2 addObject:@{@"controlsName":@"AxcUI_ActivityIndicatorView",@"describeName":@"动画View",@"VCName":@"AxcActivityIndicatorViewVC"}];
         [Group2 addObject:@{@"controlsName":@"AxcUI_ActivityHUD",@"describeName":@"加载指示器",@"VCName":@"AxcActivityHUDVC"}];
-        [Group2 addObject:@{@"controlsName":@"AxcUI_BarrageView",@"describeName":@"弹幕/视图容器",@"VCName":@"AxcBarrageViewVC"}];
+        [Group2 addObject:@{@"controlsName":@"AxcUI_BarrageView",@"describeName":@"独立弹幕/视图容器",@"VCName":@"AxcBarrageViewVC"}];
+        [Group2 addObject:@{@"controlsName":@"AxcUI_BarrageScrollEngine",@"describeName":@"弹幕动态渲染引擎",@"VCName":@"AxcBarrageScrollEngineVC"}];
         [Group2 addObject:@{@"controlsName":@"AxcUI_Label",@"describeName":@"动态设置文字边距",@"VCName":@"AxcLabelVC"}];
         [Group2 addObject:@{@"controlsName":@"AxcUI_ProgressView",@"describeName":@"进度指示器",@"VCName":@"AxcProgressViewVC"}];
         [Group2 addObject:@{@"controlsName":@"AxcUI_PhotoBrowser",@"describeName":@"照片浏览器",@"VCName":@"AxcPhotoBrowserVC"}];
