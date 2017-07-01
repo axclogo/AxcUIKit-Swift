@@ -76,14 +76,15 @@
     self.instructionsLabel.text = @"根据作者sunsx9316的项目JHDanmakuRender改制\n多弹幕情况下效率较高，占用内存以及CPU极少。\nAxcUI_BarrageView是根据此架构修改后的多元素展示控件";
 }
 
+// 发射弹幕
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    [self.barrageTextFiled resignFirstResponder];
-    AxcUI_BaseBarrageModel *sc;
-    NSString *str = self.barrageTextFiled.text;
+    [self.barrageTextFiled resignFirstResponder]; // 解除第一响应者
+    AxcUI_BaseBarrageModel *sc;                 // 声明父类弹幕
+    NSString *str = self.barrageTextFiled.text; // 准备弹幕文字
     if (!str || [str isEqualToString:@""]) {
         str = self.barrageTextFiled.axcUI_PlaceholderLabel.text;
     }
-    if (_barrageStyle == 0) {
+    if (_barrageStyle == 0) {   // 创建滚动弹幕模组
         sc = [[AxcUI_ScrollBarrageModel alloc] initWithFontSize:13
                                                       textColor:[UIColor AxcUI_ArcColor]  // 随机色
                                                            text:str
@@ -91,7 +92,7 @@
                                                            font:nil
                                                           speed:arc4random_uniform(100) + 50
                                                       direction:_barrageDirection + 10];
-    }else{
+    }else{  // 创建浮动弹幕模组
         sc = [[AxcUI_FloatBarrageModel alloc] initWithFontSize:13
                                                      textColor:[UIColor AxcUI_ArcColor] // 随机色
                                                           text:str
@@ -100,6 +101,7 @@
                                                         during:5        // 持续时间
                                                      direction:_barrageDirection + 100];
     }
+    // 发送该弹幕
     [self.barrageEngine AxcUI_BarrageSendBarrage: sc];
     
 }
