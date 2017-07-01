@@ -53,7 +53,7 @@ UITableViewDelegate
     cell.textLabel.textColor = [UIColor AxcUI_colorWithHexCode:@"1296db"];
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     cell.detailTextLabel.text = dic[@"describeName"];
-    cell.detailTextLabel.font = [UIFont systemFontOfSize:15];
+    cell.detailTextLabel.font = [UIFont systemFontOfSize:14];
     cell.detailTextLabel.textColor = [UIColor AxcUI_colorWithHexCode:@"b0a4e3"];
 
     return cell;
@@ -106,7 +106,7 @@ UITableViewDelegate
         [Group2 addObject:@{@"controlsName":@"AxcUI_ActivityIndicatorView",@"describeName":@"动画View",@"VCName":@"AxcActivityIndicatorViewVC"}];
         [Group2 addObject:@{@"controlsName":@"AxcUI_ActivityHUD",@"describeName":@"加载指示器",@"VCName":@"AxcActivityHUDVC"}];
         [Group2 addObject:@{@"controlsName":@"AxcUI_BarrageView",@"describeName":@"独立弹幕/视图容器",@"VCName":@"AxcBarrageViewVC"}];
-        [Group2 addObject:@{@"controlsName":@"AxcUI_BarrageScrollEngine",@"describeName":@"弹幕动态渲染引擎",@"VCName":@"AxcBarrageScrollEngineVC"}];
+        [Group2 addObject:@{@"controlsName":@"AxcUI_BarrageScrollEngine",@"describeName":@"弹幕渲染引擎",@"VCName":@"AxcBarrageScrollEngineVC"}];
         [Group2 addObject:@{@"controlsName":@"AxcUI_Label",@"describeName":@"动态设置文字边距",@"VCName":@"AxcLabelVC"}];
         [Group2 addObject:@{@"controlsName":@"AxcUI_ProgressView",@"describeName":@"进度指示器",@"VCName":@"AxcProgressViewVC"}];
         [Group2 addObject:@{@"controlsName":@"AxcUI_PhotoBrowser",@"describeName":@"照片浏览器",@"VCName":@"AxcPhotoBrowserVC"}];

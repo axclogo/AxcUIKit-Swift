@@ -62,7 +62,7 @@
     }];
     
     self.instructionsLabel.text = @"AxcUI_BarrageScrollEngine的简约版\n层级结构与其无异，绘制方式上有差别。\n承载层使用动画来将展示层推动。\n其中展示层可以自定义，不局限于Label组成的弹幕效果和跑马灯效果，也支持多元素视图效果。";
-    
+    // 根据AxcUI_BarrageScrollEngine的架构制成的多元素滚动容器
     [self createBarrageImage];
 }
 
@@ -73,7 +73,7 @@
     // 设置弹幕的参数
     self.contentString = @"这是普通的弹幕效果";  // 注意下方的SET重写方法
     self.ordinaryBarrage.axcUI_barrageDelegate = self; // 代理参数，有两个动画开始和结束的回调委托
-    self.ordinaryBarrage.axcUI_barrageMarqueeDirection  = AxcBarrageMovementStyleBottomFromTop; // 滑动方向
+    self.ordinaryBarrage.axcUI_barrageMarqueeDirection  = AxcBarrageMovementStyleRightFromLeft; // 滑动方向
     self.ordinaryBarrage.axcUI_barrageSpeed = 1;  // 速度
     [self.ordinaryBarrage AxcUI_addContentView:self.contentLabel];  // 将一个View展示控件添加到弹幕容器中去
     [self.ordinaryBarrage AxcUI_startAnimation];    // 开始动画
@@ -139,16 +139,6 @@
 
 
 #pragma mark - 懒加载区
-- (UILabel *)contentLabel{ // 这个是容器Label
-    if (!_contentLabel) {
-        _contentLabel  = [[UILabel alloc] init];
-        _contentLabel.font = [UIFont systemFontOfSize:14.f];
-        _contentLabel.textColor = [UIColor AxcUI_ArcColor];
-        _contentLabel.textAlignment = NSTextAlignmentCenter;
-    }
-    return _contentLabel;
-}
-
 - (AxcUI_BarrageView *)ordinaryBarrage{
     if (!_ordinaryBarrage) {
         _ordinaryBarrage = [[AxcUI_BarrageView alloc] initWithFrame:CGRectMake(0, 110, self.view.frame.size.width, 50)];
@@ -165,6 +155,22 @@
         [self.view addSubview:_imageOrdinaryBarrage];
     }
     return _imageOrdinaryBarrage;
+}
+
+
+
+
+
+
+
+- (UILabel *)contentLabel{ // 这个是容器Label
+    if (!_contentLabel) {
+        _contentLabel  = [[UILabel alloc] init];
+        _contentLabel.font = [UIFont systemFontOfSize:14.f];
+        _contentLabel.textColor = [UIColor AxcUI_ArcColor];
+        _contentLabel.textAlignment = NSTextAlignmentCenter;
+    }
+    return _contentLabel;
 }
 
 

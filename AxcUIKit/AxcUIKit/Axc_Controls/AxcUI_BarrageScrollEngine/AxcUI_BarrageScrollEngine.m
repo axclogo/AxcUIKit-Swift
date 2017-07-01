@@ -10,7 +10,6 @@
 #import "AxcBarrageClock.h"
 #import "AxcBarrageContainer.h"
 #import "AxcUI_FloatBarrageModel.h"
-#import "AxcUI_FloatBarrageModel.h"
 
 @interface AxcUI_BarrageScrollEngine()<AxcBarrageClockDelegate>
 @property (strong, nonatomic) AxcBarrageClock *clock;
@@ -41,11 +40,11 @@
     return self;
 }
 
-- (void)start {
+- (void)AxcUI_BarrageStart {
     [self.clock start];
 }
 
-- (void)stop {
+- (void)AxcUI_BarrageStop {
     _intTime = -_axcUI_barrageTimeInterval;
     [self.clock stop];
     [self.activeContainer enumerateObjectsUsingBlock:^(AxcBarrageContainer * _Nonnull obj,
@@ -56,7 +55,7 @@
     [self.activeContainer removeAllObjects];
 }
 
-- (void)pause {
+- (void)AxcUI_BarragePause {
     [self.clock pause];
 }
 
@@ -65,7 +64,7 @@
     _intTime = -_axcUI_barrageTimeInterval;
 }
 
-- (void)sendDanmaku:(AxcUI_BaseBarrageModel *)danmaku {
+- (void)AxcUI_BarrageSendBarrage:(AxcUI_BaseBarrageModel *)danmaku {
     [self sendDanmaku:danmaku updateAppearTime:YES];
 }
 
@@ -147,11 +146,11 @@
 - (void)danmakuClock:(AxcBarrageClock *)clock time:(NSTimeInterval)time {
     _axcUI_barrageCurrentTime = time;
     //根据间隔获取一次弹幕 开启回退功能时启用
-    if ([self.delegate respondsToSelector:@selector(danmakuEngine:didSendDanmakuAtTime:)] &&
+    if ([self.axcUI_barrageDelegate respondsToSelector:@selector(AxcUI_barrageScrollEngine:didSendBarrageAtTime:)] &&
         (NSInteger)_axcUI_barrageCurrentTime - _intTime >= _axcUI_barrageTimeInterval) {
         _intTime = _axcUI_barrageCurrentTime;
-        NSArray <AxcUI_BaseBarrageModel*>*danmakus = [self.delegate danmakuEngine:self didSendDanmakuAtTime:_intTime];
-        
+        NSArray <AxcUI_BaseBarrageModel*>*danmakus = [self.axcUI_barrageDelegate AxcUI_barrageScrollEngine:self
+                                                                                      didSendBarrageAtTime:_intTime];
         [danmakus enumerateObjectsUsingBlock:^(AxcUI_BaseBarrageModel * _Nonnull obj,
                                                NSUInteger idx,
                                                BOOL * _Nonnull stop) {
@@ -177,7 +176,7 @@
 #pragma mark - 私有方法
 //预加载前5秒的弹幕
 - (void)reloadPreDanmaku {
-    if ([self.delegate respondsToSelector:@selector(danmakuEngine:didSendDanmakuAtTime:)]) {
+    if ([self.axcUI_barrageDelegate respondsToSelector:@selector(AxcUI_barrageScrollEngine:didSendBarrageAtTime:)]) {
         //移除当前显示的弹幕
         [self.activeContainer enumerateObjectsUsingBlock:^(AxcBarrageContainer * _Nonnull obj,
                                                            NSUInteger idx, BOOL * _Nonnull stop) {
@@ -187,8 +186,8 @@
         
         for (NSInteger i = 1; i <= 5; ++i) {
             NSInteger time = _axcUI_barrageCurrentTime - i;
-            NSArray <AxcUI_BaseBarrageModel *>*danmakus = [self.delegate danmakuEngine:self
-                                                                  didSendDanmakuAtTime:time];
+            NSArray <AxcUI_BaseBarrageModel *>*danmakus = [self.axcUI_barrageDelegate AxcUI_barrageScrollEngine:self
+                                                                                           didSendBarrageAtTime:time];
             [danmakus enumerateObjectsUsingBlock:^(AxcUI_BaseBarrageModel * _Nonnull obj,
                                                    NSUInteger idx,
                                                    BOOL * _Nonnull stop) {
@@ -219,8 +218,8 @@
  */
 - (void)sendDanmaku:(AxcUI_BaseBarrageModel *)danmaku updateAppearTime:(BOOL)updateAppearTime {
     
-    if ([self.delegate respondsToSelector:@selector(danmakuEngine:shouldSendDanmaku:)] &&
-        [self.delegate danmakuEngine:self shouldSendDanmaku:danmaku] == NO) {
+    if ([self.axcUI_barrageDelegate respondsToSelector:@selector(AxcUI_barrageScrollEngine:shouldSendBarrage:)] &&
+        [self.axcUI_barrageDelegate AxcUI_barrageScrollEngine:self shouldSendBarrage:danmaku] == NO) {
         return;
     }
 

@@ -10,34 +10,34 @@
 #import "AxcBarrageCanvas.h"
 
 @class AxcUI_BarrageScrollEngine;
-@protocol AxcUI_BarrageScrollEngineDelegate <NSObject>
+@protocol AxcBarrageScrollEngineDelegate <NSObject>
 @optional
 
 /**
  在指定时间发射弹幕
 
- @param danmakuEngine 弹幕引擎
+ @param barrageEngine 弹幕引擎
  @param time 时间
  @return 发射的弹幕
  */
-- (NSArray <__kindof AxcUI_BaseBarrageModel*>*)danmakuEngine:(AxcUI_BarrageScrollEngine *)danmakuEngine
-                                        didSendDanmakuAtTime:(NSUInteger)time;
+- (NSArray <__kindof AxcUI_BaseBarrageModel*>*)AxcUI_barrageScrollEngine:(AxcUI_BarrageScrollEngine *)barrageEngine
+                                                    didSendBarrageAtTime:(NSUInteger)time;
 
 /**
  是否发射某个弹幕
 
- @param danmakuEngine 弹幕引擎
- @param danmaku 弹幕
+ @param barrageEngine 弹幕引擎
+ @param barrage 弹幕
  @return 是否发射
  */
-- (BOOL)danmakuEngine:(AxcUI_BarrageScrollEngine *)danmakuEngine
-    shouldSendDanmaku:(__kindof AxcUI_BaseBarrageModel *)danmaku;
+- (BOOL)AxcUI_barrageScrollEngine:(AxcUI_BarrageScrollEngine *)barrageEngine
+                shouldSendBarrage:(__kindof AxcUI_BaseBarrageModel *)barrage;
 
 @end
 
 @interface AxcUI_BarrageScrollEngine : NSObject
 
-@property (weak, nonatomic) id<AxcUI_BarrageScrollEngineDelegate> delegate;
+@property (weak, nonatomic) id<AxcBarrageScrollEngineDelegate> axcUI_barrageDelegate;
 
 /**
  计时器多少秒调用一次代理方法 默认1s
@@ -88,14 +88,14 @@
 /**
  开始计时器 暂停状态就是恢复运动
  */
-- (void)start;
-- (void)stop;
-- (void)pause;
+- (void)AxcUI_BarrageStart;
+- (void)AxcUI_BarrageStop;
+- (void)AxcUI_BarragePause;
 
 /**
  *  发射弹幕
  *
  *  @param danmaku 单个弹幕
  */
-- (void)sendDanmaku:(AxcUI_BaseBarrageModel *)danmaku;
+- (void)AxcUI_BarrageSendBarrage:(AxcUI_BaseBarrageModel *)danmaku;
 @end
