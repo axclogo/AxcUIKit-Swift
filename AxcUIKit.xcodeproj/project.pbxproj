@@ -103,6 +103,8 @@
 		EA6A3BC71F09E3E400E0FAAA /* AxcFilterTwoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6A3BC51F09E3E400E0FAAA /* AxcFilterTwoCollectionViewCell.m */; };
 		EA6A3BC81F09E3E400E0FAAA /* AxcFilterTwoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA6A3BC61F09E3E400E0FAAA /* AxcFilterTwoCollectionViewCell.xib */; };
 		EA6A3BCA1F09F3C100E0FAAA /* test_5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EA6A3BC91F09F3C100E0FAAA /* test_5.jpg */; };
+		EA6A3BD01F0A20B400E0FAAA /* AxcUI_StarRatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6A3BCF1F0A20B400E0FAAA /* AxcUI_StarRatingView.m */; };
+		EA6A3BD31F0A20DB00E0FAAA /* StarRatingViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6A3BD21F0A20DB00E0FAAA /* StarRatingViewVC.m */; };
 		EA87DA6C1F04D3DF00452D2D /* AxcQRCodeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EA87DA6B1F04D3DE00452D2D /* AxcQRCodeVC.m */; };
 		EA87DA751F04F9F700452D2D /* AxcFilterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EA87DA741F04F9F600452D2D /* AxcFilterVC.m */; };
 		EA87DA771F04FCCB00452D2D /* add_Image.png in Resources */ = {isa = PBXBuildFile; fileRef = EA87DA761F04FCCB00452D2D /* add_Image.png */; };
@@ -375,6 +377,10 @@
 		EA6A3BC51F09E3E400E0FAAA /* AxcFilterTwoCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcFilterTwoCollectionViewCell.m; sourceTree = "<group>"; };
 		EA6A3BC61F09E3E400E0FAAA /* AxcFilterTwoCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AxcFilterTwoCollectionViewCell.xib; sourceTree = "<group>"; };
 		EA6A3BC91F09F3C100E0FAAA /* test_5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test_5.jpg; sourceTree = "<group>"; };
+		EA6A3BCE1F0A20B400E0FAAA /* AxcUI_StarRatingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcUI_StarRatingView.h; sourceTree = "<group>"; };
+		EA6A3BCF1F0A20B400E0FAAA /* AxcUI_StarRatingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcUI_StarRatingView.m; sourceTree = "<group>"; };
+		EA6A3BD11F0A20DA00E0FAAA /* StarRatingViewVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StarRatingViewVC.h; sourceTree = "<group>"; };
+		EA6A3BD21F0A20DB00E0FAAA /* StarRatingViewVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StarRatingViewVC.m; sourceTree = "<group>"; };
 		EA87DA6A1F04D3DE00452D2D /* AxcQRCodeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcQRCodeVC.h; sourceTree = "<group>"; };
 		EA87DA6B1F04D3DE00452D2D /* AxcQRCodeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcQRCodeVC.m; sourceTree = "<group>"; };
 		EA87DA731F04F9F600452D2D /* AxcFilterVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcFilterVC.h; sourceTree = "<group>"; };
@@ -657,6 +663,8 @@
 				EA87DA871F063A2200452D2D /* AxcBarrageViewVC.m */,
 				EA87DAE01F073D8000452D2D /* AxcBarrageScrollEngineVC.h */,
 				EA87DAE11F073D8000452D2D /* AxcBarrageScrollEngineVC.m */,
+				EA6A3BD11F0A20DA00E0FAAA /* StarRatingViewVC.h */,
+				EA6A3BD21F0A20DB00E0FAAA /* StarRatingViewVC.m */,
 			);
 			name = Controls;
 			sourceTree = "<group>";
@@ -887,6 +895,7 @@
 		EA6A3B411F09DE3800E0FAAA /* Axc_Controls */ = {
 			isa = PBXGroup;
 			children = (
+				EA6A3BCD1F0A20B400E0FAAA /* AxcUI_StarRatingView */,
 				EA6A3B421F09DE3800E0FAAA /* AxcUI_ActivityHUD */,
 				EA6A3B471F09DE3800E0FAAA /* AxcUI_ActivityIndicatorView */,
 				EA6A3B4C1F09DE3800E0FAAA /* AxcUI_BarrageScrollEngine */,
@@ -1022,6 +1031,15 @@
 				EA6A3BC61F09E3E400E0FAAA /* AxcFilterTwoCollectionViewCell.xib */,
 			);
 			path = AxcFilterTwoViews;
+			sourceTree = "<group>";
+		};
+		EA6A3BCD1F0A20B400E0FAAA /* AxcUI_StarRatingView */ = {
+			isa = PBXGroup;
+			children = (
+				EA6A3BCE1F0A20B400E0FAAA /* AxcUI_StarRatingView.h */,
+				EA6A3BCF1F0A20B400E0FAAA /* AxcUI_StarRatingView.m */,
+			);
+			path = AxcUI_StarRatingView;
 			sourceTree = "<group>";
 		};
 		EA87DAE31F0746ED00452D2D /* AxcBarrageScrollEngineViews */ = {
@@ -1412,6 +1430,7 @@
 				EA6A3BB71F09DE3800E0FAAA /* AxcUI_LodingProgressView.m in Sources */,
 				EA6A3BB41F09DE3800E0FAAA /* AxcUI_PhotoBrowserView.m in Sources */,
 				EA439D3A1EE54EF900D992E7 /* AxcPhotoBrowserCollectionViewCell.m in Sources */,
+				EA6A3BD01F0A20B400E0FAAA /* AxcUI_StarRatingView.m in Sources */,
 				EA6A3BAF1F09DE3800E0FAAA /* AxcUI_FloatBarrageModel.m in Sources */,
 				EA439D051EE415C900D992E7 /* AxcSemiModalPresentVC.m in Sources */,
 				EA6A3BA81F09DE3800E0FAAA /* AxcUI_ActivityIndicatorView.m in Sources */,
@@ -1449,6 +1468,7 @@
 				EA6A3B881F09DE3800E0FAAA /* UIImage+AxcImageName.m in Sources */,
 				EA6A3B991F09DE3800E0FAAA /* Axc_WebImageRequest.m in Sources */,
 				EA6A3B9C1F09DE3800E0FAAA /* UITableViewCell+AxcAnimation.m in Sources */,
+				EA6A3BD31F0A20DB00E0FAAA /* StarRatingViewVC.m in Sources */,
 				EA87DB0C1F0749E100452D2D /* AxcUI_BarrageScrollEngine+Tools.m in Sources */,
 				EA6A3B8A1F09DE3800E0FAAA /* UIImageView+AxcFilter.m in Sources */,
 				EA43A07C1EE8055100D992E7 /* AxcProgressViewVC.m in Sources */,

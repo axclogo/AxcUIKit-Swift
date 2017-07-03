@@ -73,6 +73,7 @@
 #import "AxcBarrageRenderHeader.h" // 弹幕动态渲染引擎
 
 
+#import "AxcUI_StarRatingView.h"    // 星级评分控件
 
 
 

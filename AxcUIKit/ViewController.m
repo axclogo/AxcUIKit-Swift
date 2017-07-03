@@ -111,6 +111,7 @@ UITableViewDelegate
         [Group2 addObject:@{@"controlsName":@"AxcUI_Label",@"describeName":@"动态设置文字边距",@"VCName":@"AxcLabelVC"}];
         [Group2 addObject:@{@"controlsName":@"AxcUI_ProgressView",@"describeName":@"进度指示器",@"VCName":@"AxcProgressViewVC"}];
         [Group2 addObject:@{@"controlsName":@"AxcUI_PhotoBrowser",@"describeName":@"照片浏览器",@"VCName":@"AxcPhotoBrowserVC"}];
+        [Group2 addObject:@{@"controlsName":@"AxcUI_StarRatingView",@"describeName":@"星级评分器",@"VCName":@"StarRatingViewVC"}];
         [Group2 addObject:@{@"controlsName":@"AxcUI_Toast",@"describeName":@"弹出式提醒",@"VCName":@"AxcToastVC"}];
         
         [_dataArray addObject:Group1];
