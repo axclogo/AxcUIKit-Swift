@@ -8,22 +8,12 @@
 
 #import "TestTwoVC.h"
 
-#import "AxcUI_PhotoBrowser.h"
 
-#import "Axc_ImageCache.h"
 
-#import "AxcUI_Toast.h"
-
-@interface TestTwoVC ()<UITableViewDelegate,UITableViewDataSource>
+@interface TestTwoVC ()
 {
-    NSArray *array;
-
+    UIImageView *imageView;
 }
-
-
-@property (nonatomic, strong) UITableView *tableView;
-@property(nonatomic, strong)UIImageView *imageView;
-@property(nonatomic, strong)UISlider *parentScale;
 
 @end
 
@@ -32,51 +22,17 @@
 - (void)viewDidLoad{
     [super viewDidLoad];
     
-    AxcUI_BarrageView *drawMarqueeView0   = [[AxcUI_BarrageView alloc] initWithFrame:CGRectMake(0, 104, self.view.frame.size.width, 20)];
-    drawMarqueeView0.axcUI_barrageDelegate         = self;
-    drawMarqueeView0.axcUI_barrageMarqueeDirection  = AxcBarrageMovementStyleRightFromLeft;
-    [self.view addSubview:drawMarqueeView0];
-    [drawMarqueeView0 AxcUI_addContentView:[self createLabelWithText:@"夏天是个很好的季节, 而夏天然后是简书的推荐作者, 喜欢分享!"
-                                                           textColor:[UIColor blackColor]]];
-    [drawMarqueeView0 AxcUI_startAnimation];
     
-    drawMarqueeView0.axcUI_barrageSpeed = 3;
-    drawMarqueeView0.axcUI_barrageMarqueeDirection  = AxcBarrageMovementStyleLeftFromRight;
+    imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"test_1.jpg"]];
+    imageView.frame = CGRectMake(100, 100, 200, 100);
+    [self.view addSubview:imageView];
     
-    
+    imageView.axcUI_filterPresetStyle = AxcFilterPresetStyleLOMO;
 }
 
-#pragma mark -
-- (UILabel *)createLabelWithText:(NSString *)text textColor:(UIColor *)textColor {
-    
-    NSString *string = [NSString stringWithFormat:@" %@ ", text];
-    CGFloat width = [string widthWithStringAttribute:@{NSFontAttributeName : [UIFont systemFontOfSize:14.f]}];
-    UILabel  *label  = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, width, 20)];
-    label.font       = [UIFont systemFontOfSize:14.f];
-    label.text       = string;
-    label.textColor  = textColor;
-    return label;
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    imageView.image = [UIImage imageNamed:@"test_1.jpg"];
+    imageView.axcUI_filterPresetStyle = arc4random()%13;
 }
 
-@end
-@implementation NSString (XTAdd)
-- (CGFloat)widthWithStringAttribute:(NSDictionary <NSString *, id> *)attribute {
-    
-    NSParameterAssert(attribute);
-    
-    CGFloat width = 0;
-    
-    if (self.length) {
-        
-        CGRect rect = [self boundingRectWithSize:CGSizeMake(MAXFLOAT, 0)
-                                         options:NSStringDrawingTruncatesLastVisibleLine |NSStringDrawingUsesLineFragmentOrigin |
-                       NSStringDrawingUsesFontLeading
-                                      attributes:attribute
-                                         context:nil];
-        
-        width = rect.size.width;
-    }
-    
-    return width;
-}
 @end
