@@ -389,7 +389,9 @@
 
 #pragma mark - 公开的DISMISS方法重载
 //MARK: 移除展示文字
-- (void)AxcUI_dismissWithText:(NSString *)text delay:(CGFloat)delay success:(BOOL)success completion:(void (^ __nullable)(BOOL finished))completion{
+- (void)AxcUI_dismissWithText:(NSString *)text delay:(CGFloat)delay
+                      success:(BOOL)success
+                   completion:(void (^)(BOOL))completion{
     if (self.axcUI_activityIndicatorView) { // 清空动画效果
         [self.axcUI_activityIndicatorView AxcUI_stopAnimating];
         [self.axcUI_activityIndicatorView removeFromSuperview];
@@ -415,7 +417,7 @@
         tickCrossImageView.tintColor = [UIColor AxcUI_InverseColorFor:self.backgroundColor];
         [self addSubview:tickCrossImageView];
         [UIView transitionWithView:self duration:0.3 options:UIViewAnimationOptionTransitionFlipFromTop animations:nil completion:nil];
-        if (text != nil || text.length != 0) {
+        if (text != nil || text.length != 0 ) {
             // 翻转动画，翻转中替换展示元素
             [UIView animateWithDuration:0.5 animations:^{
                 self.frame = CGRectMake(0, 0, TEXT_WIDTH, FrameOriginY(tickCrossImageView)+FrameHeightFor(tickCrossImageView)+8+[self heightForText:text]+4);

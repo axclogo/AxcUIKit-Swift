@@ -14,6 +14,9 @@
 
 @property(nonatomic,strong)AxcUI_StarRatingView *starRatingView;
 
+
+
+
 @property(nonatomic, strong)UILabel *StartValueLabel;
 
 @property(nonatomic, strong)UISlider *maximumSlider;
@@ -68,10 +71,10 @@
     
     
     // 原作者GitHub：https://github.com/hsousa
-    self.instructionsLabel.text = @"以Hugo Sousa作者的开源项目：HCSStarRatingView为主\n改造结构后融入框架中。在此感谢作者Hugo Sousa提供的使用许可";
+    self.instructionsLabel.text = @"以Hugo Sousa作者的开源项目：HCSStarRatingView为主\n改造结构后融入框架中。在此感谢作者Hugo Sousa提供的使用许可\n也是一个很兼容XIB使用的控件";
 }
 
-// 使用初始化和重写SET方法，设置即可调用，无先后顺序，设置即可动态调整  ************************************************
+// 使用初始化、重写SET方法和setNeedsDisplay，设置即可调用，无先后顺序，设置即可动态调整  ************************************************
 - (void)starRatingViewDidChangeValue:(AxcUI_StarRatingView *)sender { // 数值
     self.StartValueLabel.text = [NSString stringWithFormat:@"星级评分值：%.1f", sender.axcUI_value];
 }

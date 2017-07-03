@@ -3,6 +3,11 @@
 
 #import "AxcUI_ActivityIndicatorView.h"
 
+/**
+ *  宏指针定义 __nonnull 类型
+ *
+ */
+NS_ASSUME_NONNULL_BEGIN
 
 // 动画指示器效果
 typedef NS_ENUM(NSInteger, AxcActivityHUDIndicatorStyle) {
@@ -86,6 +91,7 @@ typedef NS_ENUM(NSInteger, AxcActivityHUDOverlayType) {
 };
 
 
+
 @interface AxcUI_ActivityHUD : UIView
 
 #pragma mark - properties
@@ -98,15 +104,15 @@ typedef NS_ENUM(NSInteger, AxcActivityHUDOverlayType) {
 /**
  *  Toast边缘线宽，默认0
  */
-@property (nonatomic) CGFloat axcUI_borderWidth;
+@property (nonatomic,assign) CGFloat axcUI_borderWidth;
 /**
  *  Toast的风格
  */
-@property AxcActivityHUDOverlayType axcUI_overlayType;
+@property(nonatomic,assign) AxcActivityHUDOverlayType axcUI_overlayType;
 /**
  *  Toast圆角值
  */
-@property (nonatomic) CGFloat axcUI_cornerRadius;
+@property (nonatomic,assign) CGFloat axcUI_cornerRadius;
 
 /**
  *  所有动画指示器的渲染颜色默认颜色：light grey.
@@ -116,22 +122,22 @@ typedef NS_ENUM(NSInteger, AxcActivityHUDOverlayType) {
 /**
  *  是否允许点击背景，默认YES
  */
-@property (nonatomic) BOOL axcUI_isTheOnlyActiveView;
+@property (nonatomic,assign) BOOL axcUI_isTheOnlyActiveView;
 
 /**
  *  入场动画风格
  */
-@property AxcActivityHUDAppearAnimationType axcUI_appearAnimationType;
+@property(nonatomic,assign) AxcActivityHUDAppearAnimationType axcUI_appearAnimationType;
 
 /**
  *  退场动画风格
  */
-@property AxcActivityHUDDisappearAnimationType axcUI_disappearAnimationType;
+@property(nonatomic,assign) AxcActivityHUDDisappearAnimationType axcUI_disappearAnimationType;
 
 /**
  *  动画指示控件
  */
-@property(nonatomic, strong) AxcUI_ActivityIndicatorView *axcUI_activityIndicatorView;
+@property(nonatomic, strong) AxcUI_ActivityIndicatorView *__nullable axcUI_activityIndicatorView;
 
 
 
@@ -165,12 +171,12 @@ typedef NS_ENUM(NSInteger, AxcActivityHUDOverlayType) {
 /**
  *  移除时展示的文字、动画时间、成功与否
  */
-- (void)AxcUI_dismissWithText:(NSString *)text delay:(CGFloat)delay success:(BOOL)success;
+- (void)AxcUI_dismissWithText:(NSString * __nullable )text delay:(CGFloat)delay success:(BOOL)success;
 /**
  *  移除时展示的文字、动画时间、成功与否，附带回调
  *
  */
-- (void)AxcUI_dismissWithText:(NSString *)text delay:(CGFloat)delay success:(BOOL)success completion:(void (^ __nullable)(BOOL finished))completion;
+- (void)AxcUI_dismissWithText:(NSString * __nullable )text delay:(CGFloat)delay success:(BOOL)success completion:(void (^ __nullable)(BOOL finished))completion;
 /**
  *  默认移除方式
  */
@@ -181,3 +187,9 @@ typedef NS_ENUM(NSInteger, AxcActivityHUDOverlayType) {
 - (void)AxcUI_dismissWithSuccess:(BOOL)success;
 
 @end
+
+
+/**
+ *  宏指针定义下文
+ */
+NS_ASSUME_NONNULL_END

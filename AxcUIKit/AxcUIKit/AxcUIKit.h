@@ -28,6 +28,7 @@
 #import "Axc_WebimageCache.h"                 // 清理图片缓存的工具
 #import "UIImageView+AxcImageLoader.h"        // ImageView自动添加Progress指示器扩展
 #import "UIImageView+AxcWebCache.h"           // ImageView的图片处理
+#import "UIImageView+AxcFilter.h"             // 快速渲染扩展
 
 // MARK: UICollectionView+
 #import "UICollectionView+AxcCellRearrange.h" // UICollectionView可长摁拖动的扩展 iOS9以后可以调用系统方案
@@ -71,13 +72,13 @@
 #import "AxcUI_ActivityHUD.h"  // HUD指示器
 #import "AxcUI_BarrageView.h"  // 弹幕容器View
 #import "AxcBarrageRenderHeader.h" // 弹幕动态渲染引擎
-
-
 #import "AxcUI_StarRatingView.h"    // 星级评分控件
+#import "AxcUI_NumberUnitField.h"   // 单位数字输入
 
 
 
-#import "UIImageView+AxcFilter.h"
+
+
 
 
 

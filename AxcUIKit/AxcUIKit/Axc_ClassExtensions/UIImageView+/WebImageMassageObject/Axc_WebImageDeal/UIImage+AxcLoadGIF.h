@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ *  宏指针定义 __nonnull 类型
+ *
+ */
+NS_ASSUME_NONNULL_BEGIN
+
 @interface UIImage (GIF)
 
 + (UIImage *)coreAxc_animatedGIFNamed:(NSString *)name;
@@ -20,3 +26,9 @@
 + (UIImage * _Nullable)animatedImageWithAnimatedGIFData:(NSData * _Nonnull)theData;
 + (UIImage * _Nullable)animatedImageWithAnimatedGIFURL:(NSURL * _Nonnull)theURL;
 @end
+
+
+/**
+ *  宏指针定义下文
+ */
+NS_ASSUME_NONNULL_END

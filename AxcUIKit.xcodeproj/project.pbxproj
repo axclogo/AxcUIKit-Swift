@@ -105,6 +105,8 @@
 		EA6A3BCA1F09F3C100E0FAAA /* test_5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EA6A3BC91F09F3C100E0FAAA /* test_5.jpg */; };
 		EA6A3BD01F0A20B400E0FAAA /* AxcUI_StarRatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6A3BCF1F0A20B400E0FAAA /* AxcUI_StarRatingView.m */; };
 		EA6A3BD31F0A20DB00E0FAAA /* StarRatingViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6A3BD21F0A20DB00E0FAAA /* StarRatingViewVC.m */; };
+		EA6A3BD71F0A4C4600E0FAAA /* AxcUI_NumberUnitField.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6A3BD61F0A4C4600E0FAAA /* AxcUI_NumberUnitField.m */; };
+		EA6A3BDA1F0A4D8000E0FAAA /* AxcNumberUnitFieldVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6A3BD91F0A4D8000E0FAAA /* AxcNumberUnitFieldVC.m */; };
 		EA87DA6C1F04D3DF00452D2D /* AxcQRCodeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EA87DA6B1F04D3DE00452D2D /* AxcQRCodeVC.m */; };
 		EA87DA751F04F9F700452D2D /* AxcFilterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EA87DA741F04F9F600452D2D /* AxcFilterVC.m */; };
 		EA87DA771F04FCCB00452D2D /* add_Image.png in Resources */ = {isa = PBXBuildFile; fileRef = EA87DA761F04FCCB00452D2D /* add_Image.png */; };
@@ -381,6 +383,10 @@
 		EA6A3BCF1F0A20B400E0FAAA /* AxcUI_StarRatingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcUI_StarRatingView.m; sourceTree = "<group>"; };
 		EA6A3BD11F0A20DA00E0FAAA /* StarRatingViewVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StarRatingViewVC.h; sourceTree = "<group>"; };
 		EA6A3BD21F0A20DB00E0FAAA /* StarRatingViewVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StarRatingViewVC.m; sourceTree = "<group>"; };
+		EA6A3BD51F0A4C4600E0FAAA /* AxcUI_NumberUnitField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcUI_NumberUnitField.h; sourceTree = "<group>"; };
+		EA6A3BD61F0A4C4600E0FAAA /* AxcUI_NumberUnitField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcUI_NumberUnitField.m; sourceTree = "<group>"; };
+		EA6A3BD81F0A4D8000E0FAAA /* AxcNumberUnitFieldVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcNumberUnitFieldVC.h; sourceTree = "<group>"; };
+		EA6A3BD91F0A4D8000E0FAAA /* AxcNumberUnitFieldVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcNumberUnitFieldVC.m; sourceTree = "<group>"; };
 		EA87DA6A1F04D3DE00452D2D /* AxcQRCodeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcQRCodeVC.h; sourceTree = "<group>"; };
 		EA87DA6B1F04D3DE00452D2D /* AxcQRCodeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcQRCodeVC.m; sourceTree = "<group>"; };
 		EA87DA731F04F9F600452D2D /* AxcFilterVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcFilterVC.h; sourceTree = "<group>"; };
@@ -665,6 +671,8 @@
 				EA87DAE11F073D8000452D2D /* AxcBarrageScrollEngineVC.m */,
 				EA6A3BD11F0A20DA00E0FAAA /* StarRatingViewVC.h */,
 				EA6A3BD21F0A20DB00E0FAAA /* StarRatingViewVC.m */,
+				EA6A3BD81F0A4D8000E0FAAA /* AxcNumberUnitFieldVC.h */,
+				EA6A3BD91F0A4D8000E0FAAA /* AxcNumberUnitFieldVC.m */,
 			);
 			name = Controls;
 			sourceTree = "<group>";
@@ -895,6 +903,7 @@
 		EA6A3B411F09DE3800E0FAAA /* Axc_Controls */ = {
 			isa = PBXGroup;
 			children = (
+				EA6A3BD41F0A4C4600E0FAAA /* AxcUI_NumberUnitField */,
 				EA6A3BCD1F0A20B400E0FAAA /* AxcUI_StarRatingView */,
 				EA6A3B421F09DE3800E0FAAA /* AxcUI_ActivityHUD */,
 				EA6A3B471F09DE3800E0FAAA /* AxcUI_ActivityIndicatorView */,
@@ -1040,6 +1049,15 @@
 				EA6A3BCF1F0A20B400E0FAAA /* AxcUI_StarRatingView.m */,
 			);
 			path = AxcUI_StarRatingView;
+			sourceTree = "<group>";
+		};
+		EA6A3BD41F0A4C4600E0FAAA /* AxcUI_NumberUnitField */ = {
+			isa = PBXGroup;
+			children = (
+				EA6A3BD51F0A4C4600E0FAAA /* AxcUI_NumberUnitField.h */,
+				EA6A3BD61F0A4C4600E0FAAA /* AxcUI_NumberUnitField.m */,
+			);
+			path = AxcUI_NumberUnitField;
 			sourceTree = "<group>";
 		};
 		EA87DAE31F0746ED00452D2D /* AxcBarrageScrollEngineViews */ = {
@@ -1473,6 +1491,7 @@
 				EA6A3B8A1F09DE3800E0FAAA /* UIImageView+AxcFilter.m in Sources */,
 				EA43A07C1EE8055100D992E7 /* AxcProgressViewVC.m in Sources */,
 				093C622E1EA6F85800ADAC42 /* ViewController.m in Sources */,
+				EA6A3BD71F0A4C4600E0FAAA /* AxcUI_NumberUnitField.m in Sources */,
 				EA650EC71F076A8000863057 /* AxcXmlUtil.m in Sources */,
 				EA87DA751F04F9F700452D2D /* AxcFilterVC.m in Sources */,
 				EA6A3B981F09DE3800E0FAAA /* UIView+WebCacheOperation.m in Sources */,
@@ -1480,6 +1499,7 @@
 				EA6A3BB61F09DE3800E0FAAA /* AxcUI_BallProgressView.m in Sources */,
 				EA6A3B8E1F09DE3800E0FAAA /* Axc_ImageCache.m in Sources */,
 				EA6A3BA41F09DE3800E0FAAA /* AxcUI_ActivityHUD.m in Sources */,
+				EA6A3BDA1F0A4D8000E0FAAA /* AxcNumberUnitFieldVC.m in Sources */,
 				093C622B1EA6F85800ADAC42 /* AppDelegate.m in Sources */,
 				EA439D0D1EE4417C00D992E7 /* AxcLabelVC.m in Sources */,
 				EA6A3BBB1F09DE3800E0FAAA /* AxcUI_TranPieProgressView.m in Sources */,

@@ -10,29 +10,31 @@
 
 
 
-@interface TestTwoVC ()
+@interface TestTwoVC ()<AxcNumberUnitFieldDelegate>
 {
-    UIImageView *imageView;
+    AxcUI_NumberUnitField * Axc;
 }
 
 @end
 
 @implementation TestTwoVC
 
-- (void)viewDidLoad{
+- (void)viewDidLoad {
     [super viewDidLoad];
     
+    Axc = [[AxcUI_NumberUnitField alloc] init];
+    Axc.frame = CGRectMake(100, 100, 300, 60);
+    Axc.axcUI_numberFieldDelegate = self;
+    [Axc addTarget:self action:@selector(changeAxc) forControlEvents:UIControlEventEditingChanged];
+    [self.view addSubview:Axc];
     
-    imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"test_1.jpg"]];
-    imageView.frame = CGRectMake(100, 100, 200, 100);
-    [self.view addSubview:imageView];
-    
-    imageView.axcUI_filterPresetStyle = AxcFilterPresetStyleLOMO;
+}
+- (void)changeAxc{
+    NSLog(@"  %@",Axc.axcUI_text);
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    imageView.image = [UIImage imageNamed:@"test_1.jpg"];
-    imageView.axcUI_filterPresetStyle = arc4random()%13;
+    [Axc resignFirstResponder];
 }
 
 @end
