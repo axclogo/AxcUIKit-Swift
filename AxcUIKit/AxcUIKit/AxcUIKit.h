@@ -74,7 +74,7 @@
 #import "AxcBarrageRenderHeader.h" // 弹幕动态渲染引擎
 #import "AxcUI_StarRatingView.h"    // 星级评分控件
 #import "AxcUI_NumberUnitField.h"   // 单位数字输入
-
+#import "AxcUI_NumberScrollView.h"  // 数字滚动展示
 
 
 

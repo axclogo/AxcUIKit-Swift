@@ -9,7 +9,7 @@
 #import "AxcNumberUnitFieldVC.h"
 
 
-@interface AxcNumberUnitFieldVC ()
+@interface AxcNumberUnitFieldVC ()<AxcNumberUnitFieldDelegate>
 
 
 @property(nonatomic,strong) AxcUI_NumberUnitField * numberUnitField;
@@ -87,15 +87,18 @@
             break;
     }
 }
-
-
-
+#pragma mark - 代理回调
+- (BOOL)AxcUI_numberUnitField:(AxcUI_NumberUnitField *)uniField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
+    NSLog(@"%@",string);
+    return YES;
+}
 
 
 
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     [self.numberUnitField resignFirstResponder];
+
 }
 
 #pragma mark - 懒加载区
@@ -105,7 +108,9 @@
         _numberUnitField.axcUI_Size = CGSizeMake(SCREEN_WIDTH - 150, 50);
         _numberUnitField.center = self.view.center;
         _numberUnitField.axcUI_Y = 140;
+        _numberUnitField.axcUI_numberFieldDelegate = self;
         _numberUnitField.backgroundColor = [UIColor AxcUI_CloudColor];
+        _numberUnitField.axcUI_inputUnitCount = 4;      // 输入个数
     }
     return _numberUnitField;
 }

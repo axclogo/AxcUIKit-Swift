@@ -535,8 +535,8 @@
     
     [self setNeedsDisplay];
     [self _resetCursorStateIfNeeded];
-    if ([self.axcUI_numberFieldDelegate respondsToSelector:@selector(unitField:shouldChangeCharactersInRange:replacementString:)]) {
-        if ([self.axcUI_numberFieldDelegate unitField:self shouldChangeCharactersInRange:NSMakeRange(_characterArray.count - 1, 1)
+    if ([self.axcUI_numberFieldDelegate respondsToSelector:@selector(AxcUI_numberUnitField:shouldChangeCharactersInRange:replacementString:)]) {
+        if ([self.axcUI_numberFieldDelegate AxcUI_numberUnitField:self shouldChangeCharactersInRange:NSMakeRange(_characterArray.count - 1, 1)
                    replacementString:text] == NO) {
             return;
         }
@@ -547,8 +547,8 @@
     if ([self hasText] == NO)
         return;
     
-    if ([self.axcUI_numberFieldDelegate respondsToSelector:@selector(unitField:shouldChangeCharactersInRange:replacementString:)]) {
-        if ([self.axcUI_numberFieldDelegate unitField:self
+    if ([self.axcUI_numberFieldDelegate respondsToSelector:@selector(AxcUI_numberUnitField:shouldChangeCharactersInRange:replacementString:)]) {
+        if ([self.axcUI_numberFieldDelegate AxcUI_numberUnitField:self
        shouldChangeCharactersInRange:NSMakeRange(_characterArray.count - 1, 0)
                    replacementString:@""] == NO) {
             return;

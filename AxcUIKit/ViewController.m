@@ -98,7 +98,6 @@ UITableViewDelegate
         [Group1 addObject:@{@"controlsName":@"CollectionView+",@"describeName":@"长摁拖动排序",@"VCName":@"AxcCellRearrangeVC"}];
         [Group1 addObject:@{@"controlsName":@"TableView+",@"describeName":@"下拉放大头图",@"VCName":@"AxcScrollCoverVC"}];
         [Group1 addObject:@{@"controlsName":@"TextField+",@"describeName":@"占位符参数修改",@"VCName":@"AxcModifyPlaceholderVC"}];
-        
         [Group1 addObject:@{@"controlsName":@"ViewController+",@"describeName":@"动画推出View/VC",@"VCName":@"AxcSemiModalVC"}];
 
         [Group1 addObject:@{@"controlsName":@"测试",@"describeName":@"测试",@"VCName":@"TestTwoVC"}];
@@ -109,6 +108,7 @@ UITableViewDelegate
         [Group2 addObject:@{@"controlsName":@"AxcUI_BarrageView",@"describeName":@"独立弹幕/视图容器",@"VCName":@"AxcBarrageViewVC"}];
         [Group2 addObject:@{@"controlsName":@"AxcUI_BarrageScrollEngine",@"describeName":@"弹幕渲染引擎",@"VCName":@"AxcBarrageScrollEngineVC"}];
         [Group2 addObject:@{@"controlsName":@"AxcUI_Label",@"describeName":@"动态设置文字边距",@"VCName":@"AxcLabelVC"}];
+        [Group2 addObject:@{@"controlsName":@"AxcUI_NumberScrollView",@"describeName":@"数字滚动控件",@"VCName":@"AxcNumberScrollViewVC"}];
         [Group2 addObject:@{@"controlsName":@"AxcUI_NumberUnitField",@"describeName":@"数字输入控件",@"VCName":@"AxcNumberUnitFieldVC"}];
         [Group2 addObject:@{@"controlsName":@"AxcUI_ProgressView",@"describeName":@"进度指示器",@"VCName":@"AxcProgressViewVC"}];
         [Group2 addObject:@{@"controlsName":@"AxcUI_PhotoBrowser",@"describeName":@"照片浏览器",@"VCName":@"AxcPhotoBrowserVC"}];

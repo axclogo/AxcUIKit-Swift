@@ -107,6 +107,8 @@
 		EA6A3BD31F0A20DB00E0FAAA /* StarRatingViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6A3BD21F0A20DB00E0FAAA /* StarRatingViewVC.m */; };
 		EA6A3BD71F0A4C4600E0FAAA /* AxcUI_NumberUnitField.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6A3BD61F0A4C4600E0FAAA /* AxcUI_NumberUnitField.m */; };
 		EA6A3BDA1F0A4D8000E0FAAA /* AxcNumberUnitFieldVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6A3BD91F0A4D8000E0FAAA /* AxcNumberUnitFieldVC.m */; };
+		EA6A3BE11F0B2EF400E0FAAA /* AxcUI_NumberScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6A3BE01F0B2EF400E0FAAA /* AxcUI_NumberScrollView.m */; };
+		EA6A3BE41F0B2F2E00E0FAAA /* AxcNumberScrollViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6A3BE31F0B2F2E00E0FAAA /* AxcNumberScrollViewVC.m */; };
 		EA87DA6C1F04D3DF00452D2D /* AxcQRCodeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EA87DA6B1F04D3DE00452D2D /* AxcQRCodeVC.m */; };
 		EA87DA751F04F9F700452D2D /* AxcFilterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EA87DA741F04F9F600452D2D /* AxcFilterVC.m */; };
 		EA87DA771F04FCCB00452D2D /* add_Image.png in Resources */ = {isa = PBXBuildFile; fileRef = EA87DA761F04FCCB00452D2D /* add_Image.png */; };
@@ -387,6 +389,10 @@
 		EA6A3BD61F0A4C4600E0FAAA /* AxcUI_NumberUnitField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcUI_NumberUnitField.m; sourceTree = "<group>"; };
 		EA6A3BD81F0A4D8000E0FAAA /* AxcNumberUnitFieldVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcNumberUnitFieldVC.h; sourceTree = "<group>"; };
 		EA6A3BD91F0A4D8000E0FAAA /* AxcNumberUnitFieldVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcNumberUnitFieldVC.m; sourceTree = "<group>"; };
+		EA6A3BDF1F0B2EF400E0FAAA /* AxcUI_NumberScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcUI_NumberScrollView.h; sourceTree = "<group>"; };
+		EA6A3BE01F0B2EF400E0FAAA /* AxcUI_NumberScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcUI_NumberScrollView.m; sourceTree = "<group>"; };
+		EA6A3BE21F0B2F2E00E0FAAA /* AxcNumberScrollViewVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcNumberScrollViewVC.h; sourceTree = "<group>"; };
+		EA6A3BE31F0B2F2E00E0FAAA /* AxcNumberScrollViewVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcNumberScrollViewVC.m; sourceTree = "<group>"; };
 		EA87DA6A1F04D3DE00452D2D /* AxcQRCodeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcQRCodeVC.h; sourceTree = "<group>"; };
 		EA87DA6B1F04D3DE00452D2D /* AxcQRCodeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcQRCodeVC.m; sourceTree = "<group>"; };
 		EA87DA731F04F9F600452D2D /* AxcFilterVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcFilterVC.h; sourceTree = "<group>"; };
@@ -673,6 +679,8 @@
 				EA6A3BD21F0A20DB00E0FAAA /* StarRatingViewVC.m */,
 				EA6A3BD81F0A4D8000E0FAAA /* AxcNumberUnitFieldVC.h */,
 				EA6A3BD91F0A4D8000E0FAAA /* AxcNumberUnitFieldVC.m */,
+				EA6A3BE21F0B2F2E00E0FAAA /* AxcNumberScrollViewVC.h */,
+				EA6A3BE31F0B2F2E00E0FAAA /* AxcNumberScrollViewVC.m */,
 			);
 			name = Controls;
 			sourceTree = "<group>";
@@ -903,6 +911,7 @@
 		EA6A3B411F09DE3800E0FAAA /* Axc_Controls */ = {
 			isa = PBXGroup;
 			children = (
+				EA6A3BDE1F0B2EF400E0FAAA /* AxcUI_NumberScrollView */,
 				EA6A3BD41F0A4C4600E0FAAA /* AxcUI_NumberUnitField */,
 				EA6A3BCD1F0A20B400E0FAAA /* AxcUI_StarRatingView */,
 				EA6A3B421F09DE3800E0FAAA /* AxcUI_ActivityHUD */,
@@ -1058,6 +1067,15 @@
 				EA6A3BD61F0A4C4600E0FAAA /* AxcUI_NumberUnitField.m */,
 			);
 			path = AxcUI_NumberUnitField;
+			sourceTree = "<group>";
+		};
+		EA6A3BDE1F0B2EF400E0FAAA /* AxcUI_NumberScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				EA6A3BDF1F0B2EF400E0FAAA /* AxcUI_NumberScrollView.h */,
+				EA6A3BE01F0B2EF400E0FAAA /* AxcUI_NumberScrollView.m */,
+			);
+			path = AxcUI_NumberScrollView;
 			sourceTree = "<group>";
 		};
 		EA87DAE31F0746ED00452D2D /* AxcBarrageScrollEngineViews */ = {
@@ -1496,6 +1514,7 @@
 				EA87DA751F04F9F700452D2D /* AxcFilterVC.m in Sources */,
 				EA6A3B981F09DE3800E0FAAA /* UIView+WebCacheOperation.m in Sources */,
 				EA6A3BB91F09DE3800E0FAAA /* AxcUI_PieLoopProgressView.m in Sources */,
+				EA6A3BE11F0B2EF400E0FAAA /* AxcUI_NumberScrollView.m in Sources */,
 				EA6A3BB61F09DE3800E0FAAA /* AxcUI_BallProgressView.m in Sources */,
 				EA6A3B8E1F09DE3800E0FAAA /* Axc_ImageCache.m in Sources */,
 				EA6A3BA41F09DE3800E0FAAA /* AxcUI_ActivityHUD.m in Sources */,
@@ -1511,6 +1530,7 @@
 				EA6A3B8B1F09DE3800E0FAAA /* UIImageView+AxcImageLoader.m in Sources */,
 				EA6A3B911F09DE3800E0FAAA /* Axc_WebImageDownloader.m in Sources */,
 				093C62281EA6F85800ADAC42 /* main.m in Sources */,
+				EA6A3BE41F0B2F2E00E0FAAA /* AxcNumberScrollViewVC.m in Sources */,
 				EA6A3B921F09DE3800E0FAAA /* Axc_WebImageDownloaderOperation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

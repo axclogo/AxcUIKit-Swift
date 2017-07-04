@@ -51,7 +51,7 @@ IB_DESIGNABLE
  */
 @property (nonatomic, assign) IBInspectable NSUInteger axcUI_inputUnitCount;
 #else
-@property (nonatomic, assign, readonly) NSUInteger axcUI_inputUnitCount;
+@property (nonatomic, assign) NSUInteger axcUI_inputUnitCount;
 #endif
 
 
@@ -120,7 +120,7 @@ IB_DESIGNABLE
 @protocol AxcNumberUnitFieldDelegate <NSObject>
 
 @optional
-- (BOOL)unitField:(AxcUI_NumberUnitField *)uniField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string;
+- (BOOL)AxcUI_numberUnitField:(AxcUI_NumberUnitField *)uniField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string;
 
 @end
 
