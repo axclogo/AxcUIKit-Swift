@@ -75,6 +75,7 @@
 #import "AxcUI_StarRatingView.h"    // 星级评分控件
 #import "AxcUI_NumberUnitField.h"   // 单位数字输入
 #import "AxcUI_NumberScrollView.h"  // 数字滚动展示
+#import "AxcUI_TagView.h"           // 自定义View标签
 
 
 

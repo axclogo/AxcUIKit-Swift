@@ -26,10 +26,13 @@
     [self.view addSubview:self.numberScrollView];
     
     [self createInstructionsLabel];
+    self.instructionsLabel.text = @"一个单纯的数字展示动画控件";
 }
 
-- (void)clickInsSwitch:(UISwitch *)sender{
-    _numberScrollView.axcUI_isAscending = sender.on;
+
+// 使用初始化、重写SET方法和setNeedsDisplay，设置即可调用，无先后顺序，设置即可动态调整  ************************************************
+- (void)clickInsSwitch:(UISwitch *)sender{ // 设置滚动方向
+    self.numberScrollView.axcUI_isAscending = sender.on;
 }
 - (void)slidingSlider:(UISlider *)sender{
     NSInteger i = sender.tag - 100;
@@ -92,6 +95,13 @@
     }
     return _numberScrollView;
 }
+
+
+
+
+
+
+
 
 - (NSArray *)createInstructionsLabelTextArr{
     if (!_createInstructionsLabelTextArr) {
