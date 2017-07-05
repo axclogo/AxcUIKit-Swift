@@ -76,6 +76,7 @@
 #import "AxcUI_NumberUnitField.h"   // 单位数字输入
 #import "AxcUI_NumberScrollView.h"  // 数字滚动展示
 #import "AxcUI_TagView.h"           // 自定义View标签
+#import "AxcUI_TagTextView.h"       // 文字样式标签
 
 
 

@@ -110,6 +110,7 @@ UITableViewDelegate
         [Group1 addObject:@{@"controlsName":@"测试",@"describeName":@"测试",@"VCName":@"TestTwoVC"}];
 
         NSMutableArray *Group2 = [NSMutableArray array];
+        [Group2 addObject:@{@"controlsName":@"AxcUI_TagTextView",@"describeName":@"文字样式标签",@"VCName":@"AxcTagTextViewVC"}];
 
         
         [Group2 addObject:@{@"controlsName":@"AxcUI_ActivityIndicatorView",@"describeName":@"动画View",@"VCName":@"AxcActivityIndicatorViewVC"}];
