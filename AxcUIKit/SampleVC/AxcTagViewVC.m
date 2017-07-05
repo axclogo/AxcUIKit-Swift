@@ -34,9 +34,10 @@
     [self createSegmented];
     
     // 原作者GitHub：https://github.com/zekunyan
-    self.instructionsLabel.text = @"根据作者zekunyan的项目TTGTagCollectionView改制\n这并不是图文混排。这只是一个个标签而已\n不过可以根据此思路配合此控件来达到一些简单的图文混排效果\n此处将其细化分模块化控件";
+    self.instructionsLabel.text = @"根据作者zekunyan项目TTGTagCollectionView改制\n这并不是图文混排。这只是一个个标签而已\n不过可以根据此思路配合此控件来达到一些简单的图文混排效果\n此处将其细化分模块化控件";
 }
 
+// 使用初始化、重写SET方法和setNeedsDisplay，设置即可调用，无先后顺序，设置即可动态调整  ************************************************
 - (void)clicksegmented:(UISegmentedControl *)sender{
     switch (sender.tag - 100) {
         case 0: // 对齐风格
