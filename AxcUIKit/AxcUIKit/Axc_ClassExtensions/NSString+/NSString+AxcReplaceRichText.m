@@ -30,6 +30,9 @@
 }
 
 - (NSMutableAttributedString *)AxcUI_markWords:(NSString *)markWords addAttributes:(NSDictionary<NSString *, id> *)attrs{
+    if (!markWords) {
+        return nil;
+    }
     NSMutableAttributedString *mutableAttributedStr = [[NSMutableAttributedString alloc] initWithString:self];
     NSRange searchRange = NSMakeRange(0, [self length]);
     NSRange range;

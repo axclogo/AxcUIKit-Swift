@@ -10,6 +10,7 @@
 #import "UITableViewCell+AxcAnimation.h"
 #import "UIColor+AxcColor.h"
 #import "NSString+AxcReplaceRichText.h"
+#import "NSString+AxcTextCalculation.h"
 
 @interface PYSearchSuggestionViewController ()
 
@@ -30,7 +31,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
     if ([self.tableView respondsToSelector:@selector(setCellLayoutMarginsFollowReadableWidth:)]) { // For the adapter iPad
         self.tableView.cellLayoutMarginsFollowReadableWidth = NO;
     }
@@ -95,16 +96,17 @@
         cell.textLabel.textColor = [UIColor darkGrayColor];
         cell.textLabel.font = [UIFont systemFontOfSize:14];
         cell.backgroundColor = [UIColor clearColor];
-        UIImageView *line = [[UIImageView alloc] initWithImage: [NSBundle py_imageNamed:@"cell-content-line"]];
-        line.py_height = 0.5;
-        line.alpha = 0.7;
-        line.py_x = PYSEARCH_MARGIN;
-        line.py_y = 43;
-        line.py_width = PYScreenW;
-        [cell.contentView addSubview:line];
+//        UIImageView *line = [[UIImageView alloc] initWithImage: [NSBundle py_imageNamed:@"cell-content-line"]];
+//        line.py_height = 0.5;
+//        line.alpha = 0.7;
+//        line.py_x = PYSEARCH_MARGIN;
+//        line.py_y = [self AxcUI_getHeightForRow:self.searchSuggestions[indexPath.row]] - 0.5;
+//        line.py_width = PYScreenW;
+//        [cell.contentView addSubview:line];
     }
     cell.imageView.image = [NSBundle py_imageNamed:@"search"];
     cell.textLabel.text = self.searchSuggestions[indexPath.row];
+    cell.textLabel.numberOfLines = 0;
     if (indexPath.row % 2) {
         cell.backgroundColor = [UIColor AxcUI_CloudColor];
     }
@@ -113,17 +115,27 @@
                                                                    withColor:[UIColor AxcUI_OrangeColor]];
     }
    
-    NSLog(@"%@",self.searchKeyWord);
     return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if ([self.dataSource respondsToSelector:@selector(searchSuggestionView:heightForRowAtIndexPath:)]) {
-        return [self.dataSource searchSuggestionView:tableView heightForRowAtIndexPath:indexPath];
+//    if ([self.dataSource respondsToSelector:@selector(searchSuggestionView:heightForRowAtIndexPath:)]) {
+//        return [self.dataSource searchSuggestionView:tableView heightForRowAtIndexPath:indexPath];
+//    }
+    return [self AxcUI_getHeightForRow:self.searchSuggestions[indexPath.row]];
+}
+
+- (CGFloat )AxcUI_getHeightForRow:(NSString *)str{
+    CGFloat width = [str AxcUI_widthWithStringFontSize:14];
+    CGFloat difference = 70;
+    if (width > SCREEN_WIDTH - difference) {
+        NSInteger multiple = width/(SCREEN_WIDTH - difference);
+        return multiple *30 +24;
     }
     return 44.0;
 }
+
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
     [cell AxcUI_cellAppearAnimateStyle:AxcCellAppearAnimateStyleRightToLeft indexPath:indexPath];
 }

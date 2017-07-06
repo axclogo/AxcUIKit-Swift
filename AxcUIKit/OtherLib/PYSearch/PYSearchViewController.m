@@ -218,7 +218,7 @@
                 [_swSelf searchBarSearchButtonClicked:_swSelf.searchBar];
             }
         };
-        searchSuggestionVC.view.frame = CGRectMake(0, 64, PYScreenW, PYScreenH);
+        searchSuggestionVC.view.frame = CGRectMake(0, 59, PYScreenW, PYScreenH - 64);
         searchSuggestionVC.view.backgroundColor = self.baseSearchTableView.backgroundColor;
         searchSuggestionVC.view.hidden = YES;
         _searchSuggestionView = (UITableView *)searchSuggestionVC.view;
@@ -1013,8 +1013,7 @@
     return nil;
 }
 
-- (CGFloat)searchSuggestionView:(UITableView *)searchSuggestionView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (CGFloat)searchSuggestionView:(UITableView *)searchSuggestionView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     if ([self.dataSource respondsToSelector:@selector(searchSuggestionView:heightForRowAtIndexPath:)]) {
         return [self.dataSource searchSuggestionView:searchSuggestionView heightForRowAtIndexPath:indexPath];
     }
