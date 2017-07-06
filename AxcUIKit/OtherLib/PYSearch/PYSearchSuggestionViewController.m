@@ -108,8 +108,11 @@
     if (indexPath.row % 2) {
         cell.backgroundColor = [UIColor AxcUI_CloudColor];
     }
-    cell.textLabel.attributedText = [cell.textLabel.text AxcUI_markWords:self.searchKeyWord
-                                                               withColor:[UIColor AxcUI_OrangeColor]];
+    if (self.searchKeyWord) {
+        cell.textLabel.attributedText = [cell.textLabel.text AxcUI_markWords:self.searchKeyWord
+                                                                   withColor:[UIColor AxcUI_OrangeColor]];
+    }
+   
     NSLog(@"%@",self.searchKeyWord);
     return cell;
 }
