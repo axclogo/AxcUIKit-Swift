@@ -110,7 +110,6 @@ UITableViewDelegate
         [Group1 addObject:@{@"controlsName":@"测试",@"describeName":@"测试",@"VCName":@"TestTwoVC"}];
 
         NSMutableArray *Group2 = [NSMutableArray array];
-        [Group2 addObject:@{@"controlsName":@"AxcUI_TagTextView",@"describeName":@"文字样式标签",@"VCName":@"AxcTagTextViewVC"}];
 
         
         [Group2 addObject:@{@"controlsName":@"AxcUI_ActivityIndicatorView",@"describeName":@"动画View",@"VCName":@"AxcActivityIndicatorViewVC"}];
@@ -129,7 +128,8 @@ UITableViewDelegate
         
         [Group2 addObject:@{@"controlsName":@"AxcUI_StarRatingView",@"describeName":@"星级评分器",@"VCName":@"StarRatingViewVC"}];
         
-        [Group2 addObject:@{@"controlsName":@"AxcUI_TagView",@"describeName":@"自定义View标签",@"VCName":@"AxcTagViewVC"}];
+        [Group2 addObject:@{@"controlsName":@"AxcUI_TagView",@"describeName":@"自定义ViewTag标签",@"VCName":@"AxcTagViewVC"}];
+        [Group2 addObject:@{@"controlsName":@"AxcUI_TagTextView",@"describeName":@"文字样式Tag标签",@"VCName":@"AxcTagTextViewVC"}];
 
         [Group2 addObject:@{@"controlsName":@"AxcUI_Toast",@"describeName":@"弹出式提醒",@"VCName":@"AxcToastVC"}];
         

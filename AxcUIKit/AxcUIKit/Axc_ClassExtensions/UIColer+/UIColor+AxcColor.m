@@ -11,6 +11,12 @@
 
 @implementation UIColor (AxcColor)
 
++ (UIColor *)AxcUI_ArcPresetColor{
+    NSArray *arr = @[[UIColor AxcUI_CarrotColor],[UIColor AxcUI_CloudColor],[UIColor AxcUI_OrangeColor],[UIColor AxcUI_SilverColor],[UIColor AxcUI_EmeraldColor],[UIColor AxcUI_PumpkinColor],[UIColor AxcUI_AlizarinColor],[UIColor AxcUI_AmethystColor],[UIColor AxcUI_AsbestosColor],[UIColor AxcUI_ConcreteColor],[UIColor AxcUI_GreenSeaColor],[UIColor AxcUI_MidNightColor],[UIColor AxcUI_WisteriaColor],[UIColor AxcUI_NephritisColor],[UIColor AxcUI_SunFlowerColor],[UIColor AxcUI_TurquoiseColor],[UIColor AxcUI_BelizeHoleColor],[UIColor AxcUI_PeterRiverColor],[UIColor AxcUI_WetAsphaltColor]];
+    return arr[arc4random()%arr.count];
+}
+
+
 + (CGFloat) colorComponentFrom: (NSString *) string start: (NSUInteger) start length: (NSUInteger) length {
     NSString *substring = [string substringWithRange: NSMakeRange(start, length)];
     NSString *fullHex = length == 2 ? substring : [NSString stringWithFormat: @"%@%@", substring, substring];

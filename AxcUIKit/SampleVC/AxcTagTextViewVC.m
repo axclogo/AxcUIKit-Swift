@@ -48,7 +48,7 @@
             if (sender.selectedSegmentIndex != _backSelectedSegmentIndex &&
                 _backSelectedSegmentIndex == 4) { // 当宽度适配之后将拉伸所有tag，所以需要重置数据
                 // 一般在使用当中这些参数都会设置好，并不会向Demo中这样动态演示
-                [self clickBtn:nil]; // 重置
+                [self reloadData]; // 重置
             }
             _backSelectedSegmentIndex = sender.selectedSegmentIndex;
             break;
@@ -80,7 +80,61 @@
     }
 }
 
+// 使用配置对象来构造标签的属性，传值后即可，无先后顺序  ************************************************
+- (void)clickBtn:(UIButton *)sender{
+    AxcTagTextConfig *config = [AxcTagTextConfig new];
+    config.axcUI_tagTextColor = [UIColor whiteColor];
+    config.axcUI_tagSelectedTextColor = [UIColor whiteColor];
+    NSArray * tagsArr = [self.textArray subarrayWithRange:NSMakeRange(0, 10)];
+    switch (sender.tag - 100) {
+        case 3:// 添加随机色的
+            config.axcUI_tagTextFont = [UIFont systemFontOfSize:13];
+            config.axcUI_tagBackgroundColor = [UIColor AxcUI_ArcColor];
+            config.axcUI_tagSelectedBackgroundColor = [UIColor AxcUI_ArcColor];
+            [self.tagTextView AxcUI_addTags:tagsArr withConfig:[config copy]]; // 添加进组
+            break;
+        case 4:// 添加随机字体大小和带阴影的的
+            config.axcUI_tagBackgroundColor = [UIColor AxcUI_ArcColor];
+            config.axcUI_tagSelectedBackgroundColor = [UIColor AxcUI_ArcColor];
+            config.axcUI_tagTextFont = [UIFont systemFontOfSize:arc4random()%10+5];
+            config.axcUI_tagShadowColor = [UIColor blackColor];
+            config.axcUI_tagShadowOffset = CGSizeMake(2, 2);
+            config.axcUI_tagShadowRadius = 2;
+            config.axcUI_tagShadowOpacity = 0.3f;
+            [self.tagTextView AxcUI_addTags:tagsArr withConfig:[config copy]]; // 添加进组
+            break;
+        case 5:// 添加原作者风格的
+            config.axcUI_tagTextFont = [UIFont systemFontOfSize:16.0f];
+            config.axcUI_tagBackgroundColor = [UIColor colorWithRed:0.30 green:0.72 blue:0.53 alpha:1.00];
+            config.axcUI_tagSelectedBackgroundColor = [UIColor colorWithRed:0.22 green:0.29 blue:0.36 alpha:1.00];
+            config.axcUI_tagCornerRadius = 4.0f;
+            config.axcUI_tagSelectedCornerRadius = 4.0f;
+            config.axcUI_tagBorderWidth = 1.0f;
+            config.axcUI_tagSelectedBorderWidth = 1.0f;
+            config.axcUI_tagBorderColor = [UIColor whiteColor];
+            config.axcUI_tagSelectedBorderColor = [UIColor whiteColor];
+            config.axcUI_tagShadowColor = [UIColor blackColor];
+            config.axcUI_tagShadowOffset = CGSizeMake(2, 2);
+            config.axcUI_tagShadowRadius = 2;
+            config.axcUI_tagShadowOpacity = 0.3f;
+            [self.tagTextView AxcUI_addTags:tagsArr withConfig:[config copy]]; // 添加进组
+            break;
+        case 6: // 清空并重置数据
+            [self.tagTextView AxcUI_removeAllTags];
+            [self.tagTextView AxcUI_addTags:self.textArray];
+            [self reloadData];
+            break;
+        default:  break;
+    }
+}
 
+
+
+// 重置
+- (void)reloadData{
+    self.textArray = nil;
+    [self.tagTextView AxcUI_reloadData];
+}
 
 
 #pragma mark - 懒加载区
@@ -108,7 +162,8 @@
     if (!_createInstructionsLabelTextArr) {
         _createInstructionsLabelTextArr = @[@"",@"",
                                             @"显示行数",
-                                            @"重置刷新所有数据"];
+                                            @[@"添加随机色标签",@"添加带阴影标签"],
+                                            @[@"添加原作者风标签",@"重置"]];
     }
     return _createInstructionsLabelTextArr;
 }
@@ -123,7 +178,8 @@
     NSArray *arr = @[@[@"左对齐",@"居中排列",@"右对齐",@"水平分布",@"宽度填充"],
                      @[@"纵向滚动",@"横向滚动"]];
     NSArray *defaultParameters = @[@"",@"",@"0",@"",@"",@"",@""];
-    for (int i = 0; i < 4; i ++) {
+    NSInteger buttonTag = 0;
+    for (int i = 0; i < 5; i ++) {
         CGFloat Y = i * 40 + self.tagTextView.axcUI_Y + self.tagTextView.axcUI_Height + 10;
         CGFloat width = 150;
         if (i < 2) {
@@ -157,26 +213,30 @@
             label.text =  [NSString stringWithFormat:
                            @"%@：\t%@",self.createInstructionsLabelTextArr[i],defaultParameters[i]];
         }else{
-            UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(10, Y, SCREEN_WIDTH - 20, 30)];
-            [button addTarget:self action:@selector(clickBtn:) forControlEvents:UIControlEventTouchUpInside];
-            [button setTitle:self.createInstructionsLabelTextArr[i] forState:UIControlStateNormal];
-            button.titleLabel.font = [UIFont systemFontOfSize:13];
-            button.backgroundColor = [UIColor AxcUI_NephritisColor];
-            [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-            button.titleLabel.textAlignment = NSTextAlignmentCenter;
-            button.tag = i + 100;
-            [self.view addSubview:button];
+            NSArray *arr = self.createInstructionsLabelTextArr[i];
+            if (buttonTag == 0) {
+                buttonTag = i;
+            }
+            for (int j = 0; j < arr.count; j ++) {
+                CGFloat BtnWidth = SCREEN_WIDTH / 2 - 20;
+                CGFloat X = j * BtnWidth + 10 + j * 20;
+                UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(X , Y, BtnWidth, 30)];
+                [button addTarget:self action:@selector(clickBtn:) forControlEvents:UIControlEventTouchUpInside];
+                [button setTitle:arr[j] forState:UIControlStateNormal];
+                button.titleLabel.font = [UIFont systemFontOfSize:13];
+                button.backgroundColor = [UIColor AxcUI_ArcPresetColor];
+                [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+                button.titleLabel.textAlignment = NSTextAlignmentCenter;
+                button.tag = buttonTag + 100;
+                [self.view addSubview:button];
+                buttonTag ++;
+            }
+            
         }
         
     }
 }
-- (void)clickBtn:(UIButton *)sender{
-    if (sender) { // 只有循环创建的Btn才有参，手动调用的为nil，不会执行
-        [AxcUI_Toast AxcUI_showBottomWithText:@"正在创建模拟数据..."];
-    }
-    self.textArray = nil;
-    [self.tagTextView AxcUI_reloadData];
-}
+
 
 
 

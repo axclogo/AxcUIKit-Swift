@@ -34,7 +34,7 @@
     [self createSegmented];
     
     // 原作者GitHub：https://github.com/zekunyan
-    self.instructionsLabel.text = @"根据作者zekunyan项目TTGTagCollectionView改制\n这并不是图文混排。这只是一个个标签而已\n不过可以根据此思路配合此控件来达到一些简单的图文混排效果\n此处将其细化分模块化控件";
+    self.instructionsLabel.text = @"根据作者zekunyan项目TTGTagCollectionView改制\n这并不是图文混排。这只是一个个标签而已\n此处将其细化分模块化控件";
 }
 
 // 使用初始化、重写SET方法和setNeedsDisplay，设置即可调用，无先后顺序，设置即可动态调整  ************************************************
@@ -234,13 +234,13 @@
     [self.tagViews addObject:[self newLabelWithText:self.textArray[arc4random()%self.textArray.count]
                                            fontSize:arc4random()% 5 + 10
                                           textColor:[UIColor whiteColor]
-                                    backgroundColor:[UIColor AxcUI_ArcColor]]];
+                                    backgroundColor:[UIColor AxcUI_ArcPresetColor]]];
 }
 - (void)addView1{
     NSString *str = [NSString stringWithFormat:@"%@(Button)",self.textArray[arc4random()%self.textArray.count]];
     [self.tagViews addObject:[self newButtonWithTitle:str
                                              fontSize:arc4random()% 8 + 10
-                                      backgroundColor:[UIColor AxcUI_ArcColor]]];
+                                      backgroundColor:[UIColor AxcUI_ArcPresetColor]]];
 }
 - (void)addView2{
     [_tagViews addObject:[self newImageViewWithImage:[UIImage imageNamed:self.imageNameArray[arc4random()%self.imageNameArray.count]]]];
@@ -302,7 +302,7 @@
 - (UIImageView *)newImageViewWithImage:(UIImage *)image {
     UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
     imageView.axcUI_Size = CGSizeMake(30, 30);
-    imageView.backgroundColor = [UIColor AxcUI_ArcColor];
+    imageView.backgroundColor = [UIColor AxcUI_ArcPresetColor];
     imageView.layer.masksToBounds = YES;
     imageView.layer.cornerRadius = 4.0f;
     return imageView;

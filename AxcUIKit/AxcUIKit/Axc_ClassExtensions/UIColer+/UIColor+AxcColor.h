@@ -9,7 +9,16 @@
 
 @interface UIColor (AxcColor)
 
+/**
+ *  在扩展随机一个颜色
+ */
++ (UIColor*)AxcUI_ArcPresetColor;
+
+/**
+ *  随机色
+ */
 + (UIColor*)AxcUI_ArcColor;
+
 /**
  *  绿松石
  */
