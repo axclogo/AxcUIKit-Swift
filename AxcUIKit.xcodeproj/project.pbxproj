@@ -141,6 +141,13 @@
 		EA87DB0C1F0749E100452D2D /* AxcUI_BarrageScrollEngine+Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = EA87DB0B1F0749E100452D2D /* AxcUI_BarrageScrollEngine+Tools.m */; };
 		EA87DB0F1F074A7400452D2D /* UIColor+Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = EA87DB0E1F074A7400452D2D /* UIColor+Tools.m */; };
 		EAAFBFC91F0E21C900881A62 /* NSString+AxcReplaceRichText.m in Sources */ = {isa = PBXBuildFile; fileRef = EAAFBFC81F0E21C900881A62 /* NSString+AxcReplaceRichText.m */; };
+		EAAFBFDB1F0E3E9D00881A62 /* NSBundle+PYSearchExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = EAAFBFCE1F0E3E9D00881A62 /* NSBundle+PYSearchExtension.m */; };
+		EAAFBFDC1F0E3E9D00881A62 /* PYSearch.bundle in Resources */ = {isa = PBXBuildFile; fileRef = EAAFBFCF1F0E3E9D00881A62 /* PYSearch.bundle */; };
+		EAAFBFDD1F0E3E9D00881A62 /* PYSearchConst.m in Sources */ = {isa = PBXBuildFile; fileRef = EAAFBFD21F0E3E9D00881A62 /* PYSearchConst.m */; };
+		EAAFBFDE1F0E3E9D00881A62 /* PYSearchSuggestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAAFBFD41F0E3E9D00881A62 /* PYSearchSuggestionViewController.m */; };
+		EAAFBFDF1F0E3E9D00881A62 /* PYSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAAFBFD61F0E3E9D00881A62 /* PYSearchViewController.m */; };
+		EAAFBFE01F0E3E9D00881A62 /* UIColor+PYSearchExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = EAAFBFD81F0E3E9D00881A62 /* UIColor+PYSearchExtension.m */; };
+		EAAFBFE11F0E3E9D00881A62 /* UIView+PYSearchExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = EAAFBFDA1F0E3E9D00881A62 /* UIView+PYSearchExtension.m */; };
 		EAD085761EEAE65F007DE2C4 /* AxcActivityHUDVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD085751EEAE65F007DE2C4 /* AxcActivityHUDVC.m */; };
 		EAD0857F1EEAE851007DE2C4 /* test_4.png in Resources */ = {isa = PBXBuildFile; fileRef = EAD085781EEAE851007DE2C4 /* test_4.png */; };
 		EAD085801EEAE851007DE2C4 /* found_icons_4.png in Resources */ = {isa = PBXBuildFile; fileRef = EAD085791EEAE851007DE2C4 /* found_icons_4.png */; };
@@ -461,6 +468,20 @@
 		EA87DB0E1F074A7400452D2D /* UIColor+Tools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Tools.m"; sourceTree = "<group>"; };
 		EAAFBFC71F0E21C900881A62 /* NSString+AxcReplaceRichText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+AxcReplaceRichText.h"; sourceTree = "<group>"; };
 		EAAFBFC81F0E21C900881A62 /* NSString+AxcReplaceRichText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+AxcReplaceRichText.m"; sourceTree = "<group>"; };
+		EAAFBFCD1F0E3E9D00881A62 /* NSBundle+PYSearchExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+PYSearchExtension.h"; sourceTree = "<group>"; };
+		EAAFBFCE1F0E3E9D00881A62 /* NSBundle+PYSearchExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+PYSearchExtension.m"; sourceTree = "<group>"; };
+		EAAFBFCF1F0E3E9D00881A62 /* PYSearch.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = PYSearch.bundle; sourceTree = "<group>"; };
+		EAAFBFD01F0E3E9D00881A62 /* PYSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PYSearch.h; sourceTree = "<group>"; };
+		EAAFBFD11F0E3E9D00881A62 /* PYSearchConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PYSearchConst.h; sourceTree = "<group>"; };
+		EAAFBFD21F0E3E9D00881A62 /* PYSearchConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PYSearchConst.m; sourceTree = "<group>"; };
+		EAAFBFD31F0E3E9D00881A62 /* PYSearchSuggestionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PYSearchSuggestionViewController.h; sourceTree = "<group>"; };
+		EAAFBFD41F0E3E9D00881A62 /* PYSearchSuggestionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PYSearchSuggestionViewController.m; sourceTree = "<group>"; };
+		EAAFBFD51F0E3E9D00881A62 /* PYSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PYSearchViewController.h; sourceTree = "<group>"; };
+		EAAFBFD61F0E3E9D00881A62 /* PYSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PYSearchViewController.m; sourceTree = "<group>"; };
+		EAAFBFD71F0E3E9D00881A62 /* UIColor+PYSearchExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+PYSearchExtension.h"; sourceTree = "<group>"; };
+		EAAFBFD81F0E3E9D00881A62 /* UIColor+PYSearchExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+PYSearchExtension.m"; sourceTree = "<group>"; };
+		EAAFBFD91F0E3E9D00881A62 /* UIView+PYSearchExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+PYSearchExtension.h"; sourceTree = "<group>"; };
+		EAAFBFDA1F0E3E9D00881A62 /* UIView+PYSearchExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+PYSearchExtension.m"; sourceTree = "<group>"; };
 		EAD085741EEAE65F007DE2C4 /* AxcActivityHUDVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcActivityHUDVC.h; sourceTree = "<group>"; };
 		EAD085751EEAE65F007DE2C4 /* AxcActivityHUDVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcActivityHUDVC.m; sourceTree = "<group>"; };
 		EAD085781EEAE851007DE2C4 /* test_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test_4.png; sourceTree = "<group>"; };
@@ -577,6 +598,7 @@
 				093C622D1EA6F85800ADAC42 /* ViewController.m */,
 				EA439CC21EE2DE8400D992E7 /* TestTwoVC.h */,
 				EA439CC31EE2DE8400D992E7 /* TestTwoVC.m */,
+				EAAFBFCB1F0E3E9000881A62 /* OtherLib */,
 				EA439CD51EE3066F00D992E7 /* BaseVC */,
 				EA439CF41EE3EBE200D992E7 /* Views */,
 				EA439CB41EE29E0100D992E7 /* SampleVC */,
@@ -1218,6 +1240,35 @@
 			path = XML_Parsing;
 			sourceTree = "<group>";
 		};
+		EAAFBFCB1F0E3E9000881A62 /* OtherLib */ = {
+			isa = PBXGroup;
+			children = (
+				EAAFBFCC1F0E3E9D00881A62 /* PYSearch */,
+			);
+			path = OtherLib;
+			sourceTree = "<group>";
+		};
+		EAAFBFCC1F0E3E9D00881A62 /* PYSearch */ = {
+			isa = PBXGroup;
+			children = (
+				EAAFBFCD1F0E3E9D00881A62 /* NSBundle+PYSearchExtension.h */,
+				EAAFBFCE1F0E3E9D00881A62 /* NSBundle+PYSearchExtension.m */,
+				EAAFBFCF1F0E3E9D00881A62 /* PYSearch.bundle */,
+				EAAFBFD01F0E3E9D00881A62 /* PYSearch.h */,
+				EAAFBFD11F0E3E9D00881A62 /* PYSearchConst.h */,
+				EAAFBFD21F0E3E9D00881A62 /* PYSearchConst.m */,
+				EAAFBFD31F0E3E9D00881A62 /* PYSearchSuggestionViewController.h */,
+				EAAFBFD41F0E3E9D00881A62 /* PYSearchSuggestionViewController.m */,
+				EAAFBFD51F0E3E9D00881A62 /* PYSearchViewController.h */,
+				EAAFBFD61F0E3E9D00881A62 /* PYSearchViewController.m */,
+				EAAFBFD71F0E3E9D00881A62 /* UIColor+PYSearchExtension.h */,
+				EAAFBFD81F0E3E9D00881A62 /* UIColor+PYSearchExtension.m */,
+				EAAFBFD91F0E3E9D00881A62 /* UIView+PYSearchExtension.h */,
+				EAAFBFDA1F0E3E9D00881A62 /* UIView+PYSearchExtension.m */,
+			);
+			path = PYSearch;
+			sourceTree = "<group>";
+		};
 		EAD085771EEAE851007DE2C4 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
@@ -1490,6 +1541,7 @@
 				EA530A7E1F0CC20E00F562FD /* ship.png in Resources */,
 				EAD085D51EEAFFDC007DE2C4 /* HUD_6.png in Resources */,
 				EAD085BB1EEAFFDC007DE2C4 /* HUD_19.png in Resources */,
+				EAAFBFDC1F0E3E9D00881A62 /* PYSearch.bundle in Resources */,
 				EAD085E31EEB03E4007DE2C4 /* AxcActivityHUDEffectVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1587,6 +1639,7 @@
 				EA87DAE21F073D8000452D2D /* AxcBarrageScrollEngineVC.m in Sources */,
 				EA6A3B9D1F09DE3800E0FAAA /* UITextField+AxcModifyPlaceholder.m in Sources */,
 				EA6A3BBA1F09DE3800E0FAAA /* AxcUI_PieProgressView.m in Sources */,
+				EAAFBFE11F0E3E9D00881A62 /* UIView+PYSearchExtension.m in Sources */,
 				EA650ED31F076B7A00863057 /* BarrageDataModel.m in Sources */,
 				EA5252CC1EF5253F0016C687 /* AxcActivityIndicatorViewCell.m in Sources */,
 				EA439CD81EE3068300D992E7 /* SampleBaseVC.m in Sources */,
@@ -1623,16 +1676,19 @@
 				EA6A3BA91F09DE3800E0FAAA /* AxcBarrageCanvas.m in Sources */,
 				EA6A3BA71F09DE3800E0FAAA /* Axc_ActivityIndicator.m in Sources */,
 				EA6A3B8F1F09DE3800E0FAAA /* Axc_WebImageCompat.m in Sources */,
+				EAAFBFDD1F0E3E9D00881A62 /* PYSearchConst.m in Sources */,
 				EA87DB0F1F074A7400452D2D /* UIColor+Tools.m in Sources */,
 				EAAFBFC91F0E21C900881A62 /* NSString+AxcReplaceRichText.m in Sources */,
 				EA6A3B8D1F09DE3800E0FAAA /* Axc_WebimageCache.m in Sources */,
 				EA6A3B9F1F09DE3800E0FAAA /* UIView+AxcCoverEX.m in Sources */,
 				EA6A3BA01F09DE3800E0FAAA /* UIView+AxcExtension.m in Sources */,
+				EAAFBFE01F0E3E9D00881A62 /* UIColor+PYSearchExtension.m in Sources */,
 				EA530A901F0CDC9600F562FD /* AxcTagTextViewVC.m in Sources */,
 				EA439CE11EE3C1B500D992E7 /* AxcModifyPlaceholderVC.m in Sources */,
 				EA439D2D1EE52A3D00D992E7 /* AxcImageLoaderVC.m in Sources */,
 				EA6A3BBC1F09DE3800E0FAAA /* AxcUI_WhiteLineBlack.m in Sources */,
 				EA6A3B901F09DE3800E0FAAA /* Axc_WebImageDecoder.m in Sources */,
+				EAAFBFDE1F0E3E9D00881A62 /* PYSearchSuggestionViewController.m in Sources */,
 				EA6A3B971F09DE3800E0FAAA /* UIImageView+AxcWebCache.m in Sources */,
 				EA6A3B881F09DE3800E0FAAA /* UIImage+AxcImageName.m in Sources */,
 				EA6A3B991F09DE3800E0FAAA /* Axc_WebImageRequest.m in Sources */,
@@ -1652,6 +1708,7 @@
 				EA6A3B8E1F09DE3800E0FAAA /* Axc_ImageCache.m in Sources */,
 				EA6A3BA41F09DE3800E0FAAA /* AxcUI_ActivityHUD.m in Sources */,
 				EA6A3BDA1F0A4D8000E0FAAA /* AxcNumberUnitFieldVC.m in Sources */,
+				EAAFBFDF1F0E3E9D00881A62 /* PYSearchViewController.m in Sources */,
 				093C622B1EA6F85800ADAC42 /* AppDelegate.m in Sources */,
 				EA439D0D1EE4417C00D992E7 /* AxcLabelVC.m in Sources */,
 				EA6A3BBB1F09DE3800E0FAAA /* AxcUI_TranPieProgressView.m in Sources */,
@@ -1660,6 +1717,7 @@
 				EA6A3BAD1F09DE3800E0FAAA /* AxcUI_BarrageScrollEngine.m in Sources */,
 				EA6A3BA31F09DE3800E0FAAA /* UIViewController+AxcSemiModal.m in Sources */,
 				EAD085DD1EEB000C007DE2C4 /* AxcActivityHUDVCCollectionViewCell.m in Sources */,
+				EAAFBFDB1F0E3E9D00881A62 /* NSBundle+PYSearchExtension.m in Sources */,
 				EAD086261EED09B7007DE2C4 /* AxcShimmeringViewVC.m in Sources */,
 				EA6A3B8B1F09DE3800E0FAAA /* UIImageView+AxcImageLoader.m in Sources */,
 				EA6A3B911F09DE3800E0FAAA /* Axc_WebImageDownloader.m in Sources */,

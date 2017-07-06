@@ -11,15 +11,21 @@
 
 #import "SampleBaseVC.h"
 
+#import "PYSearch.h" // 导入搜索成品控件(稍微经过AxcUIKit美化了下)
+
+#define NO_SearchEesults @"没有搜索结果哟~"
+
 @interface ViewController ()<
 UITableViewDelegate
 ,UITableViewDataSource
-
+,PYSearchViewControllerDelegate
 >
 
 @property(nonatomic, strong) UITableView *tableView;
 @property(nonatomic, strong) NSMutableArray *dataArray;
 @property(nonatomic, strong) NSArray *sectionTitleArray;
+@property(nonatomic, strong) NSMutableArray *controlsNameArray;
+@property(nonatomic, strong) NSArray *recommendArray;
 
 @end
 
@@ -37,8 +43,108 @@ UITableViewDelegate
 }
 // 点击了搜索
 - (void)clickRightSearchBtn{
+    __weak typeof(self) WeakSelf = self;
+    PYSearchViewController *searchViewController = [PYSearchViewController
+     searchViewControllerWithHotSearches:self.recommendArray
+     searchBarPlaceholder:@"搜索相关示例"
+     didSearchBlock:^(PYSearchViewController *searchViewController,
+                      UISearchBar *searchBar,
+                      NSString *searchText) {
+         [WeakSelf AxcUI_SearchVC_WithText:searchText];
+     }];
+    searchViewController.hotSearchStyle = PYHotSearchStyleColorfulTag;
+    searchViewController.searchHistoryStyle = PYSearchHistoryStyleColorfulTag;
+    searchViewController.delegate = self;
+    [self.navigationController pushViewController:searchViewController animated:YES];
+}
+
+
+
+#pragma mark - PYSearchViewControllerDelegate
+- (void)searchViewController:(PYSearchViewController *)searchViewController
+         searchTextDidChange:(UISearchBar *)seachBar
+                  searchText:(NSString *)searchText{
+    if (searchText.length) {
+        NSArray *searchSuggestionsM = [self AxcUI_ArrangementVC_WithText:searchText];
+        if (!searchSuggestionsM.count) {
+            [AxcUI_Toast AxcUI_showCenterWithText: NO_SearchEesults];
+            return;
+        }
+        searchViewController.searchSuggestions = searchSuggestionsM;
+    }
+}
+- (void)searchViewController:(PYSearchViewController *)searchViewController
+   didSelectHotSearchAtIndex:(NSInteger)index
+                  searchText:(NSString *)searchText{
+    searchViewController.searchSuggestions = [self AxcUI_ArrangementVC_WithText:searchText];
+}
+- (void)searchViewController:(PYSearchViewController *)searchViewController
+didSelectSearchHistoryAtIndex:(NSInteger)index
+                  searchText:(NSString *)searchText{
+    NSArray *searchSuggestionsM = [self AxcUI_ArrangementVC_WithText:searchText];
+    if (!searchSuggestionsM.count) {
+        [AxcUI_Toast AxcUI_showCenterWithText: NO_SearchEesults];
+        return;
+    }
+    searchViewController.searchSuggestions = searchSuggestionsM;
+}
+- (void)didClickCancel:(PYSearchViewController *)searchViewController{
+    if (searchViewController.searchBar.text.length) {
+        searchViewController.searchBar.text = @"";
+        searchViewController.searchSuggestions = [NSArray array];
+    }else{
+        [searchViewController.navigationController popViewControllerAnimated:YES];
+    }
     
 }
+#pragma mark - 复用函数
+// 排列出所有结果
+- (NSArray *)AxcUI_ArrangementVC_WithText:(NSString *)searchText{
+    NSMutableArray *searchSuggestionsM = [NSMutableArray array];
+    for (NSDictionary *searchDic in self.controlsNameArray) {
+        NSString *name = searchDic[@"name"];
+        // 谓词搜索，不区分大小写
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"self contains [cd] %@",searchText];
+        if ([@[name] filteredArrayUsingPredicate:predicate].count) {
+            [searchSuggestionsM addObject:name];
+        }else if ([name rangeOfString:searchText].location != NSNotFound) {
+            [searchSuggestionsM addObject:name];
+        }
+    }
+    return searchSuggestionsM;
+}
+// 搜索VC
+- (void)AxcUI_SearchVC_WithText:(NSString *)searchText{
+    BOOL searchSuccessful = NO;
+    for (NSDictionary *searchDic in self.controlsNameArray) {
+        NSString *name = searchDic[@"name"];
+        if ([name isEqualToString:searchText]) {
+            NSInteger section = [searchDic[@"section"] intValue];
+            NSInteger row = [searchDic[@"row"] intValue];
+            [self AxcUI_PushSampleVC_WithIndexPath:[NSIndexPath indexPathForRow:row
+                                                                      inSection:section]];
+            searchSuccessful = YES;
+            break;
+        }
+    }
+    if (!searchSuccessful) {
+        [AxcUI_Toast AxcUI_showCenterWithText: NO_SearchEesults];
+    }
+}
+// 推出VC
+- (void)AxcUI_PushSampleVC_WithIndexPath:(NSIndexPath *)indexPath{
+    NSArray *Arr = self.dataArray[indexPath.section];
+    NSDictionary *dic = Arr[indexPath.row];
+    NSString *VC_Name = dic[@"VCName"];
+    Class class = NSClassFromString(VC_Name);
+    SampleBaseVC *viewController = [[class alloc]init];
+    Arr = self.dataArray[indexPath.section];
+    dic = Arr[indexPath.row];
+    viewController.title = dic[@"describeName"];
+    viewController.navigationItem.prompt = [NSString stringWithFormat:@"示例文件名称: %@",dic[@"VCName"]];
+    [self.navigationController pushViewController:viewController animated:YES];
+}
+
 
 #pragma mark - 代理区
 - (NSInteger )tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -68,16 +174,7 @@ UITableViewDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    NSArray *Arr = self.dataArray[indexPath.section];
-    NSDictionary *dic = Arr[indexPath.row];
-    NSString *VC_Name = dic[@"VCName"];
-    Class class = NSClassFromString(VC_Name);
-    SampleBaseVC *viewController = [[class alloc]init];
-    Arr = self.dataArray[indexPath.section];
-    dic = Arr[indexPath.row];
-    viewController.title = dic[@"describeName"];
-    viewController.navigationItem.prompt = [NSString stringWithFormat:@"示例文件名称: %@",dic[@"VCName"]];
-    [self.navigationController pushViewController:viewController animated:YES];
+    [self AxcUI_PushSampleVC_WithIndexPath:indexPath];
 }
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
     return self.sectionTitleArray[section];
@@ -88,6 +185,7 @@ UITableViewDelegate
     header.textLabel.textColor = [UIColor AxcUI_ConcreteColor];
     header.textLabel.font = [UIFont systemFontOfSize:14];
 }
+
 
 
 #pragma mark - 懒加载
@@ -138,6 +236,14 @@ UITableViewDelegate
     }
     return _dataArray;
 }
+// 推荐组
+- (NSArray *)recommendArray{
+    if (!_recommendArray) {
+        _recommendArray = @[@"动画推出View/VC",@"弹幕",@"Tag标签",@"动画",@"长摁拖动排序",@"Image",@"AxcUI"];
+    }
+    return _recommendArray;
+}
+
 - (NSArray *)sectionTitleArray{
     if (!_sectionTitleArray) {
         _sectionTitleArray = @[@"扩展类",@"控件类"];
@@ -151,6 +257,28 @@ UITableViewDelegate
         _tableView.dataSource = self;
     }
     return _tableView;
+}
+
+- (NSMutableArray *)controlsNameArray{
+    if (!_controlsNameArray) {
+        _controlsNameArray = [NSMutableArray array];
+        int i = 0;
+        for (NSArray *sectionArr in self.dataArray) {
+            NSString *Controltype = self.sectionTitleArray[i];
+            int j = 0;
+            for (NSDictionary *searchDic in sectionArr) {
+                NSString *controlsName = searchDic[@"controlsName"];
+                NSString *describeName = searchDic[@"describeName"];
+                NSString *SearchNameStr = [NSString stringWithFormat:@"%@ - %@（%@）",Controltype,controlsName,describeName];
+                [_controlsNameArray addObject:@{@"name":SearchNameStr,
+                                                @"section":@(i),
+                                                @"row":@(j)}];
+                j ++;
+            }
+            i ++;
+        }
+    }
+    return _controlsNameArray;
 }
 
 - (void)viewWillAppear:(BOOL)animated{
