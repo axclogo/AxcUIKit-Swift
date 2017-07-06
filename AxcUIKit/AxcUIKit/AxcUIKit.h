@@ -46,6 +46,7 @@
 /***********************************工具类***************************************/
 // MARK: NSString+
 #import "NSString+AxcTextCalculation.h"       // 工具类，计算文字宽和高
+#import "NSString+AxcReplaceRichText.h"       // 修改文本中部分字体的属性
 // MARK: UIView+
 #import "UIView+AxcExtension.h"               // 可修改属性的类扩展
 #import "UIView+AxcAutoresizingMask.h"        // 自动拉伸的类扩展

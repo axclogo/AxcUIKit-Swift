@@ -140,6 +140,7 @@
 		EA87DAE21F073D8000452D2D /* AxcBarrageScrollEngineVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EA87DAE11F073D8000452D2D /* AxcBarrageScrollEngineVC.m */; };
 		EA87DB0C1F0749E100452D2D /* AxcUI_BarrageScrollEngine+Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = EA87DB0B1F0749E100452D2D /* AxcUI_BarrageScrollEngine+Tools.m */; };
 		EA87DB0F1F074A7400452D2D /* UIColor+Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = EA87DB0E1F074A7400452D2D /* UIColor+Tools.m */; };
+		EAAFBFC91F0E21C900881A62 /* NSString+AxcReplaceRichText.m in Sources */ = {isa = PBXBuildFile; fileRef = EAAFBFC81F0E21C900881A62 /* NSString+AxcReplaceRichText.m */; };
 		EAD085761EEAE65F007DE2C4 /* AxcActivityHUDVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD085751EEAE65F007DE2C4 /* AxcActivityHUDVC.m */; };
 		EAD0857F1EEAE851007DE2C4 /* test_4.png in Resources */ = {isa = PBXBuildFile; fileRef = EAD085781EEAE851007DE2C4 /* test_4.png */; };
 		EAD085801EEAE851007DE2C4 /* found_icons_4.png in Resources */ = {isa = PBXBuildFile; fileRef = EAD085791EEAE851007DE2C4 /* found_icons_4.png */; };
@@ -458,6 +459,8 @@
 		EA87DB0B1F0749E100452D2D /* AxcUI_BarrageScrollEngine+Tools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AxcUI_BarrageScrollEngine+Tools.m"; sourceTree = "<group>"; };
 		EA87DB0D1F074A7400452D2D /* UIColor+Tools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Tools.h"; sourceTree = "<group>"; };
 		EA87DB0E1F074A7400452D2D /* UIColor+Tools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Tools.m"; sourceTree = "<group>"; };
+		EAAFBFC71F0E21C900881A62 /* NSString+AxcReplaceRichText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+AxcReplaceRichText.h"; sourceTree = "<group>"; };
+		EAAFBFC81F0E21C900881A62 /* NSString+AxcReplaceRichText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+AxcReplaceRichText.m"; sourceTree = "<group>"; };
 		EAD085741EEAE65F007DE2C4 /* AxcActivityHUDVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcActivityHUDVC.h; sourceTree = "<group>"; };
 		EAD085751EEAE65F007DE2C4 /* AxcActivityHUDVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcActivityHUDVC.m; sourceTree = "<group>"; };
 		EAD085781EEAE851007DE2C4 /* test_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test_4.png; sourceTree = "<group>"; };
@@ -849,6 +852,8 @@
 			children = (
 				EA6A3AEA1F09DE3700E0FAAA /* NSString+AxcTextCalculation.h */,
 				EA6A3AEB1F09DE3700E0FAAA /* NSString+AxcTextCalculation.m */,
+				EAAFBFC71F0E21C900881A62 /* NSString+AxcReplaceRichText.h */,
+				EAAFBFC81F0E21C900881A62 /* NSString+AxcReplaceRichText.m */,
 			);
 			path = "NSString+";
 			sourceTree = "<group>";
@@ -1619,6 +1624,7 @@
 				EA6A3BA71F09DE3800E0FAAA /* Axc_ActivityIndicator.m in Sources */,
 				EA6A3B8F1F09DE3800E0FAAA /* Axc_WebImageCompat.m in Sources */,
 				EA87DB0F1F074A7400452D2D /* UIColor+Tools.m in Sources */,
+				EAAFBFC91F0E21C900881A62 /* NSString+AxcReplaceRichText.m in Sources */,
 				EA6A3B8D1F09DE3800E0FAAA /* Axc_WebimageCache.m in Sources */,
 				EA6A3B9F1F09DE3800E0FAAA /* UIView+AxcCoverEX.m in Sources */,
 				EA6A3BA01F09DE3800E0FAAA /* UIView+AxcExtension.m in Sources */,
