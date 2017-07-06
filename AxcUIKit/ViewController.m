@@ -50,7 +50,12 @@ UITableViewDelegate
      didSearchBlock:^(PYSearchViewController *searchViewController,
                       UISearchBar *searchBar,
                       NSString *searchText) {
-         [WeakSelf AxcUI_SearchVC_WithText:searchText];
+         if (searchText.length < 15) { // 手动搜索
+             [WeakSelf AxcUI_ShowToast_WithSearchText:searchText
+                             SearchViewController:searchViewController];
+         }else{ // 全文搜索
+             [WeakSelf AxcUI_SearchVC_WithText:searchText];
+         }
      }];
     searchViewController.hotSearchStyle = PYHotSearchStyleColorfulTag;
     searchViewController.searchHistoryStyle = PYSearchHistoryStyleColorfulTag;
@@ -64,29 +69,20 @@ UITableViewDelegate
 - (void)searchViewController:(PYSearchViewController *)searchViewController
          searchTextDidChange:(UISearchBar *)seachBar
                   searchText:(NSString *)searchText{
-    if (searchText.length) {
-        NSArray *searchSuggestionsM = [self AxcUI_ArrangementVC_WithText:searchText];
-        if (!searchSuggestionsM.count) {
-            [AxcUI_Toast AxcUI_showCenterWithText: NO_SearchEesults];
-            return;
-        }
-        searchViewController.searchSuggestions = searchSuggestionsM;
-    }
+    [self AxcUI_ShowToast_WithSearchText:searchText
+                    SearchViewController:searchViewController];
 }
 - (void)searchViewController:(PYSearchViewController *)searchViewController
    didSelectHotSearchAtIndex:(NSInteger)index
                   searchText:(NSString *)searchText{
-    searchViewController.searchSuggestions = [self AxcUI_ArrangementVC_WithText:searchText];
+    [self AxcUI_ShowToast_WithSearchText:searchText
+                    SearchViewController:searchViewController];
 }
 - (void)searchViewController:(PYSearchViewController *)searchViewController
 didSelectSearchHistoryAtIndex:(NSInteger)index
                   searchText:(NSString *)searchText{
-    NSArray *searchSuggestionsM = [self AxcUI_ArrangementVC_WithText:searchText];
-    if (!searchSuggestionsM.count) {
-        [AxcUI_Toast AxcUI_showCenterWithText: NO_SearchEesults];
-        return;
-    }
-    searchViewController.searchSuggestions = searchSuggestionsM;
+    [self AxcUI_ShowToast_WithSearchText:searchText
+                    SearchViewController:searchViewController];
 }
 - (void)didClickCancel:(PYSearchViewController *)searchViewController{
     if (searchViewController.searchBar.text.length) {
@@ -98,6 +94,19 @@ didSelectSearchHistoryAtIndex:(NSInteger)index
     
 }
 #pragma mark - 复用函数
+// 添加提示
+- (void)AxcUI_ShowToast_WithSearchText:(NSString *)searchText
+                  SearchViewController:(PYSearchViewController *)searchViewController{
+    if (searchText.length) {
+        NSArray *searchSuggestionsM = [self AxcUI_ArrangementVC_WithText:searchText];
+        if (!searchSuggestionsM.count) {
+            [AxcUI_Toast AxcUI_showCenterWithText: NO_SearchEesults];
+            return;
+        }
+        searchViewController.searchSuggestions = searchSuggestionsM;
+    }
+}
+
 // 排列出所有结果
 - (NSArray *)AxcUI_ArrangementVC_WithText:(NSString *)searchText{
     NSMutableArray *searchSuggestionsM = [NSMutableArray array];
@@ -115,7 +124,6 @@ didSelectSearchHistoryAtIndex:(NSInteger)index
 }
 // 搜索VC
 - (void)AxcUI_SearchVC_WithText:(NSString *)searchText{
-    BOOL searchSuccessful = NO;
     for (NSDictionary *searchDic in self.controlsNameArray) {
         NSString *name = searchDic[@"name"];
         if ([name isEqualToString:searchText]) {
@@ -123,12 +131,8 @@ didSelectSearchHistoryAtIndex:(NSInteger)index
             NSInteger row = [searchDic[@"row"] intValue];
             [self AxcUI_PushSampleVC_WithIndexPath:[NSIndexPath indexPathForRow:row
                                                                       inSection:section]];
-            searchSuccessful = YES;
             break;
         }
-    }
-    if (!searchSuccessful) {
-        [AxcUI_Toast AxcUI_showCenterWithText: NO_SearchEesults];
     }
 }
 // 推出VC

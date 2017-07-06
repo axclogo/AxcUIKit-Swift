@@ -33,6 +33,32 @@
 - (NSMutableAttributedString *)AxcUI_markWords:(NSString *)markWords
                                  addAttributes:(NSDictionary<NSString *, id> *)attrs;
 
+/**
+ *  传入需要标注的文字、 字体、匹配模式
+ */
+- (NSMutableAttributedString *)AxcUI_markWords:(NSString *)markWords
+                                 MarkWordsFont:(UIFont *)font
+                                       options:(NSStringCompareOptions)mask;
+/**
+ *  传入需要标注的文字、颜色、匹配模式
+ */
+- (NSMutableAttributedString *)AxcUI_markWords:(NSString *)markWords
+                                     withColor:(UIColor *)color
+                                       options:(NSStringCompareOptions)mask;
+/**
+ *  传入需要标注的文字、颜色、字体、匹配模式
+ */
+- (NSMutableAttributedString *)AxcUI_markWords:(NSString *)markWords
+                                     withColor:(UIColor *)color
+                                 MarkWordsFont:(UIFont *)font
+                                       options:(NSStringCompareOptions)mask;
+/**
+ *  传入需要标注的文字、富文本属性、匹配模式
+ */
+- (NSMutableAttributedString *)AxcUI_markWords:(NSString *)markWords
+                                 addAttributes:(NSDictionary<NSString *, id> *)attrs
+                                       options:(NSStringCompareOptions)mask;
+
 
 
 /* 富文本属性如下： */
