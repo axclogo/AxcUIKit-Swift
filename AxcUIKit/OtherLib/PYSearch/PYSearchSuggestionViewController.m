@@ -16,6 +16,7 @@
 
 @property (nonatomic, assign) UIEdgeInsets originalContentInset;
 
+
 @end
 
 @implementation PYSearchSuggestionViewController
@@ -43,12 +44,7 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
-- (void)viewWillDisappear:(BOOL)animated
-{
-    [super viewWillDisappear:animated];
-    
-    self.originalContentInset = self.tableView.contentInset;
-}
+
 
 - (void)keyboradFrameDidChange:(NSNotification *)notification
 {
@@ -96,6 +92,7 @@
         cell.textLabel.textColor = [UIColor darkGrayColor];
         cell.textLabel.font = [UIFont systemFontOfSize:14];
         cell.backgroundColor = [UIColor clearColor];
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 //        UIImageView *line = [[UIImageView alloc] initWithImage: [NSBundle py_imageNamed:@"cell-content-line"]];
 //        line.py_height = 0.5;
 //        line.alpha = 0.7;
@@ -134,6 +131,12 @@
         return multiple *30 +24;
     }
     return 44.0;
+}
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    
+    self.originalContentInset = self.tableView.contentInset;
+    
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
