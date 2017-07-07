@@ -30,7 +30,7 @@
     [self createSegmented];
     
     // 原作者GitHub：https://github.com/boai
-    self.instructionsLabel.text = @"根据作者boai项目BAButton改制\n感谢原作者通过类方法给我灵感，在不使用继承的方式快速融入到原有项目中\n摘取部分代码独立分割";
+    self.instructionsLabel.text = @"根据作者boai项目BAButton改制\n原作者通过类方法给我灵感，在不使用继承的方式快速融入到原有项目中\n在此感谢作者Hugo Sousa提供的使用许可";
 }
 
 // 重写SET传值，需要在图文元素确定后才能设置布局，之后参数即可动态调整  ************************************************
@@ -78,7 +78,7 @@
         _button.axcUI_Size = CGSizeMake(SCREEN_WIDTH - 150, 50);
         _button.center = self.view.center;
         _button.axcUI_Y = 140;
-        _button.backgroundColor = [UIColor clearColor];
+        _button.backgroundColor = [UIColor AxcUI_CloudColor];
         _button.layer.borderWidth = 1;
         _button.layer.borderColor = [iosSystemBlue CGColor];
         _button.layer.masksToBounds = YES;
@@ -103,9 +103,13 @@
         if (i < self.segmentedTitleArray.count) {
             UISegmentedControl *segmented = [[UISegmentedControl alloc]
                                              initWithItems:self.segmentedTitleArray[i]];
-            segmented.frame = CGRectMake(10, Y, SCREEN_WIDTH - 20, 30);
+            segmented.frame = CGRectMake(10, Y + i*10, SCREEN_WIDTH - 20, 40);
             segmented.tag = 100 + i;
             segmented.momentary = YES;
+            UIFont *font = [UIFont boldSystemFontOfSize:12];
+            NSDictionary *attributes = @{NSFontAttributeName:font};
+            [segmented setTitleTextAttributes:attributes
+                                     forState:UIControlStateNormal];
             [segmented addTarget:self action:@selector(clicksegmented:)
                 forControlEvents:UIControlEventValueChanged];
             [self.view addSubview:segmented];
@@ -115,7 +119,7 @@
             UILabel *label = [[UILabel alloc] init];
             label.axcUI_Size = CGSizeMake(width, 30);
             label.axcUI_X = 10;
-            label.axcUI_Y = Y;
+            label.axcUI_Y = Y + 30;
             label.text = self.createInstructionsLabelTextArr[i];
             label.textColor = [UIColor AxcUI_WisteriaColor];
             label.font = [UIFont systemFontOfSize:14];
@@ -123,7 +127,7 @@
             [self.labelArray addObject:label];
             
             
-            UISlider *slider = [[UISlider alloc] initWithFrame:CGRectMake(width + 30,Y, SCREEN_WIDTH - (width + 40), 30)];
+            UISlider *slider = [[UISlider alloc] initWithFrame:CGRectMake(width + 30,Y+30, SCREEN_WIDTH - (width + 40), 30)];
             [slider addTarget:self action:@selector(slidingSlider:)
              forControlEvents:UIControlEventValueChanged];
             slider.minimumValue = 0;

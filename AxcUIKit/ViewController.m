@@ -198,7 +198,6 @@ didSelectSearchHistoryAtIndex:(NSInteger)index
         _dataArray = [NSMutableArray array];
         NSMutableArray *Group1 = [NSMutableArray array];
         
-        [Group1 addObject:@{@"controlsName":@"Button+",@"describeName":@"快速按钮布局",@"VCName":@"AxcButtonLayoutVC"}];
         [Group1 addObject:@{@"controlsName":@"View+",@"describeName":@"添加晃动动画",@"VCName":@"AxcViewSharkVC"}];
         [Group1 addObject:@{@"controlsName":@"View+",@"describeName":@"添加文字闪动效果",@"VCName":@"AxcShimmeringViewVC"}];
         [Group1 addObject:@{@"controlsName":@"ImageView+",@"describeName":@"轻量加载图片",@"VCName":@"AxcLoadImageVC"}];
@@ -206,6 +205,8 @@ didSelectSearchHistoryAtIndex:(NSInteger)index
         [Group1 addObject:@{@"controlsName":@"ImageView+",@"describeName":@"基础滤镜渲染",@"VCName":@"AxcFilterVC"}];
         [Group1 addObject:@{@"controlsName":@"ImageView+",@"describeName":@"自定义/预设滤镜渲染",@"VCName":@"AxcFilterTwoVC"}];
         [Group1 addObject:@{@"controlsName":@"Image+",@"describeName":@"快速生成二维码",@"VCName":@"AxcQRCodeVC"}];
+        [Group1 addObject:@{@"controlsName":@"Button+",@"describeName":@"快速按钮布局",@"VCName":@"AxcButtonLayoutVC"}];
+
         [Group1 addObject:@{@"controlsName":@"CollectionView+",@"describeName":@"长摁拖动排序",@"VCName":@"AxcCellRearrangeVC"}];
         [Group1 addObject:@{@"controlsName":@"TableView+",@"describeName":@"下拉放大头图",@"VCName":@"AxcScrollCoverVC"}];
         [Group1 addObject:@{@"controlsName":@"TextField+",@"describeName":@"占位符参数修改",@"VCName":@"AxcModifyPlaceholderVC"}];

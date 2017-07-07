@@ -122,7 +122,6 @@ static NSString * const kpaddingInsetKey = @"axcUI_paddingInsetKey";
 }
 
 - (CGFloat)axcUI_padding{
-    NSLog(@"%.f",[objc_getAssociatedObject(self, &kpaddingKey) floatValue]);
     return [objc_getAssociatedObject(self, &kpaddingKey) floatValue];
 }
 
