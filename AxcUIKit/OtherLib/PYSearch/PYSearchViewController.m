@@ -888,7 +888,7 @@
     if (YES == self.swapHotSeachWithSearchHistory) {
         self.hotSearches = self.hotSearches;
     }
-    PYSEARCH_LOG(@"%@", [NSBundle py_localizedStringForKey:PYSearchEmptySearchHistoryLogText]);
+    // PYSEARCH_LOG(@"%@", [NSBundle py_localizedStringForKey:PYSearchEmptySearchHistoryLogText]);
 }
 
 - (void)tagDidCLick:(UITapGestureRecognizer *)gr
@@ -974,7 +974,7 @@
                 self.searchResultController.view.py_height = self.view.py_height - self.searchResultController.view.py_y;
                 self.searchSuggestionVC.view.hidden = YES;
             } else {
-                PYSEARCH_LOG(@"PYSearchDebug： searchResultController cannot be nil when searchResultShowMode is PYSearchResultShowModeEmbed.");
+                // PYSEARCH_LOG(@"PYSearchDebug： searchResultController cannot be nil when searchResultShowMode is PYSearchResultShowModeEmbed.");
             }
             break;
         case PYSearchResultShowModeCustom:
