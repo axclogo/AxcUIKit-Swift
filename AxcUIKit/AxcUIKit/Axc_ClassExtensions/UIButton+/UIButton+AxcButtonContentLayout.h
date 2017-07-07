@@ -1,5 +1,5 @@
 //
-//  UIView+BARectCorner.h
+//  UIView+AxcRectCorner.h
 //  AxcUIKit
 //
 //  Created by Axc on 2017/7/7.
@@ -28,17 +28,17 @@ typedef NS_ENUM(NSInteger, AxcButtonContentLayoutStyle) {
 @interface UIButton (AxcContentLayout)
 
 /**
- button 的布局样式，默认为：AxcButtonContentLayoutStyleNormal，注意：文字、字体大小、图片等设置一定要在设置 axcUI_buttonContentLayoutType 之前设置，要不然计算会以默认字体大小计算，导致位置偏移
+ button 的布局样式，文字、字体大小、图片等参数一定要在其之前设置，方便计算
  */
 @property(nonatomic, assign) AxcButtonContentLayoutStyle axcUI_buttonContentLayoutType;
 
 /*!
- *  文字与图片之间的间距，默认为：0
+ *  图文间距，默认为：0
  */
 @property (nonatomic, assign) CGFloat axcUI_padding;
 
 /*!
- *  文字或图片距离 button 左右边界的最小距离，默认为：5
+ *  图文边界的间距，默认为：5
  */
 @property (nonatomic, assign) CGFloat axcUI_paddingInset;
 

@@ -11,10 +11,10 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+static NSString * const kbuttonContentLayoutTypeKey = @"axcUI_buttonContentLayoutTypeKey";
+static NSString * const kpaddingKey = @"axcUI_paddingKey";
+static NSString * const kpaddingInsetKey = @"axcUI_paddingInsetKey";
 
-static void *axcUI_buttonContentLayoutTypeKey = @"axcUI_buttonContentLayoutTypeKey";
-static void *paddingKey = @"paddingKey";
-static void *axcUI_paddingInsetKey = @"axcUI_paddingInsetKey";
 
 @implementation UIButton (AxcContentLayout)
 
@@ -44,21 +44,25 @@ static void *axcUI_paddingInsetKey = @"axcUI_paddingInsetKey";
         case AxcButtonContentLayoutStyleNormal:{
             titleEdge = UIEdgeInsetsMake(0, self.axcUI_padding, 0, 0);
             imageEdge = UIEdgeInsetsMake(0, 0, 0, self.axcUI_padding);
+            self.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
         }
             break;
         case AxcButtonContentLayoutStyleCenterImageRight:{
             titleEdge = UIEdgeInsetsMake(0, -image_w - self.axcUI_padding, 0, image_w);
             imageEdge = UIEdgeInsetsMake(0, title_w + self.axcUI_padding, 0, -title_w);
+            self.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
         }
             break;
         case AxcButtonContentLayoutStyleCenterImageTop:{
             titleEdge = UIEdgeInsetsMake(0, -image_w, -image_h - self.axcUI_padding, 0);
             imageEdge = UIEdgeInsetsMake(-title_h - self.axcUI_padding, 0, 0, -title_w);
+            self.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
         }
             break;
         case AxcButtonContentLayoutStyleCenterImageBottom:{
             titleEdge = UIEdgeInsetsMake(-image_h - self.axcUI_padding, -image_w, 0, 0);
             imageEdge = UIEdgeInsetsMake(0, 0, -title_h - self.axcUI_padding, -title_w);
+            self.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
         }
             break;
         case AxcButtonContentLayoutStyleLeftImageLeft:{
@@ -93,32 +97,46 @@ static void *axcUI_paddingInsetKey = @"axcUI_paddingInsetKey";
 }
 
 
-#pragma mark - setter / getter
+#pragma mark - SET
 - (void)setAxcUI_buttonContentLayoutType:(AxcButtonContentLayoutStyle)axcUI_buttonContentLayoutType{
-    objc_setAssociatedObject(self, axcUI_buttonContentLayoutTypeKey, @(axcUI_buttonContentLayoutType), OBJC_ASSOCIATION_ASSIGN);
+    [self willChangeValueForKey:kbuttonContentLayoutTypeKey];
+    objc_setAssociatedObject(self, &kbuttonContentLayoutTypeKey,
+                             @(axcUI_buttonContentLayoutType),
+                             OBJC_ASSOCIATION_ASSIGN);
+    [self didChangeValueForKey:kbuttonContentLayoutTypeKey];
     [self setupButtonLayout];
 }
 
 - (AxcButtonContentLayoutStyle)axcUI_buttonContentLayoutType{
-    return [objc_getAssociatedObject(self, axcUI_buttonContentLayoutTypeKey) integerValue];
+    return [objc_getAssociatedObject(self, &kbuttonContentLayoutTypeKey) integerValue];
 }
 
 - (void)setAxcUI_padding:(CGFloat)axcUI_padding{
-    objc_setAssociatedObject(self, paddingKey, @(axcUI_padding), OBJC_ASSOCIATION_ASSIGN);
+    [self willChangeValueForKey:kpaddingKey];
+    objc_setAssociatedObject(self, &kpaddingKey,
+                             @(axcUI_padding),
+                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    [self didChangeValueForKey:kpaddingKey];
+
     [self setupButtonLayout];
 }
 
 - (CGFloat)axcUI_padding{
-    return [objc_getAssociatedObject(self, paddingKey) floatValue];
+    NSLog(@"%.f",[objc_getAssociatedObject(self, &kpaddingKey) floatValue]);
+    return [objc_getAssociatedObject(self, &kpaddingKey) floatValue];
 }
 
 - (void)setAxcUI_paddingInset:(CGFloat)axcUI_paddingInset{
-    objc_setAssociatedObject(self, axcUI_paddingInsetKey, @(axcUI_paddingInset), OBJC_ASSOCIATION_ASSIGN);
+    [self willChangeValueForKey:kpaddingInsetKey];
+    objc_setAssociatedObject(self, &kpaddingInsetKey,
+                             @(axcUI_paddingInset),
+                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    [self didChangeValueForKey:kpaddingInsetKey];
     [self setupButtonLayout];
 }
 
 - (CGFloat)axcUI_paddingInset{
-    return [objc_getAssociatedObject(self, axcUI_paddingInsetKey) floatValue];
+    return [objc_getAssociatedObject(self, &kpaddingInsetKey) floatValue];
 }
 
 

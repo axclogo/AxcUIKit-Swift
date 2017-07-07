@@ -149,7 +149,7 @@
 		EAAFBFE01F0E3E9D00881A62 /* UIColor+PYSearchExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = EAAFBFD81F0E3E9D00881A62 /* UIColor+PYSearchExtension.m */; };
 		EAAFBFE11F0E3E9D00881A62 /* UIView+PYSearchExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = EAAFBFDA1F0E3E9D00881A62 /* UIView+PYSearchExtension.m */; };
 		EAAFBFE51F0F2B8800881A62 /* UIButton+AxcButtonContentLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = EAAFBFE41F0F2B8800881A62 /* UIButton+AxcButtonContentLayout.m */; };
-		EAAFBFE81F0F2BA600881A62 /* UIView+BARectCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = EAAFBFE71F0F2BA600881A62 /* UIView+BARectCorner.m */; };
+		EAAFBFE81F0F2BA600881A62 /* UIView+AxcRectCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = EAAFBFE71F0F2BA600881A62 /* UIView+AxcRectCorner.m */; };
 		EAAFBFEA1F0F687400881A62 /* delected_img.png in Resources */ = {isa = PBXBuildFile; fileRef = EAAFBFE91F0F687400881A62 /* delected_img.png */; };
 		EAAFBFED1F0F6C7B00881A62 /* AxcButtonLayoutVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EAAFBFEC1F0F6C7B00881A62 /* AxcButtonLayoutVC.m */; };
 		EAD085761EEAE65F007DE2C4 /* AxcActivityHUDVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD085751EEAE65F007DE2C4 /* AxcActivityHUDVC.m */; };
@@ -488,8 +488,8 @@
 		EAAFBFDA1F0E3E9D00881A62 /* UIView+PYSearchExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+PYSearchExtension.m"; sourceTree = "<group>"; };
 		EAAFBFE31F0F2B8800881A62 /* UIButton+AxcButtonContentLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+AxcButtonContentLayout.h"; sourceTree = "<group>"; };
 		EAAFBFE41F0F2B8800881A62 /* UIButton+AxcButtonContentLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+AxcButtonContentLayout.m"; sourceTree = "<group>"; };
-		EAAFBFE61F0F2BA600881A62 /* UIView+BARectCorner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+BARectCorner.h"; sourceTree = "<group>"; };
-		EAAFBFE71F0F2BA600881A62 /* UIView+BARectCorner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+BARectCorner.m"; sourceTree = "<group>"; };
+		EAAFBFE61F0F2BA600881A62 /* UIView+AxcRectCorner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+AxcRectCorner.h"; sourceTree = "<group>"; };
+		EAAFBFE71F0F2BA600881A62 /* UIView+AxcRectCorner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+AxcRectCorner.m"; sourceTree = "<group>"; };
 		EAAFBFE91F0F687400881A62 /* delected_img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = delected_img.png; sourceTree = "<group>"; };
 		EAAFBFEB1F0F6C7B00881A62 /* AxcButtonLayoutVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcButtonLayoutVC.h; sourceTree = "<group>"; };
 		EAAFBFEC1F0F6C7B00881A62 /* AxcButtonLayoutVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcButtonLayoutVC.m; sourceTree = "<group>"; };
@@ -1027,8 +1027,8 @@
 		EA6A3B331F09DE3800E0FAAA /* UIView+ */ = {
 			isa = PBXGroup;
 			children = (
-				EAAFBFE61F0F2BA600881A62 /* UIView+BARectCorner.h */,
-				EAAFBFE71F0F2BA600881A62 /* UIView+BARectCorner.m */,
+				EAAFBFE61F0F2BA600881A62 /* UIView+AxcRectCorner.h */,
+				EAAFBFE71F0F2BA600881A62 /* UIView+AxcRectCorner.m */,
 				EA6A3B341F09DE3800E0FAAA /* UIView+AxcAutoresizingMask.h */,
 				EA6A3B351F09DE3800E0FAAA /* UIView+AxcAutoresizingMask.m */,
 				EA6A3B361F09DE3800E0FAAA /* UIView+AxcCoverEX.h */,
@@ -1651,7 +1651,7 @@
 				EA439CC41EE2DE8400D992E7 /* TestTwoVC.m in Sources */,
 				EA6A3BBD1F09DE3800E0FAAA /* AxcUI_Toast.m in Sources */,
 				EA6A3B8C1F09DE3800E0FAAA /* UIImageView+AxcNetworkLoadImage.m in Sources */,
-				EAAFBFE81F0F2BA600881A62 /* UIView+BARectCorner.m in Sources */,
+				EAAFBFE81F0F2BA600881A62 /* UIView+AxcRectCorner.m in Sources */,
 				EA439CF31EE3EAC900D992E7 /* AxcSemiModalVC.m in Sources */,
 				EA6A3BAE1F09DE3800E0FAAA /* AxcUI_BaseBarrageModel.m in Sources */,
 				EA6A3BB51F09DE3800E0FAAA /* AxcBaseProgressView.m in Sources */,

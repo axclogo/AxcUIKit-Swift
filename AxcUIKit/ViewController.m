@@ -197,6 +197,8 @@ didSelectSearchHistoryAtIndex:(NSInteger)index
     if (!_dataArray) {
         _dataArray = [NSMutableArray array];
         NSMutableArray *Group1 = [NSMutableArray array];
+        
+        [Group1 addObject:@{@"controlsName":@"Button+",@"describeName":@"快速按钮布局",@"VCName":@"AxcButtonLayoutVC"}];
         [Group1 addObject:@{@"controlsName":@"View+",@"describeName":@"添加晃动动画",@"VCName":@"AxcViewSharkVC"}];
         [Group1 addObject:@{@"controlsName":@"View+",@"describeName":@"添加文字闪动效果",@"VCName":@"AxcShimmeringViewVC"}];
         [Group1 addObject:@{@"controlsName":@"ImageView+",@"describeName":@"轻量加载图片",@"VCName":@"AxcLoadImageVC"}];

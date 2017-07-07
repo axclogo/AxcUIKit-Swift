@@ -34,7 +34,7 @@
     [self createSegmented];
     
     self.instructionsLabel.text = @"AxcUI_TagView的纯文字扩展版本，主要以展示文字标签为主的一个控件。\n架构同样借鉴的是作者zekunyan的项目TTGTagCollectionView，\n其中文字样式的定义于Config配置对象中设置";
-//self.tagTextView.axcUI_defaultConfig
+
 }
 
 

@@ -1,5 +1,5 @@
 //
-//  UIView+BARectCorner.m
+//  UIView+AxcRectCorner.m
 //  BAButton
 //
 //  Created by boai on 2017/5/19.
@@ -8,7 +8,7 @@
 #define AxcContentLayout_Objc_setObj(key, value) objc_setAssociatedObject(self, key, value, OBJC_ASSOCIATION_RETAIN_NONATOMIC)
 #define AxcContentLayout_Objc_getObj objc_getAssociatedObject(self, _cmd)
 
-#import "UIView+BARectCorner.h"
+#import "UIView+AxcRectCorner.h"
 #import <objc/runtime.h>
 
 @implementation UIView (BARectCorner)
