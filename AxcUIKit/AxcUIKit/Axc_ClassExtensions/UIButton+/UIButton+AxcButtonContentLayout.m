@@ -1,12 +1,12 @@
 //
-//  UIButton+AxcContentLayout.m
+//  UIButton+AxcButtonContentLayout.m
 //  AxcUIKit
 //
 //  Created by Axc on 2017/7/7.
 //  Copyright © 2017年 Axc_5324. All rights reserved.
 //
 
-#import "UIButton+AxcContentLayout.h"
+#import "UIButton+AxcButtonContentLayout.h"
 #import <objc/runtime.h>
 
 NS_ASSUME_NONNULL_BEGIN

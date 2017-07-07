@@ -31,7 +31,7 @@
 #import "UIImageView+AxcFilter.h"             // 快速渲染扩展
 
 // MARK: UIButton+
-#import "UIButton+AxcContentLayout.h"         // Button按钮布局的扩展
+#import "UIButton+AxcButtonContentLayout.h"         // Button按钮布局的扩展
 
 // MARK: UICollectionView+
 #import "UICollectionView+AxcCellRearrange.h" // UICollectionView可长摁拖动的扩展 iOS9以后可以调用系统方案

@@ -28,7 +28,6 @@
     button.backgroundColor = [UIColor AxcUI_OrangeColor]; // boat
     button.titleLabel.font = [UIFont systemFontOfSize:13];// tabbar_mainframeHL
     
-    
     [button setImage:[UIImage imageNamed:@"delected_img"] forState:UIControlStateNormal];
     [button setTitle:@"内容居左-图左文右" forState:UIControlStateNormal];
     button.axcUI_buttonContentLayoutType = AxcButtonContentLayoutStyleRightImageRight;
