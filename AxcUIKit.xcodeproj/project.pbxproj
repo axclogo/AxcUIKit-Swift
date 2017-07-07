@@ -148,6 +148,9 @@
 		EAAFBFDF1F0E3E9D00881A62 /* PYSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAAFBFD61F0E3E9D00881A62 /* PYSearchViewController.m */; };
 		EAAFBFE01F0E3E9D00881A62 /* UIColor+PYSearchExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = EAAFBFD81F0E3E9D00881A62 /* UIColor+PYSearchExtension.m */; };
 		EAAFBFE11F0E3E9D00881A62 /* UIView+PYSearchExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = EAAFBFDA1F0E3E9D00881A62 /* UIView+PYSearchExtension.m */; };
+		EAAFBFE51F0F2B8800881A62 /* UIButton+AxcContentLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = EAAFBFE41F0F2B8800881A62 /* UIButton+AxcContentLayout.m */; };
+		EAAFBFE81F0F2BA600881A62 /* UIView+BARectCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = EAAFBFE71F0F2BA600881A62 /* UIView+BARectCorner.m */; };
+		EAAFBFEA1F0F687400881A62 /* delected_img.png in Resources */ = {isa = PBXBuildFile; fileRef = EAAFBFE91F0F687400881A62 /* delected_img.png */; };
 		EAD085761EEAE65F007DE2C4 /* AxcActivityHUDVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD085751EEAE65F007DE2C4 /* AxcActivityHUDVC.m */; };
 		EAD0857F1EEAE851007DE2C4 /* test_4.png in Resources */ = {isa = PBXBuildFile; fileRef = EAD085781EEAE851007DE2C4 /* test_4.png */; };
 		EAD085801EEAE851007DE2C4 /* found_icons_4.png in Resources */ = {isa = PBXBuildFile; fileRef = EAD085791EEAE851007DE2C4 /* found_icons_4.png */; };
@@ -482,6 +485,11 @@
 		EAAFBFD81F0E3E9D00881A62 /* UIColor+PYSearchExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+PYSearchExtension.m"; sourceTree = "<group>"; };
 		EAAFBFD91F0E3E9D00881A62 /* UIView+PYSearchExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+PYSearchExtension.h"; sourceTree = "<group>"; };
 		EAAFBFDA1F0E3E9D00881A62 /* UIView+PYSearchExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+PYSearchExtension.m"; sourceTree = "<group>"; };
+		EAAFBFE31F0F2B8800881A62 /* UIButton+AxcContentLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+AxcContentLayout.h"; sourceTree = "<group>"; };
+		EAAFBFE41F0F2B8800881A62 /* UIButton+AxcContentLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+AxcContentLayout.m"; sourceTree = "<group>"; };
+		EAAFBFE61F0F2BA600881A62 /* UIView+BARectCorner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+BARectCorner.h"; sourceTree = "<group>"; };
+		EAAFBFE71F0F2BA600881A62 /* UIView+BARectCorner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+BARectCorner.m"; sourceTree = "<group>"; };
+		EAAFBFE91F0F687400881A62 /* delected_img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = delected_img.png; sourceTree = "<group>"; };
 		EAD085741EEAE65F007DE2C4 /* AxcActivityHUDVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcActivityHUDVC.h; sourceTree = "<group>"; };
 		EAD085751EEAE65F007DE2C4 /* AxcActivityHUDVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcActivityHUDVC.m; sourceTree = "<group>"; };
 		EAD085781EEAE851007DE2C4 /* test_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test_4.png; sourceTree = "<group>"; };
@@ -854,6 +862,7 @@
 		EA6A3AE81F09DE3700E0FAAA /* Axc_ClassExtensions */ = {
 			isa = PBXGroup;
 			children = (
+				EAAFBFE21F0F2B7C00881A62 /* UIButton+ */,
 				EA6A3AE91F09DE3700E0FAAA /* NSString+ */,
 				EA6A3AEC1F09DE3700E0FAAA /* UIColer+ */,
 				EA6A3AEF1F09DE3700E0FAAA /* UICollectionView+ */,
@@ -1013,6 +1022,8 @@
 		EA6A3B331F09DE3800E0FAAA /* UIView+ */ = {
 			isa = PBXGroup;
 			children = (
+				EAAFBFE61F0F2BA600881A62 /* UIView+BARectCorner.h */,
+				EAAFBFE71F0F2BA600881A62 /* UIView+BARectCorner.m */,
 				EA6A3B341F09DE3800E0FAAA /* UIView+AxcAutoresizingMask.h */,
 				EA6A3B351F09DE3800E0FAAA /* UIView+AxcAutoresizingMask.m */,
 				EA6A3B361F09DE3800E0FAAA /* UIView+AxcCoverEX.h */,
@@ -1269,6 +1280,15 @@
 			path = PYSearch;
 			sourceTree = "<group>";
 		};
+		EAAFBFE21F0F2B7C00881A62 /* UIButton+ */ = {
+			isa = PBXGroup;
+			children = (
+				EAAFBFE31F0F2B8800881A62 /* UIButton+AxcContentLayout.h */,
+				EAAFBFE41F0F2B8800881A62 /* UIButton+AxcContentLayout.m */,
+			);
+			path = "UIButton+";
+			sourceTree = "<group>";
+		};
 		EAD085771EEAE851007DE2C4 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
@@ -1276,6 +1296,7 @@
 				EAD085861EEAFFDC007DE2C4 /* HUD_Icon */,
 				EAD085781EEAE851007DE2C4 /* test_4.png */,
 				EA6A3BC91F09F3C100E0FAAA /* test_5.jpg */,
+				EAAFBFE91F0F687400881A62 /* delected_img.png */,
 				EAD085791EEAE851007DE2C4 /* found_icons_4.png */,
 				EAD0857A1EEAE851007DE2C4 /* placeholder.jpg */,
 				EAD0857B1EEAE851007DE2C4 /* test_0.jpg */,
@@ -1525,6 +1546,7 @@
 				EAD085D61EEAFFDC007DE2C4 /* HUD_7.png in Resources */,
 				EA530A761F0CC20E00F562FD /* bus.png in Resources */,
 				EA530A7C1F0CC20E00F562FD /* platform.png in Resources */,
+				EAAFBFEA1F0F687400881A62 /* delected_img.png in Resources */,
 				EAD085B11EEAFFDC007DE2C4 /* HUD_1.png in Resources */,
 				EA530A861F0CC20E00F562FD /* vehicle.png in Resources */,
 				EA530A751F0CC20E00F562FD /* boat.png in Resources */,
@@ -1624,6 +1646,7 @@
 				EA439CC41EE2DE8400D992E7 /* TestTwoVC.m in Sources */,
 				EA6A3BBD1F09DE3800E0FAAA /* AxcUI_Toast.m in Sources */,
 				EA6A3B8C1F09DE3800E0FAAA /* UIImageView+AxcNetworkLoadImage.m in Sources */,
+				EAAFBFE81F0F2BA600881A62 /* UIView+BARectCorner.m in Sources */,
 				EA439CF31EE3EAC900D992E7 /* AxcSemiModalVC.m in Sources */,
 				EA6A3BAE1F09DE3800E0FAAA /* AxcUI_BaseBarrageModel.m in Sources */,
 				EA6A3BB51F09DE3800E0FAAA /* AxcBaseProgressView.m in Sources */,
@@ -1634,6 +1657,7 @@
 				EA6A3BB11F09DE3800E0FAAA /* AxcUI_BarrageView.m in Sources */,
 				EA6A3B941F09DE3800E0FAAA /* NSData+ImageContentType.m in Sources */,
 				EA6A3B821F09DE3800E0FAAA /* UICollectionView+AxcCellRearrange.m in Sources */,
+				EAAFBFE51F0F2B8800881A62 /* UIButton+AxcContentLayout.m in Sources */,
 				EA6A3BB01F09DE3800E0FAAA /* AxcUI_ScrollBarrageModel.m in Sources */,
 				EA6A3B9E1F09DE3800E0FAAA /* UIView+AxcAutoresizingMask.m in Sources */,
 				EA87DAE21F073D8000452D2D /* AxcBarrageScrollEngineVC.m in Sources */,
