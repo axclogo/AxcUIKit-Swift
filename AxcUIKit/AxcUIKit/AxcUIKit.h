@@ -15,7 +15,6 @@
 // MARK: UIView+
 #import "UIView+AxcShaking.h"                 // 左右晃动的动画扩展
 #import "UIView+AxcShimmeringView.h"          // 为View添加闪动效果
-#import "UIView+AxcRectCorner.h"              // 快速倒圆角
 
 // MARK: UITextField+
 #import "UITextField+AxcModifyPlaceholder.h"  // UITextField快速修改Placeholder属性
@@ -32,7 +31,7 @@
 #import "UIImageView+AxcFilter.h"             // 快速渲染扩展
 
 // MARK: UIButton+
-#import "UIButton+AxcButtonContentLayout.h"         // Button按钮布局的扩展
+#import "UIButton+AxcButtonContentLayout.h"   // Button按钮布局的扩展
 
 // MARK: UICollectionView+
 #import "UICollectionView+AxcCellRearrange.h" // UICollectionView可长摁拖动的扩展 iOS9以后可以调用系统方案
