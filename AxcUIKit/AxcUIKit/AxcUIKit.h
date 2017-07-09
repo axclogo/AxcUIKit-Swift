@@ -28,7 +28,7 @@
 #import "Axc_WebimageCache.h"                 // 清理图片缓存的工具
 #import "UIImageView+AxcImageLoader.h"        // ImageView自动添加Progress指示器扩展
 #import "UIImageView+AxcWebCache.h"           // ImageView的图片处理
-#import "UIImageView+AxcFilter.h"             // 快速渲染扩展
+#import "UIImageView+AxcFilter.h"             // 快速滤镜扩展
 
 // MARK: UIButton+
 #import "UIButton+AxcButtonContentLayout.h"   // Button按钮布局的扩展

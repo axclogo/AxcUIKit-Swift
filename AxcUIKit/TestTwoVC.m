@@ -41,7 +41,7 @@
     [button setTitle:@"内容居右-图右文左" forState:UIControlStateNormal];
     button.axcUI_buttonContentLayoutType =  arc4random()%8;
     button.axcUI_padding = 10;
-    NSLog(@"%ld",button.axcUI_buttonContentLayoutType);
+    NSLog(@"%ld",(long)button.axcUI_buttonContentLayoutType);
 }
 
 @end
