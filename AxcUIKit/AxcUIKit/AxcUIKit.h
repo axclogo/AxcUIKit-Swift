@@ -30,6 +30,9 @@
 #import "UIImageView+AxcWebCache.h"           // ImageView的图片处理
 #import "UIImageView+AxcFilter.h"             // 快速滤镜扩展
 
+// MARK: UILabel+
+#import "UILabel+AxcCopyable.h"               // Label添加长摁复制功能
+
 // MARK: UIButton+
 #import "UIButton+AxcButtonContentLayout.h"   // Button按钮布局的扩展
 

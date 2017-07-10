@@ -206,6 +206,8 @@
 		EAD085E71EEB11BC007DE2C4 /* test.gif in Resources */ = {isa = PBXBuildFile; fileRef = EAD085E61EEB11BC007DE2C4 /* test.gif */; };
 		EAD086261EED09B7007DE2C4 /* AxcShimmeringViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD086251EED09B7007DE2C4 /* AxcShimmeringViewVC.m */; };
 		EAD0875C1EED4DAD007DE2C4 /* test_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EAD0875B1EED4DAD007DE2C4 /* test_1.jpg */; };
+		EADC7D241F13705D004AF7D8 /* UILabel+AxcCopyable.m in Sources */ = {isa = PBXBuildFile; fileRef = EADC7D231F13705D004AF7D8 /* UILabel+AxcCopyable.m */; };
+		EADC7D271F1370E4004AF7D8 /* AxcCopyableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EADC7D261F1370E4004AF7D8 /* AxcCopyableVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -549,6 +551,10 @@
 		EAD086241EED09B7007DE2C4 /* AxcShimmeringViewVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcShimmeringViewVC.h; sourceTree = "<group>"; };
 		EAD086251EED09B7007DE2C4 /* AxcShimmeringViewVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcShimmeringViewVC.m; sourceTree = "<group>"; };
 		EAD0875B1EED4DAD007DE2C4 /* test_1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test_1.jpg; sourceTree = "<group>"; };
+		EADC7D221F13705D004AF7D8 /* UILabel+AxcCopyable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+AxcCopyable.h"; sourceTree = "<group>"; };
+		EADC7D231F13705D004AF7D8 /* UILabel+AxcCopyable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+AxcCopyable.m"; sourceTree = "<group>"; };
+		EADC7D251F1370E4004AF7D8 /* AxcCopyableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcCopyableVC.h; sourceTree = "<group>"; };
+		EADC7D261F1370E4004AF7D8 /* AxcCopyableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcCopyableVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -801,6 +807,8 @@
 				EA6A3BC11F09E11700E0FAAA /* AxcFilterTwoVC.m */,
 				EAAFBFEB1F0F6C7B00881A62 /* AxcButtonLayoutVC.h */,
 				EAAFBFEC1F0F6C7B00881A62 /* AxcButtonLayoutVC.m */,
+				EADC7D251F1370E4004AF7D8 /* AxcCopyableVC.h */,
+				EADC7D261F1370E4004AF7D8 /* AxcCopyableVC.m */,
 			);
 			name = Extension;
 			sourceTree = "<group>";
@@ -988,6 +996,8 @@
 		EA6A3B271F09DE3800E0FAAA /* UILabel+ */ = {
 			isa = PBXGroup;
 			children = (
+				EADC7D221F13705D004AF7D8 /* UILabel+AxcCopyable.h */,
+				EADC7D231F13705D004AF7D8 /* UILabel+AxcCopyable.m */,
 				EA6A3B281F09DE3800E0FAAA /* UILabel+AxcShimmering.h */,
 				EA6A3B291F09DE3800E0FAAA /* UILabel+AxcShimmering.m */,
 			);
@@ -1641,6 +1651,7 @@
 				EA6A3BB21F09DE3800E0FAAA /* AxcUI_Label.m in Sources */,
 				EA6A3B891F09DE3800E0FAAA /* UIImage+AxcQRCode.m in Sources */,
 				EA6A3BC21F09E11700E0FAAA /* AxcFilterTwoVC.m in Sources */,
+				EADC7D241F13705D004AF7D8 /* UILabel+AxcCopyable.m in Sources */,
 				EA439CD11EE2FAB500D992E7 /* AxcViewSharkVC.m in Sources */,
 				EA87DA6C1F04D3DF00452D2D /* AxcQRCodeVC.m in Sources */,
 				EA439CC41EE2DE8400D992E7 /* TestTwoVC.m in Sources */,
@@ -1655,6 +1666,7 @@
 				EAD085761EEAE65F007DE2C4 /* AxcActivityHUDVC.m in Sources */,
 				EA5252C21EF523CB0016C687 /* AxcActivityIndicatorViewVC.m in Sources */,
 				EA6A3BB11F09DE3800E0FAAA /* AxcUI_BarrageView.m in Sources */,
+				EADC7D271F1370E4004AF7D8 /* AxcCopyableVC.m in Sources */,
 				EA6A3B941F09DE3800E0FAAA /* NSData+ImageContentType.m in Sources */,
 				EA6A3B821F09DE3800E0FAAA /* UICollectionView+AxcCellRearrange.m in Sources */,
 				EAAFBFE51F0F2B8800881A62 /* UIButton+AxcButtonContentLayout.m in Sources */,
