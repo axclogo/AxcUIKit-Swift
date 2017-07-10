@@ -94,8 +94,9 @@
 - (UISegmentedControl *)shimmeringTypeSegmented{
     if (!_shimmeringTypeSegmented) {
         _shimmeringTypeSegmented = [[UISegmentedControl alloc] initWithItems:@[@"歌词模式",
-                                                                               @"闪烁左到右",
-                                                                               @"闪烁右到左",
+                                                                               @"左到右",
+                                                                               @"右到左",
+                                                                               @"反复左右",
                                                                                @"全闪烁"]];
         _shimmeringTypeSegmented.frame = CGRectMake(10, 190,
                                             self.view.axcUI_Width - 20, 30);

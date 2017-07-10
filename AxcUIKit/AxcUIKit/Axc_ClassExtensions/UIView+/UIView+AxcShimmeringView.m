@@ -157,7 +157,21 @@ static NSString * const ktextEdgeInsets = @"axcUI_textEdgeInsets";
         basicAnimation.removedOnCompletion = NO;
         basicAnimation.fillMode = kCAFillModeForwards;
         [self.AxcfrontLabel.layer.mask addAnimation:basicAnimation forKey:nil];
-    }else{
+    }else if(type == AxcShimmeringViewStyleFadeReverse){
+        
+        [self createiPhoneFadeMask];
+        CABasicAnimation *basicAnimation = [CABasicAnimation animation];
+        basicAnimation.keyPath = @"transform.translation.x";
+        basicAnimation.fromValue = @(0);
+        basicAnimation.toValue = @(self.bounds.size.width+self.bounds.size.width/2.0);
+        basicAnimation.duration = duration;
+        basicAnimation.repeatCount = LONG_MAX;
+        basicAnimation.removedOnCompletion = NO;
+        basicAnimation.autoreverses = YES;
+        basicAnimation.fillMode = kCAFillModeForwards;
+        [self.AxcfrontLabel.layer.mask addAnimation:basicAnimation forKey:nil];
+        
+    }else if(type == AxcShimmeringViewStyleFadeAll){
         [self createShimmerAllMask];
         CABasicAnimation *basicAnimation = [CABasicAnimation animationWithKeyPath:@"opacity"];
         basicAnimation.repeatCount = MAXFLOAT;

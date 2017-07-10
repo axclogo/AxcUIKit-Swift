@@ -14,6 +14,7 @@ typedef NS_ENUM(NSUInteger, AxcShimmeringViewStyle) {
     AxcShimmeringViewStyleOverallFilling,   // 歌词模式
     AxcShimmeringViewStyleFadeLeftToRight,  // 从左到右解锁模式
     AxcShimmeringViewStyleFadeRightToLeft,  // 从右到左解锁模式
+    AxcShimmeringViewStyleFadeReverse,      // 从左右循环（秘籍~反复横跳）
     AxcShimmeringViewStyleFadeAll           // 整体闪烁
 };
 
