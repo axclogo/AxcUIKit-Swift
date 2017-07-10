@@ -11,8 +11,9 @@
 #import "AxcUI_Label.h"
 
 typedef NS_ENUM(NSUInteger, AxcShimmeringViewStyle) {
-    AxcShimmeringViewStyleFadeRight,
-    AxcShimmeringViewStyleiPhoneFade
+    AxcShimmeringViewStyleOverallFilling,   // 歌词模式
+    AxcShimmeringViewStyleFadeLeftToRight,  // 从左到右解锁模式
+    AxcShimmeringViewStyleFadeRightToLeft   // 从右到左解锁模式
 };
 
 
