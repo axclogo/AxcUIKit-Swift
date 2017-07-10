@@ -146,7 +146,7 @@ static NSString * const ktextEdgeInsets = @"axcUI_textEdgeInsets";
         basicAnimation.removedOnCompletion = NO;
         basicAnimation.fillMode = kCAFillModeForwards;
         [self.AxcfrontLabel.layer.mask addAnimation:basicAnimation forKey:nil];
-    }else{
+    }else if(type == AxcShimmeringViewStyleFadeRightToLeft){
         [self createiPhoneFadeMask];
         CABasicAnimation *basicAnimation = [CABasicAnimation animation];
         basicAnimation.keyPath = @"transform.translation.x";
@@ -157,27 +157,51 @@ static NSString * const ktextEdgeInsets = @"axcUI_textEdgeInsets";
         basicAnimation.removedOnCompletion = NO;
         basicAnimation.fillMode = kCAFillModeForwards;
         [self.AxcfrontLabel.layer.mask addAnimation:basicAnimation forKey:nil];
+    }else{
+        [self createShimmerAllMask];
+        CABasicAnimation *basicAnimation = [CABasicAnimation animationWithKeyPath:@"opacity"];
+        basicAnimation.repeatCount = MAXFLOAT;
+        basicAnimation.autoreverses = true;
+        basicAnimation.fromValue = @(0.0);
+        basicAnimation.toValue = @(1.0);
+        basicAnimation.duration = duration;
+        
+        [self.AxcfrontLabel.layer addAnimation:basicAnimation forKey:@"start"];
+        [self.AxcfrontLabel.layer.mask addAnimation:basicAnimation forKey:nil];
     }
 }
 
+- (void)createShimmerAllMask{
+    [self.AxcfrontLabel.layer removeAllAnimations];
+    CAGradientLayer *layer = [CAGradientLayer layer];
+    layer.frame = self.bounds;
+    layer.colors = @[(id)[UIColor clearColor].CGColor,(id)[UIColor redColor].CGColor,(id)[UIColor clearColor].CGColor];
+    layer.transform = CATransform3DIdentity;
+
+    self.AxcfrontLabel.layer.mask = layer;
+}
+
 - (void)createiPhoneFadeMask{
+    [self.AxcfrontLabel.layer removeAllAnimations];
     CAGradientLayer *layer = [CAGradientLayer layer];
     layer.frame = self.bounds;
     layer.colors = @[(id)[UIColor clearColor].CGColor,(id)[UIColor redColor].CGColor,(id)[UIColor clearColor].CGColor];
     layer.locations = @[@(0.25),@(0.5),@(0.75)];
     layer.startPoint = CGPointMake(0, 0);
     layer.endPoint = CGPointMake(1, 0);
+
     self.AxcfrontLabel.layer.mask = layer;
     
     layer.position = CGPointMake(-self.bounds.size.width/4.0, self.bounds.size.height/2.0);
 }
 
 - (void)createFadeRightMask{
+    [self.AxcfrontLabel.layer removeAllAnimations];
     CAGradientLayer *layer = [CAGradientLayer layer];
     layer.frame = self.bounds;
     layer.colors = @[(id)[UIColor clearColor],(id)[UIColor redColor].CGColor,(id)[UIColor blackColor].CGColor,(id)[UIColor clearColor].CGColor];
     layer.locations = @[@(0.01),@(0.1),@(0.9),@(0.99)];
-    
+
     self.AxcfrontLabel.layer.mask = layer;
 }
 
