@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+
+// 支持XIB使用
 /**
     一个类别,使长按UILabel复制功能。
  */

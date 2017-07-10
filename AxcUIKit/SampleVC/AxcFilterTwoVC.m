@@ -50,7 +50,7 @@ UICollectionViewDelegateFlowLayout
         make.centerX.mas_equalTo(0);
     }];
 
-    self.instructionsLabel.text = @"以下为预设的滤镜渲染，效率一般，如果有多组图片需要渲染需要做分线程和缓存处理\n示例中对CollectionView使用了简单的Image缓存处理，只有在第一次滑动时会进行渲染，之后会从缓存中取出渲染过的图片直接展示。";
+    self.instructionsLabel.text = @"以下为预设的【颜色矩阵】滤镜渲染，效率一般，如果有多组图片需要渲染需要做分线程和缓存处理\n可自定义颜色矩阵使用相关函数调用渲染";
     
 }
 
@@ -71,7 +71,7 @@ UICollectionViewDelegateFlowLayout
 //        0,  0.1f, 1.6f, 0, -73.1f,
 //        0,  0, 0, 1.0f, 0 };
 //    self.MainImageView.image = [UIImageView AxcUI_drawingWithImage:<#(UIImage *)#>  // 输入即将渲染的image
-//                                                   withColorMatrix:colormatrix_lomo]; // 渲染的参数/数组参数
+//                                                   withColorMatrix:colormatrix_lomo]; // 渲染的颜色矩阵数组
 }
 
 
