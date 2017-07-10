@@ -34,7 +34,7 @@
 }
 
 // 重写SET传值，需要在图文元素确定后才能设置布局，之后参数即可动态调整  ************************************************
-- (void)clicksegmented:(UISegmentedControl *)sender{
+- (void)clicksegmented:(UISegmentedControl *)sender{    // 两排控制布局的选择器
     NSInteger tag = sender.tag - 100;
     NSArray *arr = self.segmentedTitleArray[tag];
     switch (tag) {
