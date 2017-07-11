@@ -13,9 +13,11 @@
 
 
 
-@interface TestTwoVC (){
-    UIButton *button;
+@interface TestTwoVC ()<UITableViewDelegate,UITableViewDataSource>
+{
+    NSInteger type;
 }
+
 
 @end
 
@@ -24,24 +26,54 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    button = [[UIButton alloc] initWithFrame:CGRectMake(10, 100, 300, 200)];
-    button.backgroundColor = [UIColor AxcUI_OrangeColor]; // boat
-    button.titleLabel.font = [UIFont systemFontOfSize:13];// tabbar_mainframeHL
+    [self.view addSubview:self.tableView];
     
-    [button setImage:[UIImage imageNamed:@"delected_img"] forState:UIControlStateNormal];
-    [button setTitle:@"内容居左-图左文右" forState:UIControlStateNormal];
-    button.axcUI_buttonContentLayoutType = AxcButtonContentLayoutStyleRightImageRight;
-    button.axcUI_padding = 10;
     
-    [self.view addSubview:button];
-    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemSearch
+                                                                                          target:self
+                                                                                          action:@selector(clickRightSearchBtn)];
+}
+// 点击了搜索
+- (void)clickRightSearchBtn{
+
+    type ++;
+    if (type > 7) {
+        type = 0;
+    }
+    [self.tableView reloadData];
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    [button setTitle:@"内容居右-图右文左" forState:UIControlStateNormal];
-    button.axcUI_buttonContentLayoutType =  arc4random()%8;
-    button.axcUI_padding = 10;
-    NSLog(@"%ld",(long)button.axcUI_buttonContentLayoutType);
+    
 }
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
+    [cell AxcUI_cellAppearAnimateStyle:type indexPath:indexPath];
+}
+
+- (NSInteger )tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 50;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"axc"];
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"axc"];
+    }
+    cell.textLabel.text = @"123";
+    return cell;
+}
+
+
+- (UITableView *)tableView{
+    if (!_tableView) {
+        _tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
+        _tableView.delegate = self;
+        _tableView.dataSource = self;
+        
+    }
+    return _tableView;
+}
+
 
 @end

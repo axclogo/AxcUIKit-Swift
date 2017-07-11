@@ -9,6 +9,7 @@
 #import "SampleBaseVC.h"
 
 @interface TestTwoVC : SampleBaseVC
+@property(nonatomic,strong)UITableView *tableView;
 
 @end
 
