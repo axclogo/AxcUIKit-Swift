@@ -13,7 +13,7 @@
 
 
 @property(nonatomic,strong)NSArray *dataArray;
-
+@property(nonatomic, strong)UILabel *label;
 
 @end
 
@@ -27,7 +27,19 @@
 #pragma mark - SET区
 
 #pragma mark - 懒加载区
-
+- (UILabel *)label{
+    if (!_label) {
+        _label = [[UILabel alloc] initWithFrame:CGRectMake(10, 100, SCREEN_WIDTH - 20, 40)];
+        _label.text = @"";
+        _label.backgroundColor = [UIColor AxcUI_CloudColor];
+        _label.layer.borderWidth = 1;
+        _label.layer.borderColor = [iosSystemBlue CGColor];
+        _label.layer.masksToBounds = YES;
+        _label.layer.cornerRadius = 5;
+        _label.titleLabel.font = [UIFont systemFontOfSize:13];
+    }
+    return _label;
+}
 
 
 @end
