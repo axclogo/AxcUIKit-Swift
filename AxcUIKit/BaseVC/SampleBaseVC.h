@@ -16,5 +16,11 @@
 @property(nonatomic, strong) AxcUI_Label *instructionsLabel;
 
 
+- (void)AxcBase_addRightBarButtonItemSystemItem:(UIBarButtonSystemItem)systemItem;
+- (void)AxcBase_clickRightBtn:(UIBarButtonItem *)sender;
+
+- (void)AxcBase_addRightBarButtonItems:(NSArray *)items;
+- (void)AxcBase_clickRightItems:(UIBarButtonItem *)sender;
+
 
 @end

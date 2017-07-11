@@ -248,19 +248,13 @@
 
 - (NSArray *)textArray{
     if (!_textArray) {
-        _textArray = @[@"这几天有时间看了下UICollectionView的东西",@"才发觉它真的非常强大",
-                       @"基本使用",@"UICollectionView",@"自定义布局",@"自定义插入删除动画",
-                       @"自定义转场动画",@"UICollectionView相对于UITableView",@"可以说是青出于蓝而胜于蓝",
-                       @"它和",@"UITableView",@"布局形式比较单一",@"局限于",@"行列表",@"独立的类"];
+        _textArray = ArcStrArray;
     }
     return _textArray;
 }
 - (NSArray *)imageNameArray{
     if (!_imageNameArray) {
-        _imageNameArray = @[@"heart-empty",@"heart-full",@"heart-half",@"airplane",@"bike",@"boat",@"bus",
-                            @"cable",@"car",@"express",@"light-rail",@"plane",@"platform",
-                            @"railway",@"ship",@"shuttle",@"stop",@"subway",@"taxi",@"telpher",
-                            @"train",@"tram",@"vehicle"];
+        _imageNameArray = SmallIconImages;
     }
     return _imageNameArray;
 }

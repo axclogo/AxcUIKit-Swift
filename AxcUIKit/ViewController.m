@@ -209,6 +209,7 @@ didSelectSearchHistoryAtIndex:(NSInteger)index
         [Group1 addObject:@{@"controlsName":@"Label+",@"describeName":@"Label长按复制剪贴板",@"VCName":@"AxcCopyableVC"}];
 
         [Group1 addObject:@{@"controlsName":@"CollectionView+",@"describeName":@"长摁拖动排序",@"VCName":@"AxcCellRearrangeVC"}];
+        [Group1 addObject:@{@"controlsName":@"TableView+",@"describeName":@"空集的占位View",@"VCName":@"AxcEmptyDataVC"}];
         [Group1 addObject:@{@"controlsName":@"TableView+",@"describeName":@"下拉放大头图",@"VCName":@"AxcScrollCoverVC"}];
         [Group1 addObject:@{@"controlsName":@"TextField+",@"describeName":@"占位符参数修改",@"VCName":@"AxcModifyPlaceholderVC"}];
         [Group1 addObject:@{@"controlsName":@"ViewController+",@"describeName":@"动画推出View/VC",@"VCName":@"AxcSemiModalVC"}];

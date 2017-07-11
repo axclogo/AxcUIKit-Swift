@@ -36,26 +36,32 @@
 // MARK: UIButton+
 #import "UIButton+AxcButtonContentLayout.h"   // Button按钮布局的扩展
 
-// MARK: UICollectionView+
-#import "UICollectionView+AxcCellRearrange.h" // UICollectionView可长摁拖动的扩展 iOS9以后可以调用系统方案
-
 // MARK: UIScrollView+
 #import "UIScrollView+AxcScrollCover.h"       // 下拉自动放大头图的扩展
+
+// MARK: UITableView+
+#import "UITableView+AxcEmptyData.h"          // TableView无数据时添加占位View
+
+// MARK: UICollectionView+
+#import "UICollectionView+AxcCellRearrange.h" // UICollectionView可长摁拖动的扩展 iOS9以后可以调用系统方案
 
 // MARK: UIViewController+
 #import "UIViewController+AxcSemiModal.h"     // VC推出动画效果框架扩展
 
-// MARK: UILabel+
-#import "UILabel+AxcShimmering.h"             // 文字闪动效果
+
 
 
 /***********************************工具类***************************************/
 // MARK: NSString+
 #import "NSString+AxcTextCalculation.h"       // 工具类，计算文字宽和高
 #import "NSString+AxcReplaceRichText.h"       // 修改文本中部分字体的属性
+// MARK: UIImage+
+#import "UIImage+AxcTransfromBitmap.h"        // 缩放位图扩展
 // MARK: UIView+
 #import "UIView+AxcExtension.h"               // 可修改属性的类扩展
 #import "UIView+AxcAutoresizingMask.h"        // 自动拉伸的类扩展
+// MARK: UILabel+
+#import "UILabel+AxcShimmering.h"             // 文字闪动效果(框架内部Api)
 // MARK: UIColor+
 #import "UIColor+AxcColor.h"                  // COLOR扩展颜色类
 // MARK: UITableViewCell+

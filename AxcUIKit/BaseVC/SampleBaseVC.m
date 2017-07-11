@@ -24,7 +24,30 @@
     self.view.backgroundColor = [UIColor whiteColor];
     self.automaticallyAdjustsScrollViewInsets = NO;
     self.instructionsLabelHeight = 100;
+    
 }
+- (void)AxcBase_addRightBarButtonItems:(NSArray *)items{
+    NSMutableArray *arr_M = [NSMutableArray array];
+    [items enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        UIBarButtonItem *btn = [[UIBarButtonItem alloc] initWithTitle:obj
+                                                                style:UIBarButtonItemStyleDone
+                                                               target:self
+                                                               action:@selector(AxcBase_clickRightItems:)];
+        btn.tag = idx + 5324;
+        [arr_M addObject:btn];
+    }];
+    self.navigationItem.rightBarButtonItems = arr_M;
+}
+- (void)AxcBase_clickRightItems:(UIBarButtonItem *)sender{}
+
+
+- (void)AxcBase_addRightBarButtonItemSystemItem:(UIBarButtonSystemItem)systemItem{
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]
+                                              initWithBarButtonSystemItem:systemItem
+                                              target:self
+                                              action:@selector(AxcBase_clickRightBtn:)];
+}
+- (void)AxcBase_clickRightBtn:(UIBarButtonItem *)sender{}
 
 
 - (UILabel *)instructionsLabel{

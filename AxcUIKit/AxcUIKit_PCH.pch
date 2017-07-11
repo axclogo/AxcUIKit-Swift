@@ -17,7 +17,10 @@
 
 #ifdef __OBJC__
 
-//#import "AxcUIKit.h"
+#define SmallIconImages @[@"heart-empty",@"heart-full",@"heart-half",@"airplane",@"bike",@"boat",@"bus",@"cable",@"car",@"express",@"light-rail",@"plane",@"platform",@"railway",@"ship",@"shuttle",@"stop",@"subway",@"taxi",@"telpher",@"train",@"tram",@"vehicle"];
+
+#define ArcStrArray @[@"这几天有时间看了下UICollectionView的东西",@"才发觉它真的非常强大",@"基本使用",@"UICollectionView",@"自定义布局",@"自定义插入删除动画",@"自定义转场动画",@"UICollectionView相对于UITableView",@"可以说是青出于蓝而胜于蓝",@"它和",@"UITableView",@"布局形式比较单一",@"局限于",@"行列表",@"独立的类",@"这些文字都是瞎写的",@"都是测试文字",@"不要纠结关于他的真实性",@"当您点击按钮或选择具有焦点的按钮时，该按钮将执行附加的任何操作。您使用文本标签，图像或两者来传达按钮的目的。按钮的外观是可配置的，因此您可以使用色调按钮或格式标题来匹配应用程序的设计。您可以通过编程方式或使用Interface Builder向界面添加按钮",@"按钮使用Target-Action设计模式通知您的应用程序，当用户点击按钮。而不是直接处理触摸事件，您可以向按钮分配操作方法，并指定哪些事件触发对您的方法的调用。在运行时，该按钮可处理所有传入的触摸事件并调用您的方法作为响应。"]
+
 #import "EfficientMacroDefinition.h"
 
 #import <Masonry.h>

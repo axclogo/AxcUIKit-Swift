@@ -22,6 +22,9 @@ typedef NS_ENUM(NSUInteger, AxcCellAppearAnimateStyle) {
 
 @interface UITableViewCell (AxcAnimation)
 
+/**
+    此API尚未完善，仅能在示例中使用
+ */
 - (void)AxcUI_cellAppearAnimateStyle:(AxcCellAppearAnimateStyle )type indexPath:(NSIndexPath *)indexPath;
 
 @end
