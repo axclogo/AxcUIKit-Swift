@@ -60,6 +60,8 @@
 // MARK: UIView+
 #import "UIView+AxcExtension.h"               // 可修改属性的类扩展
 #import "UIView+AxcAutoresizingMask.h"        // 自动拉伸的类扩展
+#import "UIView+AxcRectCorner.h"              // 快速切圆角
+
 // MARK: UILabel+
 #import "UILabel+AxcShimmering.h"             // 文字闪动效果(框架内部Api)
 // MARK: UIColor+

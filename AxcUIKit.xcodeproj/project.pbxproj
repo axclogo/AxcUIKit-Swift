@@ -214,6 +214,7 @@
 		EADC7D3A1F14D17C004AF7D8 /* Load_failed.png in Resources */ = {isa = PBXBuildFile; fileRef = EADC7D391F14D17C004AF7D8 /* Load_failed.png */; };
 		EADC7D401F14D643004AF7D8 /* Refresh_Img.png in Resources */ = {isa = PBXBuildFile; fileRef = EADC7D3F1F14D643004AF7D8 /* Refresh_Img.png */; };
 		EADC7D431F14D705004AF7D8 /* UIImage+AxcTransfromBitmap.m in Sources */ = {isa = PBXBuildFile; fileRef = EADC7D421F14D705004AF7D8 /* UIImage+AxcTransfromBitmap.m */; };
+		EADC7D461F15BCB1004AF7D8 /* UIView+AxcRectCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = EADC7D451F15BCB1004AF7D8 /* UIView+AxcRectCorner.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -571,6 +572,8 @@
 		EADC7D3F1F14D643004AF7D8 /* Refresh_Img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Refresh_Img.png; sourceTree = "<group>"; };
 		EADC7D411F14D705004AF7D8 /* UIImage+AxcTransfromBitmap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+AxcTransfromBitmap.h"; sourceTree = "<group>"; };
 		EADC7D421F14D705004AF7D8 /* UIImage+AxcTransfromBitmap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+AxcTransfromBitmap.m"; sourceTree = "<group>"; };
+		EADC7D441F15BCB1004AF7D8 /* UIView+AxcRectCorner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+AxcRectCorner.h"; sourceTree = "<group>"; };
+		EADC7D451F15BCB1004AF7D8 /* UIView+AxcRectCorner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+AxcRectCorner.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1066,6 +1069,8 @@
 				EA6A3B3B1F09DE3800E0FAAA /* UIView+AxcShaking.m */,
 				EA6A3B3C1F09DE3800E0FAAA /* UIView+AxcShimmeringView.h */,
 				EA6A3B3D1F09DE3800E0FAAA /* UIView+AxcShimmeringView.m */,
+				EADC7D441F15BCB1004AF7D8 /* UIView+AxcRectCorner.h */,
+				EADC7D451F15BCB1004AF7D8 /* UIView+AxcRectCorner.m */,
 			);
 			path = "UIView+";
 			sourceTree = "<group>";
@@ -1741,6 +1746,7 @@
 				EA6A3B811F09DE3800E0FAAA /* UIColor+AxcColor.m in Sources */,
 				EAD085E21EEB03E4007DE2C4 /* AxcActivityHUDEffectVC.m in Sources */,
 				EA6A3B931F09DE3800E0FAAA /* Axc_WebImageManager.m in Sources */,
+				EADC7D461F15BCB1004AF7D8 /* UIView+AxcRectCorner.m in Sources */,
 				EA6A3B801F09DE3800E0FAAA /* NSString+AxcTextCalculation.m in Sources */,
 				EA6A3BAA1F09DE3800E0FAAA /* AxcBarrageClock.m in Sources */,
 				EA439CFB1EE3ECBC00D992E7 /* AxcSemiModalHeaderView.m in Sources */,

@@ -15,7 +15,7 @@
 
 @interface TestTwoVC ()<UITableViewDelegate,UITableViewDataSource>
 {
-    NSInteger type;
+    UIView *view;
 }
 
 
@@ -26,54 +26,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self.view addSubview:self.tableView];
     
-    
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemSearch
-                                                                                          target:self
-                                                                                          action:@selector(clickRightSearchBtn)];
-}
-// 点击了搜索
-- (void)clickRightSearchBtn{
+    view = [[UIView alloc] initWithFrame:CGRectMake(100, 100, 100, 100)];
+    view.backgroundColor = [UIColor lightGrayColor];
+    [self.view addSubview:view];
+    view.axcUI_cornerRadii = 10;
+    view.axcUI_rectCorner = UIRectCornerTopRight | UIRectCornerTopLeft;
+    view.axcUI_rectCorner = UIRectCornerTopLeft | UIRectCornerBottomRight | UIRectCornerBottomLeft;
+    view.axcUI_cornerRadii = 50;
 
-    type ++;
-    if (type > 7) {
-        type = 0;
-    }
-    [self.tableView reloadData];
-}
-
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     
 }
-
-- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
-    [cell AxcUI_cellAppearAnimateStyle:type indexPath:indexPath];
-}
-
-- (NSInteger )tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 50;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"axc"];
-    if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"axc"];
-    }
-    cell.textLabel.text = @"123";
-    return cell;
-}
-
-
-- (UITableView *)tableView{
-    if (!_tableView) {
-        _tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
-        _tableView.delegate = self;
-        _tableView.dataSource = self;
-        
-    }
-    return _tableView;
-}
-
 
 @end
