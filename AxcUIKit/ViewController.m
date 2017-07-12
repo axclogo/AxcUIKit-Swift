@@ -200,6 +200,7 @@ didSelectSearchHistoryAtIndex:(NSInteger)index
         
         [Group1 addObject:@{@"controlsName":@"View+",@"describeName":@"添加晃动动画",@"VCName":@"AxcViewSharkVC"}];
         [Group1 addObject:@{@"controlsName":@"View+",@"describeName":@"添加文字闪动效果",@"VCName":@"AxcShimmeringViewVC"}];
+        [Group1 addObject:@{@"controlsName":@"View+",@"describeName":@"快速切圆角",@"VCName":@"AxcRectCornerVC"}];
         [Group1 addObject:@{@"controlsName":@"ImageView+",@"describeName":@"轻量加载图片",@"VCName":@"AxcLoadImageVC"}];
         [Group1 addObject:@{@"controlsName":@"ImageView+",@"describeName":@"添加Progress",@"VCName":@"AxcImageLoaderVC"}];
         [Group1 addObject:@{@"controlsName":@"ImageView+",@"describeName":@"基础滤镜渲染",@"VCName":@"AxcFilterVC"}];
