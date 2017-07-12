@@ -12,7 +12,7 @@
 
 #import "UIImage+AxcImageName.h"
 
-#define kDefaultTintColor               [UIColor redColor]
+#define kDefaultaxcUI_tintColor               [UIColor redColor]
 #define kDefaultBorderColor             [UIColor clearColor]
 #define kDefaultBorderWidth             1.0f
 #define kElasticDuration                0.5f
@@ -112,14 +112,14 @@ CGFloat distanceBetweenPoints (CGPoint p1, CGPoint p2) {
     
     self.backgroundColor = [UIColor clearColor];
     
-    _tintColor = kDefaultTintColor;
-    _hiddenWhenZero = YES;
-    _fontSizeAutoFit = NO;
+    _axcUI_tintColor = kDefaultaxcUI_tintColor;
+    _axcUI_hiddenWhenZero = YES;
+    _axcUI_fontSizeAutoFit = NO;
     
     _shapeLayer = [CAShapeLayer new];
     [self.layer addSublayer:_shapeLayer];
     _shapeLayer.frame = CGRectMake(0, 0, _size.width, _size.height);
-    _shapeLayer.fillColor = _tintColor.CGColor;
+    _shapeLayer.fillColor = _axcUI_tintColor.CGColor;
     
     _radius = _size.width/2;
     _originPoint = CGPointMake(kPaddingSize+_radius, kPaddingSize+_radius);
@@ -163,36 +163,44 @@ CGFloat distanceBetweenPoints (CGPoint p1, CGPoint p2) {
     [self removeGestureRecognizer:_panGestureRecognizer];
 }
 
-- (void)setTintColor:(UIColor *)tintColor {
-    _tintColor = tintColor?tintColor:kDefaultTintColor;
-    _shapeLayer.fillColor = _tintColor.CGColor;
+- (void)setAxcUI_fontSizeAutoFit:(BOOL)axcUI_fontSizeAutoFit{
+    _axcUI_fontSizeAutoFit = axcUI_fontSizeAutoFit;
+    [self setNeedsDisplay];
 }
 
-- (void)setFont:(UIFont *)font {
-    [_textLabel setFont:font];
+- (void)setAxcUI_tintColor:(UIColor *)axcUI_tintColor{
+    _axcUI_tintColor = axcUI_tintColor?axcUI_tintColor:kDefaultaxcUI_tintColor;
+    _shapeLayer.fillColor = _axcUI_tintColor.CGColor;
 }
 
-- (void)setFontSize:(CGFloat)fontSize {
-    [_textLabel setFont:[_textLabel.font fontWithSize:fontSize]];
+- (void)setAxcUI_font:(UIFont *)axcUI_font {
+    _axcUI_font = axcUI_font;
+    [_textLabel setFont:axcUI_font];
 }
 
-- (void)setText:(NSString *)text {
-    _text = [text copy];
+- (void)setAxcUI_fontSize:(CGFloat)axcUI_fontSize {
+    _axcUI_fontSize = axcUI_fontSize;
+    [_textLabel setFont:[_textLabel.font fontWithSize:axcUI_fontSize]];
+}
+
+- (void)setAxcUI_text:(NSString *)axcUI_text {
+    _axcUI_text = [axcUI_text copy];
     
-    _textLabel.text = text;
+    _textLabel.text = axcUI_text;
     _textLabel.hidden = NO;
     
     self.hidden = NO;
-    if (_hiddenWhenZero
-        && ([text isEqualToString:@"0"] || [text isEqualToString:@""])) {
+    if (_axcUI_hiddenWhenZero
+        && ([axcUI_text isEqualToString:@"0"] || [axcUI_text isEqualToString:@""])) {
         self.hidden = YES;
     }
     
     [self reset];
 }
 
-- (void)setTextColor:(UIColor *)textColor {
-    _textLabel.textColor = textColor;
+- (void)setAxcUI_textColor:(UIColor *)axcUI_textColor {
+    _axcUI_textColor = axcUI_textColor;
+    _textLabel.textColor = _axcUI_textColor;
 }
 
 - (void)reset {
@@ -231,7 +239,7 @@ CGFloat distanceBetweenPoints (CGPoint p1, CGPoint p2) {
     _toRadius = _radius-kToRadiusScaleCoefficient*r;
     _viscosity = (_maxDistance != 0)?(1.0-r/_maxDistance):1.0f;
     
-    if (_fontSizeAutoFit) {
+    if (_axcUI_fontSizeAutoFit) {
         _textLabel.font = [_textLabel.font fontWithSize:(_textLabel.text.length)?((2*_toRadius)/(1.2*_textLabel.text.length)):kDefaultFontSize];
     }
     _textLabel.center = _toPoint;

@@ -1,10 +1,10 @@
- //
- //  AxcUI_BadgeView.h
- //  AxcUIKit
- //
- //  Created by Axc on 2017/7/12.
- //  Copyright © 2017年 Axc_5324. All rights reserved.
- //
+//
+//  AxcUI_BadgeView.h
+//  AxcUIKit
+//
+//  Created by Axc on 2017/7/12.
+//  Copyright © 2017年 Axc_5324. All rights reserved.
+//
 
 #import <UIKit/UIKit.h>
 
@@ -28,36 +28,36 @@
 /**
  * 颜色
  */
-@property (nonatomic, strong) UIColor* tintColor;
+@property (nonatomic, strong) UIColor* axcUI_tintColor;
 
 /**
  * 当文本是0的时候默认YES隐藏
  */
-@property (nonatomic, assign) BOOL hiddenWhenZero;
+@property (nonatomic, assign) BOOL axcUI_hiddenWhenZero;
 
 /**
  * 文本大小 默认16
  */
-@property (nonatomic, strong) UIFont* font;
+@property (nonatomic, strong) UIFont* axcUI_font;
 
 /**
  * 文本大小 默认16
  */
-@property (nonatomic, assign) CGFloat fontSize;
+@property (nonatomic, assign) CGFloat axcUI_fontSize;
 
 /**
  * 自适应文本大小，默认NO
  */
-@property (nonatomic, assign) BOOL fontSizeAutoFit;
+@property (nonatomic, assign) BOOL axcUI_fontSizeAutoFit;
 
 /**
  * 文本
  */
-@property (nonatomic, strong) NSString* text;
+@property (nonatomic, strong) NSString* axcUI_text;
 
 /**
  * 文本颜色
  */
-@property (nonatomic, strong) UIColor* textColor;
+@property (nonatomic, strong) UIColor* axcUI_textColor;
 
 @end

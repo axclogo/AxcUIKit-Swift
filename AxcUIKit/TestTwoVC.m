@@ -39,8 +39,8 @@
     AxcUI_BadgeView *dragView = [[AxcUI_BadgeView alloc] init];
     dragView.center = self.view.center;
     dragView.axcUI_Size = CGSizeMake(30, 30);
-    dragView.text = @"3";
-    dragView.font = [UIFont systemFontOfSize:10];
+    dragView.axcUI_text = @"3";
+    dragView.axcUI_font = [UIFont systemFontOfSize:10];
     [self.view addSubview:dragView];
 }
 

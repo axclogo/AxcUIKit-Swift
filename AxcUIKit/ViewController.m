@@ -208,7 +208,6 @@ didSelectSearchHistoryAtIndex:(NSInteger)index
         [Group1 addObject:@{@"controlsName":@"Image+",@"describeName":@"快速生成二维码",@"VCName":@"AxcQRCodeVC"}];
         [Group1 addObject:@{@"controlsName":@"Button+",@"describeName":@"Button快速布局",@"VCName":@"AxcButtonLayoutVC"}];
         [Group1 addObject:@{@"controlsName":@"Label+",@"describeName":@"Label长按复制剪贴板",@"VCName":@"AxcCopyableVC"}];
-
         [Group1 addObject:@{@"controlsName":@"CollectionView+",@"describeName":@"长摁拖动排序",@"VCName":@"AxcCellRearrangeVC"}];
         [Group1 addObject:@{@"controlsName":@"TableView+",@"describeName":@"空集的占位View",@"VCName":@"AxcEmptyDataVC"}];
         [Group1 addObject:@{@"controlsName":@"TableView+",@"describeName":@"下拉放大头图",@"VCName":@"AxcScrollCoverVC"}];
@@ -225,6 +224,8 @@ didSelectSearchHistoryAtIndex:(NSInteger)index
         
         [Group2 addObject:@{@"controlsName":@"AxcUI_BarrageView",@"describeName":@"独立弹幕/视图容器",@"VCName":@"AxcBarrageViewVC"}];
         [Group2 addObject:@{@"controlsName":@"AxcUI_BarrageScrollEngine",@"describeName":@"弹幕渲染引擎",@"VCName":@"AxcBarrageScrollEngineVC"}];
+        
+        [Group2 addObject:@{@"controlsName":@"AxcUI_BadgeView",@"describeName":@"可拖拽数字气泡",@"VCName":@"AxcBadgeViewVC"}];
         
         [Group2 addObject:@{@"controlsName":@"AxcUI_Label",@"describeName":@"动态设置文字边距",@"VCName":@"AxcLabelVC"}];
         
