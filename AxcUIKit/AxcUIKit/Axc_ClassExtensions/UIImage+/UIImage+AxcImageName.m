@@ -36,7 +36,9 @@
     return 0;
 }
 
-
++(UIImage *)AxcUI_axcUIBoundleImageName:(NSString *)name{
+    return [UIImage imageNamed:[NSString stringWithFormat:@"AxcUIKitBundle.bundle/%@",name]];
+}
 
 
 

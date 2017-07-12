@@ -19,5 +19,10 @@
  */
 + (int )AxcUI_fileSizeAtPath:(NSString*) filePath;
 
+/**
+ *  获取Boundle里的图片
+ */
++(UIImage *)AxcUI_axcUIBoundleImageName:(NSString *)name;
+
 
 @end

@@ -4,7 +4,7 @@
 #import "UIColor+AxcColor.h"
 #import "UIImage+AxcLoadGIF.h"
 #import "UILabel+AxcShimmering.h"
-
+#import "UIImage+AxcImageName.h"
 
 
 
@@ -412,7 +412,11 @@
         }];
         __block CGFloat length = BoundsWidthFor(Screen)/10;
         UIImageView *tickCrossImageView = [[UIImageView alloc] initWithFrame:CGRectMake(ViewFrameWidth/2-length/2, length/3, length, length)];
-        tickCrossImageView.image = [UIImage imageNamed:success?@"AxcUI_ActivityHUD_successful":@"AxcUI_ActivityHUD_cross"];
+        if (success) {
+            tickCrossImageView.image = [UIImage AxcUI_axcUIBoundleImageName:@"AxcUI_ActivityHUD_successful"];
+        }else{
+            tickCrossImageView.image = [UIImage AxcUI_axcUIBoundleImageName:@"AxcUI_ActivityHUD_cross"];
+        }
         tickCrossImageView.image = [tickCrossImageView.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
         tickCrossImageView.tintColor = [UIColor AxcUI_InverseColorFor:self.backgroundColor];
         [self addSubview:tickCrossImageView];
