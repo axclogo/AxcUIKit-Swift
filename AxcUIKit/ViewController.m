@@ -201,12 +201,17 @@ didSelectSearchHistoryAtIndex:(NSInteger)index
         [Group1 addObject:@{@"controlsName":@"View+",@"describeName":@"添加晃动动画",@"VCName":@"AxcViewSharkVC"}];
         [Group1 addObject:@{@"controlsName":@"View+",@"describeName":@"添加文字闪动效果",@"VCName":@"AxcShimmeringViewVC"}];
         [Group1 addObject:@{@"controlsName":@"View+",@"describeName":@"快速切圆角",@"VCName":@"AxcRectCornerVC"}];
+        
         [Group1 addObject:@{@"controlsName":@"ImageView+",@"describeName":@"轻量加载图片",@"VCName":@"AxcLoadImageVC"}];
         [Group1 addObject:@{@"controlsName":@"ImageView+",@"describeName":@"添加Progress",@"VCName":@"AxcImageLoaderVC"}];
         [Group1 addObject:@{@"controlsName":@"ImageView+",@"describeName":@"基础滤镜渲染",@"VCName":@"AxcFilterVC"}];
         [Group1 addObject:@{@"controlsName":@"ImageView+",@"describeName":@"自定义/预设滤镜渲染",@"VCName":@"AxcFilterTwoVC"}];
+        
         [Group1 addObject:@{@"controlsName":@"Image+",@"describeName":@"快速生成二维码",@"VCName":@"AxcQRCodeVC"}];
+        
         [Group1 addObject:@{@"controlsName":@"Button+",@"describeName":@"Button快速布局",@"VCName":@"AxcButtonLayoutVC"}];
+        [Group1 addObject:@{@"controlsName":@"Button+",@"describeName":@"Button快速设置倒计时",@"VCName":@"AxcButtonCountDownVC"}];
+        
         [Group1 addObject:@{@"controlsName":@"Label+",@"describeName":@"Label长按复制剪贴板",@"VCName":@"AxcCopyableVC"}];
         [Group1 addObject:@{@"controlsName":@"CollectionView+",@"describeName":@"长摁拖动排序",@"VCName":@"AxcCellRearrangeVC"}];
         [Group1 addObject:@{@"controlsName":@"TableView+",@"describeName":@"空集的占位View",@"VCName":@"AxcEmptyDataVC"}];

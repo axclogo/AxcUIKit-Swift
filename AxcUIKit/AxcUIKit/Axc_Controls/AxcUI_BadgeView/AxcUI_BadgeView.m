@@ -83,14 +83,14 @@ CGFloat distanceBetweenPoints (CGPoint p1, CGPoint p2) {
 }
 
 - (instancetype)initWithFrame:(CGRect)frame {
-    return [self initWithFrame:frame dragdropCompletion:nil];
+    return [self initWithFrame:frame axcUI_dragdropCompletion:nil];
 }
 
 - (instancetype)initWithFrame:(CGRect)frame
-           dragdropCompletion:(void(^)())dragdropCompletion {
+           axcUI_dragdropCompletion:(void(^)())axcUI_dragdropCompletion {
     self = [super initWithFrame:frame];
     if (self) {
-        self.dragdropCompletion = dragdropCompletion;
+        self.axcUI_dragdropCompletion = axcUI_dragdropCompletion;
         [self setup];
     }
     return self;
@@ -439,8 +439,8 @@ CGFloat distanceBetweenPoints (CGPoint p1, CGPoint p2) {
                 [self resignUpper];
             });
             
-            if (self.dragdropCompletion) {
-                self.dragdropCompletion();
+            if (self.axcUI_dragdropCompletion) {
+                self.axcUI_dragdropCompletion();
             }
         }
         

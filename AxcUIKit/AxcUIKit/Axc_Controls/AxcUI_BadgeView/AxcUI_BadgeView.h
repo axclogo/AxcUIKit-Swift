@@ -18,12 +18,12 @@
  * 快速构造方法
  */
 - (instancetype)initWithFrame:(CGRect)frame
-           dragdropCompletion:(void(^)())dragdropCompletion;
+           axcUI_dragdropCompletion:(void(^)())axcUI_dragdropCompletion;
 
 /**
  * 拖拽结束的回调
  */
-@property (nonatomic, copy) void(^dragdropCompletion)();
+@property (nonatomic, copy) void(^axcUI_dragdropCompletion)();
 
 /**
  * 颜色
