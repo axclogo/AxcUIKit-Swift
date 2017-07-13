@@ -99,7 +99,6 @@ static NSString * const kimageAlgorithmStyle = @"axcUI_imageAlgorithmStyle";
             self.image = [UIImageView AxcUI_drawingWithImage:self.image withColorMatrix:colormatrix_liangdu]; break;
         case AxcFilterPresetStyleHighGray:
             self.image = [UIImageView AxcUI_drawingWithImage:self.image withColorMatrix:colormatrix_huidu]; break;
-            
         default:
             break;
     }
