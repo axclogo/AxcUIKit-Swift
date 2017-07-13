@@ -7,6 +7,7 @@
 //
 
 #import "UIImageView+AxcFilter.h"
+#import "UIImage+AxcSpecialEffectsDrawing.h"
 
 #import <objc/runtime.h>
 
@@ -19,9 +20,47 @@ static NSString * const kfilterColorControlsFilter = @"axcUI_filterColorControls
 static NSString * const kfilterContext = @"axcUI_filterContext";
 static NSString * const kfilterDynamicRendering = @"axcUI_filterDynamicRendering";
 static NSString * const kfilterPresetStyle = @"axcUI_filterPresetStyle";
+static NSString * const kimageAlgorithmStyle = @"axcUI_imageAlgorithmStyle";
 
 
 @implementation UIImageView (AxcFilter)
+
+- (void)setAxcUI_imageAlgorithmStyle:(AxcImageAlgorithmStyle)axcUI_imageAlgorithmStyle{
+    [self willChangeValueForKey:kimageAlgorithmStyle];
+    objc_setAssociatedObject(self, &kimageAlgorithmStyle,
+                             @(axcUI_imageAlgorithmStyle),
+                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    [self didChangeValueForKey:kimageAlgorithmStyle];
+    switch (axcUI_imageAlgorithmStyle) {
+        case AxcImageAlgorithmStyleMosaic:
+            self.image = [self.image AxcUI_drawingWithMosaic]; break;
+        case AxcImageAlgorithmStyleGaussianBlur:
+            self.image = [self.image AxcUI_drawingWithGaussianBlur]; break;
+        case AxcImageAlgorithmStyleEdgeDetection:
+            self.image = [self.image AxcUI_drawingWithEdgeDetection]; break;
+        case AxcImageAlgorithmStyleEmboss:
+            self.image = [self.image AxcUI_drawingWithEmboss]; break;
+        case AxcImageAlgorithmStyleSharpen:
+            self.image = [self.image AxcUI_drawingWithSharpen]; break;
+        case AxcImageAlgorithmStyleNnsharpen:
+            self.image = [self.image AxcUI_drawingWithNnsharpen]; break;
+        case AxcImageAlgorithmStyleDilate:
+            self.image = [self.image AxcUI_drawingWithDilate]; break;
+        case AxcImageAlgorithmStyleErode:
+            self.image = [self.image AxcUI_drawingWithErode]; break;
+        case AxcImageAlgorithmStyleEqualization:
+            self.image = [self.image AxcUI_drawingWithEqualization]; break;
+        default:
+            break;
+    }
+}
+
+- (AxcImageAlgorithmStyle)axcUI_imageAlgorithmStyle{
+    return [objc_getAssociatedObject(self, &kfilterPresetStyle) integerValue];
+}
+
+
+
 
 - (void)setAxcUI_filterPresetStyle:(AxcFilterPresetStyle)axcUI_filterPresetStyle{
     [self willChangeValueForKey:kfilterPresetStyle];

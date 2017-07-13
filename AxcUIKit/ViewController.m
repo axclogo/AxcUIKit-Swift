@@ -206,6 +206,7 @@ didSelectSearchHistoryAtIndex:(NSInteger)index
         [Group1 addObject:@{@"controlsName":@"ImageView+",@"describeName":@"添加Progress",@"VCName":@"AxcImageLoaderVC"}];
         [Group1 addObject:@{@"controlsName":@"ImageView+",@"describeName":@"基础滤镜渲染",@"VCName":@"AxcFilterVC"}];
         [Group1 addObject:@{@"controlsName":@"ImageView+",@"describeName":@"自定义/预设滤镜渲染",@"VCName":@"AxcFilterTwoVC"}];
+        [Group1 addObject:@{@"controlsName":@"ImageView+",@"describeName":@"形态学图像运算",@"VCName":@"AxcFilterThreeVC"}];
         
         [Group1 addObject:@{@"controlsName":@"Image+",@"describeName":@"快速生成二维码",@"VCName":@"AxcQRCodeVC"}];
         

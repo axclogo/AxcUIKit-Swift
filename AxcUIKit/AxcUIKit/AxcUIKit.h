@@ -23,6 +23,7 @@
 // MARK: UIImage+
 #import "UIImage+AxcImageName.h"              // 为Image扩展根据图片大小来是否加入内存缓存
 #import "UIImage+AxcQRCode.h"                 // Image扩展自动生成二维码
+#import "UIImage+AxcSpecialEffectsDrawing.h"  // 图像算法/形态学图像处理
 
 // MARK: UIImageView+
 #import "UIImageView+AxcNetworkLoadImage.h"   // 根据AFN和SD结合简单封装的一套异步加载图片的小型框架

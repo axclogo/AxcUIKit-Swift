@@ -15,66 +15,57 @@
  *  预设滤镜风格
  */
 typedef NS_ENUM(NSUInteger, AxcFilterPresetStyle) {
-    /**
-     *  LOMO
-     */
+    /** LOMO */
     AxcFilterPresetStyleLOMO,
-    /**
-     *  黑白
-     */
+    /** 黑白 */
     AxcFilterPresetStyleBlackWhite,
-    /**
-     *  复古
-     */
+    /** 复古 */
     AxcFilterPresetStyleRestoringAncientWays,
-    /**
-     *  哥特
-     */
+    /** 哥特 */
     AxcFilterPresetStyleGothic,
-    /**
-     *  锐化
-     */
+    /** 锐化 */
     AxcFilterPresetStyleSharpen,
-    /**
-     *  淡雅
-     */
+    /** 淡雅 */
     AxcFilterPresetStyleQuietlyElegant,
-    /**
-     *  酒红
-     */
+    /** 酒红 */
     AxcFilterPresetStyleRedWine,
-    /**
-     *  清宁
-     */
+    /** 清宁 */
     AxcFilterPresetStyleQingNing,
-    /**
-     *  浪漫
-     */
+    /** 浪漫 */
     AxcFilterPresetStyleRomantic,
-    /**
-     *  光晕
-     */
+    /** 光晕 */
     AxcFilterPresetStyleHalo,
-    /**
-     *  蓝调
-     */
+    /** 蓝调 */
     AxcFilterPresetStyleBlues,
-    /**
-     *  梦幻
-     */
+    /** 梦幻 */
     AxcFilterPresetStyleDream,
-    /**
-     *  夜色
-     */
+    /** 夜色 */
     AxcFilterPresetStyleDimLightNight,
-    /**
-     *  增加亮度
-     */
+    /** 增加亮度 */
     AxcFilterPresetStyleIncreaseLight,
-    /**
-     *  高灰度
-     */
+    /** 高灰度 */
     AxcFilterPresetStyleHighGray
+};
+
+typedef NS_ENUM(NSUInteger, AxcImageAlgorithmStyle) {
+    /** 马赛克 */
+    AxcImageAlgorithmStyleMosaic,
+    /** 高斯模糊 */
+    AxcImageAlgorithmStyleGaussianBlur,
+    /** 边缘锐化 */
+    AxcImageAlgorithmStyleEdgeDetection,
+    /** 浮雕 */
+    AxcImageAlgorithmStyleEmboss,
+    /** 锐化 */
+    AxcImageAlgorithmStyleSharpen,
+    /** 进一步锐化 */
+    AxcImageAlgorithmStyleNnsharpen,
+    /** 形态膨胀/扩张 */
+    AxcImageAlgorithmStyleDilate,
+    /** 侵蚀 */
+    AxcImageAlgorithmStyleErode,
+    /** 均衡运算 */
+    AxcImageAlgorithmStyleEqualization,
 };
 
 
@@ -113,7 +104,10 @@ typedef NS_ENUM(NSUInteger, AxcFilterPresetStyle) {
 @property(nonatomic, assign)AxcFilterPresetStyle axcUI_filterPresetStyle;
 
 
-
+/**
+ *  预设图像算法处理
+ */
+@property(nonatomic, assign)AxcImageAlgorithmStyle axcUI_imageAlgorithmStyle;
 
 
 
