@@ -135,10 +135,10 @@
 - (UIView *)testView{
     if (!_testView) {
         _testView = [[UIView alloc] init];
-        _testView.axcUI_Size = CGSizeMake(SCREEN_WIDTH - 20, 250);
+        _testView.axcUI_Size = CGSizeMake(200, 200);
         _testView.center = self.view.center;
         _testView.axcUI_Y = 100;
-        _testView.backgroundColor = [UIColor AxcUI_ArcPresetColor];
+        _testView.backgroundColor = [UIColor AxcUI_EmeraldColor];
         // 初始20，看起来大一点
         _testView.axcUI_cornerRadii = 20;
     }

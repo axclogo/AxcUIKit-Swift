@@ -163,9 +163,19 @@ CGFloat distanceBetweenPoints (CGPoint p1, CGPoint p2) {
     [self removeGestureRecognizer:_panGestureRecognizer];
 }
 
+- (void)setAxcUI_hiddenWhenZero:(BOOL)axcUI_hiddenWhenZero{
+    _axcUI_hiddenWhenZero = axcUI_hiddenWhenZero;
+    self.axcUI_text = self.axcUI_text;
+    [self setNeedsDisplay];
+}
+
 - (void)setAxcUI_fontSizeAutoFit:(BOOL)axcUI_fontSizeAutoFit{
     _axcUI_fontSizeAutoFit = axcUI_fontSizeAutoFit;
+    self.axcUI_text = self.axcUI_text;
     [self setNeedsDisplay];
+    if (!axcUI_fontSizeAutoFit) {
+        _textLabel.font = self.axcUI_font;
+    }
 }
 
 - (void)setAxcUI_tintColor:(UIColor *)axcUI_tintColor{
