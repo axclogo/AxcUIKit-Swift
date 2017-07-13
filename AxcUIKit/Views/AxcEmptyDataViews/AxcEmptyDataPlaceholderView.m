@@ -11,7 +11,7 @@
 #import "UIColor+AxcColor.h"
 #import "UIView+AxcExtension.h"
 #import "UIButton+AxcButtonContentLayout.h"
-#import "UIImage+AxcTransfromBitmap.h"
+#import "UIImage+AxcTransfromZoom.h"
 
 @implementation AxcEmptyDataPlaceholderView
 
@@ -74,8 +74,7 @@
     
     // 设置图像大小
     [button setContentMode:UIViewContentModeScaleAspectFit];
-    [button setImage:[[UIImage imageNamed:@"Refresh_Img"] AxcUI_transformWidth:20
-                                                                        height:20]
+    [button setImage:[[UIImage imageNamed:@"Refresh_Img"] AxcUI_transformImageScale:0.2]
             forState:UIControlStateNormal];
     
     // 设置布局

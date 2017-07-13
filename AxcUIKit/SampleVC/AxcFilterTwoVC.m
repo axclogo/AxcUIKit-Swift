@@ -58,7 +58,7 @@ UICollectionViewDelegateFlowLayout
     self.MainImageView.image = self.originalImage.copy;             // 恢复成原图
     if (indexPath.row != 0) { // 如果选择的不是原图
         // 重写SET传值，无先后顺序，设置即可动态调整  ************************************************
-        self.MainImageView.axcUI_filterPresetStyle = indexPath.row - 1;     // 然后设置渲染风格/样式（共预设13种样式）
+        self.MainImageView.axcUI_filterPresetStyle = indexPath.row - 1;     // 然后设置渲染风格/样式（共预设15种样式）
         // 如果渲染图为镂空图则会有偏差
     }
     self.filterNameLabel.text = [NSString stringWithFormat:@"当前滤镜：%@",self.titleArray[indexPath.row]];
@@ -72,6 +72,7 @@ UICollectionViewDelegateFlowLayout
 //        0,  0, 0, 1.0f, 0 };
 //    self.MainImageView.image = [UIImageView AxcUI_drawingWithImage:<#(UIImage *)#>  // 输入即将渲染的image
 //                                                   withColorMatrix:colormatrix_lomo]; // 渲染的颜色矩阵数组
+    // 了解颜色矩阵传送门：http://www.cnblogs.com/yjmyzz/archive/2010/10/16/1852878.html
 }
 
 
@@ -225,7 +226,7 @@ UICollectionViewDelegateFlowLayout
 - (NSArray *)titleArray{
     if (!_titleArray) {
         _titleArray = @[@"原图",@"LOMO",@"黑白",@"复古",@"哥特",@"锐化",@"淡雅",@"酒红",
-                        @"清宁",@"浪漫",@"光晕",@"蓝调",@"梦幻",@"夜色"];
+                        @"清宁",@"浪漫",@"光晕",@"蓝调",@"梦幻",@"夜色",@"亮度",@"高灰度"];
     }
     return _titleArray;
 }

@@ -102,3 +102,18 @@ const float colormatrix_yese[] = {
     0.0f, 0.0f, 0.0f, 1.0f, 0.0f
 };
 
+// 14、增加亮度
+const float colormatrix_liangdu[] = {
+    1.0f, 0.0f, 0.0f, 0.0f, 50.0f,
+    0.0f, 1.1f, 0.0f, 0.0f, 50.0f,
+    0.0f, 0.0f, 1.0f, 0.0f, 50.0f,
+    0.0f, 0.0f, 0.0f, 1.0f, 0.0f
+};
+
+// 15、高灰度
+const float colormatrix_huidu[] = {
+    0.33f, 0.33f, 0.33f, 0.0f, 0.0f,
+    0.33f, 0.33f, 0.33f, 0.0f, 0.0f,
+    0.33f, 0.33f, 0.33f, 0.0f, 0.0f,
+    0.0f,  0.0f,  0.0f,  1.0f, 0.0f
+};

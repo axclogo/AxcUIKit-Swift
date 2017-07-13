@@ -56,6 +56,11 @@ static NSString * const kfilterPresetStyle = @"axcUI_filterPresetStyle";
             self.image = [UIImageView AxcUI_drawingWithImage:self.image withColorMatrix:colormatrix_menghuan]; break;
         case AxcFilterPresetStyleDimLightNight:
             self.image = [UIImageView AxcUI_drawingWithImage:self.image withColorMatrix:colormatrix_yese]; break;
+        case AxcFilterPresetStyleIncreaseLight:
+            self.image = [UIImageView AxcUI_drawingWithImage:self.image withColorMatrix:colormatrix_liangdu]; break;
+        case AxcFilterPresetStyleHighGray:
+            self.image = [UIImageView AxcUI_drawingWithImage:self.image withColorMatrix:colormatrix_huidu]; break;
+            
         default:
             break;
     }
@@ -64,6 +69,10 @@ static NSString * const kfilterPresetStyle = @"axcUI_filterPresetStyle";
 - (AxcFilterPresetStyle)axcUI_filterPresetStyle{
     return [objc_getAssociatedObject(self, &kfilterPresetStyle) integerValue];
 }
+
+
+
+
 
 static CGContextRef CreateRGBABitmapContext (CGImageRef inImage)// 返回一个使用RGBA通道的位图上下文
 {

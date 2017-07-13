@@ -15,6 +15,7 @@
 // MARK: UIView+
 #import "UIView+AxcShaking.h"                 // 左右晃动的动画扩展
 #import "UIView+AxcShimmeringView.h"          // 为View添加闪动效果
+#import "UIView+AxcRectCorner.h"              // 快速切圆角
 
 // MARK: UITextField+
 #import "UITextField+AxcModifyPlaceholder.h"  // UITextField快速修改Placeholder属性
@@ -57,11 +58,10 @@
 #import "NSString+AxcTextCalculation.h"       // 工具类，计算文字宽和高
 #import "NSString+AxcReplaceRichText.h"       // 修改文本中部分字体的属性
 // MARK: UIImage+
-#import "UIImage+AxcTransfromBitmap.h"        // 缩放位图扩展
+#import "UIImage+AxcTransfromZoom.h"          // 图片缩放扩展
 // MARK: UIView+
 #import "UIView+AxcExtension.h"               // 可修改属性的类扩展
 #import "UIView+AxcAutoresizingMask.h"        // 自动拉伸的类扩展
-#import "UIView+AxcRectCorner.h"              // 快速切圆角
 
 // MARK: UILabel+
 #import "UILabel+AxcShimmering.h"             // 文字闪动效果(框架内部Api)

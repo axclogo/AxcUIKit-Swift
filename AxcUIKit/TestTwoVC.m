@@ -17,6 +17,7 @@
 @interface TestTwoVC ()<UITableViewDelegate,UITableViewDataSource>
 {
     UIView *view;
+    UIImageView *imageV;
 }
 
 
@@ -28,20 +29,30 @@
     [super viewDidLoad];
     
     
-    view = [[UIView alloc] initWithFrame:CGRectMake(100, 100, 100, 100)];
-    view.backgroundColor = [UIColor lightGrayColor];
-    [self.view addSubview:view];
-    view.axcUI_cornerRadii = 10;
-    view.axcUI_rectCorner = UIRectCornerTopRight | UIRectCornerTopLeft;
-    view.axcUI_rectCorner = UIRectCornerTopLeft | UIRectCornerBottomRight | UIRectCornerBottomLeft;
-    view.axcUI_cornerRadii = 50;
+//    view = [[UIView alloc] initWithFrame:CGRectMake(100, 100, 100, 100)];
+//    view.backgroundColor = [UIColor lightGrayColor];
+//    [self.view addSubview:view];
+//    view.axcUI_cornerRadii = 10;
+//    view.axcUI_rectCorner = UIRectCornerTopRight | UIRectCornerTopLeft;
+//    view.axcUI_rectCorner = UIRectCornerTopLeft | UIRectCornerBottomRight | UIRectCornerBottomLeft;
+//    view.axcUI_cornerRadii = 50;
+//
+//    AxcUI_BadgeView *dragView = [[AxcUI_BadgeView alloc] init];
+//    dragView.center = self.view.center;
+//    dragView.axcUI_Size = CGSizeMake(30, 30);
+//    dragView.axcUI_text = @"3";
+//    dragView.axcUI_font = [UIFont systemFontOfSize:10];
+//    [self.view addSubview:dragView];
+    
+    imageV = [[UIImageView alloc] initWithFrame:CGRectMake(10, 100, 300, 300)];
+    imageV.image = [UIImage imageNamed:@"test_4"];
+    [self.view addSubview:imageV];
+    
+    
+}
 
-    AxcUI_BadgeView *dragView = [[AxcUI_BadgeView alloc] init];
-    dragView.center = self.view.center;
-    dragView.axcUI_Size = CGSizeMake(30, 30);
-    dragView.axcUI_text = @"3";
-    dragView.axcUI_font = [UIFont systemFontOfSize:10];
-    [self.view addSubview:dragView];
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+//    [imageV AxcUI_drawingWithMosaic];
 }
 
 @end
