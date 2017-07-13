@@ -151,7 +151,7 @@ UICollectionViewDelegateFlowLayout
         _MainImageView.axcUI_Y = 100;
         _MainImageView.backgroundColor = [UIColor AxcUI_CloudColor];
         _MainImageView.contentMode = UIViewContentModeScaleAspectFit;
-        _MainImageView.image = self.originalImage = [UIImage imageNamed:@"test_5.jpg"];
+        _MainImageView.image = self.originalImage = [UIImage imageNamed:@"test_6"];
         _MainImageView.userInteractionEnabled = YES;
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self
                                                                              action:@selector(SelectImage)];
