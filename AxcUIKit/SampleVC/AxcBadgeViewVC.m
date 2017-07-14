@@ -83,7 +83,10 @@
     return _badgeView;
 }
 
-
+- (void)dealloc{
+    [self.badgeView removeFromSuperview];
+    self.badgeView = nil;
+}
 
 
 

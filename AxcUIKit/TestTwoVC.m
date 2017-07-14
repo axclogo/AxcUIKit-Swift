@@ -48,6 +48,8 @@
     
     imageV = [[UIImageView alloc] initWithFrame:CGRectMake(10, 100, 300, 300)];
     imageV.image = [UIImage imageNamed:@"test_4"];
+    imageV.axcUI_badgeText = @"10";
+    imageV.userInteractionEnabled = YES;
     [self.view addSubview:imageV];
     
     
