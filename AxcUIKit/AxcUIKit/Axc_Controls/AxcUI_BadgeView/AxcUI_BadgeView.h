@@ -60,4 +60,10 @@
  */
 @property (nonatomic, strong) UIColor* axcUI_textColor;
 
+/**
+ * 置空函数
+ */
+- (void)empty;
+
+
 @end

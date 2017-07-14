@@ -34,7 +34,6 @@ CGFloat distanceBetweenPoints (CGPoint p1, CGPoint p2) {
 
 @interface AxcUI_BadgeView () {
     UIControl*              _overlayView;       //拖动时self依附的view
-//    UIView*                 self.superview;   //原self容器
     CGFloat                 _viscosity;         //粘度
     CGSize                  _size;              //圆大小
     CGPoint                 _originPoint;       //源点
@@ -63,6 +62,8 @@ CGFloat distanceBetweenPoints (CGPoint p1, CGPoint p2) {
 }
 
 @property (nonatomic, strong) UIControl* overlayView;
+
+@property(nonatomic, weak)  UIView *originSuperView;   //原self容器
 
 @end
 
@@ -384,32 +385,33 @@ CGFloat distanceBetweenPoints (CGPoint p1, CGPoint p2) {
         [self.overlayView.superview bringSubviewToFront:self.overlayView];
     }
     
-//    self.superview = self.superview;
-    self.center = [self.superview convertPoint:self.center toView:self.overlayView];
+    _originSuperView = self.superview;
+    self.center = [_originSuperView convertPoint:self.center toView:self.overlayView];
     
-    if ([self.superview isKindOfClass:[UITableViewCell class]]
-        && self == ((UITableViewCell* )self.superview).accessoryView) {
-        ((UITableViewCell* )self.superview).accessoryView = nil;
+    if ([_originSuperView isKindOfClass:[UITableViewCell class]]
+        && self == ((UITableViewCell* )_originSuperView).accessoryView) {
+        ((UITableViewCell* )_originSuperView).accessoryView = nil;
     }
     
     [self.overlayView addSubview:self];
 }
 
 - (void)resignUpper {
-    self.center = [_overlayView convertPoint:self.center toView:self.superview];
+    self.center = [_overlayView convertPoint:self.center toView:_originSuperView];
     
-    if ([self.superview isKindOfClass:[UITableViewCell class]]
-        && self == ((UITableViewCell* )self.superview).accessoryView) {
-        ((UITableViewCell* )self.superview).accessoryView = self;
+    if ([_originSuperView isKindOfClass:[UITableViewCell class]]
+        && self == ((UITableViewCell* )_originSuperView).accessoryView) {
+        ((UITableViewCell* )_originSuperView).accessoryView = self;
     } else {
-        [self.superview addSubview:self];
+        [_originSuperView addSubview:self];
     }
+    
     [_overlayView removeFromSuperview];
     _overlayView = nil;
 }
 
 - (void)touchesEnded:(CGPoint)point {
-    if (!_missed) {
+    if (!_missed) { // 未脱离
         _elasticBeginPoint = _toPoint;
         _distance = distanceBetweenPoints(_fromPoint, _toPoint);
         
@@ -417,14 +419,16 @@ CGFloat distanceBetweenPoints (CGPoint p1, CGPoint p2) {
         AxcTweenPeriod *period = [AxcTweenPeriod periodWithStartValue:0 endValue:_distance duration:kElasticDuration];
         _activeTweenOperation = [[AxcTween sharedInstance] addTweenPeriod:period target:self selector:@selector(update:) timingFunction:&AxcTweenTimingFunctionElasticOut];
         
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(kElasticDuration * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [self resignUpper];
-        });
+        // 延迟执行
+        [self resignUpper];
+//        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(kElasticDuration * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//            [self resignUpper];
+//        });
     } else {
         if (CGRectContainsPoint(CGRectMake(_originPoint.x-kValidRadius, _originPoint.y-kValidRadius, 2*kValidRadius, 2*kValidRadius), point)) {
             [self resignUpper];
             [self reset];
-        } else {
+        } else { // 脱离
             _bombImageView.center = _toPoint;
             _toRadius = 0;
             _fromRadius = 0;
@@ -433,12 +437,11 @@ CGFloat distanceBetweenPoints (CGPoint p1, CGPoint p2) {
             _beEnableDragDrop = NO;
             _activeTweenOperation.updateSelector = nil;
             [[AxcTween sharedInstance] removeTweenOperation:_activeTweenOperation];
-            
+            [self empty];
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(kBombDuration * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 [self resignUpper];
             });
-            [self removeGestureRecognizer:_panGestureRecognizer];
-
+            
             if (self.axcUI_dragdropCompletion) {
                 self.axcUI_dragdropCompletion();
             }
@@ -446,6 +449,11 @@ CGFloat distanceBetweenPoints (CGPoint p1, CGPoint p2) {
         
         [self setNeedsDisplay];
     }
+}
+
+- (void)empty{
+    _originSuperView = nil;  // 这个会造成内存泄漏
+//    [self removeGestureRecognizer:_panGestureRecognizer];
 }
 
 - (void)touchesMoved:(CGPoint)point {

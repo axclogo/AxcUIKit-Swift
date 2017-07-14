@@ -29,7 +29,7 @@
     [self createSegmented];
     
     // 原作者GitHub：https://github.com/smallmuou
-    self.instructionsLabel.text = @"类似QQ消息数量标签的可拖拽气泡\n根据原作者smallmuou改制，在此感谢原作者提供的使用许可";
+    self.instructionsLabel.text = @"类似QQ消息数量标签的可拖拽气泡\n根据原作者smallmuou改制，在此感谢原作者提供的使用许可\n因为涉及到父视图原因需要强引用，但不妨碍父视图执行delloc函数";
 }
 
 
