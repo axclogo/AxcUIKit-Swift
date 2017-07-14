@@ -83,16 +83,17 @@
 #import "AxcUI_LodingProgressView.h"
 #import "AxcUI_PieLoopProgressView.h"
 // ------------------
-#import "AxcUI_PhotoBrowser.h"      // 图片预览器
-#import "AxcUI_ActivityHUD.h"       // HUD指示器
-#import "AxcUI_BarrageView.h"       // 弹幕容器View
-#import "AxcBarrageRenderHeader.h"  // 弹幕动态渲染引擎
-#import "AxcUI_StarRatingView.h"    // 星级评分控件
-#import "AxcUI_NumberUnitField.h"   // 单位数字输入
-#import "AxcUI_NumberScrollView.h"  // 数字滚动展示
-#import "AxcUI_TagView.h"           // 自定义View标签
-#import "AxcUI_TagTextView.h"       // 文字样式标签
-#import "AxcUI_BadgeView.h"         // 可拖拽气泡控件
+#import "AxcUI_PhotoBrowser.h"          // 图片预览器
+#import "AxcUI_ActivityHUD.h"           // HUD指示器
+#import "AxcUI_BarrageView.h"           // 弹幕容器View
+#import "AxcBarrageRenderHeader.h"      // 弹幕动态渲染引擎
+#import "AxcUI_StarRatingView.h"        // 星级评分控件
+#import "AxcUI_NumberUnitField.h"       // 单位数字输入
+#import "AxcUI_NumberScrollView.h"      // 数字滚动展示
+#import "AxcUI_TagView.h"               // 自定义View标签
+#import "AxcUI_TagTextView.h"           // 文字样式标签
+#import "AxcUI_BadgeInteractionView.h"  // 可交互气泡控件
+#import "AxcUI_BadgeView.h"             // 消息展示型气泡
 
 
 

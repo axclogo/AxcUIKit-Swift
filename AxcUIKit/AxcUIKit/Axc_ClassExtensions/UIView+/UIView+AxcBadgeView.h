@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-#import "AxcUI_BadgeView.h"
+#import "AxcUI_BadgeInteractionView.h"
 
 @interface UIView (AxcBadgeView)
 
-@property(nonatomic,strong)AxcUI_BadgeView *axcUI_badgeView;
+@property(nonatomic,strong)AxcUI_BadgeInteractionView *AxcUI_BadgeInteractionView;
 
 @property(nonatomic, assign)CGPoint axcUI_badgePoint;
 

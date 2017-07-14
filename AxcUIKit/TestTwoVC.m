@@ -12,7 +12,7 @@
 #import "TestTwoVC.h"
 
 
-#import "AxcUI_BadgeView.h"
+#import "AxcUI_BadgeInteractionView.h"
 
 @interface TestTwoVC ()<UITableViewDelegate,UITableViewDataSource>
 {
@@ -39,7 +39,7 @@
 //    view.axcUI_rectCorner = UIRectCornerTopLeft | UIRectCornerBottomRight | UIRectCornerBottomLeft;
 //    view.axcUI_cornerRadii = 50;
 //
-//    AxcUI_BadgeView *dragView = [[AxcUI_BadgeView alloc] init];
+//    AxcUI_BadgeInteractionView *dragView = [[AxcUI_BadgeInteractionView alloc] init];
 //    dragView.center = self.view.center;
 //    dragView.axcUI_Size = CGSizeMake(30, 30);
 //    dragView.axcUI_text = @"3";

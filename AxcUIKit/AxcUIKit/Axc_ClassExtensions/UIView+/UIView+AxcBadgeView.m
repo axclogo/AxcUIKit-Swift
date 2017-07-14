@@ -13,7 +13,7 @@
 #import "UIView+AxcExtension.h"
 
 
-static NSString * const kbadgeView = @"axcUI_badgeView";
+static NSString * const kbadgeView = @"AxcUI_BadgeInteractionView";
 static NSString * const kbadgePoint = @"axcUI_badgePoint";
 static NSString * const kbadgeText = @"axcUI_badgeText";
 
@@ -26,11 +26,11 @@ static NSString * const kbadgeText = @"axcUI_badgeText";
                              axcUI_badgeText,
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     [self didChangeValueForKey:kbadgeText];
-    self.axcUI_badgeView.axcUI_text = axcUI_badgeText;
+    self.AxcUI_BadgeInteractionView.axcUI_text = axcUI_badgeText;
 }
 
 - (NSString *)axcUI_badgeText{
-    return self.axcUI_badgeView.axcUI_text;
+    return self.AxcUI_BadgeInteractionView.axcUI_text;
 }
 
 
@@ -40,27 +40,27 @@ static NSString * const kbadgeText = @"axcUI_badgeText";
                              [NSValue valueWithCGPoint:axcUI_badgePoint],
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     [self didChangeValueForKey:kbadgeView];
-    self.axcUI_badgeView.center = axcUI_badgePoint;
+    self.AxcUI_BadgeInteractionView.center = axcUI_badgePoint;
 }
 
 - (CGPoint)axcUI_badgePoint{
-    return self.axcUI_badgeView.center;
+    return self.AxcUI_BadgeInteractionView.center;
 }
 
 
 
-- (void)setAxcUI_badgeView:(AxcUI_BadgeView *)axcUI_badgeView{
+- (void)setAxcUI_BadgeInteractionView:(AxcUI_BadgeInteractionView *)AxcUI_BadgeInteractionView{
     [self willChangeValueForKey:kbadgeView];
     objc_setAssociatedObject(self, &kbadgeView,
-                             axcUI_badgeView,
+                             AxcUI_BadgeInteractionView,
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     [self didChangeValueForKey:kbadgeView];
 }
 
-- (AxcUI_BadgeView *)axcUI_badgeView{
-    AxcUI_BadgeView *badgeView = objc_getAssociatedObject(self, &kbadgeView);
+- (AxcUI_BadgeInteractionView *)AxcUI_BadgeInteractionView{
+    AxcUI_BadgeInteractionView *badgeView = objc_getAssociatedObject(self, &kbadgeView);
     if (!badgeView) {
-        badgeView = [[AxcUI_BadgeView alloc] init];
+        badgeView = [[AxcUI_BadgeInteractionView alloc] init];
         badgeView.axcUI_Size = CGSizeMake(40, 40);
         badgeView.axcUI_X = self.axcUI_Width - badgeView.axcUI_Size.width;
         badgeView.axcUI_Y = 0;
@@ -68,7 +68,7 @@ static NSString * const kbadgeText = @"axcUI_badgeText";
         badgeView.axcUI_text = @"0";
         badgeView.axcUI_hiddenWhenZero = NO;
         [self addSubview:badgeView];
-        [self setAxcUI_badgeView:badgeView];
+        [self setAxcUI_BadgeInteractionView:badgeView];
     }
     return badgeView;
 }

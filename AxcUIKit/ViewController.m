@@ -230,7 +230,8 @@ didSelectSearchHistoryAtIndex:(NSInteger)index
         [Group2 addObject:@{@"controlsName":@"AxcUI_BarrageView",@"describeName":@"独立弹幕/视图容器",@"VCName":@"AxcBarrageViewVC"}];
         [Group2 addObject:@{@"controlsName":@"AxcUI_BarrageScrollEngine",@"describeName":@"弹幕渲染引擎",@"VCName":@"AxcBarrageScrollEngineVC"}];
         
-        [Group2 addObject:@{@"controlsName":@"AxcUI_BadgeView",@"describeName":@"可拖拽数字气泡",@"VCName":@"AxcBadgeViewVC"}];
+        [Group2 addObject:@{@"controlsName":@"AxcUI_BadgeView",@"describeName":@"消息数量气泡",@"VCName":@"AxcBadgeViewVC"}];
+        [Group2 addObject:@{@"controlsName":@"AxcUI_BadgeInteractionView",@"describeName":@"交互气泡",@"VCName":@"AxcBadgeInteractionViewVC"}];
         
         [Group2 addObject:@{@"controlsName":@"AxcUI_Label",@"describeName":@"动态设置文字边距",@"VCName":@"AxcLabelVC"}];
         
