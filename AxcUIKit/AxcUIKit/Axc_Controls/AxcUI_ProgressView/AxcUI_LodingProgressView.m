@@ -14,13 +14,14 @@ NSString * const AxcRotationLoopProgressViewWaitingText = @"LOADING...";
 @implementation AxcUI_LodingProgressView
 {
     CGFloat _angleInterval;
+    NSTimer *timer;
 }
 
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
-        NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:0.03 target:self selector:@selector(changeAngle) userInfo:nil repeats:YES];
+        timer = [NSTimer scheduledTimerWithTimeInterval:0.03 target:self selector:@selector(changeAngle) userInfo:nil repeats:YES];
         [[NSRunLoop mainRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
     }
     return self;
@@ -52,6 +53,11 @@ NSString * const AxcRotationLoopProgressViewWaitingText = @"LOADING...";
     attributes[NSFontAttributeName] = [UIFont boldSystemFontOfSize:13 * BaseProgressViewFontScale];
     attributes[NSForegroundColorAttributeName] = [UIColor lightGrayColor];
     [self setCenterProgressText:AxcRotationLoopProgressViewWaitingText withAttributes:attributes];
+}
+
+- (void)removeTimer{
+    [timer invalidate];
+    timer = nil;
 }
 
 @end

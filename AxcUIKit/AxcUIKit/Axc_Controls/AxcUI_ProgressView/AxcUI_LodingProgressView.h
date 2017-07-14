@@ -10,4 +10,8 @@
 
 @interface AxcUI_LodingProgressView : AxcBaseProgressView
 
+
+- (void)removeTimer;
+
+
 @end

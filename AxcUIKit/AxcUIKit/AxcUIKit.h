@@ -39,9 +39,6 @@
 #import "UIButton+AxcButtonContentLayout.h"   // Button按钮布局的扩展
 #import "UIButton+AxcButtonCountDown.h"       // Button快速设置倒计时扩展
 
-// MARK: UIScrollView+
-#import "UIScrollView+AxcScrollCover.h"       // 下拉自动放大头图的扩展
-
 // MARK: UITableView+
 #import "UITableView+AxcEmptyData.h"          // TableView无数据时添加占位View
 

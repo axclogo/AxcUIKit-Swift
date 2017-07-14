@@ -18,7 +18,6 @@
 		E2E6193EA1C05F6CFA9FDC77 /* libPods-AxcUIKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AAE9AEE02E9EE7F4A95B14D6 /* libPods-AxcUIKit.a */; };
 		EA439CB71EE29E3100D992E7 /* AxcCellRearrangeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EA439CB61EE29E3100D992E7 /* AxcCellRearrangeVC.m */; };
 		EA439CC41EE2DE8400D992E7 /* TestTwoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EA439CC31EE2DE8400D992E7 /* TestTwoVC.m */; };
-		EA439CC71EE2F38000D992E7 /* AxcScrollCoverVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EA439CC61EE2F38000D992E7 /* AxcScrollCoverVC.m */; };
 		EA439CD11EE2FAB500D992E7 /* AxcViewSharkVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EA439CCF1EE2FAB500D992E7 /* AxcViewSharkVC.m */; };
 		EA439CD81EE3068300D992E7 /* SampleBaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EA439CD71EE3068200D992E7 /* SampleBaseVC.m */; };
 		EA439CE11EE3C1B500D992E7 /* AxcModifyPlaceholderVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EA439CE01EE3C1B500D992E7 /* AxcModifyPlaceholderVC.m */; };
@@ -97,11 +96,9 @@
 		EA6A3B981F09DE3800E0FAAA /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6A3B241F09DE3800E0FAAA /* UIView+WebCacheOperation.m */; };
 		EA6A3B991F09DE3800E0FAAA /* Axc_WebImageRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6A3B261F09DE3800E0FAAA /* Axc_WebImageRequest.m */; };
 		EA6A3B9A1F09DE3800E0FAAA /* UILabel+AxcShimmering.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6A3B291F09DE3800E0FAAA /* UILabel+AxcShimmering.m */; };
-		EA6A3B9B1F09DE3800E0FAAA /* UIScrollView+AxcScrollCover.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6A3B2C1F09DE3800E0FAAA /* UIScrollView+AxcScrollCover.m */; };
 		EA6A3B9C1F09DE3800E0FAAA /* UITableViewCell+AxcAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6A3B2F1F09DE3800E0FAAA /* UITableViewCell+AxcAnimation.m */; };
 		EA6A3B9D1F09DE3800E0FAAA /* UITextField+AxcModifyPlaceholder.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6A3B321F09DE3800E0FAAA /* UITextField+AxcModifyPlaceholder.m */; };
 		EA6A3B9E1F09DE3800E0FAAA /* UIView+AxcAutoresizingMask.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6A3B351F09DE3800E0FAAA /* UIView+AxcAutoresizingMask.m */; };
-		EA6A3B9F1F09DE3800E0FAAA /* UIView+AxcCoverEX.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6A3B371F09DE3800E0FAAA /* UIView+AxcCoverEX.m */; };
 		EA6A3BA01F09DE3800E0FAAA /* UIView+AxcExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6A3B391F09DE3800E0FAAA /* UIView+AxcExtension.m */; };
 		EA6A3BA11F09DE3800E0FAAA /* UIView+AxcShaking.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6A3B3B1F09DE3800E0FAAA /* UIView+AxcShaking.m */; };
 		EA6A3BA21F09DE3800E0FAAA /* UIView+AxcShimmeringView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6A3B3D1F09DE3800E0FAAA /* UIView+AxcShimmeringView.m */; };
@@ -268,8 +265,6 @@
 		EA439CB81EE29E6B00D992E7 /* AxcUIKit_PCH.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AxcUIKit_PCH.pch; sourceTree = "<group>"; };
 		EA439CC21EE2DE8400D992E7 /* TestTwoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestTwoVC.h; sourceTree = "<group>"; };
 		EA439CC31EE2DE8400D992E7 /* TestTwoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestTwoVC.m; sourceTree = "<group>"; };
-		EA439CC51EE2F38000D992E7 /* AxcScrollCoverVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcScrollCoverVC.h; sourceTree = "<group>"; };
-		EA439CC61EE2F38000D992E7 /* AxcScrollCoverVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcScrollCoverVC.m; sourceTree = "<group>"; };
 		EA439CCE1EE2FAB500D992E7 /* AxcViewSharkVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcViewSharkVC.h; sourceTree = "<group>"; };
 		EA439CCF1EE2FAB500D992E7 /* AxcViewSharkVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcViewSharkVC.m; sourceTree = "<group>"; };
 		EA439CD61EE3068200D992E7 /* SampleBaseVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SampleBaseVC.h; sourceTree = "<group>"; };
@@ -403,16 +398,12 @@
 		EA6A3B261F09DE3800E0FAAA /* Axc_WebImageRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Axc_WebImageRequest.m; sourceTree = "<group>"; };
 		EA6A3B281F09DE3800E0FAAA /* UILabel+AxcShimmering.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+AxcShimmering.h"; sourceTree = "<group>"; };
 		EA6A3B291F09DE3800E0FAAA /* UILabel+AxcShimmering.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+AxcShimmering.m"; sourceTree = "<group>"; };
-		EA6A3B2B1F09DE3800E0FAAA /* UIScrollView+AxcScrollCover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+AxcScrollCover.h"; sourceTree = "<group>"; };
-		EA6A3B2C1F09DE3800E0FAAA /* UIScrollView+AxcScrollCover.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+AxcScrollCover.m"; sourceTree = "<group>"; };
 		EA6A3B2E1F09DE3800E0FAAA /* UITableViewCell+AxcAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+AxcAnimation.h"; sourceTree = "<group>"; };
 		EA6A3B2F1F09DE3800E0FAAA /* UITableViewCell+AxcAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+AxcAnimation.m"; sourceTree = "<group>"; };
 		EA6A3B311F09DE3800E0FAAA /* UITextField+AxcModifyPlaceholder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+AxcModifyPlaceholder.h"; sourceTree = "<group>"; };
 		EA6A3B321F09DE3800E0FAAA /* UITextField+AxcModifyPlaceholder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+AxcModifyPlaceholder.m"; sourceTree = "<group>"; };
 		EA6A3B341F09DE3800E0FAAA /* UIView+AxcAutoresizingMask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+AxcAutoresizingMask.h"; sourceTree = "<group>"; };
 		EA6A3B351F09DE3800E0FAAA /* UIView+AxcAutoresizingMask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+AxcAutoresizingMask.m"; sourceTree = "<group>"; };
-		EA6A3B361F09DE3800E0FAAA /* UIView+AxcCoverEX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+AxcCoverEX.h"; sourceTree = "<group>"; };
-		EA6A3B371F09DE3800E0FAAA /* UIView+AxcCoverEX.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+AxcCoverEX.m"; sourceTree = "<group>"; };
 		EA6A3B381F09DE3800E0FAAA /* UIView+AxcExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+AxcExtension.h"; sourceTree = "<group>"; };
 		EA6A3B391F09DE3800E0FAAA /* UIView+AxcExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+AxcExtension.m"; sourceTree = "<group>"; };
 		EA6A3B3A1F09DE3800E0FAAA /* UIView+AxcShaking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+AxcShaking.h"; sourceTree = "<group>"; };
@@ -836,8 +827,6 @@
 				EA439CE31EE3C93600D992E7 /* AxcLoadImageVC.m */,
 				EA439CB51EE29E3100D992E7 /* AxcCellRearrangeVC.h */,
 				EA439CB61EE29E3100D992E7 /* AxcCellRearrangeVC.m */,
-				EA439CC51EE2F38000D992E7 /* AxcScrollCoverVC.h */,
-				EA439CC61EE2F38000D992E7 /* AxcScrollCoverVC.m */,
 				EA439CCE1EE2FAB500D992E7 /* AxcViewSharkVC.h */,
 				EA439CCF1EE2FAB500D992E7 /* AxcViewSharkVC.m */,
 				EA439CDF1EE3C1B500D992E7 /* AxcModifyPlaceholderVC.h */,
@@ -1091,8 +1080,6 @@
 		EA6A3B2A1F09DE3800E0FAAA /* UIScrollView+ */ = {
 			isa = PBXGroup;
 			children = (
-				EA6A3B2B1F09DE3800E0FAAA /* UIScrollView+AxcScrollCover.h */,
-				EA6A3B2C1F09DE3800E0FAAA /* UIScrollView+AxcScrollCover.m */,
 			);
 			path = "UIScrollView+";
 			sourceTree = "<group>";
@@ -1120,8 +1107,6 @@
 			children = (
 				EA6A3B341F09DE3800E0FAAA /* UIView+AxcAutoresizingMask.h */,
 				EA6A3B351F09DE3800E0FAAA /* UIView+AxcAutoresizingMask.m */,
-				EA6A3B361F09DE3800E0FAAA /* UIView+AxcCoverEX.h */,
-				EA6A3B371F09DE3800E0FAAA /* UIView+AxcCoverEX.m */,
 				EA6A3B381F09DE3800E0FAAA /* UIView+AxcExtension.h */,
 				EA6A3B391F09DE3800E0FAAA /* UIView+AxcExtension.m */,
 				EA6A3B3A1F09DE3800E0FAAA /* UIView+AxcShaking.h */,
@@ -1775,7 +1760,6 @@
 				EA5D4EEB1F1756860002E9E9 /* UIImage+AxcSpecialEffectsDrawing.m in Sources */,
 				EAAFBFED1F0F6C7B00881A62 /* AxcButtonLayoutVC.m in Sources */,
 				EA439CED1EE3D1CB00D992E7 /* AxcToastVC.m in Sources */,
-				EA439CC71EE2F38000D992E7 /* AxcScrollCoverVC.m in Sources */,
 				EADC7D2E1F14C330004AF7D8 /* UITableView+AxcEmptyData.m in Sources */,
 				EAD085761EEAE65F007DE2C4 /* AxcActivityHUDVC.m in Sources */,
 				EA5252C21EF523CB0016C687 /* AxcActivityIndicatorViewVC.m in Sources */,
@@ -1826,7 +1810,6 @@
 				EA6A3BA11F09DE3800E0FAAA /* UIView+AxcShaking.m in Sources */,
 				EA6A3BAB1F09DE3800E0FAAA /* AxcBarrageContainer.m in Sources */,
 				EA6A3BB31F09DE3800E0FAAA /* AxcUI_PhotoBrowser.m in Sources */,
-				EA6A3B9B1F09DE3800E0FAAA /* UIScrollView+AxcScrollCover.m in Sources */,
 				EA6A3BA91F09DE3800E0FAAA /* AxcBarrageCanvas.m in Sources */,
 				EA6A3BA71F09DE3800E0FAAA /* Axc_ActivityIndicator.m in Sources */,
 				EA6A3B8F1F09DE3800E0FAAA /* Axc_WebImageCompat.m in Sources */,
@@ -1834,7 +1817,6 @@
 				EA87DB0F1F074A7400452D2D /* UIColor+Tools.m in Sources */,
 				EAAFBFC91F0E21C900881A62 /* NSString+AxcReplaceRichText.m in Sources */,
 				EA6A3B8D1F09DE3800E0FAAA /* Axc_WebimageCache.m in Sources */,
-				EA6A3B9F1F09DE3800E0FAAA /* UIView+AxcCoverEX.m in Sources */,
 				EA6A3BA01F09DE3800E0FAAA /* UIView+AxcExtension.m in Sources */,
 				EAAFBFE01F0E3E9D00881A62 /* UIColor+PYSearchExtension.m in Sources */,
 				EA530A901F0CDC9600F562FD /* AxcTagTextViewVC.m in Sources */,

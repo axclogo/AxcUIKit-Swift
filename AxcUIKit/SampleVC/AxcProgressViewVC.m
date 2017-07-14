@@ -75,6 +75,9 @@
 - (void)viewWillDisappear:(BOOL)animated{
     [self.timer invalidate];
     self.timer = nil;
+    
+    // 安全移除，防止内存泄漏
+    [self.lodingProgressView removeTimer];
 }
 
 #pragma mark - 懒加载区
