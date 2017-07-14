@@ -55,6 +55,11 @@ NSString * const AxcRotationLoopProgressViewWaitingText = @"LOADING...";
     [self setCenterProgressText:AxcRotationLoopProgressViewWaitingText withAttributes:attributes];
 }
 
+- (void)removeFromSuperview{
+    [self removeTimer];
+    [super removeFromSuperview];
+}
+
 - (void)removeTimer{
     [timer invalidate];
     timer = nil;

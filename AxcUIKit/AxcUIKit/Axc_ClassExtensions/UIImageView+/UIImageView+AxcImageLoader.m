@@ -90,7 +90,7 @@ static NSString * const kprogressViewStyle = @"axcUI_progressViewStyle";
     AxcBaseProgressView *loaderView = objc_getAssociatedObject(self, &kprogressView);
     if (![loaderView isKindOfClass:Progressclass]) { // 判断当前风格类是否与所使用的不同，如果不同则替换指针
         CGFloat progress = loaderView.axcUI_progress;
-        [loaderView removeFromSuperview];
+        [loaderView removeFromSuperview]; // 可执行清空内存泄漏的函数
         loaderView = nil;
         switch (axcUI_progressViewStyle) {
             case AxcUIProgressViewStyleTranPieProgressView:
