@@ -8,19 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
-typedef enum {
+typedef NS_ENUM(NSInteger, AxcBadgeViewHorizontalStyle) {
     AxcBadgeViewHorizontalStyleNone,
     AxcBadgeViewHorizontalStyleLeft,
     AxcBadgeViewHorizontalStyleCenter,
     AxcBadgeViewHorizontalStyleRight
-} AxcBadgeViewHorizontalStyle;
+} ;
 
-typedef enum {
+typedef NS_ENUM(NSInteger, AxcBadgeViewVerticalStyle) {
     AxcBadgeViewVerticalStyleNone,
     AxcBadgeViewVerticalStyleTop,
     AxcBadgeViewVerticalStyleMiddle,
     AxcBadgeViewVerticalStyleBottom
-} AxcBadgeViewVerticalStyle;
+} ;
 
 /** 气泡badge视图类似于标准badge标签栏项目  */
 @interface AxcUI_BadgeView : UIView
@@ -43,9 +43,9 @@ typedef enum {
 /** 圆弧半径 */
 @property (nonatomic, assign) CGFloat axcUI_cornerRadius;
 /** 水平对齐方位，枚举 */
-@property (nonatomic, assign) AxcBadgeViewHorizontalStyle axcUI_horizontalAlignment;
+@property (nonatomic, assign) AxcBadgeViewHorizontalStyle axcUI_horizontalStyle;
 /** 纵向对齐方位，枚举 */
-@property (nonatomic, assign) AxcBadgeViewVerticalStyle axcUI_verticalAlignment;
+@property (nonatomic, assign) AxcBadgeViewVerticalStyle axcUI_verticalStyle;
 /** 转移的badge,当水平/垂直对齐  微调调整 */
 @property (nonatomic, assign) CGSize axcUI_alignmentShift;
 /** 是否开启不改变当前帧大小动画 */

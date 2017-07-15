@@ -55,8 +55,8 @@
     _axcUI_badgeBackgroundColor = [UIColor redColor];
     _axcUI_showGloss = NO;
     _axcUI_cornerRadius = self.frame.size.height / 2;
-    _axcUI_horizontalAlignment = AxcBadgeViewHorizontalStyleRight;
-    _axcUI_verticalAlignment = AxcBadgeViewVerticalStyleTop;
+    _axcUI_horizontalStyle = AxcBadgeViewHorizontalStyleRight;
+    _axcUI_verticalStyle = AxcBadgeViewVerticalStyleTop;
     _axcUI_alignmentShift = CGSizeMake(0, 0);
     _axcUI_animateChanges = YES;
     _axcUI_animationDuration = 0.2;
@@ -157,20 +157,20 @@
     // 高度不需要改变
     
     // 必要时修正水平对齐
-    if (_axcUI_horizontalAlignment == AxcBadgeViewHorizontalStyleLeft) {
+    if (_axcUI_horizontalStyle == AxcBadgeViewHorizontalStyleLeft) {
         frame.origin.x = 0 - (frame.size.width / 2) + _axcUI_alignmentShift.width;
-    } else if (_axcUI_horizontalAlignment == AxcBadgeViewHorizontalStyleCenter) {
+    } else if (_axcUI_horizontalStyle == AxcBadgeViewHorizontalStyleCenter) {
         frame.origin.x = (self.superview.bounds.size.width / 2) - (frame.size.width / 2) + _axcUI_alignmentShift.width;
-    } else if (_axcUI_horizontalAlignment == AxcBadgeViewHorizontalStyleRight) {
+    } else if (_axcUI_horizontalStyle == AxcBadgeViewHorizontalStyleRight) {
         frame.origin.x = self.superview.bounds.size.width - (frame.size.width / 2) + _axcUI_alignmentShift.width;
     }
     
     // 必要时修正垂直对齐
-    if (_axcUI_verticalAlignment == AxcBadgeViewVerticalStyleTop) {
+    if (_axcUI_verticalStyle == AxcBadgeViewVerticalStyleTop) {
         frame.origin.y = 0 - (frame.size.height / 2) + _axcUI_alignmentShift.height;
-    } else if (_axcUI_verticalAlignment == AxcBadgeViewVerticalStyleMiddle) {
+    } else if (_axcUI_verticalStyle == AxcBadgeViewVerticalStyleMiddle) {
         frame.origin.y = (self.superview.bounds.size.height / 2) - (frame.size.height / 2.0) + _axcUI_alignmentShift.height;
-    } else if (_axcUI_verticalAlignment == AxcBadgeViewVerticalStyleBottom) {
+    } else if (_axcUI_verticalStyle == AxcBadgeViewVerticalStyleBottom) {
         frame.origin.y = self.superview.bounds.size.height - (frame.size.height / 2.0) + _axcUI_alignmentShift.height;
     }
     
@@ -352,13 +352,13 @@
     borderLayer.path = path.CGPath;
 }
 
-- (void)setAxcUI_horizontalAlignment:(AxcBadgeViewHorizontalStyle)axcUI_horizontalAlignment{
-    _axcUI_horizontalAlignment = axcUI_horizontalAlignment;
+- (void)setAxcUI_horizontalStyle:(AxcBadgeViewHorizontalStyle)axcUI_horizontalStyle{
+    _axcUI_horizontalStyle = axcUI_horizontalStyle;
     [self autoSetBadgeFrame];
 }
 
-- (void)setAxcUI_verticalAlignment:(AxcBadgeViewVerticalStyle)axcUI_verticalAlignment{
-    _axcUI_verticalAlignment = axcUI_verticalAlignment;
+- (void)setAxcUI_verticalStyle:(AxcBadgeViewVerticalStyle)axcUI_verticalStyle{
+    _axcUI_verticalStyle = axcUI_verticalStyle;
     [self autoSetBadgeFrame];
 }
 

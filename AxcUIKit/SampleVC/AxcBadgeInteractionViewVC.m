@@ -12,7 +12,7 @@
 @interface AxcBadgeInteractionViewVC ()
 
 
-@property(nonatomic,strong)AxcUI_BadgeInteractionView *badgeView;
+@property(nonatomic,strong)AxcUI_BadgeInteractionView *badgeInteractionView;
 
 @property(nonatomic, strong)NSArray *createInstructionsLabelTextArr;
 @property(nonatomic, strong)UILabel *numLabel;
@@ -24,7 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self.view addSubview:self.badgeView];
+    [self.view addSubview:self.badgeInteractionView];
     
     [self createSegmented];
     
@@ -37,8 +37,8 @@
 - (void)clickInsSwitch:(UISwitch *)sender{
     NSInteger tag = sender.tag - 100;
     switch (tag) {
-        case 1: self.badgeView.axcUI_fontSizeAutoFit = sender.on; break; // 根据文本自适应
-        case 2: self.badgeView.axcUI_hiddenWhenZero = sender.on;  break; // 文本为0时自动隐藏
+        case 1: self.badgeInteractionView.axcUI_fontSizeAutoFit = sender.on; break; // 根据文本自适应
+        case 2: self.badgeInteractionView.axcUI_hiddenWhenZero = sender.on;  break; // 文本为0时自动隐藏
         default: break;
     }
 }
@@ -47,23 +47,23 @@
     NSInteger tag = sender.tag - 100;
     switch (tag) {
         case 3:
-            self.badgeView.axcUI_textColor = [UIColor AxcUI_ArcColor];  // 文本颜色
-            sender.backgroundColor = self.badgeView.axcUI_textColor;
+            self.badgeInteractionView.axcUI_textColor = [UIColor AxcUI_ArcColor];  // 文本颜色
+            sender.backgroundColor = self.badgeInteractionView.axcUI_textColor;
             break;
         case 4:
-            self.badgeView.axcUI_tintColor = [UIColor AxcUI_ArcColor];  // 气泡颜色
-            sender.backgroundColor = self.badgeView.axcUI_tintColor;
+            self.badgeInteractionView.axcUI_tintColor = [UIColor AxcUI_ArcColor];  // 气泡颜色
+            sender.backgroundColor = self.badgeInteractionView.axcUI_tintColor;
             break;
         case 5:
-            [self.badgeView removeFromSuperview];
-            self.badgeView = nil;                                       // 清空再次调用懒加载
-            [self.view addSubview:self.badgeView];
+            [self.badgeInteractionView removeFromSuperview];
+            self.badgeInteractionView = nil;                                       // 清空再次调用懒加载
+            [self.view addSubview:self.badgeInteractionView];
             break;
         default: break;
     }
 }
 - (void)clickStepper:(UIStepper *)sender{
-    self.badgeView.axcUI_text = [NSString stringWithFormat:@"%.0f",sender.value];   // 显示的文本
+    self.badgeInteractionView.axcUI_text = [NSString stringWithFormat:@"%.0f",sender.value];   // 显示的文本
     self.numLabel.text =  [NSString stringWithFormat:
                            @"%@：\t%.0f",self.createInstructionsLabelTextArr[sender.tag - 100],sender.value];
 }
@@ -71,21 +71,21 @@
 
 
 #pragma mark - 懒加载区
-- (AxcUI_BadgeInteractionView *)badgeView{
-    if (!_badgeView) {
-        _badgeView = [[AxcUI_BadgeInteractionView alloc] init];
-        _badgeView.axcUI_Size = CGSizeMake(40, 40);
-        _badgeView.center = self.view.center;
-        _badgeView.axcUI_Y = 150;
-        _badgeView.axcUI_font = [UIFont systemFontOfSize:13];
-        _badgeView.axcUI_text = @"5";
+- (AxcUI_BadgeInteractionView *)badgeInteractionView{
+    if (!_badgeInteractionView) {
+        _badgeInteractionView = [[AxcUI_BadgeInteractionView alloc] init];
+        _badgeInteractionView.axcUI_Size = CGSizeMake(40, 40);
+        _badgeInteractionView.center = self.view.center;
+        _badgeInteractionView.axcUI_Y = 150;
+        _badgeInteractionView.axcUI_font = [UIFont systemFontOfSize:13];
+        _badgeInteractionView.axcUI_text = @"5";
     }
-    return _badgeView;
+    return _badgeInteractionView;
 }
 
 - (void)dealloc{
-    [self.badgeView removeFromSuperview];
-    self.badgeView = nil;
+    [self.badgeInteractionView removeFromSuperview];
+    self.badgeInteractionView = nil;
 }
 
 
@@ -101,7 +101,7 @@
 - (void)createSegmented{
     NSArray *colorArr = @[@"",@"",@"",[UIColor AxcUI_ArcColor],[UIColor redColor],[UIColor AxcUI_ArcColor]];
     for (int i = 0; i < 6; i ++) {
-        CGFloat Y = i * 40 + self.badgeView.axcUI_Y + self.badgeView.axcUI_Height + 100;
+        CGFloat Y = i * 40 + self.badgeInteractionView.axcUI_Y + self.badgeInteractionView.axcUI_Height + 100;
         CGFloat width = 150;
         if (i < 3) {
             UILabel *label = [[UILabel alloc] init];
