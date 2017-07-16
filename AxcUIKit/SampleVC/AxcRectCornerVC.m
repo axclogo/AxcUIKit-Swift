@@ -87,7 +87,7 @@
     }
 }
 - (void)slidingSlider:(UISlider *)sender{
-    self.testView.axcUI_cornerRadii = sender.value;
+    self.testView.axcUI_rectCornerRadii = sender.value;
     ((UILabel *)[self.view viewWithTag:5324 + sender.tag - 100]).text = [NSString stringWithFormat:
                                                                          @"%@：\t%.2f",self.createInstructionsLabelTextArr[sender.tag - 100],
                                                                          sender.value];
@@ -140,7 +140,7 @@
         _testView.axcUI_Y = 100;
         _testView.backgroundColor = [UIColor AxcUI_EmeraldColor];
         // 初始20，看起来大一点
-        _testView.axcUI_cornerRadii = 20;
+        _testView.axcUI_rectCornerRadii = 20;
     }
     return _testView;
 }

@@ -34,10 +34,10 @@
 //    view = [[UIView alloc] initWithFrame:CGRectMake(100, 100, 100, 100)];
 //    view.backgroundColor = [UIColor lightGrayColor];
 //    [self.view addSubview:view];
-//    view.axcUI_cornerRadii = 10;
+//    view.axcUI_rectCornerRadii = 10;
 //    view.axcUI_rectCorner = UIRectCornerTopRight | UIRectCornerTopLeft;
 //    view.axcUI_rectCorner = UIRectCornerTopLeft | UIRectCornerBottomRight | UIRectCornerBottomLeft;
-//    view.axcUI_cornerRadii = 50;
+//    view.axcUI_rectCornerRadii = 50;
 //
 //    AxcUI_BadgeInteractionView *dragView = [[AxcUI_BadgeInteractionView alloc] init];
 //    dragView.center = self.view.center;

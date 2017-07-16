@@ -14,7 +14,7 @@
 /**
  *  圆角半径 默认 5
  */
-@property(nonatomic,assign)CGFloat axcUI_cornerRadii;
+@property(nonatomic,assign)CGFloat axcUI_rectCornerRadii;
 
 /**
  *  圆角方位
