@@ -12,10 +12,14 @@
 
 @interface UIView (BadgeInteractionView)
 
+
+/** 文本带交互badge */
 @property(nonatomic,strong)AxcUI_BadgeInteractionView *AxcUI_BadgeInteractionView;
 
+/** 交互badge坐标点 */
 @property(nonatomic, assign)CGPoint axcUI_badgeInteractionPoint;
 
+/** 交互badge文本 */
 @property(nonatomic, strong)NSString *axcUI_badgeInteractionText;
 
 

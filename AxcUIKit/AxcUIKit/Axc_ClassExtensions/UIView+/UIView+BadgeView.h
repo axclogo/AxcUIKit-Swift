@@ -8,6 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
+#import "AxcUI_BadgeView.h"
+
 @interface UIView (BadgeView)
+
+/** 文本显示徽章badge */
+@property(nonatomic, strong)AxcUI_BadgeView *axcUI_badgeView;
+
+/** badge坐标点 */
+@property(nonatomic, assign)CGPoint axcUI_badgePoint;
+
+/** badge文本 */
+@property(nonatomic, strong)NSString *axcUI_badgeText;
 
 @end
