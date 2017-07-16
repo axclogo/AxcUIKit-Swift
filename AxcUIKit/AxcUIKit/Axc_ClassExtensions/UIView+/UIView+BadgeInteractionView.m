@@ -35,11 +35,11 @@ static NSString * const kbadgeText = @"axcUI_badgeInteractionText";
 
 
 - (void)setAxcUI_badgeInteractionPoint:(CGPoint)axcUI_badgeInteractionPoint{
-    [self willChangeValueForKey:kbadgeView];
-    objc_setAssociatedObject(self, &kbadgeView,
+    [self willChangeValueForKey:kbadgePoint];
+    objc_setAssociatedObject(self, &kbadgePoint,
                              [NSValue valueWithCGPoint:axcUI_badgeInteractionPoint],
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    [self didChangeValueForKey:kbadgeView];
+    [self didChangeValueForKey:kbadgePoint];
     self.AxcUI_BadgeInteractionView.center = axcUI_badgeInteractionPoint;
 }
 
