@@ -219,17 +219,17 @@ static NSString * const ktextEdgeInsets = @"axcUI_textEdgeInsets";
     self.AxcfrontLabel.layer.mask = layer;
 }
 
-- (void)setAxcUI_textEdgeInsets:(UIEdgeInsets)axcUI_textEdgeInsets{
-    self.AxcfrontLabel.axcUI_textEdgeInsets = axcUI_textEdgeInsets;
-    self.AxcBackLabel.axcUI_textEdgeInsets = axcUI_textEdgeInsets;
+- (void)setAxcUI_shimmeringTextEdgeInsets:(UIEdgeInsets)axcUI_shimmeringTextEdgeInsets{
+    self.AxcfrontLabel.axcUI_textEdgeInsets = axcUI_shimmeringTextEdgeInsets;
+    self.AxcBackLabel.axcUI_textEdgeInsets = axcUI_shimmeringTextEdgeInsets;
     [self willChangeValueForKey:kshimmeringBackColor];
     objc_setAssociatedObject(self, &ktextEdgeInsets,
-                             [NSValue valueWithUIEdgeInsets:axcUI_textEdgeInsets],
+                             [NSValue valueWithUIEdgeInsets:axcUI_shimmeringTextEdgeInsets],
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     [self didChangeValueForKey:ktextEdgeInsets];
 }
 
-- (UIEdgeInsets)axcUI_textEdgeInsets{
+- (UIEdgeInsets)axcUI_shimmeringTextEdgeInsets{
     return [objc_getAssociatedObject(self, &ktextEdgeInsets) UIEdgeInsetsValue];
 }
 

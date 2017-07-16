@@ -48,7 +48,7 @@
 - (void)clickShakingButton{
     for (UIView *subView in self.view.subviews) {
         // 一行代码触发晃动  ************************************************
-        [subView AxcUI_shaking];
+        [subView AxcUI_viewShaking];
     }
 }
 

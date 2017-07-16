@@ -13,6 +13,6 @@
 /**
  *  晃动动画执行
  */
-- (void)AxcUI_shaking;
+- (void)AxcUI_viewShaking;
 
 @end

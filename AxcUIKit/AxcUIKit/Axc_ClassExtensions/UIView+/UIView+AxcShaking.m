@@ -14,7 +14,7 @@
 
 @implementation UIView (AxcShaking)
 
-- (void)AxcUI_shaking{
+- (void)AxcUI_viewShaking{
     CAKeyframeAnimation *keyFrame = [CAKeyframeAnimation animationWithKeyPath:@"position.x"];
     keyFrame.duration = 0.3;
     CGFloat x = self.layer.position.x;

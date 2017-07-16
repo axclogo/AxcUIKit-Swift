@@ -46,7 +46,7 @@ typedef NS_ENUM(NSUInteger, AxcShimmeringViewStyle) {
 /**
  *  shimmering文字的边距
  */
-@property(nonatomic, assign) UIEdgeInsets axcUI_textEdgeInsets;
+@property(nonatomic, assign) UIEdgeInsets axcUI_shimmeringTextEdgeInsets;
 
 /**
  *  开始执行shimmering动画效果
