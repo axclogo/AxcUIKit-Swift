@@ -12,15 +12,15 @@
 #import "UIView+AxcExtension.h"
 
 
-static NSString * const kbadgeView1 = @"AxcUI_BadgeView";
-static NSString * const kbadgePoint1 = @"axcUI_badgePoint";
-static NSString * const kbadgeText1 = @"axcUI_badgeText";
+static NSString * const kbadgeView = @"AxcUI_BadgeView";
+static NSString * const kbadgePoint = @"axcUI_badgePoint";
+static NSString * const kbadgeText = @"axcUI_badgeText";
 
 
 @implementation UIView (BadgeView)
 
 - (AxcUI_BadgeView *)axcUI_badgeView{
-    AxcUI_BadgeView *_axcUI_badgeView = objc_getAssociatedObject(self, &kbadgeView1);
+    AxcUI_BadgeView *_axcUI_badgeView = objc_getAssociatedObject(self, &kbadgeView);
     if (!_axcUI_badgeView) {
         _axcUI_badgeView = [[AxcUI_BadgeView alloc] init];
         _axcUI_badgeView.axcUI_Size = CGSizeMake(24, 24);
@@ -32,20 +32,20 @@ static NSString * const kbadgeText1 = @"axcUI_badgeText";
 }
 
 - (void)setAxcUI_badgeView:(AxcUI_BadgeView *)axcUI_badgeView{
-    [self willChangeValueForKey:kbadgeView1];
-    objc_setAssociatedObject(self, &kbadgeView1,
+    [self willChangeValueForKey:kbadgeView];
+    objc_setAssociatedObject(self, &kbadgeView,
                              axcUI_badgeView,
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    [self didChangeValueForKey:kbadgeView1];
+    [self didChangeValueForKey:kbadgeView];
 }
 
 
 - (void)setAxcUI_badgeText:(NSString *)axcUI_badgeText{
-    [self willChangeValueForKey:kbadgeText1];
-    objc_setAssociatedObject(self, &kbadgeText1,
+    [self willChangeValueForKey:kbadgeText];
+    objc_setAssociatedObject(self, &kbadgeText,
                              axcUI_badgeText,
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    [self didChangeValueForKey:kbadgeText1];
+    [self didChangeValueForKey:kbadgeText];
     self.axcUI_badgeView.axcUI_text = axcUI_badgeText;
 }
 
@@ -55,11 +55,11 @@ static NSString * const kbadgeText1 = @"axcUI_badgeText";
 
 
 - (void)setAxcUI_badgePoint:(CGPoint)axcUI_badgePoint{
-    [self willChangeValueForKey:kbadgePoint1];
-    objc_setAssociatedObject(self, &kbadgePoint1,
+    [self willChangeValueForKey:kbadgePoint];
+    objc_setAssociatedObject(self, &kbadgePoint,
                              [NSValue valueWithCGPoint:axcUI_badgePoint],
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    [self didChangeValueForKey:kbadgePoint1];
+    [self didChangeValueForKey:kbadgePoint];
     self.axcUI_badgeView.center = axcUI_badgePoint;
 }
 
