@@ -16,7 +16,8 @@
 #import "UIView+AxcShaking.h"                 // 左右晃动的动画扩展
 #import "UIView+AxcShimmeringView.h"          // 为View添加闪动效果
 #import "UIView+AxcRectCorner.h"              // 快速切圆角
-#import "UIView+AxcBadgeView.h"               // 给View添加小气泡
+#import "UIView+BadgeInteractionView.h"       // 给View添加交互气泡
+#import "UIView+BadgeView.h"                  // 给View添加消息数量气泡
 
 // MARK: UITextField+
 #import "UITextField+AxcModifyPlaceholder.h"  // UITextField快速修改Placeholder属性

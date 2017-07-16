@@ -49,7 +49,7 @@
     imageV = [[UIImageView alloc] initWithFrame:CGRectMake(10, 150, 300, 300)];
     imageV.image = [UIImage imageNamed:@"test_4"];
     imageV.backgroundColor = [UIColor AxcUI_CloudColor];
-    imageV.axcUI_badgeText = @"10";
+    imageV.axcUI_badgeInteractionText = @"10";
     imageV.userInteractionEnabled = YES;
     [self.view addSubview:imageV];
     

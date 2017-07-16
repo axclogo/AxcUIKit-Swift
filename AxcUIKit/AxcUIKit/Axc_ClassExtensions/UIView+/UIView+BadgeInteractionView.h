@@ -10,13 +10,13 @@
 
 #import "AxcUI_BadgeInteractionView.h"
 
-@interface UIView (AxcBadgeView)
+@interface UIView (BadgeInteractionView)
 
 @property(nonatomic,strong)AxcUI_BadgeInteractionView *AxcUI_BadgeInteractionView;
 
-@property(nonatomic, assign)CGPoint axcUI_badgePoint;
+@property(nonatomic, assign)CGPoint axcUI_badgeInteractionPoint;
 
-@property(nonatomic, strong)NSString *axcUI_badgeText;
+@property(nonatomic, strong)NSString *axcUI_badgeInteractionText;
 
 
 

@@ -6,7 +6,7 @@
 //  Copyright © 2017年 Axc_5324. All rights reserved.
 //
 
-#import "UIView+AxcBadgeView.h"
+#import "UIView+BadgeInteractionView.h"
 
 #import <objc/runtime.h>
 
@@ -14,36 +14,36 @@
 
 
 static NSString * const kbadgeView = @"AxcUI_BadgeInteractionView";
-static NSString * const kbadgePoint = @"axcUI_badgePoint";
-static NSString * const kbadgeText = @"axcUI_badgeText";
+static NSString * const kbadgePoint = @"axcUI_badgeInteractionPoint";
+static NSString * const kbadgeText = @"axcUI_badgeInteractionText";
 
-@implementation UIView (AxcBadgeView)
+@implementation UIView (BadgeInteractionView)
 
 
-- (void)setAxcUI_badgeText:(NSString *)axcUI_badgeText{
+- (void)setAxcUI_badgeInteractionText:(NSString *)axcUI_badgeInteractionText{
     [self willChangeValueForKey:kbadgeText];
     objc_setAssociatedObject(self, &kbadgeText,
-                             axcUI_badgeText,
+                             axcUI_badgeInteractionText,
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     [self didChangeValueForKey:kbadgeText];
-    self.AxcUI_BadgeInteractionView.axcUI_text = axcUI_badgeText;
+    self.AxcUI_BadgeInteractionView.axcUI_text = axcUI_badgeInteractionText;
 }
 
-- (NSString *)axcUI_badgeText{
+- (NSString *)axcUI_badgeInteractionText{
     return self.AxcUI_BadgeInteractionView.axcUI_text;
 }
 
 
-- (void)setAxcUI_badgePoint:(CGPoint)axcUI_badgePoint{
+- (void)setAxcUI_badgeInteractionPoint:(CGPoint)axcUI_badgeInteractionPoint{
     [self willChangeValueForKey:kbadgeView];
     objc_setAssociatedObject(self, &kbadgeView,
-                             [NSValue valueWithCGPoint:axcUI_badgePoint],
+                             [NSValue valueWithCGPoint:axcUI_badgeInteractionPoint],
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     [self didChangeValueForKey:kbadgeView];
-    self.AxcUI_BadgeInteractionView.center = axcUI_badgePoint;
+    self.AxcUI_BadgeInteractionView.center = axcUI_badgeInteractionPoint;
 }
 
-- (CGPoint)axcUI_badgePoint{
+- (CGPoint)axcUI_badgeInteractionPoint{
     return self.AxcUI_BadgeInteractionView.center;
 }
 
