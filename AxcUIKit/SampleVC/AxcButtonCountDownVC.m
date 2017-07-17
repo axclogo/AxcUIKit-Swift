@@ -25,7 +25,7 @@
     [self.view addSubview:self.button];
     
     // 原作者GitHub：https://github.com/boai
-    self.instructionsLabel.text = @"一个快速设置Button进行倒计时的类扩展\n根据作者boai项目BAButton改制\n在此感谢作者Hugo Sousa提供的使用许可";
+    self.instructionsLabel.text = @"一个快速设置Button进行倒计时的类扩展\n根据作者boai项目BAButton改制\n在此感谢作者提供的使用许可";
 }
 
 - (void)getVerificationCode{

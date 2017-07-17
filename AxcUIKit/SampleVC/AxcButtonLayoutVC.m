@@ -30,7 +30,7 @@
     [self createSegmented];
     
     // 原作者GitHub：https://github.com/boai
-    self.instructionsLabel.text = @"根据作者boai项目BAButton改制\n原作者通过类方法给我灵感，在不使用继承的方式快速融入到原有项目中\n在此感谢作者Hugo Sousa提供的使用许可";
+    self.instructionsLabel.text = @"根据作者boai项目BAButton改制\n原作者通过类方法给我灵感，在不使用继承的方式快速融入到原有项目中\n在此感谢作者提供的使用许可";
 }
 
 // 重写SET传值，需要在图文元素确定后才能设置布局，之后参数即可动态调整  ************************************************

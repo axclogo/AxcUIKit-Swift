@@ -27,7 +27,7 @@
     
     
     // 重写SET方法，设置即可调用，无先后顺序，设置即可动态调整  ************************************************
-    // 设置气泡文本
+    // 快速设置气泡文本
     self.testView.axcUI_badgeText = @"99+";
     
     // 气泡对象的指针
@@ -35,7 +35,16 @@
     
     self.instructionsLabel.text = @"其中的Badge对象为‘AxcUI_BadgeView’\n此对象详细属性设置请参见Api或者“AxcBadgeViewVC”";
     
+    
+    // 设置成iOS5怀旧式风
+    self.testView.axcUI_badgeView.axcUI_borderWidth = 2;    // 边框
+    self.testView.axcUI_badgeView.axcUI_showGloss = YES;    // 抛光
+    self.testView.axcUI_badgeView.axcUI_shadowText = YES;   // 文字阴影
+    self.testView.axcUI_badgeView.axcUI_shadowBadge = YES;  // 气泡阴影
+    self.testView.axcUI_badgeView.axcUI_shadowBorder = YES; // 边框阴影
+    
 }
+
 #pragma mark - 懒加载区
 - (UIView *)testView{
     if (!_testView) {

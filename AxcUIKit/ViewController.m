@@ -172,7 +172,7 @@ didSelectSearchHistoryAtIndex:(NSInteger)index
     cell.detailTextLabel.text = dic[@"describeName"];
     cell.detailTextLabel.font = [UIFont systemFontOfSize:14];
     cell.detailTextLabel.textColor = [UIColor AxcUI_colorWithHexCode:@"b0a4e3"];
-
+    
     return cell;
 }
 
@@ -269,6 +269,11 @@ didSelectSearchHistoryAtIndex:(NSInteger)index
     }
     return _sectionTitleArray;
 }
+
+
+
+
+
 - (UITableView *)tableView{
     if (!_tableView) {
         _tableView = [[UITableView alloc]initWithFrame:self.view.frame];
