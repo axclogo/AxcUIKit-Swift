@@ -212,7 +212,6 @@ didSelectSearchHistoryAtIndex:(NSInteger)index
         
         [Group1 addObject:@{@"controlsName":@"Button+",@"describeName":@"Button快速布局",@"VCName":@"AxcButtonLayoutVC"}];
         [Group1 addObject:@{@"controlsName":@"Button+",@"describeName":@"Button快速设置倒计时",@"VCName":@"AxcButtonCountDownVC"}];
-        [Group1 addObject:@{@"controlsName":@"Button+",@"describeName":@"Button快速设置气泡时",@"VCName":@"AxcButtonBadgeInteractionView"}];
         
         [Group1 addObject:@{@"controlsName":@"Label+",@"describeName":@"Label长按复制剪贴板",@"VCName":@"AxcCopyableVC"}];
         [Group1 addObject:@{@"controlsName":@"CollectionView+",@"describeName":@"长摁拖动排序",@"VCName":@"AxcCellRearrangeVC"}];
