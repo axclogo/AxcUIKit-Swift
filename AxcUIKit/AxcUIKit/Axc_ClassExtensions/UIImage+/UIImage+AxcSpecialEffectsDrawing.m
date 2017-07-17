@@ -35,33 +35,54 @@
  *  高斯模糊函数
  */
 - (UIImage *)AxcUI_drawingWithGaussianBlur{
-    const size_t width = self.size.width;
-    const size_t height = self.size.height;
-    const size_t bytesPerRow = width * 4;
-    CGColorSpaceRef space = CGColorSpaceCreateDeviceRGB();
-    CGContextRef bmContext = CGBitmapContextCreate(NULL, width, height, 8, bytesPerRow, space, kCGBitmapByteOrderDefault | kCGImageAlphaPremultipliedFirst);
-    CGColorSpaceRelease(space);
-    if (!bmContext)
-        return nil;
-    CGContextDrawImage(bmContext, (CGRect){.origin.x = 0.0f, .origin.y = 0.0f, .size.width = width, .size.height = height}, self.CGImage);
-    UInt8* data = (UInt8*)CGBitmapContextGetData(bmContext);
-    if (!data){
-        CGContextRelease(bmContext);
-        return nil;
-    }
-    const size_t n = sizeof(UInt8) * width * height * 4;
-    void* outt = malloc(n);
-    vImage_Buffer src = {data, height, width, bytesPerRow};
-    vImage_Buffer dest = {outt, height, width, bytesPerRow};
-    vImageConvolve_ARGB8888(&src, &dest, NULL, 0, 0, gaussianblur_kernel, 5, 5, 256, NULL, kvImageCopyInPlace);
-    memcpy(data, outt, n);
-    free(outt);
-    CGImageRef blurredImageRef = CGBitmapContextCreateImage(bmContext);
-    UIImage* blurred = [UIImage imageWithCGImage:blurredImageRef];
-    CGImageRelease(blurredImageRef);
-    CGContextRelease(bmContext);
-    return blurred;
+    return [self AxcUI_drawingWithGaussianBlurNumber:0.5];
 }
+
+- (UIImage *)AxcUI_drawingWithGaussianBlurNumber:(CGFloat)blur {
+    int boxSize = (int)(blur * 40);
+    boxSize = boxSize - (boxSize % 2) + 1;
+    CGImageRef img = self.CGImage;
+    vImage_Buffer inBuffer, outBuffer;
+    vImage_Error error;
+    void *pixelBuffer;
+    //从CGImage中获取数据
+    CGDataProviderRef inProvider = CGImageGetDataProvider(img);
+    CFDataRef inBitmapData = CGDataProviderCopyData(inProvider);
+    //设置从CGImage获取对象的属性
+    inBuffer.width = CGImageGetWidth(img);
+    inBuffer.height = CGImageGetHeight(img);
+    inBuffer.rowBytes = CGImageGetBytesPerRow(img);
+    inBuffer.data = (void*)CFDataGetBytePtr(inBitmapData);
+    pixelBuffer = malloc(CGImageGetBytesPerRow(img) *
+                         CGImageGetHeight(img));
+    if(pixelBuffer == NULL)NSLog(@"No pixelbuffer");
+    outBuffer.data = pixelBuffer;
+    outBuffer.width = CGImageGetWidth(img);
+    outBuffer.height = CGImageGetHeight(img);
+    outBuffer.rowBytes = CGImageGetBytesPerRow(img);
+    error = vImageBoxConvolve_ARGB8888(&inBuffer, &outBuffer, NULL, 0, 0, boxSize, boxSize, NULL, kvImageEdgeExtend);
+    if (error) {NSLog(@"error from convolution %ld", error);}
+    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+    CGContextRef ctx = CGBitmapContextCreate(
+                                             outBuffer.data,
+                                             outBuffer.width,
+                                             outBuffer.height,
+                                             8,
+                                             outBuffer.rowBytes,
+                                             colorSpace,
+                                             kCGImageAlphaNoneSkipLast);
+    CGImageRef imageRef = CGBitmapContextCreateImage (ctx);
+    UIImage *returnImage = [UIImage imageWithCGImage:imageRef];
+    //clean up
+    CGContextRelease(ctx);
+    CGColorSpaceRelease(colorSpace);
+    free(pixelBuffer);
+    CFRelease(inBitmapData);
+    CGColorSpaceRelease(colorSpace);
+    CGImageRelease(imageRef);
+    return returnImage;
+}
+
 
 /**
  *  边缘锐化函数

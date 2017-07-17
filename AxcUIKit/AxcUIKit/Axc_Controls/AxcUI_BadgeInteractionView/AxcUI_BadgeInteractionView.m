@@ -449,11 +449,14 @@ CGFloat distanceBetweenPoints (CGPoint p1, CGPoint p2) {
         
         [self setNeedsDisplay];
     }
+    _originSuperView = nil;
 }
 
 - (void)empty{
-    _originSuperView = nil;  // 这个会造成内存泄漏
-//    [self removeGestureRecognizer:_panGestureRecognizer];
+    // 这个会造成内存泄漏
+    _originSuperView = nil;
+    _activeTweenOperation.updateSelector = nil;
+    _activeTweenOperation = nil;
 }
 
 - (void)touchesMoved:(CGPoint)point {

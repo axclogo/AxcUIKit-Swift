@@ -75,6 +75,8 @@
 		EA5D4F0E1F18C5B90002E9E9 /* AxcUI_BadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA5D4F0D1F18C5B90002E9E9 /* AxcUI_BadgeView.m */; };
 		EA5D4F111F18C65C0002E9E9 /* AxcBadgeViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EA5D4F101F18C65C0002E9E9 /* AxcBadgeViewVC.m */; };
 		EA5D4F141F1B0BD10002E9E9 /* UIView+BadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA5D4F131F1B0BD10002E9E9 /* UIView+BadgeView.m */; };
+		EA5D4F2C1F1C50590002E9E9 /* AxcQuickBadgeInteractionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EA5D4F2B1F1C50590002E9E9 /* AxcQuickBadgeInteractionVC.m */; };
+		EA5D4F2F1F1C506F0002E9E9 /* AxcQuickBadgeViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EA5D4F2E1F1C506F0002E9E9 /* AxcQuickBadgeViewVC.m */; };
 		EA650EC41F0768B600863057 /* test.json in Resources */ = {isa = PBXBuildFile; fileRef = EA650EC31F0768B600863057 /* test.json */; };
 		EA650EC71F076A8000863057 /* AxcXmlUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = EA650EC61F076A8000863057 /* AxcXmlUtil.m */; };
 		EA650ED31F076B7A00863057 /* BarrageDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EA650ED21F076B7A00863057 /* BarrageDataModel.m */; };
@@ -360,6 +362,10 @@
 		EA5D4F101F18C65C0002E9E9 /* AxcBadgeViewVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcBadgeViewVC.m; sourceTree = "<group>"; };
 		EA5D4F121F1B0BD10002E9E9 /* UIView+BadgeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+BadgeView.h"; sourceTree = "<group>"; };
 		EA5D4F131F1B0BD10002E9E9 /* UIView+BadgeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+BadgeView.m"; sourceTree = "<group>"; };
+		EA5D4F2A1F1C50590002E9E9 /* AxcQuickBadgeInteractionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcQuickBadgeInteractionVC.h; sourceTree = "<group>"; };
+		EA5D4F2B1F1C50590002E9E9 /* AxcQuickBadgeInteractionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcQuickBadgeInteractionVC.m; sourceTree = "<group>"; };
+		EA5D4F2D1F1C506F0002E9E9 /* AxcQuickBadgeViewVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcQuickBadgeViewVC.h; sourceTree = "<group>"; };
+		EA5D4F2E1F1C506F0002E9E9 /* AxcQuickBadgeViewVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcQuickBadgeViewVC.m; sourceTree = "<group>"; };
 		EA650EC31F0768B600863057 /* test.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = test.json; sourceTree = "<group>"; };
 		EA650EC51F076A8000863057 /* AxcXmlUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcXmlUtil.h; sourceTree = "<group>"; };
 		EA650EC61F076A8000863057 /* AxcXmlUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcXmlUtil.m; sourceTree = "<group>"; };
@@ -869,6 +875,10 @@
 				EA5D4ECD1F160B5E0002E9E9 /* AxcRectCornerVC.m */,
 				EA5D4EE61F17166E0002E9E9 /* AxcButtonCountDownVC.h */,
 				EA5D4EE71F17166E0002E9E9 /* AxcButtonCountDownVC.m */,
+				EA5D4F2A1F1C50590002E9E9 /* AxcQuickBadgeInteractionVC.h */,
+				EA5D4F2B1F1C50590002E9E9 /* AxcQuickBadgeInteractionVC.m */,
+				EA5D4F2D1F1C506F0002E9E9 /* AxcQuickBadgeViewVC.h */,
+				EA5D4F2E1F1C506F0002E9E9 /* AxcQuickBadgeViewVC.m */,
 			);
 			name = Extension;
 			sourceTree = "<group>";
@@ -1835,6 +1845,7 @@
 				EA43A0631EE7DE9E00D992E7 /* AxcPhotoBrowserVC.m in Sources */,
 				EA6A3BBE1F09DE3800E0FAAA /* AxcUIKit.m in Sources */,
 				EA6A3B9A1F09DE3800E0FAAA /* UILabel+AxcShimmering.m in Sources */,
+				EA5D4F2C1F1C50590002E9E9 /* AxcQuickBadgeInteractionVC.m in Sources */,
 				EA439CB71EE29E3100D992E7 /* AxcCellRearrangeVC.m in Sources */,
 				EA6A3BB81F09DE3800E0FAAA /* AxcUI_LoopProgressView.m in Sources */,
 				EA6A3BA11F09DE3800E0FAAA /* UIView+AxcShaking.m in Sources */,
@@ -1865,6 +1876,7 @@
 				EA6A3B8A1F09DE3800E0FAAA /* UIImageView+AxcFilter.m in Sources */,
 				EA43A07C1EE8055100D992E7 /* AxcProgressViewVC.m in Sources */,
 				093C622E1EA6F85800ADAC42 /* ViewController.m in Sources */,
+				EA5D4F2F1F1C506F0002E9E9 /* AxcQuickBadgeViewVC.m in Sources */,
 				EA6A3BD71F0A4C4600E0FAAA /* AxcUI_NumberUnitField.m in Sources */,
 				EADC7D311F14C3DA004AF7D8 /* AxcEmptyDataVC.m in Sources */,
 				EA650EC71F076A8000863057 /* AxcXmlUtil.m in Sources */,

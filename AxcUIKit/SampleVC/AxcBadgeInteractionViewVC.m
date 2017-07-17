@@ -68,6 +68,10 @@
                            @"%@：\t%.0f",self.createInstructionsLabelTextArr[sender.tag - 100],sender.value];
 }
 
+// 因为交互原因，有部分代码被循环引用，因此需要手动置空一部分指针
+- (void)dealloc{
+    [self.badgeInteractionView empty];
+}
 
 
 #pragma mark - 懒加载区
@@ -82,12 +86,6 @@
     }
     return _badgeInteractionView;
 }
-
-- (void)dealloc{
-    [self.badgeInteractionView removeFromSuperview];
-    self.badgeInteractionView = nil;
-}
-
 
 
 

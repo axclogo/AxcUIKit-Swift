@@ -16,9 +16,14 @@
 - (UIImage *)AxcUI_drawingWithMosaic;
 
 /**
- *  高斯模糊
+ *  高斯模糊 0.5
  */
 - (UIImage *)AxcUI_drawingWithGaussianBlur;
+
+/**
+ *  高斯模糊 自定义
+ */
+- (UIImage *)AxcUI_drawingWithGaussianBlurNumber:(CGFloat)blur;
 
 /**
  *  边缘锐化
