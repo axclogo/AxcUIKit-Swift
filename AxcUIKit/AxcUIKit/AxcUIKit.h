@@ -95,7 +95,7 @@
 #import "AxcUI_TagTextView.h"           // 文字样式标签
 #import "AxcUI_BadgeInteractionView.h"  // 可交互气泡控件
 #import "AxcUI_BadgeView.h"             // 消息展示型气泡
-
+#import "AxcUI_BannerView.h"            // 横幅控件
 
 
 

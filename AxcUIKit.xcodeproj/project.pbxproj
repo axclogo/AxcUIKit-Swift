@@ -77,6 +77,10 @@
 		EA5D4F141F1B0BD10002E9E9 /* UIView+BadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA5D4F131F1B0BD10002E9E9 /* UIView+BadgeView.m */; };
 		EA5D4F2C1F1C50590002E9E9 /* AxcQuickBadgeInteractionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EA5D4F2B1F1C50590002E9E9 /* AxcQuickBadgeInteractionVC.m */; };
 		EA5D4F2F1F1C506F0002E9E9 /* AxcQuickBadgeViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EA5D4F2E1F1C506F0002E9E9 /* AxcQuickBadgeViewVC.m */; };
+		EA5D50461F1C947B0002E9E9 /* AxcBannerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EA5D50411F1C947B0002E9E9 /* AxcBannerCell.m */; };
+		EA5D50471F1C947B0002E9E9 /* AxcBannerFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = EA5D50431F1C947B0002E9E9 /* AxcBannerFooter.m */; };
+		EA5D50481F1C947B0002E9E9 /* AxcUI_BannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA5D50451F1C947B0002E9E9 /* AxcUI_BannerView.m */; };
+		EA5D504B1F1C959F0002E9E9 /* AxcBannerViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EA5D504A1F1C959F0002E9E9 /* AxcBannerViewVC.m */; };
 		EA650EC41F0768B600863057 /* test.json in Resources */ = {isa = PBXBuildFile; fileRef = EA650EC31F0768B600863057 /* test.json */; };
 		EA650EC71F076A8000863057 /* AxcXmlUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = EA650EC61F076A8000863057 /* AxcXmlUtil.m */; };
 		EA650ED31F076B7A00863057 /* BarrageDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EA650ED21F076B7A00863057 /* BarrageDataModel.m */; };
@@ -366,6 +370,14 @@
 		EA5D4F2B1F1C50590002E9E9 /* AxcQuickBadgeInteractionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcQuickBadgeInteractionVC.m; sourceTree = "<group>"; };
 		EA5D4F2D1F1C506F0002E9E9 /* AxcQuickBadgeViewVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcQuickBadgeViewVC.h; sourceTree = "<group>"; };
 		EA5D4F2E1F1C506F0002E9E9 /* AxcQuickBadgeViewVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcQuickBadgeViewVC.m; sourceTree = "<group>"; };
+		EA5D50401F1C947B0002E9E9 /* AxcBannerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcBannerCell.h; sourceTree = "<group>"; };
+		EA5D50411F1C947B0002E9E9 /* AxcBannerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcBannerCell.m; sourceTree = "<group>"; };
+		EA5D50421F1C947B0002E9E9 /* AxcBannerFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcBannerFooter.h; sourceTree = "<group>"; };
+		EA5D50431F1C947B0002E9E9 /* AxcBannerFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcBannerFooter.m; sourceTree = "<group>"; };
+		EA5D50441F1C947B0002E9E9 /* AxcUI_BannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcUI_BannerView.h; sourceTree = "<group>"; };
+		EA5D50451F1C947B0002E9E9 /* AxcUI_BannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcUI_BannerView.m; sourceTree = "<group>"; };
+		EA5D50491F1C959F0002E9E9 /* AxcBannerViewVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcBannerViewVC.h; sourceTree = "<group>"; };
+		EA5D504A1F1C959F0002E9E9 /* AxcBannerViewVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcBannerViewVC.m; sourceTree = "<group>"; };
 		EA650EC31F0768B600863057 /* test.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = test.json; sourceTree = "<group>"; };
 		EA650EC51F076A8000863057 /* AxcXmlUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcXmlUtil.h; sourceTree = "<group>"; };
 		EA650EC61F076A8000863057 /* AxcXmlUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcXmlUtil.m; sourceTree = "<group>"; };
@@ -836,6 +848,8 @@
 				EA5D4ED01F16233B0002E9E9 /* AxcBadgeInteractionViewVC.m */,
 				EA5D4F0F1F18C65C0002E9E9 /* AxcBadgeViewVC.h */,
 				EA5D4F101F18C65C0002E9E9 /* AxcBadgeViewVC.m */,
+				EA5D50491F1C959F0002E9E9 /* AxcBannerViewVC.h */,
+				EA5D504A1F1C959F0002E9E9 /* AxcBannerViewVC.m */,
 			);
 			name = Controls;
 			sourceTree = "<group>";
@@ -956,6 +970,19 @@
 				EA5D4F0D1F18C5B90002E9E9 /* AxcUI_BadgeView.m */,
 			);
 			path = AxcUI_BadgeView;
+			sourceTree = "<group>";
+		};
+		EA5D503F1F1C947B0002E9E9 /* AxcUI_BannerView */ = {
+			isa = PBXGroup;
+			children = (
+				EA5D50401F1C947B0002E9E9 /* AxcBannerCell.h */,
+				EA5D50411F1C947B0002E9E9 /* AxcBannerCell.m */,
+				EA5D50421F1C947B0002E9E9 /* AxcBannerFooter.h */,
+				EA5D50431F1C947B0002E9E9 /* AxcBannerFooter.m */,
+				EA5D50441F1C947B0002E9E9 /* AxcUI_BannerView.h */,
+				EA5D50451F1C947B0002E9E9 /* AxcUI_BannerView.m */,
+			);
+			path = AxcUI_BannerView;
 			sourceTree = "<group>";
 		};
 		EA6A3AE71F09DE3700E0FAAA /* AxcUIKit */ = {
@@ -1168,6 +1195,7 @@
 		EA6A3B411F09DE3800E0FAAA /* Axc_Controls */ = {
 			isa = PBXGroup;
 			children = (
+				EA5D503F1F1C947B0002E9E9 /* AxcUI_BannerView */,
 				EA5D4F0B1F18C5B90002E9E9 /* AxcUI_BadgeView */,
 				EA5D4F001F18C5A20002E9E9 /* AxcUI_BadgeInteractionView */,
 				EA530A871F0CDC5100F562FD /* AxcUI_TagTextView */,
@@ -1786,6 +1814,7 @@
 				EA6A3BC21F09E11700E0FAAA /* AxcFilterTwoVC.m in Sources */,
 				EADC7D241F13705D004AF7D8 /* UILabel+AxcCopyable.m in Sources */,
 				EA439CD11EE2FAB500D992E7 /* AxcViewSharkVC.m in Sources */,
+				EA5D50461F1C947B0002E9E9 /* AxcBannerCell.m in Sources */,
 				EA87DA6C1F04D3DF00452D2D /* AxcQRCodeVC.m in Sources */,
 				EA439CC41EE2DE8400D992E7 /* TestTwoVC.m in Sources */,
 				EA6A3BBD1F09DE3800E0FAAA /* AxcUI_Toast.m in Sources */,
@@ -1801,6 +1830,7 @@
 				EA439CED1EE3D1CB00D992E7 /* AxcToastVC.m in Sources */,
 				EADC7D2E1F14C330004AF7D8 /* UITableView+AxcEmptyData.m in Sources */,
 				EAD085761EEAE65F007DE2C4 /* AxcActivityHUDVC.m in Sources */,
+				EA5D50481F1C947B0002E9E9 /* AxcUI_BannerView.m in Sources */,
 				EA5252C21EF523CB0016C687 /* AxcActivityIndicatorViewVC.m in Sources */,
 				EA6A3BB11F09DE3800E0FAAA /* AxcUI_BarrageView.m in Sources */,
 				EADC7D271F1370E4004AF7D8 /* AxcCopyableVC.m in Sources */,
@@ -1816,6 +1846,7 @@
 				EAAFBFE11F0E3E9D00881A62 /* UIView+PYSearchExtension.m in Sources */,
 				EA650ED31F076B7A00863057 /* BarrageDataModel.m in Sources */,
 				EA5252CC1EF5253F0016C687 /* AxcActivityIndicatorViewCell.m in Sources */,
+				EA5D50471F1C947B0002E9E9 /* AxcBannerFooter.m in Sources */,
 				EA439CD81EE3068300D992E7 /* SampleBaseVC.m in Sources */,
 				EA6A3BAC1F09DE3800E0FAAA /* AxcBarrageDisplayLink.m in Sources */,
 				EA439CE41EE3C93600D992E7 /* AxcLoadImageVC.m in Sources */,
@@ -1895,6 +1926,7 @@
 				EA6A3BBB1F09DE3800E0FAAA /* AxcUI_TranPieProgressView.m in Sources */,
 				EA530A5D1F0CBC3100F562FD /* AxcTagViewVC.m in Sources */,
 				EA439CFE1EE3ECCD00D992E7 /* AxcSemiModalPresentView.m in Sources */,
+				EA5D504B1F1C959F0002E9E9 /* AxcBannerViewVC.m in Sources */,
 				EA6A3BAD1F09DE3800E0FAAA /* AxcUI_BarrageScrollEngine.m in Sources */,
 				EA6A3BA31F09DE3800E0FAAA /* UIViewController+AxcSemiModal.m in Sources */,
 				EAD085DD1EEB000C007DE2C4 /* AxcActivityHUDVCCollectionViewCell.m in Sources */,
