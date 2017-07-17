@@ -6,7 +6,7 @@
 //  Copyright © 2017年 Axc_5324. All rights reserved.
 //
 
-#import "UIButton+BadgeInteractionView.h"
+#import "UIView+BadgeInteractionView.h"
 
 #import <objc/runtime.h>
 

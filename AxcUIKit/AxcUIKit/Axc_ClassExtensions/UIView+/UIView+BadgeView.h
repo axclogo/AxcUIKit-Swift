@@ -10,7 +10,7 @@
 
 #import "AxcUI_BadgeView.h"
 
-@interface UIButton (BadgeView)
+@interface UIView (BadgeView)
 
 /** 文本显示徽章badge */
 @property(nonatomic, strong)AxcUI_BadgeView *axcUI_badgeView;
