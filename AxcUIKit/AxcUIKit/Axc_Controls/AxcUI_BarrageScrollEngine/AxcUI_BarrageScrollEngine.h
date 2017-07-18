@@ -35,6 +35,8 @@
 
 @end
 
+
+/** 弹幕渲染引擎 */
 @interface AxcUI_BarrageScrollEngine : NSObject
 
 @property (weak, nonatomic) id<AxcBarrageScrollEngineDelegate> axcUI_barrageDelegate;

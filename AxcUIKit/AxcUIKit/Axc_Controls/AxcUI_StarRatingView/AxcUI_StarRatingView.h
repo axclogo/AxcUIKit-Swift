@@ -11,7 +11,7 @@
 
 IB_DESIGNABLE  // XIB老大，我干你先人。。api就不能详细点
 
-
+/** 星级评分器 */
 @interface AxcUI_StarRatingView : UIControl
 
 /**

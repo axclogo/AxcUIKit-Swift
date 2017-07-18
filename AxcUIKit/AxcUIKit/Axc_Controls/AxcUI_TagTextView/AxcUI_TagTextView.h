@@ -7,9 +7,7 @@
 #import "AxcUI_TagView.h"
 
 
-/**
- * TagText样式构造器
- */
+/** TagText样式构造器 */
 @interface AxcTagTextConfig : NSObject
 
 /**

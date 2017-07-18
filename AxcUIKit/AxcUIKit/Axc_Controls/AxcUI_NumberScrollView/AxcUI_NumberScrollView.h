@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+
+/** 数字滚动展示控件 */
 @interface AxcUI_NumberScrollView : UIView
 // 内容相关
 /**

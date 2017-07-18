@@ -10,6 +10,8 @@
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
 
+
+/** Toast信息展示控件 */
 @interface AxcUI_Toast : NSObject
 
 #pragma mark-中间显示

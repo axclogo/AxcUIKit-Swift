@@ -22,7 +22,7 @@ typedef NS_ENUM(NSInteger, AxcBadgeViewVerticalStyle) {
     AxcBadgeViewVerticalStyleBottom
 } ;
 
-/** 气泡badge视图类似于标准badge标签栏项目  */
+/** 气泡badge视图类似于标准标签栏  */
 @interface AxcUI_BadgeView : UIView
 
 /** 文本显示徽章badge */

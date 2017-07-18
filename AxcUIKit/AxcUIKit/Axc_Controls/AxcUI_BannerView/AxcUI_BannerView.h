@@ -11,6 +11,7 @@
 
 @protocol AxcBannerViewDataSource, AxcBannerViewDelegate;
 
+/** 横幅式轮播图，可带左拉显示详情功能 */
 @interface AxcUI_BannerView : UIView
 
 /** 是否需要循环滚动, 默认为 NO */

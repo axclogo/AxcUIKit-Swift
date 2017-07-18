@@ -36,7 +36,7 @@ typedef NS_ENUM(NSInteger, AxcBarrageMovementStyle) {
 
 @end
 
-
+/** 多元素/弹幕展示容器 */
 @interface AxcUI_BarrageView : UIView
 
 /**

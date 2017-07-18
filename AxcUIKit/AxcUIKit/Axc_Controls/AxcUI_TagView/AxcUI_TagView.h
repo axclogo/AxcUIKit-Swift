@@ -61,9 +61,8 @@ typedef NS_ENUM(NSInteger, AxcTagViewAlignmentStyle) {
           tagViewForIndex:(NSUInteger)index;
 @end
 
-/**
- * Tag多元素View标签展示控件
- */
+
+/** Tag多元素View标签展示控件 */
 @interface AxcUI_TagView : UIView
 @property (nonatomic, weak) id <AxcTagViewDataSource> axcUI_tagViewDataSource;
 @property (nonatomic, weak) id <AxcTagViewDelegate> axcUI_tagViewDelegate;

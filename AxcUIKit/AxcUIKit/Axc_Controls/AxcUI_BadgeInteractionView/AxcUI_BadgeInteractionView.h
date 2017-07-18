@@ -8,9 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-/**
- * 一个支持拖拽的小气泡
- */
+/** 支持手势交互的Badge气泡视图 */
 @interface AxcUI_BadgeInteractionView : UIView
 
 

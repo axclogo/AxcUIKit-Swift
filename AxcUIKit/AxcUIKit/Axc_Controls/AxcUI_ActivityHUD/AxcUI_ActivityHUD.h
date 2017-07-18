@@ -91,7 +91,7 @@ typedef NS_ENUM(NSInteger, AxcActivityHUDOverlayType) {
 };
 
 
-
+/** 加载动画指示器 */
 @interface AxcUI_ActivityHUD : UIView
 
 #pragma mark - properties

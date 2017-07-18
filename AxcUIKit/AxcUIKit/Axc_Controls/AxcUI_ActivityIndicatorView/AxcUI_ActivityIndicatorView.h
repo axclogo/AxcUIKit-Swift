@@ -47,6 +47,7 @@ typedef NS_ENUM(NSUInteger, AxcActivityIndicatorAnimationStyle) {
     AxcActivityIndicatorAnimationStyleBallSpinFadeLoader
 };
 
+/** 纯动画View */
 @interface AxcUI_ActivityIndicatorView : UIView
 
 - (id)initWithType:(AxcActivityIndicatorAnimationStyle)type;

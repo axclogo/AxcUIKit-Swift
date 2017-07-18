@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-// 支持自定义文字内边距
+
+/** 支持自定义文字内边距的Label */
 @interface AxcUI_Label : UILabel
 
 @property(nonatomic, assign) UIEdgeInsets axcUI_textEdgeInsets;

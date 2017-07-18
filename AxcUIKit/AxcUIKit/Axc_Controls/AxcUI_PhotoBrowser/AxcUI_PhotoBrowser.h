@@ -36,7 +36,7 @@ typedef enum {
 
 @end
 
-
+/** 照片浏览器 */
 @interface AxcUI_PhotoBrowser : UIView <UIScrollViewDelegate>
 
 // 必选项：===============
