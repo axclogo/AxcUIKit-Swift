@@ -165,7 +165,7 @@ didSelectSearchHistoryAtIndex:(NSInteger)index
     }
     NSArray *Arr = self.dataArray[indexPath.section];
     NSDictionary *dic = Arr[indexPath.row];
-    cell.textLabel.text = [NSString stringWithFormat:@"(%ld)\t%@",indexPath.row + 1,dic[@"controlsName"]];
+    cell.textLabel.text = [NSString stringWithFormat:@"(%zi)\t%@",indexPath.row + 1,dic[@"controlsName"]];
     cell.textLabel.font = [UIFont systemFontOfSize:15];
     cell.textLabel.textColor = [UIColor AxcUI_colorWithHexCode:@"1296db"];
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;

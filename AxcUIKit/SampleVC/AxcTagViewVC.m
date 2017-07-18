@@ -102,7 +102,7 @@
 - (void)AxcUI_tagView:(AxcUI_TagView *)tagView
          didSelectTag:(UIView *)tagView1
               atIndex:(NSUInteger)index{
-    NSLog(@"点击了第%ld",index);
+    NSLog(@"点击了第%ld",(unsigned long)index);
 }
 
 - (void)AxcUI_tagView:(AxcUI_TagView *)tagView1

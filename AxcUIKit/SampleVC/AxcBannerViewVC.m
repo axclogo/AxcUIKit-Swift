@@ -78,7 +78,7 @@
 }
 
 - (void)AxcUI_banner:(AxcUI_BannerView *)banner didSelectItemAtIndex:(NSInteger)index{
-    NSLog(@"点击了第%ld个View",index);
+    NSLog(@"点击了第%zi个View",index);
 }
 // 返回 Footer 在不同状态时要显示的文字
 - (NSString *)AxcUI_banner:(AxcUI_BannerView *)banner titleForFooterWithState:(AxcBannerFooterState)footerState{

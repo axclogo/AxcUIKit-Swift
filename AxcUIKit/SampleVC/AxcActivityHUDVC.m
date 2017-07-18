@@ -152,7 +152,7 @@ UICollectionViewDelegateFlowLayout
                                                                                          forIndexPath:indexPath];
     cell.backgroundColor = [UIColor AxcUI_ArcColor]; // 预设随机色
 
-    cell.iconImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"HUD_%ld",indexPath.row]];
+    cell.iconImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"HUD_%ld",(long)indexPath.row]];
     
     return cell;
 }

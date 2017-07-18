@@ -14,7 +14,7 @@
 
 #import "AxcUI_BadgeInteractionView.h"
 
-@interface TestTwoVC ()<UITableViewDelegate,UITableViewDataSource>
+@interface TestTwoVC ()
 {
     UIView *view;
     UIImageView *imageV;

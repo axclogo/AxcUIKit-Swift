@@ -392,13 +392,13 @@
     return blendedImage;
 }
 
-static int16_t gaussianblur_kernel[25] = {
-    1, 4, 6, 4, 1,
-    4, 16, 24, 16, 4,
-    6, 24, 36, 24, 6,
-    4, 16, 24, 16, 4,
-    1, 4, 6, 4, 1
-};
+//static int16_t gaussianblur_kernel[25] = {
+//    1, 4, 6, 4, 1,
+//    4, 16, 24, 16, 4,
+//    6, 24, 36, 24, 6,
+//    4, 16, 24, 16, 4,
+//    1, 4, 6, 4, 1
+//};
 
 static int16_t edgedetect_kernel[9] = {
     -1, -1, -1,

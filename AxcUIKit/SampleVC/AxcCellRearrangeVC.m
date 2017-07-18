@@ -113,7 +113,7 @@ AxcCollectionViewRearrangeDelegate>
 
 - (void)AxcUI_collectionView:(UICollectionView *)collectionView didMoveCell:(UICollectionViewCell *)cell fromIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
     // 途径的位置
-    NSLog(@"从:%ld, 到x:%ld", fromIndexPath.row, toIndexPath.row);
+    NSLog(@"从:%ld, 到x:%ld", (long)fromIndexPath.row, toIndexPath.row);
 }
 
 

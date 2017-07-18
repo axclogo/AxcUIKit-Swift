@@ -107,7 +107,7 @@ UICollectionViewDelegateFlowLayout
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
                   cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    NSString *imageKey = [NSString stringWithFormat:@"axc%ld",indexPath.row];
+    NSString *imageKey = [NSString stringWithFormat:@"axc%ld",(long)indexPath.row];
     
     AxcFilterTwoCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"axc"
                                                                        forIndexPath:indexPath];
