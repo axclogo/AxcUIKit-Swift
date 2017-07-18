@@ -13,12 +13,12 @@
 @interface AxcProgressViewVC ()
 
 
-@property(nonatomic,strong)AxcUI_PieProgressView *pieProgressView;
-@property(nonatomic,strong)AxcUI_PieLoopProgressView *pieLoopProgressView;
-@property(nonatomic,strong)AxcUI_LoopProgressView *loopProgressView;
-@property(nonatomic,strong)AxcUI_BallProgressView *ballProgressView;
-@property(nonatomic,strong)AxcUI_LodingProgressView *lodingProgressView;
-@property(nonatomic,strong)AxcUI_TranPieProgressView *tranPieProgressView;
+@property(nonatomic,strong)AxcUI_ProgressPieView *pieProgressView;
+@property(nonatomic,strong)AxcUI_ProgressPieLoopView *pieLoopProgressView;
+@property(nonatomic,strong)AxcUI_ProgressLoopView *loopProgressView;
+@property(nonatomic,strong)AxcUI_ProgressBallView *ballProgressView;
+@property(nonatomic,strong)AxcUI_ProgressLodingView *lodingProgressView;
+@property(nonatomic,strong)AxcUI_ProgressTranPieView *tranPieProgressView;
 
 @property (nonatomic, strong) NSTimer *timer;
 @property (nonatomic, assign) CGFloat progress;
@@ -81,44 +81,44 @@
 }
 
 #pragma mark - 懒加载区
-- (AxcUI_PieProgressView *)pieProgressView{
+- (AxcUI_ProgressPieView *)pieProgressView{
     if (!_pieProgressView) {
-        _pieProgressView = [[AxcUI_PieProgressView alloc] init];
+        _pieProgressView = [[AxcUI_ProgressPieView alloc] init];
         _pieProgressView.frame = CGRectMake(self.view.axcUI_Width - margin - 100, 410, 100, 100);
     }
     return _pieProgressView;
 }
-- (AxcUI_PieLoopProgressView *)pieLoopProgressView{
+- (AxcUI_ProgressPieLoopView *)pieLoopProgressView{
     if (!_pieLoopProgressView) {
-        _pieLoopProgressView = [[AxcUI_PieLoopProgressView alloc] init];
+        _pieLoopProgressView = [[AxcUI_ProgressPieLoopView alloc] init];
         _pieLoopProgressView.frame = CGRectMake(margin, 410, 100, 100);
     }
     return _pieLoopProgressView;
 }
-- (AxcUI_LoopProgressView *)loopProgressView{
+- (AxcUI_ProgressLoopView *)loopProgressView{
     if (!_loopProgressView) {
-        _loopProgressView = [[AxcUI_LoopProgressView alloc] init];
+        _loopProgressView = [[AxcUI_ProgressLoopView alloc] init];
         _loopProgressView.frame = CGRectMake(self.view.axcUI_Width - margin - 100, 260, 100, 100);
     }
     return _loopProgressView;
 }
-- (AxcUI_BallProgressView *)ballProgressView{
+- (AxcUI_ProgressBallView *)ballProgressView{
     if (!_ballProgressView) {
-        _ballProgressView = [[AxcUI_BallProgressView alloc] init];
+        _ballProgressView = [[AxcUI_ProgressBallView alloc] init];
         _ballProgressView.frame = CGRectMake(margin, 260, 100, 100);
     }
     return _ballProgressView;
 }
-- (AxcUI_LodingProgressView *)lodingProgressView{
+- (AxcUI_ProgressLodingView *)lodingProgressView{
     if (!_lodingProgressView) {
-        _lodingProgressView = [[AxcUI_LodingProgressView alloc] init];
+        _lodingProgressView = [[AxcUI_ProgressLodingView alloc] init];
         _lodingProgressView.frame = CGRectMake(self.view.axcUI_Width - margin - 100, 110, 100, 100);
     }
     return _lodingProgressView;
 }
-- (AxcUI_TranPieProgressView *)tranPieProgressView{
+- (AxcUI_ProgressTranPieView *)tranPieProgressView{
     if (!_tranPieProgressView) {
-        _tranPieProgressView = [[AxcUI_TranPieProgressView alloc] init];
+        _tranPieProgressView = [[AxcUI_ProgressTranPieView alloc] init];
         _tranPieProgressView.frame = CGRectMake(margin, 110, 100, 100);
     }
     return _tranPieProgressView;
@@ -131,42 +131,42 @@
 - (ProgressViewLabel *)pieProgressViewLabel{
     if (!_pieProgressViewLabel) {
         _pieProgressViewLabel = [[ProgressViewLabel alloc] initWithFrame:CGRectMake(self.view.axcUI_Width - 10 - 180, 520, 0, 30)];
-        _pieProgressViewLabel.text = @"AxcUI_PieProgressView";
+        _pieProgressViewLabel.text = @"AxcUI_ProgressPieView";
     }
     return _pieProgressViewLabel;
 }
 - (ProgressViewLabel *)pieLoopProgressViewLabel{
     if (!_pieLoopProgressViewLabel) {
         _pieLoopProgressViewLabel = [[ProgressViewLabel alloc] initWithFrame:CGRectMake(10, 520, 0, 30)];
-        _pieLoopProgressViewLabel.text = @"AxcUI_PieLoopProgressView";
+        _pieLoopProgressViewLabel.text = @"AxcUI_ProgressPieLoopView";
     }
     return _pieLoopProgressViewLabel;
 }
 - (ProgressViewLabel *)loopProgressViewLabel{
     if (!_loopProgressViewLabel) {
         _loopProgressViewLabel = [[ProgressViewLabel alloc] initWithFrame:CGRectMake(self.view.axcUI_Width - 10 - 180, 370, 0, 30)];
-        _loopProgressViewLabel.text = @"AxcUI_LoopProgressView";
+        _loopProgressViewLabel.text = @"AxcUI_ProgressLoopView";
     }
     return _loopProgressViewLabel;
 }
 - (ProgressViewLabel *)ballProgressViewLabel{
     if (!_ballProgressViewLabel) {
         _ballProgressViewLabel = [[ProgressViewLabel alloc] initWithFrame:CGRectMake(10, 370, 0, 30)];
-        _ballProgressViewLabel.text = @"AxcUI_BallProgressView";
+        _ballProgressViewLabel.text = @"AxcUI_ProgressBallView";
     }
     return _ballProgressViewLabel;
 }
 - (ProgressViewLabel *)lodingProgressViewLabel{
     if (!_lodingProgressViewLabel) {
         _lodingProgressViewLabel = [[ProgressViewLabel alloc] initWithFrame:CGRectMake(self.view.axcUI_Width - 10 - 180, 220, 0, 30)];
-        _lodingProgressViewLabel.text = @"AxcUI_LodingProgressView";
+        _lodingProgressViewLabel.text = @"AxcUI_ProgressLodingView";
     }
     return _lodingProgressViewLabel;
 }
 - (ProgressViewLabel *)tranPieProgressViewLabel{
     if (!_tranPieProgressViewLabel) {
         _tranPieProgressViewLabel = [[ProgressViewLabel alloc] initWithFrame:CGRectMake(10, 220, 0, 30)];
-        _tranPieProgressViewLabel.text = @"AxcUI_TranPieProgressView";
+        _tranPieProgressViewLabel.text = @"AxcUI_ProgressTranPieView";
     }
     return _tranPieProgressViewLabel;
 }

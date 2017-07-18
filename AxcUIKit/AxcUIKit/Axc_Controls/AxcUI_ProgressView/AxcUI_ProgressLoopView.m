@@ -1,14 +1,14 @@
 //
-//  AxcUI_LoopProgressView.m
+//  AxcUI_ProgressLoopView.m
 //  AxcUIKit
 //
 //  Created by Axc_5324 on 17/6/5.
 //  Copyright © 2017年 Axc_5324. All rights reserved.
 //
 
-#import "AxcUI_LoopProgressView.h"
+#import "AxcUI_ProgressLoopView.h"
 
-@implementation AxcUI_LoopProgressView
+@implementation AxcUI_ProgressLoopView
 
 - (void)drawRect:(CGRect)rect
 {

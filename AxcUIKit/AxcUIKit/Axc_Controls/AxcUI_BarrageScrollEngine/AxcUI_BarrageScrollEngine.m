@@ -9,7 +9,7 @@
 #import "AxcUI_BarrageScrollEngine.h"
 #import "AxcBarrageClock.h"
 #import "AxcBarrageContainer.h"
-#import "AxcUI_FloatBarrageModel.h"
+#import "AxcUI_BarrageFloatModel.h"
 
 @interface AxcUI_BarrageScrollEngine()<AxcBarrageClockDelegate>
 @property (strong, nonatomic) AxcBarrageClock *clock;
@@ -64,7 +64,7 @@
     _intTime = -_axcUI_barrageTimeInterval;
 }
 
-- (void)AxcUI_BarrageSendBarrage:(AxcUI_BaseBarrageModel *)danmaku {
+- (void)AxcUI_BarrageSendBarrage:(AxcUI_BarrageModelBase *)danmaku {
     [self sendDanmaku:danmaku updateAppearTime:YES];
 }
 
@@ -149,9 +149,9 @@
     if ([self.axcUI_barrageDelegate respondsToSelector:@selector(AxcUI_barrageScrollEngine:didSendBarrageAtTime:)] &&
         (NSInteger)_axcUI_barrageCurrentTime - _intTime >= _axcUI_barrageTimeInterval) {
         _intTime = _axcUI_barrageCurrentTime;
-        NSArray <AxcUI_BaseBarrageModel*>*danmakus = [self.axcUI_barrageDelegate AxcUI_barrageScrollEngine:self
+        NSArray <AxcUI_BarrageModelBase*>*danmakus = [self.axcUI_barrageDelegate AxcUI_barrageScrollEngine:self
                                                                                       didSendBarrageAtTime:_intTime];
-        [danmakus enumerateObjectsUsingBlock:^(AxcUI_BaseBarrageModel * _Nonnull obj,
+        [danmakus enumerateObjectsUsingBlock:^(AxcUI_BarrageModelBase * _Nonnull obj,
                                                NSUInteger idx,
                                                BOOL * _Nonnull stop) {
             [self sendDanmaku:obj updateAppearTime:NO];
@@ -186,9 +186,9 @@
         
         for (NSInteger i = 1; i <= 5; ++i) {
             NSInteger time = _axcUI_barrageCurrentTime - i;
-            NSArray <AxcUI_BaseBarrageModel *>*danmakus = [self.axcUI_barrageDelegate AxcUI_barrageScrollEngine:self
+            NSArray <AxcUI_BarrageModelBase *>*danmakus = [self.axcUI_barrageDelegate AxcUI_barrageScrollEngine:self
                                                                                            didSendBarrageAtTime:time];
-            [danmakus enumerateObjectsUsingBlock:^(AxcUI_BaseBarrageModel * _Nonnull obj,
+            [danmakus enumerateObjectsUsingBlock:^(AxcUI_BarrageModelBase * _Nonnull obj,
                                                    NSUInteger idx,
                                                    BOOL * _Nonnull stop) {
                 [self sendDanmaku:obj updateAppearTime:NO];
@@ -216,7 +216,7 @@
  @param danmaku 弹幕
  @param updateAppearTime 是否更改当前时间为弹幕的时间
  */
-- (void)sendDanmaku:(AxcUI_BaseBarrageModel *)danmaku updateAppearTime:(BOOL)updateAppearTime {
+- (void)sendDanmaku:(AxcUI_BarrageModelBase *)danmaku updateAppearTime:(BOOL)updateAppearTime {
     
     if ([self.axcUI_barrageDelegate respondsToSelector:@selector(AxcUI_barrageScrollEngine:shouldSendBarrage:)] &&
         [self.axcUI_barrageDelegate AxcUI_barrageScrollEngine:self shouldSendBarrage:danmaku] == NO) {

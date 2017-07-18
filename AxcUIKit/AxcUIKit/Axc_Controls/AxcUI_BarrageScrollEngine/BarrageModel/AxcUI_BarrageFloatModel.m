@@ -1,21 +1,21 @@
 //
-//  AxcUI_FloatBarrageModel.m
+//  AxcUI_BarrageFloatModel.m
 //  AxcUIKit
 //
 //  Created by Axc on 2017/7/1.
 //  Copyright © 2017年 Axc_5324. All rights reserved.
 //
 
-#import "AxcUI_FloatBarrageModel.h"
+#import "AxcUI_BarrageFloatModel.h"
 #import "AxcBarrageContainer.h"
 
-@interface AxcUI_FloatBarrageModel()
+@interface AxcUI_BarrageFloatModel()
 @property (assign, nonatomic) CGFloat during;
-@property (assign, nonatomic) AxcFloatBarrageDirectionStyle direction;
+@property (assign, nonatomic) AxcBarrageFloatDirectionStyle direction;
 @end
 
-@implementation AxcUI_FloatBarrageModel
-- (instancetype)initWithFontSize:(CGFloat)fontSize textColor:(UIColor *)textColor text:(NSString *)text shadowStyle:(AxcBarrageShadowStyle)shadowStyle font:(UIFont *)font during:(CGFloat)during direction:(AxcFloatBarrageDirectionStyle)direction{
+@implementation AxcUI_BarrageFloatModel
+- (instancetype)initWithFontSize:(CGFloat)fontSize textColor:(UIColor *)textColor text:(NSString *)text shadowStyle:(AxcBarrageShadowStyle)shadowStyle font:(UIFont *)font during:(CGFloat)during direction:(AxcBarrageFloatDirectionStyle)direction{
     
     if (self = [super initWithFontSize:fontSize textColor:textColor text:text shadowStyle:shadowStyle font:font]) {
         _direction = direction;
@@ -42,7 +42,7 @@
     
     for (int i = 0; i < arr.count; ++i) {
         AxcBarrageContainer *obj = arr[i];
-        if ([obj.danmaku isKindOfClass:[AxcUI_FloatBarrageModel class]] && [(AxcUI_FloatBarrageModel *)obj.danmaku direction] == _direction) {
+        if ([obj.danmaku isKindOfClass:[AxcUI_BarrageFloatModel class]] && [(AxcUI_BarrageFloatModel *)obj.danmaku direction] == _direction) {
             //判断弹幕所在轨道
             NSInteger channel = obj.frame.origin.y / channelHeight;
             
@@ -65,7 +65,7 @@
     }
     else {
         //mac坐标原点为左下角 弹幕方向为上到下 按升序查找轨道
-        if (_direction == AxcFloatBarrageDirectionStyleT2B) {
+        if (_direction == AxcBarrageFloatDirectionStyleT2B) {
             for (NSInteger i = 0; i < channelCount; ++i) {
                 if (!dic[@(i)]) {
                     channel = i;
@@ -90,7 +90,7 @@
     return _during;
 }
 
-- (AxcFloatBarrageDirectionStyle)direction{
+- (AxcBarrageFloatDirectionStyle)direction{
     return _direction;
 }
 

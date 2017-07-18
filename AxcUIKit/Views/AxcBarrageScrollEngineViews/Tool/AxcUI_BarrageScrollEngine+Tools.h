@@ -10,7 +10,7 @@
 
 @interface AxcUI_BarrageScrollEngine (Tools)
 
-+ (AxcUI_BaseBarrageModel *)barrageWithText:(NSString*)text
++ (AxcUI_BarrageModelBase *)barrageWithText:(NSString*)text
                                       color:(NSInteger)color
                                 spiritStyle:(NSInteger)spiritStyle
                                 shadowStyle:(AxcBarrageShadowStyle)shadowStyle

@@ -32,22 +32,22 @@ static NSString * const kprogressViewStyle = @"axcUI_progressViewStyle";
     if (!loaderView) {
         switch (self.axcUI_progressViewStyle) {
             case AxcUIProgressViewStyleTranPieProgressView:
-                loaderView = [[AxcUI_TranPieProgressView alloc] init];
+                loaderView = [[AxcUI_ProgressTranPieView alloc] init];
                 break;
             case AxcUIProgressViewStylePieProgressView:
-                loaderView = [[AxcUI_PieProgressView alloc] init];
+                loaderView = [[AxcUI_ProgressPieView alloc] init];
                 break;
             case AxcUIProgressViewStyleLoopProgressView:
-                loaderView = [[AxcUI_LoopProgressView alloc] init];
+                loaderView = [[AxcUI_ProgressLoopView alloc] init];
                 break;
             case AxcUIProgressViewStyleBallProgressView:
-                loaderView = [[AxcUI_BallProgressView alloc] init];
+                loaderView = [[AxcUI_ProgressBallView alloc] init];
                 break;
             case AxcUIProgressViewStyleLodingProgressView:
-                loaderView = [[AxcUI_LodingProgressView alloc] init];
+                loaderView = [[AxcUI_ProgressLodingView alloc] init];
                 break;
             case AxcUIProgressViewStylePieLoopProgressView:
-                loaderView = [[AxcUI_PieLoopProgressView alloc] init];
+                loaderView = [[AxcUI_ProgressPieLoopView alloc] init];
                 break;
             default:
                 break;
@@ -67,22 +67,22 @@ static NSString * const kprogressViewStyle = @"axcUI_progressViewStyle";
     Class Progressclass ;
     switch (axcUI_progressViewStyle) {
         case AxcUIProgressViewStyleTranPieProgressView:
-            Progressclass = [AxcUI_TranPieProgressView class];
+            Progressclass = [AxcUI_ProgressTranPieView class];
             break;
         case AxcUIProgressViewStylePieProgressView:
-            Progressclass = [AxcUI_PieProgressView class];
+            Progressclass = [AxcUI_ProgressPieView class];
             break;
         case AxcUIProgressViewStyleLoopProgressView:
-            Progressclass = [AxcUI_LoopProgressView class];
+            Progressclass = [AxcUI_ProgressLoopView class];
             break;
         case AxcUIProgressViewStyleBallProgressView:
-            Progressclass = [AxcUI_BallProgressView class];
+            Progressclass = [AxcUI_ProgressBallView class];
             break;
         case AxcUIProgressViewStyleLodingProgressView:
-            Progressclass = [AxcUI_LodingProgressView class];
+            Progressclass = [AxcUI_ProgressLodingView class];
             break;
         case AxcUIProgressViewStylePieLoopProgressView:
-            Progressclass = [AxcUI_PieLoopProgressView class];
+            Progressclass = [AxcUI_ProgressPieLoopView class];
             break;
         default:
             break;
@@ -94,22 +94,22 @@ static NSString * const kprogressViewStyle = @"axcUI_progressViewStyle";
         loaderView = nil;
         switch (axcUI_progressViewStyle) {
             case AxcUIProgressViewStyleTranPieProgressView:
-                loaderView = [[AxcUI_TranPieProgressView alloc] init];
+                loaderView = [[AxcUI_ProgressTranPieView alloc] init];
                 break;
             case AxcUIProgressViewStylePieProgressView:
-                loaderView = [[AxcUI_PieProgressView alloc] init];
+                loaderView = [[AxcUI_ProgressPieView alloc] init];
                 break;
             case AxcUIProgressViewStyleLoopProgressView:
-                loaderView = [[AxcUI_LoopProgressView alloc] init];
+                loaderView = [[AxcUI_ProgressLoopView alloc] init];
                 break;
             case AxcUIProgressViewStyleBallProgressView:
-                loaderView = [[AxcUI_BallProgressView alloc] init];
+                loaderView = [[AxcUI_ProgressBallView alloc] init];
                 break;
             case AxcUIProgressViewStyleLodingProgressView:
-                loaderView = [[AxcUI_LodingProgressView alloc] init];
+                loaderView = [[AxcUI_ProgressLodingView alloc] init];
                 break;
             case AxcUIProgressViewStylePieLoopProgressView:
-                loaderView = [[AxcUI_PieLoopProgressView alloc] init];
+                loaderView = [[AxcUI_ProgressPieLoopView alloc] init];
                 break;
             default:
                 break;

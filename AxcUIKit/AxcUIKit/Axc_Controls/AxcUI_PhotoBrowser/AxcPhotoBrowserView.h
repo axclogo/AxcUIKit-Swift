@@ -1,5 +1,5 @@
 //
-//  AxcUI_PhotoBrowserView.h
+//  AxcPhotoBrowserView.h
 //  AxcUIKit
 //
 //  Created by Axc on 2017/6/7.
@@ -16,7 +16,7 @@ typedef enum {
 } AxcPhotoBrowserSaveStyle;
 
 
-@interface AxcUI_PhotoBrowserView : UIView
+@interface AxcPhotoBrowserView : UIView
 @property (nonatomic,strong) UIScrollView *scrollview;
 @property (nonatomic,strong) UIImageView *imageview;
 

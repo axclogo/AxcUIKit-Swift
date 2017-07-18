@@ -6,7 +6,7 @@
 //  Copyright © 2017年 Axc_5324. All rights reserved.
 //
 
-#import "AxcUI_BaseBarrageModel.h"
+#import "AxcUI_BarrageModelBase.h"
 #import "AxcBarrageCanvas.h"
 
 @class AxcUI_BarrageScrollEngine;
@@ -20,7 +20,7 @@
  @param time 时间
  @return 发射的弹幕
  */
-- (NSArray <__kindof AxcUI_BaseBarrageModel*>*)AxcUI_barrageScrollEngine:(AxcUI_BarrageScrollEngine *)barrageEngine
+- (NSArray <__kindof AxcUI_BarrageModelBase*>*)AxcUI_barrageScrollEngine:(AxcUI_BarrageScrollEngine *)barrageEngine
                                                     didSendBarrageAtTime:(NSUInteger)time;
 
 /**
@@ -31,7 +31,7 @@
  @return 是否发射
  */
 - (BOOL)AxcUI_barrageScrollEngine:(AxcUI_BarrageScrollEngine *)barrageEngine
-                shouldSendBarrage:(__kindof AxcUI_BaseBarrageModel *)barrage;
+                shouldSendBarrage:(__kindof AxcUI_BarrageModelBase *)barrage;
 
 @end
 
@@ -99,5 +99,5 @@
  *
  *  @param danmaku 单个弹幕
  */
-- (void)AxcUI_BarrageSendBarrage:(AxcUI_BaseBarrageModel *)danmaku;
+- (void)AxcUI_BarrageSendBarrage:(AxcUI_BarrageModelBase *)danmaku;
 @end

@@ -1,5 +1,5 @@
 //
-//  AxcUI_LodingProgressView.h
+//  AxcUI_ProgressLoopView.h
 //  AxcUIKit
 //
 //  Created by Axc_5324 on 17/6/5.
@@ -8,10 +8,8 @@
 
 #import "AxcBaseProgressView.h"
 
-@interface AxcUI_LodingProgressView : AxcBaseProgressView
 
-
-- (void)removeTimer;
-
+/** 圆环式加载进度指示器 */
+@interface AxcUI_ProgressLoopView : AxcBaseProgressView
 
 @end

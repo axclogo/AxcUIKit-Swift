@@ -1,12 +1,12 @@
 //
-//  AxcUI_PhotoBrowserView.m
+//  AxcPhotoBrowserView.m
 //  AxcUIKit
 //
 //  Created by Axc on 2017/6/7.
 //  Copyright © 2017年 Axc_5324. All rights reserved.
 //
 
-#import "AxcUI_PhotoBrowserView.h"
+#import "AxcPhotoBrowserView.h"
 
 #import "AxcBaseProgressView.h"
 #import "UIImageView+AxcWebCache.h"
@@ -17,7 +17,7 @@
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
 
-@interface AxcUI_PhotoBrowserView() <UIScrollViewDelegate>
+@interface AxcPhotoBrowserView() <UIScrollViewDelegate>
 @property (nonatomic,strong) AxcBaseProgressView *progressView;
 @property (nonatomic,strong) UITapGestureRecognizer *doubleTap;
 @property (nonatomic,strong) UITapGestureRecognizer *singleTap;
@@ -29,7 +29,7 @@
 @property(nonatomic, strong)UIButton *saveButton;
 @end
 
-@implementation AxcUI_PhotoBrowserView
+@implementation AxcPhotoBrowserView
 
 - (instancetype)initWithFrame:(CGRect)frame
 {

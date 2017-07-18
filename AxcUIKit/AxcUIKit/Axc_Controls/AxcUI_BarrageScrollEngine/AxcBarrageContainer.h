@@ -7,8 +7,8 @@
 //  弹幕的容器 用来绘制弹幕
 
 
-#import "AxcUI_FloatBarrageModel.h"
-#import "AxcUI_ScrollBarrageModel.h"
+#import "AxcUI_BarrageFloatModel.h"
+#import "AxcUI_BarrageScrollModel.h"
 #import <UIKit/UIKit.h>
 
 @class AxcUI_BarrageScrollEngine;
@@ -17,9 +17,9 @@
 @property (weak, nonatomic) AxcUI_BarrageScrollEngine *danmakuEngine;
 - (void)updateAttributed;
 
-- (AxcUI_BaseBarrageModel *)danmaku;
-- (instancetype)initWithDanmaku:(AxcUI_BaseBarrageModel *)danmaku;
-- (void)setWithDanmaku:(AxcUI_BaseBarrageModel *)danmaku;
+- (AxcUI_BarrageModelBase *)danmaku;
+- (instancetype)initWithDanmaku:(AxcUI_BarrageModelBase *)danmaku;
+- (void)setWithDanmaku:(AxcUI_BarrageModelBase *)danmaku;
 /**
  *  更新位置
  *

@@ -1,5 +1,5 @@
 //
-//  AxcUI_TranPieProgressView.h
+//  AxcUI_ProgressBallView.h
 //  AxcUIKit
 //
 //  Created by Axc_5324 on 17/6/5.
@@ -8,6 +8,8 @@
 
 #import "AxcBaseProgressView.h"
 
-@interface AxcUI_TranPieProgressView : AxcBaseProgressView
+
+/** 填充球体式加载指示器 */
+@interface AxcUI_ProgressBallView : AxcBaseProgressView
 
 @end

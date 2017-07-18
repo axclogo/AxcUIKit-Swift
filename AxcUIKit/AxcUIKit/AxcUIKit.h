@@ -77,12 +77,12 @@
 #import "AxcUI_Label.h" // 自定义文字内边距Label
 #import "AxcUI_Toast.h" // 弹出式提醒块
 // --------- 进度指示器
-#import "AxcUI_TranPieProgressView.h"
-#import "AxcUI_PieProgressView.h"
-#import "AxcUI_LoopProgressView.h"
-#import "AxcUI_BallProgressView.h"
-#import "AxcUI_LodingProgressView.h"
-#import "AxcUI_PieLoopProgressView.h"
+#import "AxcUI_ProgressTranPieView.h"
+#import "AxcUI_ProgressPieView.h"
+#import "AxcUI_ProgressLoopView.h"
+#import "AxcUI_ProgressBallView.h"
+#import "AxcUI_ProgressLodingView.h"
+#import "AxcUI_ProgressPieLoopView.h"
 // ------------------
 #import "AxcUI_PhotoBrowser.h"          // 图片预览器
 #import "AxcUI_ActivityHUD.h"           // HUD指示器

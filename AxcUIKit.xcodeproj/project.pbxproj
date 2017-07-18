@@ -121,20 +121,20 @@
 		EA6A3BAB1F09DE3800E0FAAA /* AxcBarrageContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6A3B521F09DE3800E0FAAA /* AxcBarrageContainer.m */; };
 		EA6A3BAC1F09DE3800E0FAAA /* AxcBarrageDisplayLink.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6A3B541F09DE3800E0FAAA /* AxcBarrageDisplayLink.m */; };
 		EA6A3BAD1F09DE3800E0FAAA /* AxcUI_BarrageScrollEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6A3B571F09DE3800E0FAAA /* AxcUI_BarrageScrollEngine.m */; };
-		EA6A3BAE1F09DE3800E0FAAA /* AxcUI_BaseBarrageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6A3B5A1F09DE3800E0FAAA /* AxcUI_BaseBarrageModel.m */; };
-		EA6A3BAF1F09DE3800E0FAAA /* AxcUI_FloatBarrageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6A3B5C1F09DE3800E0FAAA /* AxcUI_FloatBarrageModel.m */; };
-		EA6A3BB01F09DE3800E0FAAA /* AxcUI_ScrollBarrageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6A3B5E1F09DE3800E0FAAA /* AxcUI_ScrollBarrageModel.m */; };
+		EA6A3BAE1F09DE3800E0FAAA /* AxcUI_BarrageModelBase.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6A3B5A1F09DE3800E0FAAA /* AxcUI_BarrageModelBase.m */; };
+		EA6A3BAF1F09DE3800E0FAAA /* AxcUI_BarrageFloatModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6A3B5C1F09DE3800E0FAAA /* AxcUI_BarrageFloatModel.m */; };
+		EA6A3BB01F09DE3800E0FAAA /* AxcUI_BarrageScrollModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6A3B5E1F09DE3800E0FAAA /* AxcUI_BarrageScrollModel.m */; };
 		EA6A3BB11F09DE3800E0FAAA /* AxcUI_BarrageView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6A3B611F09DE3800E0FAAA /* AxcUI_BarrageView.m */; };
 		EA6A3BB21F09DE3800E0FAAA /* AxcUI_Label.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6A3B641F09DE3800E0FAAA /* AxcUI_Label.m */; };
 		EA6A3BB31F09DE3800E0FAAA /* AxcUI_PhotoBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6A3B671F09DE3800E0FAAA /* AxcUI_PhotoBrowser.m */; };
-		EA6A3BB41F09DE3800E0FAAA /* AxcUI_PhotoBrowserView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6A3B691F09DE3800E0FAAA /* AxcUI_PhotoBrowserView.m */; };
+		EA6A3BB41F09DE3800E0FAAA /* AxcPhotoBrowserView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6A3B691F09DE3800E0FAAA /* AxcPhotoBrowserView.m */; };
 		EA6A3BB51F09DE3800E0FAAA /* AxcBaseProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6A3B6C1F09DE3800E0FAAA /* AxcBaseProgressView.m */; };
-		EA6A3BB61F09DE3800E0FAAA /* AxcUI_BallProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6A3B6E1F09DE3800E0FAAA /* AxcUI_BallProgressView.m */; };
-		EA6A3BB71F09DE3800E0FAAA /* AxcUI_LodingProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6A3B701F09DE3800E0FAAA /* AxcUI_LodingProgressView.m */; };
-		EA6A3BB81F09DE3800E0FAAA /* AxcUI_LoopProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6A3B721F09DE3800E0FAAA /* AxcUI_LoopProgressView.m */; };
-		EA6A3BB91F09DE3800E0FAAA /* AxcUI_PieLoopProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6A3B741F09DE3800E0FAAA /* AxcUI_PieLoopProgressView.m */; };
-		EA6A3BBA1F09DE3800E0FAAA /* AxcUI_PieProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6A3B761F09DE3800E0FAAA /* AxcUI_PieProgressView.m */; };
-		EA6A3BBB1F09DE3800E0FAAA /* AxcUI_TranPieProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6A3B781F09DE3800E0FAAA /* AxcUI_TranPieProgressView.m */; };
+		EA6A3BB61F09DE3800E0FAAA /* AxcUI_ProgressBallView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6A3B6E1F09DE3800E0FAAA /* AxcUI_ProgressBallView.m */; };
+		EA6A3BB71F09DE3800E0FAAA /* AxcUI_ProgressLodingView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6A3B701F09DE3800E0FAAA /* AxcUI_ProgressLodingView.m */; };
+		EA6A3BB81F09DE3800E0FAAA /* AxcUI_ProgressLoopView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6A3B721F09DE3800E0FAAA /* AxcUI_ProgressLoopView.m */; };
+		EA6A3BB91F09DE3800E0FAAA /* AxcUI_ProgressPieLoopView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6A3B741F09DE3800E0FAAA /* AxcUI_ProgressPieLoopView.m */; };
+		EA6A3BBA1F09DE3800E0FAAA /* AxcUI_ProgressPieView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6A3B761F09DE3800E0FAAA /* AxcUI_ProgressPieView.m */; };
+		EA6A3BBB1F09DE3800E0FAAA /* AxcUI_ProgressTranPieView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6A3B781F09DE3800E0FAAA /* AxcUI_ProgressTranPieView.m */; };
 		EA6A3BBC1F09DE3800E0FAAA /* AxcUI_WhiteLineBlack.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6A3B7A1F09DE3800E0FAAA /* AxcUI_WhiteLineBlack.m */; };
 		EA6A3BBD1F09DE3800E0FAAA /* AxcUI_Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6A3B7D1F09DE3800E0FAAA /* AxcUI_Toast.m */; };
 		EA6A3BBE1F09DE3800E0FAAA /* AxcUIKit.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6A3B7F1F09DE3800E0FAAA /* AxcUIKit.m */; };
@@ -459,34 +459,34 @@
 		EA6A3B551F09DE3800E0FAAA /* AxcBarrageRenderHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcBarrageRenderHeader.h; sourceTree = "<group>"; };
 		EA6A3B561F09DE3800E0FAAA /* AxcUI_BarrageScrollEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcUI_BarrageScrollEngine.h; sourceTree = "<group>"; };
 		EA6A3B571F09DE3800E0FAAA /* AxcUI_BarrageScrollEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcUI_BarrageScrollEngine.m; sourceTree = "<group>"; };
-		EA6A3B591F09DE3800E0FAAA /* AxcUI_BaseBarrageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcUI_BaseBarrageModel.h; sourceTree = "<group>"; };
-		EA6A3B5A1F09DE3800E0FAAA /* AxcUI_BaseBarrageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcUI_BaseBarrageModel.m; sourceTree = "<group>"; };
-		EA6A3B5B1F09DE3800E0FAAA /* AxcUI_FloatBarrageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcUI_FloatBarrageModel.h; sourceTree = "<group>"; };
-		EA6A3B5C1F09DE3800E0FAAA /* AxcUI_FloatBarrageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcUI_FloatBarrageModel.m; sourceTree = "<group>"; };
-		EA6A3B5D1F09DE3800E0FAAA /* AxcUI_ScrollBarrageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcUI_ScrollBarrageModel.h; sourceTree = "<group>"; };
-		EA6A3B5E1F09DE3800E0FAAA /* AxcUI_ScrollBarrageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcUI_ScrollBarrageModel.m; sourceTree = "<group>"; };
+		EA6A3B591F09DE3800E0FAAA /* AxcUI_BarrageModelBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcUI_BarrageModelBase.h; sourceTree = "<group>"; };
+		EA6A3B5A1F09DE3800E0FAAA /* AxcUI_BarrageModelBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcUI_BarrageModelBase.m; sourceTree = "<group>"; };
+		EA6A3B5B1F09DE3800E0FAAA /* AxcUI_BarrageFloatModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcUI_BarrageFloatModel.h; sourceTree = "<group>"; };
+		EA6A3B5C1F09DE3800E0FAAA /* AxcUI_BarrageFloatModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcUI_BarrageFloatModel.m; sourceTree = "<group>"; };
+		EA6A3B5D1F09DE3800E0FAAA /* AxcUI_BarrageScrollModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcUI_BarrageScrollModel.h; sourceTree = "<group>"; };
+		EA6A3B5E1F09DE3800E0FAAA /* AxcUI_BarrageScrollModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcUI_BarrageScrollModel.m; sourceTree = "<group>"; };
 		EA6A3B601F09DE3800E0FAAA /* AxcUI_BarrageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcUI_BarrageView.h; sourceTree = "<group>"; };
 		EA6A3B611F09DE3800E0FAAA /* AxcUI_BarrageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcUI_BarrageView.m; sourceTree = "<group>"; };
 		EA6A3B631F09DE3800E0FAAA /* AxcUI_Label.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcUI_Label.h; sourceTree = "<group>"; };
 		EA6A3B641F09DE3800E0FAAA /* AxcUI_Label.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcUI_Label.m; sourceTree = "<group>"; };
 		EA6A3B661F09DE3800E0FAAA /* AxcUI_PhotoBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcUI_PhotoBrowser.h; sourceTree = "<group>"; };
 		EA6A3B671F09DE3800E0FAAA /* AxcUI_PhotoBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcUI_PhotoBrowser.m; sourceTree = "<group>"; };
-		EA6A3B681F09DE3800E0FAAA /* AxcUI_PhotoBrowserView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcUI_PhotoBrowserView.h; sourceTree = "<group>"; };
-		EA6A3B691F09DE3800E0FAAA /* AxcUI_PhotoBrowserView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcUI_PhotoBrowserView.m; sourceTree = "<group>"; };
+		EA6A3B681F09DE3800E0FAAA /* AxcPhotoBrowserView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcPhotoBrowserView.h; sourceTree = "<group>"; };
+		EA6A3B691F09DE3800E0FAAA /* AxcPhotoBrowserView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcPhotoBrowserView.m; sourceTree = "<group>"; };
 		EA6A3B6B1F09DE3800E0FAAA /* AxcBaseProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcBaseProgressView.h; sourceTree = "<group>"; };
 		EA6A3B6C1F09DE3800E0FAAA /* AxcBaseProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcBaseProgressView.m; sourceTree = "<group>"; };
-		EA6A3B6D1F09DE3800E0FAAA /* AxcUI_BallProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcUI_BallProgressView.h; sourceTree = "<group>"; };
-		EA6A3B6E1F09DE3800E0FAAA /* AxcUI_BallProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcUI_BallProgressView.m; sourceTree = "<group>"; };
-		EA6A3B6F1F09DE3800E0FAAA /* AxcUI_LodingProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcUI_LodingProgressView.h; sourceTree = "<group>"; };
-		EA6A3B701F09DE3800E0FAAA /* AxcUI_LodingProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcUI_LodingProgressView.m; sourceTree = "<group>"; };
-		EA6A3B711F09DE3800E0FAAA /* AxcUI_LoopProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcUI_LoopProgressView.h; sourceTree = "<group>"; };
-		EA6A3B721F09DE3800E0FAAA /* AxcUI_LoopProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcUI_LoopProgressView.m; sourceTree = "<group>"; };
-		EA6A3B731F09DE3800E0FAAA /* AxcUI_PieLoopProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcUI_PieLoopProgressView.h; sourceTree = "<group>"; };
-		EA6A3B741F09DE3800E0FAAA /* AxcUI_PieLoopProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcUI_PieLoopProgressView.m; sourceTree = "<group>"; };
-		EA6A3B751F09DE3800E0FAAA /* AxcUI_PieProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcUI_PieProgressView.h; sourceTree = "<group>"; };
-		EA6A3B761F09DE3800E0FAAA /* AxcUI_PieProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcUI_PieProgressView.m; sourceTree = "<group>"; };
-		EA6A3B771F09DE3800E0FAAA /* AxcUI_TranPieProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcUI_TranPieProgressView.h; sourceTree = "<group>"; };
-		EA6A3B781F09DE3800E0FAAA /* AxcUI_TranPieProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcUI_TranPieProgressView.m; sourceTree = "<group>"; };
+		EA6A3B6D1F09DE3800E0FAAA /* AxcUI_ProgressBallView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcUI_ProgressBallView.h; sourceTree = "<group>"; };
+		EA6A3B6E1F09DE3800E0FAAA /* AxcUI_ProgressBallView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcUI_ProgressBallView.m; sourceTree = "<group>"; };
+		EA6A3B6F1F09DE3800E0FAAA /* AxcUI_ProgressLodingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcUI_ProgressLodingView.h; sourceTree = "<group>"; };
+		EA6A3B701F09DE3800E0FAAA /* AxcUI_ProgressLodingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcUI_ProgressLodingView.m; sourceTree = "<group>"; };
+		EA6A3B711F09DE3800E0FAAA /* AxcUI_ProgressLoopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcUI_ProgressLoopView.h; sourceTree = "<group>"; };
+		EA6A3B721F09DE3800E0FAAA /* AxcUI_ProgressLoopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcUI_ProgressLoopView.m; sourceTree = "<group>"; };
+		EA6A3B731F09DE3800E0FAAA /* AxcUI_ProgressPieLoopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcUI_ProgressPieLoopView.h; sourceTree = "<group>"; };
+		EA6A3B741F09DE3800E0FAAA /* AxcUI_ProgressPieLoopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcUI_ProgressPieLoopView.m; sourceTree = "<group>"; };
+		EA6A3B751F09DE3800E0FAAA /* AxcUI_ProgressPieView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcUI_ProgressPieView.h; sourceTree = "<group>"; };
+		EA6A3B761F09DE3800E0FAAA /* AxcUI_ProgressPieView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcUI_ProgressPieView.m; sourceTree = "<group>"; };
+		EA6A3B771F09DE3800E0FAAA /* AxcUI_ProgressTranPieView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcUI_ProgressTranPieView.h; sourceTree = "<group>"; };
+		EA6A3B781F09DE3800E0FAAA /* AxcUI_ProgressTranPieView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcUI_ProgressTranPieView.m; sourceTree = "<group>"; };
 		EA6A3B791F09DE3800E0FAAA /* AxcUI_WhiteLineBlack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcUI_WhiteLineBlack.h; sourceTree = "<group>"; };
 		EA6A3B7A1F09DE3800E0FAAA /* AxcUI_WhiteLineBlack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcUI_WhiteLineBlack.m; sourceTree = "<group>"; };
 		EA6A3B7C1F09DE3800E0FAAA /* AxcUI_Toast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcUI_Toast.h; sourceTree = "<group>"; };
@@ -1257,12 +1257,12 @@
 		EA6A3B581F09DE3800E0FAAA /* BarrageModel */ = {
 			isa = PBXGroup;
 			children = (
-				EA6A3B591F09DE3800E0FAAA /* AxcUI_BaseBarrageModel.h */,
-				EA6A3B5A1F09DE3800E0FAAA /* AxcUI_BaseBarrageModel.m */,
-				EA6A3B5B1F09DE3800E0FAAA /* AxcUI_FloatBarrageModel.h */,
-				EA6A3B5C1F09DE3800E0FAAA /* AxcUI_FloatBarrageModel.m */,
-				EA6A3B5D1F09DE3800E0FAAA /* AxcUI_ScrollBarrageModel.h */,
-				EA6A3B5E1F09DE3800E0FAAA /* AxcUI_ScrollBarrageModel.m */,
+				EA6A3B591F09DE3800E0FAAA /* AxcUI_BarrageModelBase.h */,
+				EA6A3B5A1F09DE3800E0FAAA /* AxcUI_BarrageModelBase.m */,
+				EA6A3B5B1F09DE3800E0FAAA /* AxcUI_BarrageFloatModel.h */,
+				EA6A3B5C1F09DE3800E0FAAA /* AxcUI_BarrageFloatModel.m */,
+				EA6A3B5D1F09DE3800E0FAAA /* AxcUI_BarrageScrollModel.h */,
+				EA6A3B5E1F09DE3800E0FAAA /* AxcUI_BarrageScrollModel.m */,
 			);
 			path = BarrageModel;
 			sourceTree = "<group>";
@@ -1290,8 +1290,8 @@
 			children = (
 				EA6A3B661F09DE3800E0FAAA /* AxcUI_PhotoBrowser.h */,
 				EA6A3B671F09DE3800E0FAAA /* AxcUI_PhotoBrowser.m */,
-				EA6A3B681F09DE3800E0FAAA /* AxcUI_PhotoBrowserView.h */,
-				EA6A3B691F09DE3800E0FAAA /* AxcUI_PhotoBrowserView.m */,
+				EA6A3B681F09DE3800E0FAAA /* AxcPhotoBrowserView.h */,
+				EA6A3B691F09DE3800E0FAAA /* AxcPhotoBrowserView.m */,
 			);
 			path = AxcUI_PhotoBrowser;
 			sourceTree = "<group>";
@@ -1301,18 +1301,18 @@
 			children = (
 				EA6A3B6B1F09DE3800E0FAAA /* AxcBaseProgressView.h */,
 				EA6A3B6C1F09DE3800E0FAAA /* AxcBaseProgressView.m */,
-				EA6A3B6D1F09DE3800E0FAAA /* AxcUI_BallProgressView.h */,
-				EA6A3B6E1F09DE3800E0FAAA /* AxcUI_BallProgressView.m */,
-				EA6A3B6F1F09DE3800E0FAAA /* AxcUI_LodingProgressView.h */,
-				EA6A3B701F09DE3800E0FAAA /* AxcUI_LodingProgressView.m */,
-				EA6A3B711F09DE3800E0FAAA /* AxcUI_LoopProgressView.h */,
-				EA6A3B721F09DE3800E0FAAA /* AxcUI_LoopProgressView.m */,
-				EA6A3B731F09DE3800E0FAAA /* AxcUI_PieLoopProgressView.h */,
-				EA6A3B741F09DE3800E0FAAA /* AxcUI_PieLoopProgressView.m */,
-				EA6A3B751F09DE3800E0FAAA /* AxcUI_PieProgressView.h */,
-				EA6A3B761F09DE3800E0FAAA /* AxcUI_PieProgressView.m */,
-				EA6A3B771F09DE3800E0FAAA /* AxcUI_TranPieProgressView.h */,
-				EA6A3B781F09DE3800E0FAAA /* AxcUI_TranPieProgressView.m */,
+				EA6A3B6D1F09DE3800E0FAAA /* AxcUI_ProgressBallView.h */,
+				EA6A3B6E1F09DE3800E0FAAA /* AxcUI_ProgressBallView.m */,
+				EA6A3B6F1F09DE3800E0FAAA /* AxcUI_ProgressLodingView.h */,
+				EA6A3B701F09DE3800E0FAAA /* AxcUI_ProgressLodingView.m */,
+				EA6A3B711F09DE3800E0FAAA /* AxcUI_ProgressLoopView.h */,
+				EA6A3B721F09DE3800E0FAAA /* AxcUI_ProgressLoopView.m */,
+				EA6A3B731F09DE3800E0FAAA /* AxcUI_ProgressPieLoopView.h */,
+				EA6A3B741F09DE3800E0FAAA /* AxcUI_ProgressPieLoopView.m */,
+				EA6A3B751F09DE3800E0FAAA /* AxcUI_ProgressPieView.h */,
+				EA6A3B761F09DE3800E0FAAA /* AxcUI_ProgressPieView.m */,
+				EA6A3B771F09DE3800E0FAAA /* AxcUI_ProgressTranPieView.h */,
+				EA6A3B781F09DE3800E0FAAA /* AxcUI_ProgressTranPieView.m */,
 				EA6A3B791F09DE3800E0FAAA /* AxcUI_WhiteLineBlack.h */,
 				EA6A3B7A1F09DE3800E0FAAA /* AxcUI_WhiteLineBlack.m */,
 			);
@@ -1823,7 +1823,7 @@
 				EADC7D381F14C9FA004AF7D8 /* AxcEmptyDataPlaceholderView.m in Sources */,
 				EA5D4ED11F16233B0002E9E9 /* AxcBadgeInteractionViewVC.m in Sources */,
 				EA5D4F0E1F18C5B90002E9E9 /* AxcUI_BadgeView.m in Sources */,
-				EA6A3BAE1F09DE3800E0FAAA /* AxcUI_BaseBarrageModel.m in Sources */,
+				EA6A3BAE1F09DE3800E0FAAA /* AxcUI_BarrageModelBase.m in Sources */,
 				EA6A3BB51F09DE3800E0FAAA /* AxcBaseProgressView.m in Sources */,
 				EA5D4EEB1F1756860002E9E9 /* UIImage+AxcSpecialEffectsDrawing.m in Sources */,
 				EAAFBFED1F0F6C7B00881A62 /* AxcButtonLayoutVC.m in Sources */,
@@ -1837,12 +1837,12 @@
 				EA6A3B941F09DE3800E0FAAA /* NSData+ImageContentType.m in Sources */,
 				EA6A3B821F09DE3800E0FAAA /* UICollectionView+AxcCellRearrange.m in Sources */,
 				EAAFBFE51F0F2B8800881A62 /* UIButton+AxcButtonContentLayout.m in Sources */,
-				EA6A3BB01F09DE3800E0FAAA /* AxcUI_ScrollBarrageModel.m in Sources */,
+				EA6A3BB01F09DE3800E0FAAA /* AxcUI_BarrageScrollModel.m in Sources */,
 				EA6A3B9E1F09DE3800E0FAAA /* UIView+AxcAutoresizingMask.m in Sources */,
 				EA5D4EEE1F17674C0002E9E9 /* AxcFilterThreeVC.m in Sources */,
 				EA87DAE21F073D8000452D2D /* AxcBarrageScrollEngineVC.m in Sources */,
 				EA6A3B9D1F09DE3800E0FAAA /* UITextField+AxcModifyPlaceholder.m in Sources */,
-				EA6A3BBA1F09DE3800E0FAAA /* AxcUI_PieProgressView.m in Sources */,
+				EA6A3BBA1F09DE3800E0FAAA /* AxcUI_ProgressPieView.m in Sources */,
 				EAAFBFE11F0E3E9D00881A62 /* UIView+PYSearchExtension.m in Sources */,
 				EA650ED31F076B7A00863057 /* BarrageDataModel.m in Sources */,
 				EA5252CC1EF5253F0016C687 /* AxcActivityIndicatorViewCell.m in Sources */,
@@ -1850,11 +1850,11 @@
 				EA439CD81EE3068300D992E7 /* SampleBaseVC.m in Sources */,
 				EA6A3BAC1F09DE3800E0FAAA /* AxcBarrageDisplayLink.m in Sources */,
 				EA439CE41EE3C93600D992E7 /* AxcLoadImageVC.m in Sources */,
-				EA6A3BB71F09DE3800E0FAAA /* AxcUI_LodingProgressView.m in Sources */,
-				EA6A3BB41F09DE3800E0FAAA /* AxcUI_PhotoBrowserView.m in Sources */,
+				EA6A3BB71F09DE3800E0FAAA /* AxcUI_ProgressLodingView.m in Sources */,
+				EA6A3BB41F09DE3800E0FAAA /* AxcPhotoBrowserView.m in Sources */,
 				EA439D3A1EE54EF900D992E7 /* AxcPhotoBrowserCollectionViewCell.m in Sources */,
 				EA6A3BD01F0A20B400E0FAAA /* AxcUI_StarRatingView.m in Sources */,
-				EA6A3BAF1F09DE3800E0FAAA /* AxcUI_FloatBarrageModel.m in Sources */,
+				EA6A3BAF1F09DE3800E0FAAA /* AxcUI_BarrageFloatModel.m in Sources */,
 				EA439D051EE415C900D992E7 /* AxcSemiModalPresentVC.m in Sources */,
 				EA6A3BA81F09DE3800E0FAAA /* AxcUI_ActivityIndicatorView.m in Sources */,
 				EA87DA881F063A2200452D2D /* AxcBarrageViewVC.m in Sources */,
@@ -1878,7 +1878,7 @@
 				EA6A3B9A1F09DE3800E0FAAA /* UILabel+AxcShimmering.m in Sources */,
 				EA5D4F2C1F1C50590002E9E9 /* AxcQuickBadgeInteractionVC.m in Sources */,
 				EA439CB71EE29E3100D992E7 /* AxcCellRearrangeVC.m in Sources */,
-				EA6A3BB81F09DE3800E0FAAA /* AxcUI_LoopProgressView.m in Sources */,
+				EA6A3BB81F09DE3800E0FAAA /* AxcUI_ProgressLoopView.m in Sources */,
 				EA6A3BA11F09DE3800E0FAAA /* UIView+AxcShaking.m in Sources */,
 				EA6A3BAB1F09DE3800E0FAAA /* AxcBarrageContainer.m in Sources */,
 				EA6A3BB31F09DE3800E0FAAA /* AxcUI_PhotoBrowser.m in Sources */,
@@ -1913,9 +1913,9 @@
 				EA650EC71F076A8000863057 /* AxcXmlUtil.m in Sources */,
 				EA87DA751F04F9F700452D2D /* AxcFilterVC.m in Sources */,
 				EA6A3B981F09DE3800E0FAAA /* UIView+WebCacheOperation.m in Sources */,
-				EA6A3BB91F09DE3800E0FAAA /* AxcUI_PieLoopProgressView.m in Sources */,
+				EA6A3BB91F09DE3800E0FAAA /* AxcUI_ProgressPieLoopView.m in Sources */,
 				EA6A3BE11F0B2EF400E0FAAA /* AxcUI_NumberScrollView.m in Sources */,
-				EA6A3BB61F09DE3800E0FAAA /* AxcUI_BallProgressView.m in Sources */,
+				EA6A3BB61F09DE3800E0FAAA /* AxcUI_ProgressBallView.m in Sources */,
 				EA6A3B8E1F09DE3800E0FAAA /* Axc_ImageCache.m in Sources */,
 				EA6A3BA41F09DE3800E0FAAA /* AxcUI_ActivityHUD.m in Sources */,
 				EA5D4ECE1F160B5E0002E9E9 /* AxcRectCornerVC.m in Sources */,
@@ -1923,7 +1923,7 @@
 				EAAFBFDF1F0E3E9D00881A62 /* PYSearchViewController.m in Sources */,
 				093C622B1EA6F85800ADAC42 /* AppDelegate.m in Sources */,
 				EA439D0D1EE4417C00D992E7 /* AxcLabelVC.m in Sources */,
-				EA6A3BBB1F09DE3800E0FAAA /* AxcUI_TranPieProgressView.m in Sources */,
+				EA6A3BBB1F09DE3800E0FAAA /* AxcUI_ProgressTranPieView.m in Sources */,
 				EA530A5D1F0CBC3100F562FD /* AxcTagViewVC.m in Sources */,
 				EA439CFE1EE3ECCD00D992E7 /* AxcSemiModalPresentView.m in Sources */,
 				EA5D504B1F1C959F0002E9E9 /* AxcBannerViewVC.m in Sources */,

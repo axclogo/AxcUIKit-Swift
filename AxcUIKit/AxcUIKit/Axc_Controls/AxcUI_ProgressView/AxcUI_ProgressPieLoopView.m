@@ -1,14 +1,14 @@
 //
-//  AxcUI_PieLoopProgressView.m
+//  AxcUI_ProgressPieLoopView.m
 //  AxcUIKit
 //
 //  Created by Axc_5324 on 17/6/5.
 //  Copyright © 2017年 Axc_5324. All rights reserved.
 //
 
-#import "AxcUI_PieLoopProgressView.h"
+#import "AxcUI_ProgressPieLoopView.h"
 
-@implementation AxcUI_PieLoopProgressView
+@implementation AxcUI_ProgressPieLoopView
 
 - (id)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];

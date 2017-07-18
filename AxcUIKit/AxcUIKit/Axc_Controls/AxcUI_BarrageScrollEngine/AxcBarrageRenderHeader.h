@@ -10,7 +10,7 @@
 #define AxcBarrageRenderHeader_h
 
 #import "AxcUI_BarrageScrollEngine.h"
-#import "AxcUI_FloatBarrageModel.h"
-#import "AxcUI_ScrollBarrageModel.h"
+#import "AxcUI_BarrageFloatModel.h"
+#import "AxcUI_BarrageScrollModel.h"
 
 #endif /* AxcBarrageRenderHeader_h */

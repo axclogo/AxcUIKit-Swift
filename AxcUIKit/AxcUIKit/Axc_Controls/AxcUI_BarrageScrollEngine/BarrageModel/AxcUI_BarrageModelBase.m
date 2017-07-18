@@ -6,14 +6,14 @@
 //  Copyright © 2017年 Axc_5324. All rights reserved.
 //
 
-#import "AxcUI_BaseBarrageModel.h"
+#import "AxcUI_BarrageModelBase.h"
 
 #define zx_AxcColorBrightness(color) ({ \
 CGFloat b;\
 [color getHue:nil saturation:nil brightness:&b alpha:nil];\
 b;\
 })
-@implementation AxcUI_BaseBarrageModel
+@implementation AxcUI_BarrageModelBase
 
 - (instancetype)initWithFontSize:(CGFloat)fontSize textColor:(UIColor *)textColor text:(NSString *)text shadowStyle:(AxcBarrageShadowStyle)shadowStyle font:(UIFont *)font{
     if (self = [super init]) {

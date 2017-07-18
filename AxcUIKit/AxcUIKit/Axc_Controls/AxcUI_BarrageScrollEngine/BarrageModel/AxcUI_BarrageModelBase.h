@@ -21,7 +21,8 @@ typedef NS_ENUM(NSUInteger,  AxcBarrageShadowStyle) {
     AxcBarrageShadowStyleGlow,
 };
 
-@interface AxcUI_BaseBarrageModel : NSObject
+/** 弹幕对象的基类 */
+@interface AxcUI_BarrageModelBase : NSObject
 @property (assign, nonatomic) NSTimeInterval appearTime;
 @property (assign, nonatomic) NSTimeInterval disappearTime;
 //额外的速度 用于调节全局速度时更改个体速度 目前只影响滚动弹幕

@@ -1,17 +1,17 @@
 //
-//  AxcUI_LodingProgressView.m
+//  AxcUI_ProgressLodingView.m
 //  AxcUIKit
 //
 //  Created by Axc_5324 on 17/6/5.
 //  Copyright © 2017年 Axc_5324. All rights reserved.
 //
 
-#import "AxcUI_LodingProgressView.h"
+#import "AxcUI_ProgressLodingView.h"
 
 // 加载时显示的文字
 NSString * const AxcRotationLoopProgressViewWaitingText = @"LOADING...";
 
-@implementation AxcUI_LodingProgressView
+@implementation AxcUI_ProgressLodingView
 {
     CGFloat _angleInterval;
     NSTimer *timer;

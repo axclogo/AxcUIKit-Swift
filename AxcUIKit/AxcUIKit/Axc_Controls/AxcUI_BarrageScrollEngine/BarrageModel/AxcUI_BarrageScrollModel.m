@@ -1,31 +1,31 @@
 //
-//  AxcUI_ScrollBarrageModel.m
+//  AxcUI_BarrageScrollModel.m
 //  AxcUIKit
 //
 //  Created by Axc on 2017/7/1.
 //  Copyright © 2017年 Axc_5324. All rights reserved.
 //
 
-#import "AxcUI_ScrollBarrageModel.h"
+#import "AxcUI_BarrageScrollModel.h"
 #import "AxcBarrageContainer.h"
 
 //当前窗口大小
 #define kWindowFrame [UIScreen mainScreen].bounds
 
-@interface AxcUI_ScrollBarrageModel()
+@interface AxcUI_BarrageScrollModel()
 @property (assign, nonatomic) CGFloat speed;
-@property (assign, nonatomic) AxcScrollBarrageDirectionStyleB2T direction;
+@property (assign, nonatomic) AxcBarrageScrollDirectionStyle direction;
 @end
 
-@implementation AxcUI_ScrollBarrageModel
+@implementation AxcUI_BarrageScrollModel
 
-- (instancetype)initWithFontSize:(CGFloat)fontSize textColor:(UIColor *)textColor text:(NSString *)text shadowStyle:(AxcBarrageShadowStyle)shadowStyle font:(UIFont *)font speed:(CGFloat)speed direction:(AxcScrollBarrageDirectionStyleB2T)direction {
+- (instancetype)initWithFontSize:(CGFloat)fontSize textColor:(UIColor *)textColor text:(NSString *)text shadowStyle:(AxcBarrageShadowStyle)shadowStyle font:(UIFont *)font speed:(CGFloat)speed direction:(AxcBarrageScrollDirectionStyle)direction {
     if (self = [super initWithFontSize:fontSize textColor:textColor text:text shadowStyle:shadowStyle font:font]) {
         _speed = speed;
-        if (direction == AxcScrollBarrageDirectionStyleB2TT2B) {
-            _direction = AxcScrollBarrageDirectionStyleB2TB2T;
-        }else if (direction == AxcScrollBarrageDirectionStyleB2TB2T) {
-            _direction = AxcScrollBarrageDirectionStyleB2TT2B;
+        if (direction == AxcBarrageScrollDirectionStyleT2B) {
+            _direction = AxcBarrageScrollDirectionStyleB2T;
+        }else if (direction == AxcBarrageScrollDirectionStyleB2T) {
+            _direction = AxcBarrageScrollDirectionStyleT2B;
         }else{
             _direction = direction;
         }
@@ -39,28 +39,28 @@
     CGPoint point = container.originalPosition;
     
     switch (_direction) {
-        case AxcScrollBarrageDirectionStyleB2TR2L:
+        case AxcBarrageScrollDirectionStyleR2L:
         {
             point.x -= (_speed * self.extraSpeed) * (time - self.appearTime);
             containerFrame.origin = point;
             container.frame = containerFrame;
             return containerFrame.origin.x + containerFrame.size.width >= 0;
         }
-        case AxcScrollBarrageDirectionStyleB2TL2R:
+        case AxcBarrageScrollDirectionStyleL2R:
         {
             point.x += (_speed * self.extraSpeed) * (time - self.appearTime);
             containerFrame.origin = point;
             container.frame = containerFrame;
             return containerFrame.origin.x <= windowFrame.size.width;
         }
-        case AxcScrollBarrageDirectionStyleB2TT2B:
+        case AxcBarrageScrollDirectionStyleT2B:
         {
             point.y -= (_speed * self.extraSpeed) * (time - self.appearTime);
             containerFrame.origin = point;
             container.frame = containerFrame;
             return containerFrame.origin.y + containerFrame.size.height >= 0;
         }
-        case AxcScrollBarrageDirectionStyleB2TB2T:
+        case AxcBarrageScrollDirectionStyleB2T:
         {
             point.y += (_speed * self.extraSpeed) * (time - self.appearTime);
             containerFrame.origin = point;
@@ -88,7 +88,7 @@
     NSInteger channelHeight = [self channelHeightWithChannelCount:channelCount contentRect:rect];
     for (int i = 0; i < arr.count; ++i) {
         AxcBarrageContainer *obj = arr[i];
-        if ([obj.danmaku isKindOfClass:[AxcUI_ScrollBarrageModel class]] && [(AxcUI_ScrollBarrageModel *)obj.danmaku direction] == _direction) {
+        if ([obj.danmaku isKindOfClass:[AxcUI_BarrageScrollModel class]] && [(AxcUI_BarrageScrollModel *)obj.danmaku direction] == _direction) {
             //计算弹幕所在轨道
             NSNumber *channel = @([self channelWithFrame:obj.frame channelHeight:channelHeight]);
             
@@ -128,13 +128,13 @@
     }
     
     switch (_direction) {
-        case AxcScrollBarrageDirectionStyleB2TR2L:
+        case AxcBarrageScrollDirectionStyleR2L:
             return CGPointMake(rect.size.width - timeDifference * (_speed * self.extraSpeed), channelHeight * channel);
-        case AxcScrollBarrageDirectionStyleB2TL2R:
+        case AxcBarrageScrollDirectionStyleL2R:
             return CGPointMake(-danmakuSize.width + timeDifference * (_speed * self.extraSpeed), channelHeight * channel);
-        case AxcScrollBarrageDirectionStyleB2TB2T:
+        case AxcBarrageScrollDirectionStyleB2T:
             return CGPointMake(channelHeight * channel, -danmakuSize.height + timeDifference * (_speed * self.extraSpeed));
-        case AxcScrollBarrageDirectionStyleB2TT2B:
+        case AxcBarrageScrollDirectionStyleT2B:
             return CGPointMake(channelHeight * channel, rect.size.height - timeDifference * (_speed * self.extraSpeed));
     }
     return CGPointMake(rect.size.width, rect.size.height);
@@ -144,7 +144,7 @@
     return _speed;
 }
 
-- (AxcScrollBarrageDirectionStyleB2T)direction {
+- (AxcBarrageScrollDirectionStyle)direction {
     return _direction;
 }
 
@@ -152,7 +152,7 @@
 #pragma mark - 私有方法
 - (NSInteger)channelCountWithContentRect:(CGRect)contentRect danmakuSize:(CGSize)danmakuSize {
     NSInteger channelCount = 0;
-    if (_direction == AxcScrollBarrageDirectionStyleB2TL2R || _direction == AxcScrollBarrageDirectionStyleB2TR2L) {
+    if (_direction == AxcBarrageScrollDirectionStyleL2R || _direction == AxcBarrageScrollDirectionStyleR2L) {
         channelCount = contentRect.size.height / danmakuSize.height;
         return channelCount > 4 ? channelCount : 4;
     }
@@ -161,7 +161,7 @@
 }
 
 - (NSInteger)channelHeightWithChannelCount:(NSInteger)channelCount contentRect:(CGRect)rect {
-    if (_direction == AxcScrollBarrageDirectionStyleB2TL2R || _direction == AxcScrollBarrageDirectionStyleB2TR2L) {
+    if (_direction == AxcBarrageScrollDirectionStyleL2R || _direction == AxcBarrageScrollDirectionStyleR2L) {
         return rect.size.height / channelCount;
     }
     else {
@@ -178,7 +178,7 @@
  *  @return 轨道
  */
 - (NSInteger)channelWithFrame:(CGRect)frame channelHeight:(CGFloat)channelHeight {
-    if (_direction == AxcScrollBarrageDirectionStyleB2TL2R || _direction == AxcScrollBarrageDirectionStyleB2TR2L) {
+    if (_direction == AxcBarrageScrollDirectionStyleL2R || _direction == AxcBarrageScrollDirectionStyleR2L) {
         return frame.origin.y / channelHeight;
     }else{
         return frame.origin.x / channelHeight;

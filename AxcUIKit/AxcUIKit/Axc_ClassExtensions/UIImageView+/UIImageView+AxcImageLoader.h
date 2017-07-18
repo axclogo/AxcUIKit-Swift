@@ -9,12 +9,12 @@
 #import <UIKit/UIKit.h>
 
 
-#import "AxcUI_TranPieProgressView.h"
-#import "AxcUI_PieProgressView.h"
-#import "AxcUI_LoopProgressView.h"
-#import "AxcUI_BallProgressView.h"
-#import "AxcUI_LodingProgressView.h"
-#import "AxcUI_PieLoopProgressView.h"
+#import "AxcUI_ProgressTranPieView.h"
+#import "AxcUI_ProgressPieView.h"
+#import "AxcUI_ProgressLoopView.h"
+#import "AxcUI_ProgressBallView.h"
+#import "AxcUI_ProgressLodingView.h"
+#import "AxcUI_ProgressPieLoopView.h"
 
 // 样式枚举
 typedef NS_ENUM(NSUInteger, AxcUIProgressViewStyle) {

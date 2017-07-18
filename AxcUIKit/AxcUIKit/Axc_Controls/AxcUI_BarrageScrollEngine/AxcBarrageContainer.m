@@ -15,17 +15,17 @@ b;\
 })
 @implementation AxcBarrageContainer
 {
-    AxcUI_BaseBarrageModel *_danmaku;
+    AxcUI_BarrageModelBase *_danmaku;
 }
 
-- (instancetype)initWithDanmaku:(AxcUI_BaseBarrageModel *)danmaku {
+- (instancetype)initWithDanmaku:(AxcUI_BarrageModelBase *)danmaku {
     if (self = [super init]) {
         [self setWithDanmaku:danmaku];
     }
     return self;
 }
 
-- (void)setWithDanmaku:(AxcUI_BaseBarrageModel *)danmaku {
+- (void)setWithDanmaku:(AxcUI_BarrageModelBase *)danmaku {
     _danmaku = danmaku;
     self.textColor = danmaku.textColor;
     self.text = danmaku.text ? danmaku.text : @"";
@@ -37,7 +37,7 @@ b;\
     return [_danmaku updatePositonWithTime:time container:self];
 }
 
-- (AxcUI_BaseBarrageModel *)danmaku {
+- (AxcUI_BarrageModelBase *)danmaku {
     return _danmaku;
 }
 

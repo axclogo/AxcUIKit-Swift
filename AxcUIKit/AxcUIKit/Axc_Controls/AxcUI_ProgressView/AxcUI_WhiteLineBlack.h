@@ -8,6 +8,7 @@
 
 #import "AxcBaseProgressView.h"
 
+/** 犹豫中到底要不要施工这个控件=。= */
 @interface AxcUI_WhiteLineBlack : AxcBaseProgressView
 
 @end

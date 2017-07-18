@@ -1,5 +1,5 @@
 //
-//  AxcUI_PhotoBrowserView.m
+//  AxcPhotoBrowserView.m
 //  AxcUIKit
 //
 //  Created by Axc on 2017/6/7.
@@ -100,7 +100,7 @@
 #pragma mark 保存图像
 - (UIImage *)saveImageWithImage{
     int index = _scrollView.contentOffset.x / _scrollView.bounds.size.width;
-    AxcUI_PhotoBrowserView *currentView = _scrollView.subviews[index];
+    AxcPhotoBrowserView *currentView = _scrollView.subviews[index];
     return currentView.imageview.image;
 }
 
@@ -118,7 +118,7 @@
     [self addSubview:_scrollView];
     
     for (int i = 0; i < self.axcUI_imageCount; i++) {
-        AxcUI_PhotoBrowserView *view = [[AxcUI_PhotoBrowserView alloc] init];
+        AxcPhotoBrowserView *view = [[AxcPhotoBrowserView alloc] init];
         view.imageview.tag = i;
         __weak __typeof(self)weakSelf = self;
         view.singleTapBlock = ^(UITapGestureRecognizer *recognizer){
@@ -146,7 +146,7 @@
 
 
 - (void)setupImageOfImageViewForIndex:(NSInteger)index{
-    AxcUI_PhotoBrowserView *view = _scrollView.subviews[index];
+    AxcPhotoBrowserView *view = _scrollView.subviews[index];
     if (view.beginLoadingImage) return;
     if ([self highQualityImageURLForIndex:index]) {
         [view setImageWithURL:[self highQualityImageURLForIndex:index] placeholderImage:[self placeholderImageForIndex:index]];
@@ -169,7 +169,7 @@
     __block CGFloat w = _scrollView.frame.size.width - self.axcUI_browserImageViewMargin * 2;
     CGFloat h = _scrollView.frame.size.height;
 
-    [_scrollView.subviews enumerateObjectsUsingBlock:^(AxcUI_PhotoBrowserView *obj, NSUInteger idx, BOOL *stop) {
+    [_scrollView.subviews enumerateObjectsUsingBlock:^(AxcPhotoBrowserView *obj, NSUInteger idx, BOOL *stop) {
         CGFloat x = self.axcUI_browserImageViewMargin + idx * (self.axcUI_browserImageViewMargin * 2 + w);
         obj.frame = CGRectMake(x, y, w, h);
         obj.axcUI_progressSize = self.axcUI_progressSize;
@@ -231,7 +231,7 @@
     if (!self.axcUI_isShouldLandscape) {
         return;
     }
-    AxcUI_PhotoBrowserView *currentView = _scrollView.subviews[self.axcUI_currentImageIndex];
+    AxcPhotoBrowserView *currentView = _scrollView.subviews[self.axcUI_currentImageIndex];
     [currentView.scrollview setZoomScale:1.0 animated:YES];
     UIDeviceOrientation orientation = [UIDevice currentDevice].orientation;
     
@@ -334,7 +334,7 @@
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
     int autualIndex = scrollView.contentOffset.x  / _scrollView.bounds.size.width;
     _axcUI_currentImageIndex = autualIndex;
-    for (AxcUI_PhotoBrowserView *view in _scrollView.subviews) {
+    for (AxcPhotoBrowserView *view in _scrollView.subviews) {
         if (view.imageview.tag != autualIndex) {
                 view.scrollview.zoomScale = 1.0;
         }
@@ -344,7 +344,7 @@
 #pragma mark - tap
 #pragma mark 双击
 - (void)handleDoubleTap:(UITapGestureRecognizer *)recognizer{
-    AxcUI_PhotoBrowserView *view = (AxcUI_PhotoBrowserView *)recognizer.view;
+    AxcPhotoBrowserView *view = (AxcPhotoBrowserView *)recognizer.view;
     CGPoint touchPoint = [recognizer locationInView:self];
     if (view.scrollview.zoomScale <= 1.0) {
     
@@ -361,7 +361,7 @@
 #pragma mark 单击
 - (void)photoClick:(UITapGestureRecognizer *)recognizer
 {
-    AxcUI_PhotoBrowserView *currentView = _scrollView.subviews[self.axcUI_currentImageIndex];
+    AxcPhotoBrowserView *currentView = _scrollView.subviews[self.axcUI_currentImageIndex];
     [currentView.scrollview setZoomScale:1.0 animated:YES];
     _indexLabel.hidden = YES;
     _saveButton.hidden = YES;
@@ -397,7 +397,7 @@
 #pragma mark - 退出大图模式
 - (void)hidePhotoBrowser:(UITapGestureRecognizer *)recognizer{
     
-    AxcUI_PhotoBrowserView *view = (AxcUI_PhotoBrowserView *)recognizer.view;
+    AxcPhotoBrowserView *view = (AxcPhotoBrowserView *)recognizer.view;
     UIImageView *currentImageView = view.imageview;
 
     CGRect targetTemp = [self.axcUI_sourceImagesContainerView convertRect:self.axcUI_convertRectView.frame toView:self];

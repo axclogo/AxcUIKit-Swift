@@ -7,7 +7,7 @@
 //
 
 #import "AxcXmlUtil.h"
-#import "AxcUI_BaseBarrageModel.h"
+#import "AxcUI_BarrageModelBase.h"
 #import "AxcUI_BarrageScrollEngine.h"
 
 #import "AxcUI_BarrageScrollEngine+Tools.h"
@@ -21,7 +21,7 @@ typedef void(^callBackBlock)(BarrageDataModel *model);
 
 
 + (NSDictionary *)dicWithObj:(id)obj{
-    NSMutableDictionary <NSNumber *,NSMutableArray <AxcUI_BaseBarrageModel *> *> *dic = [NSMutableDictionary dictionary];
+    NSMutableDictionary <NSNumber *,NSMutableArray <AxcUI_BarrageModelBase *> *> *dic = [NSMutableDictionary dictionary];
     
     UIFont *font = [UIFont systemFontOfSize:13];
     NSInteger danMufontSpecially = AxcBarrageShadowStyleNone;
@@ -31,7 +31,7 @@ typedef void(^callBackBlock)(BarrageDataModel *model);
         if (!dic[@(time)]){
             dic[@(time)] = [NSMutableArray array];
         }
-        AxcUI_BaseBarrageModel *danmaku = [AxcUI_BarrageScrollEngine barrageWithText:model.message
+        AxcUI_BarrageModelBase *danmaku = [AxcUI_BarrageScrollEngine barrageWithText:model.message
                                                                                color:model.color
                                                                          spiritStyle:model.mode
                                                                          shadowStyle:danMufontSpecially

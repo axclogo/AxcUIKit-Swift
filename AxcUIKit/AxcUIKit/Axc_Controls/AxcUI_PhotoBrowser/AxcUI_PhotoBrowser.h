@@ -1,5 +1,5 @@
 //
-//  AxcUI_PhotoBrowserView.h
+//  AxcPhotoBrowserView.h
 //  AxcUIKit
 //
 //  Created by Axc on 2017/6/7.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "UIImageView+AxcImageLoader.h"
-#import "AxcUI_PhotoBrowserView.h"
+#import "AxcPhotoBrowserView.h"
 
 typedef enum {
     AxcPhotoBrowserPageControlStyleNumPage,     //数字展示图片数量   Digital display graphics

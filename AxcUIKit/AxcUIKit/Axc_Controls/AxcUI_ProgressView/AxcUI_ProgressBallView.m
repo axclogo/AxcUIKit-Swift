@@ -1,14 +1,14 @@
 //
-//  AxcUI_BallProgressView.m
+//  AxcUI_ProgressBallView.m
 //  AxcUIKit
 //
 //  Created by Axc_5324 on 17/6/5.
 //  Copyright © 2017年 Axc_5324. All rights reserved.
 //
 
-#import "AxcUI_BallProgressView.h"
+#import "AxcUI_ProgressBallView.h"
 
-@implementation AxcUI_BallProgressView
+@implementation AxcUI_ProgressBallView
 
 - (void)drawRect:(CGRect)rect{
     CGContextRef ctx = UIGraphicsGetCurrentContext();

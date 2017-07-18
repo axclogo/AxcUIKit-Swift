@@ -79,13 +79,13 @@
 // 发射弹幕
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     [self.barrageTextFiled resignFirstResponder]; // 解除第一响应者
-    AxcUI_BaseBarrageModel *sc;                 // 声明父类弹幕
+    AxcUI_BarrageModelBase *sc;                 // 声明父类弹幕
     NSString *str = self.barrageTextFiled.text; // 准备弹幕文字
     if (!str || [str isEqualToString:@""]) {
         str = self.barrageTextFiled.axcUI_PlaceholderLabel.text;
     }
     if (_barrageStyle == 0) {   // 创建滚动弹幕模组
-        sc = [[AxcUI_ScrollBarrageModel alloc] initWithFontSize:13
+        sc = [[AxcUI_BarrageScrollModel alloc] initWithFontSize:13
                                                       textColor:[UIColor AxcUI_ArcColor]  // 随机色
                                                            text:str
                                                     shadowStyle:AxcBarrageShadowStyleNone // 字体特效
@@ -93,7 +93,7 @@
                                                           speed:arc4random_uniform(100) + 50
                                                       direction:_barrageDirection + 10];
     }else{  // 创建浮动弹幕模组
-        sc = [[AxcUI_FloatBarrageModel alloc] initWithFontSize:13
+        sc = [[AxcUI_BarrageFloatModel alloc] initWithFontSize:13
                                                      textColor:[UIColor AxcUI_ArcColor] // 随机色
                                                           text:str
                                                    shadowStyle:AxcBarrageShadowStyleNone  // 字体特效
@@ -144,7 +144,7 @@
 }
 // 回调代理
 #pragma mark - AxcUI_BarrageScrollEngineDelegate
-- (NSArray <__kindof AxcUI_BaseBarrageModel*>*)AxcUI_barrageScrollEngine:(AxcUI_BarrageScrollEngine *)barrageEngine
+- (NSArray <__kindof AxcUI_BarrageModelBase*>*)AxcUI_barrageScrollEngine:(AxcUI_BarrageScrollEngine *)barrageEngine
                                                     didSendBarrageAtTime:(NSUInteger)time {
     if (self.testSwitch.on) { // 测试开关
         return self.barrageDic[@(time)];

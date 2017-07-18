@@ -8,7 +8,11 @@
 
 //UIImage *stretchableButtonImage = [buttonImage  stretchableImageWithLeftCapWidth:buttonImage.size.width*0.5  topCapHeight:0];
 
-
+/**
+ 
+ 这个是测试控件属性和运行情况的VC，如果控件各项属性设置正常即可创建一个示例VC作为展示组，此VC不为展示使用
+ 
+ */
 #import "TestTwoVC.h"
 
 
@@ -28,8 +32,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
-    
+ 
     
 //    view = [[UIView alloc] initWithFrame:CGRectMake(100, 100, 100, 100)];
 //    view.backgroundColor = [UIColor lightGrayColor];
