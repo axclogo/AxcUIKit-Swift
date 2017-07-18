@@ -6,7 +6,6 @@
 //  Copyright © 2017年 Axc_5324. All rights reserved.
 //
 
-//UIImage *stretchableButtonImage = [buttonImage  stretchableImageWithLeftCapWidth:buttonImage.size.width*0.5  topCapHeight:0];
 
 /**
  
