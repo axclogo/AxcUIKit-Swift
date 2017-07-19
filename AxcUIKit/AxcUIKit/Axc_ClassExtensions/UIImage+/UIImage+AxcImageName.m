@@ -8,6 +8,8 @@
 
 #import "UIImage+AxcImageName.h"
 
+#import "NSBundle+AxcUIKitBundle.h"
+
 @implementation UIImage (AxcImageName)
 
 +(UIImage *)AxcUI_setImageNamed:(NSString *)name{
@@ -37,10 +39,24 @@
 }
 
 +(UIImage *)AxcUI_axcUIBoundleImageName:(NSString *)name{
-    return [UIImage imageNamed:[NSString stringWithFormat:@"AxcUIKitBundle.bundle/%@",name]];
+    return [self AxcUI_axcUIBoundleImageName:name
+                                    InBundle:[NSBundle AxcUIKitBundle]];
 }
 
 
++ (UIImage *)AxcUI_axcUIBoundleImageName:(NSString *)name InBundle:(NSBundle *)bundle {
+#if __IPHONE_OS_VERSION_MIN_REQUIRED >= __IPHONE_8_0
+    return [UIImage imageNamed:name inBundle:bundle compatibleWithTraitCollection:nil];
+#elif __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_8_0
+    return [UIImage imageWithContentsOfFile:[bundle pathForResource:name ofType:@"png"]];
+#else
+    if ([UIImage respondsToSelector:@selector(imageNamed:inBundle:compatibleWithTraitCollection:)]) {
+        return [UIImage imageNamed:name inBundle:bundle compatibleWithTraitCollection:nil];
+    } else {
+        return [UIImage imageWithContentsOfFile:[bundle pathForResource:name ofType:@"png"]];
+    }
+#endif
+}
 
 
 

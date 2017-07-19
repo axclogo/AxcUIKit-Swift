@@ -24,5 +24,9 @@
  */
 +(UIImage *)AxcUI_axcUIBoundleImageName:(NSString *)name;
 
+/**
+ *  通过Boundle获取其中的图片
+ */
++ (UIImage *)AxcUI_axcUIBoundleImageName:(NSString *)name InBundle:(NSBundle *)bundle ;
 
 @end

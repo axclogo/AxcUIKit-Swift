@@ -230,7 +230,8 @@
 		EADC7D401F14D643004AF7D8 /* Refresh_Img.png in Resources */ = {isa = PBXBuildFile; fileRef = EADC7D3F1F14D643004AF7D8 /* Refresh_Img.png */; };
 		EADC7D431F14D705004AF7D8 /* UIImage+AxcTransfromZoom.m in Sources */ = {isa = PBXBuildFile; fileRef = EADC7D421F14D705004AF7D8 /* UIImage+AxcTransfromZoom.m */; };
 		EADC7D461F15BCB1004AF7D8 /* UIView+AxcRectCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = EADC7D451F15BCB1004AF7D8 /* UIView+AxcRectCorner.m */; };
-		EADC7D481F15C6A2004AF7D8 /* AxcUIKitBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = EADC7D471F15C6A2004AF7D8 /* AxcUIKitBundle.bundle */; };
+		EADDAE7D1F1EF0860098090B /* NSBundle+AxcUIKitBundle.m in Sources */ = {isa = PBXBuildFile; fileRef = EADDAE7C1F1EF0860098090B /* NSBundle+AxcUIKitBundle.m */; };
+		EADDAE7F1F1EF20C0098090B /* AxcUIKit.bundle in Resources */ = {isa = PBXBuildFile; fileRef = EADDAE7E1F1EF20C0098090B /* AxcUIKit.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -621,7 +622,9 @@
 		EADC7D421F14D705004AF7D8 /* UIImage+AxcTransfromZoom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+AxcTransfromZoom.m"; sourceTree = "<group>"; };
 		EADC7D441F15BCB1004AF7D8 /* UIView+AxcRectCorner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+AxcRectCorner.h"; sourceTree = "<group>"; };
 		EADC7D451F15BCB1004AF7D8 /* UIView+AxcRectCorner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+AxcRectCorner.m"; sourceTree = "<group>"; };
-		EADC7D471F15C6A2004AF7D8 /* AxcUIKitBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AxcUIKitBundle.bundle; sourceTree = "<group>"; };
+		EADDAE7B1F1EF0860098090B /* NSBundle+AxcUIKitBundle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+AxcUIKitBundle.h"; sourceTree = "<group>"; };
+		EADDAE7C1F1EF0860098090B /* NSBundle+AxcUIKitBundle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+AxcUIKitBundle.m"; sourceTree = "<group>"; };
+		EADDAE7E1F1EF20C0098090B /* AxcUIKit.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AxcUIKit.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -992,7 +995,7 @@
 				EA6A3B411F09DE3800E0FAAA /* Axc_Controls */,
 				EA6A3B7E1F09DE3800E0FAAA /* AxcUIKit.h */,
 				EA6A3B7F1F09DE3800E0FAAA /* AxcUIKit.m */,
-				EADC7D471F15C6A2004AF7D8 /* AxcUIKitBundle.bundle */,
+				EADDAE7E1F1EF20C0098090B /* AxcUIKit.bundle */,
 			);
 			path = AxcUIKit;
 			sourceTree = "<group>";
@@ -1000,6 +1003,7 @@
 		EA6A3AE81F09DE3700E0FAAA /* Axc_ClassExtensions */ = {
 			isa = PBXGroup;
 			children = (
+				EADDAE7A1F1EF0690098090B /* NSBundle+ */,
 				EADC7D2B1F14C330004AF7D8 /* UITableView+ */,
 				EAAFBFE21F0F2B7C00881A62 /* UIButton+ */,
 				EA6A3AE91F09DE3700E0FAAA /* NSString+ */,
@@ -1539,6 +1543,15 @@
 			path = AxcEmptyDataViews;
 			sourceTree = "<group>";
 		};
+		EADDAE7A1F1EF0690098090B /* NSBundle+ */ = {
+			isa = PBXGroup;
+			children = (
+				EADDAE7B1F1EF0860098090B /* NSBundle+AxcUIKitBundle.h */,
+				EADDAE7C1F1EF0860098090B /* NSBundle+AxcUIKitBundle.m */,
+			);
+			path = "NSBundle+";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1673,7 +1686,6 @@
 				EAD085B71EEAFFDC007DE2C4 /* HUD_15.png in Resources */,
 				EAD085811EEAE851007DE2C4 /* placeholder.jpg in Resources */,
 				EA530A7A1F0CC20E00F562FD /* light-rail.png in Resources */,
-				EADC7D481F15C6A2004AF7D8 /* AxcUIKitBundle.bundle in Resources */,
 				EAD085B01EEAFFDC007DE2C4 /* HUD_0.png in Resources */,
 				EA530A801F0CC20E00F562FD /* stop.png in Resources */,
 				EA530A741F0CC20E00F562FD /* bike.png in Resources */,
@@ -1712,6 +1724,7 @@
 				EAD085BF1EEAFFDC007DE2C4 /* HUD_22.png in Resources */,
 				EA6A3BCA1F09F3C100E0FAAA /* test_5.jpg in Resources */,
 				EAD085D71EEAFFDC007DE2C4 /* HUD_8.png in Resources */,
+				EADDAE7F1F1EF20C0098090B /* AxcUIKit.bundle in Resources */,
 				EAD085C61EEAFFDC007DE2C4 /* HUD_29.png in Resources */,
 				EA530A7D1F0CC20E00F562FD /* railway.png in Resources */,
 				EAD085D61EEAFFDC007DE2C4 /* HUD_7.png in Resources */,
@@ -1891,6 +1904,7 @@
 				EA6A3B8D1F09DE3800E0FAAA /* Axc_WebimageCache.m in Sources */,
 				EA6A3BA01F09DE3800E0FAAA /* UIView+AxcExtension.m in Sources */,
 				EAAFBFE01F0E3E9D00881A62 /* UIColor+PYSearchExtension.m in Sources */,
+				EADDAE7D1F1EF0860098090B /* NSBundle+AxcUIKitBundle.m in Sources */,
 				EA530A901F0CDC9600F562FD /* AxcTagTextViewVC.m in Sources */,
 				EA439CE11EE3C1B500D992E7 /* AxcModifyPlaceholderVC.m in Sources */,
 				EA439D2D1EE52A3D00D992E7 /* AxcImageLoaderVC.m in Sources */,
