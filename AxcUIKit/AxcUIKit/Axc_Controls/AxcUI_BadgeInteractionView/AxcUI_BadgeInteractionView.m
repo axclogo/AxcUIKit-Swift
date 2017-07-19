@@ -132,8 +132,14 @@ CGFloat distanceBetweenPoints (CGPoint p1, CGPoint p2) {
     UIImage* image3 = [UIImage AxcUI_axcUIBoundleImageName:@"AxcUI_BadgeInteractionView_bomb3"];
     UIImage* image4 = [UIImage AxcUI_axcUIBoundleImageName:@"AxcUI_BadgeInteractionView_bomb4"];
     
+    
+    
     _bombImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 34, 34)];
-    _bombImageView.animationImages = @[image0, image1, image2, image3, image4, ];
+    if (!image0||!image1||!image2||!image3||!image4) {
+        _bombImageView.animationImages = [NSArray array];
+    }else{
+        _bombImageView.animationImages = @[image0, image1, image2, image3, image4, ];
+    }
     //
     _bombImageView.animationRepeatCount = 1;
     _bombImageView.animationDuration = kBombDuration;

@@ -39,8 +39,12 @@
 }
 
 +(UIImage *)AxcUI_axcUIBoundleImageName:(NSString *)name{
-    return [self AxcUI_axcUIBoundleImageName:name
-                                    InBundle:[NSBundle AxcUIKitBundle]];
+    UIImage *image = [self AxcUI_axcUIBoundleImageName:name
+                                              InBundle:[NSBundle AxcUIKitBundle]];
+    if (!image) {
+        NSLog(@"AxcUIKit未找到Bundle资源！\nError Image Name With ：%@\n",name);
+    }
+    return image;
 }
 
 

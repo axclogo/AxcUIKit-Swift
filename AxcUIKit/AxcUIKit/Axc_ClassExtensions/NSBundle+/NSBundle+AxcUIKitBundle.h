@@ -9,8 +9,9 @@
 #import <Foundation/Foundation.h>
 
 @interface NSBundle (AxcUIKitBundle)
-
+/** 框架内部获取 */
 + (NSBundle *)AxcUIKitBundle;
+/** 框架内部获取URL */
 + (NSURL *)AxcUIKitBundleURL;
 
 
