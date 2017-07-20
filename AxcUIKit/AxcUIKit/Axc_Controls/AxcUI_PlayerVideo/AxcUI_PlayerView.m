@@ -10,6 +10,8 @@
 #import "AxcPlayerOrientationDmonitor.h"
 #import "AxcPlayerChangeOrientationOperation.h"
 
+#import "UIView+AxcAutoresizingMask.h"
+
 NSString *const AxcUI_PlayerViewWillOrientationChangeNotificationName = @"AxcUI_PlayerViewWillOrientationChangeNotificationName";
 NSString *const AxcUI_PlayerViewDidChangedOrientationNotificationName = @"AxcUI_PlayerViewDidChangedOrientationNotificationName";
 NSString *const AxcUI_PlayerViewTapControlButtoneNotificationName = @"AxcUI_PlayerViewTapControlButtoneNotificationName";
@@ -17,7 +19,9 @@ NSString *const AxcUI_PlayerViewTapControlButtoneNotificationName = @"AxcUI_Play
 NSString *const AxcUI_PlayerViewWillChangeOrientationKey = @"AxcUI_PlayerViewWillChangeOrientationKey";
 NSString *const AxcUI_PlayerViewWillChangeFromOrientationKey = @"AxcUI_PlayerViewWillChangeFromOrientationKey";
 
-@interface AxcUI_PlayerView ()
+@interface AxcUI_PlayerView ()<AxcBarrageScrollEngineDelegate>
+
+
 
 @property (nonatomic, strong) AxcPlayerContainerView *containerView;
 
@@ -69,6 +73,8 @@ NSString *const AxcUI_PlayerViewWillChangeFromOrientationKey = @"AxcUI_PlayerVie
     if ([self.containerView.superview isEqual:self]) {
         self.containerView.frame = self.bounds;
     }
+    // 此处非主动调用懒加载
+    _axcUI_barrageEngine.axcUI_barrageCanvas.frame = self.containerView.maskContainerView.bounds;
 }
 
 - (void)AxcUI_addMask:(AxcPlayerViewMask *)mask animated:(BOOL)animated {
@@ -360,6 +366,43 @@ NSString *const AxcUI_PlayerViewWillChangeFromOrientationKey = @"AxcUI_PlayerVie
         _containerView = [[AxcPlayerContainerView alloc] init];
     }
     return _containerView;
+}
+
+- (AxcUI_BarrageScrollEngine *)axcUI_barrageEngine{
+    if (!_axcUI_barrageEngine) {
+        _axcUI_barrageEngine = [[AxcUI_BarrageScrollEngine alloc] init];
+        [_axcUI_barrageEngine.axcUI_barrageCanvas AxcUI_autoresizingMaskComprehensive];
+        _axcUI_barrageEngine.axcUI_barrageCanvas.backgroundColor = [UIColor clearColor];
+        // 代理
+        _axcUI_barrageEngine.axcUI_barrageDelegate = self;
+        // 计时器多少秒调用一次代理方法 默认1s
+        _axcUI_barrageEngine.axcUI_barrageTimeInterval = 1;
+        // 开始滚动弹幕
+        _axcUI_barrageEngine.axcUI_barrageCanvas.autoresizesSubviews = YES;
+        [self.containerView.maskContainerView addSubview:_axcUI_barrageEngine.axcUI_barrageCanvas];
+    }
+    return _axcUI_barrageEngine;
+}
+
+#pragma mark - AxcUI_BarrageScrollEngineDelegate
+// 弹幕数据源方法转移到外部
+- (NSArray <__kindof AxcUI_BarrageModelBase*>*)AxcUI_barrageScrollEngine:(AxcUI_BarrageScrollEngine *)barrageEngine
+                                                    didSendBarrageAtTime:(NSUInteger)time {
+    if ([_axcUI_playerViewBarrageDataSource
+         respondsToSelector:@selector(AxcUI_playeBarrageScrollEngine:didSendBarrageAtTime:)]) {
+        return [_axcUI_playerViewBarrageDataSource AxcUI_playeBarrageScrollEngine:barrageEngine didSendBarrageAtTime:time];
+    }else{
+        return nil;
+    }
+}
+- (BOOL)AxcUI_barrageScrollEngine:(AxcUI_BarrageScrollEngine *)barrageEngine
+                shouldSendBarrage:(__kindof AxcUI_BarrageModelBase *)barrage{
+    if ([_axcUI_playerViewBarrageDataSource
+         respondsToSelector:@selector(AxcUI_playeBarrageScrollEngine:shouldSendBarrage:)]) {
+        return [_axcUI_playerViewBarrageDataSource AxcUI_playeBarrageScrollEngine:barrageEngine shouldSendBarrage:barrage];
+    }else{
+        return YES;
+    }
 }
 
 @end

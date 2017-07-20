@@ -68,6 +68,7 @@
     AxcPlayerControlBarrageButton *barrageButton = [[AxcPlayerControlBarrageButton alloc] initWithMask:topMask mainBlock:nil];
     topMask.rightButtons = @[ barrageButton];
     
+    [self.player.axcUI_playerView.axcUI_barrageEngine AxcUI_BarrageStart];
     
 }
 

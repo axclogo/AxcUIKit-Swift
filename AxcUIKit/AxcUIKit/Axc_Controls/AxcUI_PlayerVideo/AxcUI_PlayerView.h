@@ -11,6 +11,9 @@
 #import "AxcPlayerContainerView.h"
 #import "AxcPlayerControlButton.h"
 
+/** 弹幕引擎 */
+#import "AxcUI_BarrageScrollEngine.h"
+
 extern NSString *const AxcUI_PlayerViewWillOrientationChangeNotificationName;
 extern NSString *const AxcUI_PlayerViewDidChangedOrientationNotificationName;
 extern NSString *const AxcUI_PlayerViewTapControlButtoneNotificationName;
@@ -39,6 +42,18 @@ extern NSString *const AxcUI_PlayerViewWillChangeFromOrientationKey;
 
 @end
 
+/** 弹幕数据源 */
+@protocol AxcPlayerViewBarrageDataSource <NSObject>
+/** 返回弹幕数组，每秒取多少 ,以时间戳为Key，取出数组，详见B站解析弹幕 */
+- (NSArray <__kindof AxcUI_BarrageModelBase*>*)AxcUI_playeBarrageScrollEngine:(AxcUI_BarrageScrollEngine *)barrageEngine
+                                                         didSendBarrageAtTime:(NSUInteger)time;
+/** 是否发射某种弹幕，NO则不发送，一般多用于屏蔽某种关键字弹幕 */
+- (BOOL)AxcUI_playeBarrageScrollEngine:(AxcUI_BarrageScrollEngine *)barrageEngine
+                shouldSendBarrage:(__kindof AxcUI_BarrageModelBase *)barrage;
+
+@end
+
+
 @interface AxcUI_PlayerView : UIView
 
 @property (nonatomic, weak) id<AxcPlayerViewDelegate> axcUI_playerViewDelegate;
@@ -56,8 +71,10 @@ extern NSString *const AxcUI_PlayerViewWillChangeFromOrientationKey;
 @property (nonatomic, readonly) UIInterfaceOrientation axcUI_visibleInterfaceOrientation;
 /** 当前是否填充屏幕 */
 @property (nonatomic, readonly) BOOL axcUI_isFullScreen;
-
-
+/** 弹幕引擎对象 */
+@property (strong, nonatomic) AxcUI_BarrageScrollEngine *axcUI_barrageEngine;
+/** 弹幕数据源对象 */
+@property(nonatomic, weak)id <AxcPlayerViewBarrageDataSource> axcUI_playerViewBarrageDataSource;
 
 - (instancetype)initWithPlayer:(AxcUI_PlayerVideo *)player;
 
