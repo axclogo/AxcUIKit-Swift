@@ -379,6 +379,8 @@ NSString *const AxcUI_PlayerViewWillChangeFromOrientationKey = @"AxcUI_PlayerVie
         _axcUI_barrageEngine.axcUI_barrageTimeInterval = 1;
         // 开始滚动弹幕
         _axcUI_barrageEngine.axcUI_barrageCanvas.autoresizesSubviews = YES;
+        // 弹幕默认字号
+        _axcUI_barrageEngine.axcUI_barrageGlobalFont = [UIFont systemFontOfSize:10];
         [self.containerView.maskContainerView addSubview:_axcUI_barrageEngine.axcUI_barrageCanvas];
     }
     return _axcUI_barrageEngine;

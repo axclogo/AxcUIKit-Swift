@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		091772991F20D6290065426B /* AxcPlayerVideoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 091772981F20D6290065426B /* AxcPlayerVideoVC.m */; };
+		0917729C1F20EB920065426B /* AxcPlayerVideoTwoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0917729B1F20EB920065426B /* AxcPlayerVideoTwoVC.m */; };
 		093C62281EA6F85800ADAC42 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 093C62271EA6F85800ADAC42 /* main.m */; };
 		093C622B1EA6F85800ADAC42 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 093C622A1EA6F85800ADAC42 /* AppDelegate.m */; };
 		093C622E1EA6F85800ADAC42 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 093C622D1EA6F85800ADAC42 /* ViewController.m */; };
@@ -276,6 +278,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		091772971F20D6290065426B /* AxcPlayerVideoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcPlayerVideoVC.h; sourceTree = "<group>"; };
+		091772981F20D6290065426B /* AxcPlayerVideoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcPlayerVideoVC.m; sourceTree = "<group>"; };
+		0917729A1F20EB920065426B /* AxcPlayerVideoTwoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcPlayerVideoTwoVC.h; sourceTree = "<group>"; };
+		0917729B1F20EB920065426B /* AxcPlayerVideoTwoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcPlayerVideoTwoVC.m; sourceTree = "<group>"; };
 		093C62231EA6F85800ADAC42 /* AxcUIKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AxcUIKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		093C62271EA6F85800ADAC42 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		093C62291EA6F85800ADAC42 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -925,6 +931,10 @@
 				EA5D4F101F18C65C0002E9E9 /* AxcBadgeViewVC.m */,
 				EA5D50491F1C959F0002E9E9 /* AxcBannerViewVC.h */,
 				EA5D504A1F1C959F0002E9E9 /* AxcBannerViewVC.m */,
+				091772971F20D6290065426B /* AxcPlayerVideoVC.h */,
+				091772981F20D6290065426B /* AxcPlayerVideoVC.m */,
+				0917729A1F20EB920065426B /* AxcPlayerVideoTwoVC.h */,
+				0917729B1F20EB920065426B /* AxcPlayerVideoTwoVC.m */,
 			);
 			name = Controls;
 			sourceTree = "<group>";
@@ -2030,6 +2040,7 @@
 				EA6A3BBA1F09DE3800E0FAAA /* AxcUI_ProgressPieView.m in Sources */,
 				EADDB08E1F2091B50098090B /* AxcPlayerControlItemAssetMenuButton.m in Sources */,
 				EADDB07B1F2091B50098090B /* AxcUI_PlayerVideo.m in Sources */,
+				0917729C1F20EB920065426B /* AxcPlayerVideoTwoVC.m in Sources */,
 				EAAFBFE11F0E3E9D00881A62 /* UIView+PYSearchExtension.m in Sources */,
 				EA650ED31F076B7A00863057 /* BarrageDataModel.m in Sources */,
 				EA5252CC1EF5253F0016C687 /* AxcActivityIndicatorViewCell.m in Sources */,
@@ -2091,6 +2102,7 @@
 				EADDAE7D1F1EF0860098090B /* NSBundle+AxcUIKitBundle.m in Sources */,
 				EADDB08D1F2091B50098090B /* AxcPlayerControlFullScreenButton.m in Sources */,
 				EA530A901F0CDC9600F562FD /* AxcTagTextViewVC.m in Sources */,
+				091772991F20D6290065426B /* AxcPlayerVideoVC.m in Sources */,
 				EA439CE11EE3C1B500D992E7 /* AxcModifyPlaceholderVC.m in Sources */,
 				EA439D2D1EE52A3D00D992E7 /* AxcImageLoaderVC.m in Sources */,
 				EA6A3BBC1F09DE3800E0FAAA /* AxcUI_WhiteLineBlack.m in Sources */,

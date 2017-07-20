@@ -251,6 +251,8 @@ didSelectSearchHistoryAtIndex:(NSInteger)index
         [Group2 addObject:@{@"controlsName":@"AxcUI_TagTextView",@"describeName":@"文字样式Tag标签",@"VCName":@"AxcTagTextViewVC"}];
 
         [Group2 addObject:@{@"controlsName":@"AxcUI_Toast",@"describeName":@"弹出式提醒",@"VCName":@"AxcToastVC"}];
+        [Group2 addObject:@{@"controlsName":@"AxcUI_PlayerVideo",@"describeName":@"视频播放器简单使用",@"VCName":@"AxcPlayerVideoVC"}];
+        [Group2 addObject:@{@"controlsName":@"AxcUI_PlayerVideo",@"describeName":@"视频+弹幕结合使用",@"VCName":@"AxcPlayerVideoTwoVC"}];
         
         
         

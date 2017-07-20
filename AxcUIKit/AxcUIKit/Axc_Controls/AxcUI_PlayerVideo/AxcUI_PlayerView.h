@@ -48,6 +48,7 @@ extern NSString *const AxcUI_PlayerViewWillChangeFromOrientationKey;
 /** 返回弹幕数组，每秒取多少 ,以时间戳为Key，取出数组，详见B站解析弹幕 */
 - (NSArray <__kindof AxcUI_BarrageModelBase*>*)AxcUI_playeBarrageScrollEngine:(AxcUI_BarrageScrollEngine *)barrageEngine
                                                          didSendBarrageAtTime:(NSUInteger)time;
+@optional
 /** 是否发射某种弹幕，NO则不发送，一般多用于屏蔽某种关键字弹幕 */
 - (BOOL)AxcUI_playeBarrageScrollEngine:(AxcUI_BarrageScrollEngine *)barrageEngine
                 shouldSendBarrage:(__kindof AxcUI_BarrageModelBase *)barrage;
