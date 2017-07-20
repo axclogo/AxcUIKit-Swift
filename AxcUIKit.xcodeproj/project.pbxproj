@@ -235,18 +235,6 @@
 		EADDB07B1F2091B50098090B /* AxcUI_PlayerVideo.m in Sources */ = {isa = PBXBuildFile; fileRef = EADDB03C1F2091B50098090B /* AxcUI_PlayerVideo.m */; };
 		EADDB07C1F2091B50098090B /* AxcUI_PlayerVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EADDB03E1F2091B50098090B /* AxcUI_PlayerVideoViewController.m */; };
 		EADDB07D1F2091B50098090B /* AxcUI_PlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = EADDB0401F2091B50098090B /* AxcUI_PlayerView.m */; };
-		EADDB07E1F2091B50098090B /* AxcUI_PlayerVideo_back_btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EADDB0431F2091B50098090B /* AxcUI_PlayerVideo_back_btn@2x.png */; };
-		EADDB07F1F2091B50098090B /* AxcUI_PlayerVideo_back_btn@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EADDB0441F2091B50098090B /* AxcUI_PlayerVideo_back_btn@3x.png */; };
-		EADDB0801F2091B50098090B /* AxcUI_PlayerVideo_barrage_btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EADDB0451F2091B50098090B /* AxcUI_PlayerVideo_barrage_btn@2x.png */; };
-		EADDB0811F2091B50098090B /* AxcUI_PlayerVideo_barrage_btn@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EADDB0461F2091B50098090B /* AxcUI_PlayerVideo_barrage_btn@3x.png */; };
-		EADDB0821F2091B50098090B /* AxcUI_PlayerVideo_fullScreen_btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EADDB0471F2091B50098090B /* AxcUI_PlayerVideo_fullScreen_btn@2x.png */; };
-		EADDB0831F2091B50098090B /* AxcUI_PlayerVideo_fullScreen_btn@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EADDB0481F2091B50098090B /* AxcUI_PlayerVideo_fullScreen_btn@3x.png */; };
-		EADDB0841F2091B50098090B /* AxcUI_PlayerVideo_minScreen_btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EADDB0491F2091B50098090B /* AxcUI_PlayerVideo_minScreen_btn@2x.png */; };
-		EADDB0851F2091B50098090B /* AxcUI_PlayerVideo_minScreen_btn@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EADDB04A1F2091B50098090B /* AxcUI_PlayerVideo_minScreen_btn@3x.png */; };
-		EADDB0861F2091B50098090B /* AxcUI_PlayerVideo_pause_btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EADDB04B1F2091B50098090B /* AxcUI_PlayerVideo_pause_btn@2x.png */; };
-		EADDB0871F2091B50098090B /* AxcUI_PlayerVideo_pause_btn@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EADDB04C1F2091B50098090B /* AxcUI_PlayerVideo_pause_btn@3x.png */; };
-		EADDB0881F2091B50098090B /* AxcUI_PlayerVideo_play_btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EADDB04D1F2091B50098090B /* AxcUI_PlayerVideo_play_btn@2x.png */; };
-		EADDB0891F2091B50098090B /* AxcUI_PlayerVideo_play_btn@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EADDB04E1F2091B50098090B /* AxcUI_PlayerVideo_play_btn@3x.png */; };
 		EADDB08A1F2091B50098090B /* AxcPlayerControlBackButton.m in Sources */ = {isa = PBXBuildFile; fileRef = EADDB0511F2091B50098090B /* AxcPlayerControlBackButton.m */; };
 		EADDB08B1F2091B50098090B /* AxcPlayerControlBarrageButton.m in Sources */ = {isa = PBXBuildFile; fileRef = EADDB0531F2091B50098090B /* AxcPlayerControlBarrageButton.m */; };
 		EADDB08C1F2091B50098090B /* AxcPlayerControlButton.m in Sources */ = {isa = PBXBuildFile; fileRef = EADDB0551F2091B50098090B /* AxcPlayerControlButton.m */; };
@@ -667,18 +655,6 @@
 		EADDB03E1F2091B50098090B /* AxcUI_PlayerVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcUI_PlayerVideoViewController.m; sourceTree = "<group>"; };
 		EADDB03F1F2091B50098090B /* AxcUI_PlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcUI_PlayerView.h; sourceTree = "<group>"; };
 		EADDB0401F2091B50098090B /* AxcUI_PlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcUI_PlayerView.m; sourceTree = "<group>"; };
-		EADDB0431F2091B50098090B /* AxcUI_PlayerVideo_back_btn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AxcUI_PlayerVideo_back_btn@2x.png"; sourceTree = "<group>"; };
-		EADDB0441F2091B50098090B /* AxcUI_PlayerVideo_back_btn@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AxcUI_PlayerVideo_back_btn@3x.png"; sourceTree = "<group>"; };
-		EADDB0451F2091B50098090B /* AxcUI_PlayerVideo_barrage_btn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AxcUI_PlayerVideo_barrage_btn@2x.png"; sourceTree = "<group>"; };
-		EADDB0461F2091B50098090B /* AxcUI_PlayerVideo_barrage_btn@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AxcUI_PlayerVideo_barrage_btn@3x.png"; sourceTree = "<group>"; };
-		EADDB0471F2091B50098090B /* AxcUI_PlayerVideo_fullScreen_btn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AxcUI_PlayerVideo_fullScreen_btn@2x.png"; sourceTree = "<group>"; };
-		EADDB0481F2091B50098090B /* AxcUI_PlayerVideo_fullScreen_btn@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AxcUI_PlayerVideo_fullScreen_btn@3x.png"; sourceTree = "<group>"; };
-		EADDB0491F2091B50098090B /* AxcUI_PlayerVideo_minScreen_btn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AxcUI_PlayerVideo_minScreen_btn@2x.png"; sourceTree = "<group>"; };
-		EADDB04A1F2091B50098090B /* AxcUI_PlayerVideo_minScreen_btn@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AxcUI_PlayerVideo_minScreen_btn@3x.png"; sourceTree = "<group>"; };
-		EADDB04B1F2091B50098090B /* AxcUI_PlayerVideo_pause_btn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AxcUI_PlayerVideo_pause_btn@2x.png"; sourceTree = "<group>"; };
-		EADDB04C1F2091B50098090B /* AxcUI_PlayerVideo_pause_btn@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AxcUI_PlayerVideo_pause_btn@3x.png"; sourceTree = "<group>"; };
-		EADDB04D1F2091B50098090B /* AxcUI_PlayerVideo_play_btn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AxcUI_PlayerVideo_play_btn@2x.png"; sourceTree = "<group>"; };
-		EADDB04E1F2091B50098090B /* AxcUI_PlayerVideo_play_btn@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AxcUI_PlayerVideo_play_btn@3x.png"; sourceTree = "<group>"; };
 		EADDB0501F2091B50098090B /* AxcPlayerControlBackButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcPlayerControlBackButton.h; sourceTree = "<group>"; };
 		EADDB0511F2091B50098090B /* AxcPlayerControlBackButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcPlayerControlBackButton.m; sourceTree = "<group>"; };
 		EADDB0521F2091B50098090B /* AxcPlayerControlBarrageButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcPlayerControlBarrageButton.h; sourceTree = "<group>"; };
@@ -1669,31 +1645,11 @@
 		EADDB0411F2091B50098090B /* VideoPlayerControls */ = {
 			isa = PBXGroup;
 			children = (
-				EADDB0421F2091B50098090B /* Assets */,
 				EADDB04F1F2091B50098090B /* Buttons */,
 				EADDB05E1F2091B50098090B /* Masks */,
 				EADDB06F1F2091B50098090B /* Views */,
 			);
 			path = VideoPlayerControls;
-			sourceTree = "<group>";
-		};
-		EADDB0421F2091B50098090B /* Assets */ = {
-			isa = PBXGroup;
-			children = (
-				EADDB0431F2091B50098090B /* AxcUI_PlayerVideo_back_btn@2x.png */,
-				EADDB0441F2091B50098090B /* AxcUI_PlayerVideo_back_btn@3x.png */,
-				EADDB0451F2091B50098090B /* AxcUI_PlayerVideo_barrage_btn@2x.png */,
-				EADDB0461F2091B50098090B /* AxcUI_PlayerVideo_barrage_btn@3x.png */,
-				EADDB0471F2091B50098090B /* AxcUI_PlayerVideo_fullScreen_btn@2x.png */,
-				EADDB0481F2091B50098090B /* AxcUI_PlayerVideo_fullScreen_btn@3x.png */,
-				EADDB0491F2091B50098090B /* AxcUI_PlayerVideo_minScreen_btn@2x.png */,
-				EADDB04A1F2091B50098090B /* AxcUI_PlayerVideo_minScreen_btn@3x.png */,
-				EADDB04B1F2091B50098090B /* AxcUI_PlayerVideo_pause_btn@2x.png */,
-				EADDB04C1F2091B50098090B /* AxcUI_PlayerVideo_pause_btn@3x.png */,
-				EADDB04D1F2091B50098090B /* AxcUI_PlayerVideo_play_btn@2x.png */,
-				EADDB04E1F2091B50098090B /* AxcUI_PlayerVideo_play_btn@3x.png */,
-			);
-			path = Assets;
 			sourceTree = "<group>";
 		};
 		EADDB04F1F2091B50098090B /* Buttons */ = {
@@ -1874,7 +1830,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EADDB0831F2091B50098090B /* AxcUI_PlayerVideo_fullScreen_btn@3x.png in Resources */,
 				EAD085D01EEAFFDC007DE2C4 /* HUD_38.png in Resources */,
 				EAD085CF1EEAFFDC007DE2C4 /* HUD_37.png in Resources */,
 				EA6A3BC81F09E3E400E0FAAA /* AxcFilterTwoCollectionViewCell.xib in Resources */,
@@ -1886,21 +1841,17 @@
 				EAD085C11EEAFFDC007DE2C4 /* HUD_24.png in Resources */,
 				EAD085801EEAE851007DE2C4 /* found_icons_4.png in Resources */,
 				EA530A821F0CC20E00F562FD /* taxi.png in Resources */,
-				EADDB0861F2091B50098090B /* AxcUI_PlayerVideo_pause_btn@2x.png in Resources */,
 				EAD085C41EEAFFDC007DE2C4 /* HUD_27.png in Resources */,
 				EA530A7F1F0CC20E00F562FD /* shuttle.png in Resources */,
 				EAD085B41EEAFFDC007DE2C4 /* HUD_12.png in Resources */,
 				EA530A731F0CC20E00F562FD /* airplane.png in Resources */,
-				EADDB0811F2091B50098090B /* AxcUI_PlayerVideo_barrage_btn@3x.png in Resources */,
 				EA87DA771F04FCCB00452D2D /* add_Image.png in Resources */,
 				EAD085B51EEAFFDC007DE2C4 /* HUD_13.png in Resources */,
-				EADDB0821F2091B50098090B /* AxcUI_PlayerVideo_fullScreen_btn@2x.png in Resources */,
 				EA439D061EE415C900D992E7 /* AxcSemiModalPresentVC.xib in Resources */,
 				EAD085C01EEAFFDC007DE2C4 /* HUD_23.png in Resources */,
 				EAD085BE1EEAFFDC007DE2C4 /* HUD_21.png in Resources */,
 				EA530A851F0CC20E00F562FD /* tram.png in Resources */,
 				EAD085B71EEAFFDC007DE2C4 /* HUD_15.png in Resources */,
-				EADDB07F1F2091B50098090B /* AxcUI_PlayerVideo_back_btn@3x.png in Resources */,
 				EAD085811EEAE851007DE2C4 /* placeholder.jpg in Resources */,
 				EA530A7A1F0CC20E00F562FD /* light-rail.png in Resources */,
 				EAD085B01EEAFFDC007DE2C4 /* HUD_0.png in Resources */,
@@ -1910,12 +1861,9 @@
 				EAD085CC1EEAFFDC007DE2C4 /* HUD_34.png in Resources */,
 				EAD085E71EEB11BC007DE2C4 /* test.gif in Resources */,
 				EAD085D21EEAFFDC007DE2C4 /* HUD_4.png in Resources */,
-				EADDB0871F2091B50098090B /* AxcUI_PlayerVideo_pause_btn@3x.png in Resources */,
 				EAD085B91EEAFFDC007DE2C4 /* HUD_17.png in Resources */,
 				EAD085B21EEAFFDC007DE2C4 /* HUD_10.png in Resources */,
 				EA530A811F0CC20E00F562FD /* subway.png in Resources */,
-				EADDB07E1F2091B50098090B /* AxcUI_PlayerVideo_back_btn@2x.png in Resources */,
-				EADDB0891F2091B50098090B /* AxcUI_PlayerVideo_play_btn@3x.png in Resources */,
 				EA530A831F0CC20E00F562FD /* telpher.png in Resources */,
 				EA530A841F0CC20E00F562FD /* train.png in Resources */,
 				EAD085C51EEAFFDC007DE2C4 /* HUD_28.png in Resources */,
@@ -1934,14 +1882,12 @@
 				EA530A771F0CC20E00F562FD /* cable.png in Resources */,
 				EAD085BD1EEAFFDC007DE2C4 /* HUD_20.png in Resources */,
 				EAD085B31EEAFFDC007DE2C4 /* HUD_11.png in Resources */,
-				EADDB0801F2091B50098090B /* AxcUI_PlayerVideo_barrage_btn@2x.png in Resources */,
 				EADC7D401F14D643004AF7D8 /* Refresh_Img.png in Resources */,
 				EAD085B81EEAFFDC007DE2C4 /* HUD_16.png in Resources */,
 				EAD085CD1EEAFFDC007DE2C4 /* HUD_35.png in Resources */,
 				EAD0875C1EED4DAD007DE2C4 /* test_1.jpg in Resources */,
 				EAD085BA1EEAFFDC007DE2C4 /* HUD_18.png in Resources */,
 				093C62331EA6F85800ADAC42 /* Assets.xcassets in Resources */,
-				EADDB0841F2091B50098090B /* AxcUI_PlayerVideo_minScreen_btn@2x.png in Resources */,
 				EA650EC41F0768B600863057 /* test.json in Resources */,
 				EAD085BF1EEAFFDC007DE2C4 /* HUD_22.png in Resources */,
 				EA6A3BCA1F09F3C100E0FAAA /* test_5.jpg in Resources */,
@@ -1964,13 +1910,11 @@
 				EAD0857F1EEAE851007DE2C4 /* test_4.png in Resources */,
 				EAD085C21EEAFFDC007DE2C4 /* HUD_25.png in Resources */,
 				EADC7D3A1F14D17C004AF7D8 /* Load_failed.png in Resources */,
-				EADDB0881F2091B50098090B /* AxcUI_PlayerVideo_play_btn@2x.png in Resources */,
 				EAD085C81EEAFFDC007DE2C4 /* HUD_30.png in Resources */,
 				EA530A7B1F0CC20E00F562FD /* plane.png in Resources */,
 				EA530A7E1F0CC20E00F562FD /* ship.png in Resources */,
 				EAD085D51EEAFFDC007DE2C4 /* HUD_6.png in Resources */,
 				EAD085BB1EEAFFDC007DE2C4 /* HUD_19.png in Resources */,
-				EADDB0851F2091B50098090B /* AxcUI_PlayerVideo_minScreen_btn@3x.png in Resources */,
 				EAAFBFDC1F0E3E9D00881A62 /* PYSearch.bundle in Resources */,
 				EAD085E31EEB03E4007DE2C4 /* AxcActivityHUDEffectVC.xib in Resources */,
 			);

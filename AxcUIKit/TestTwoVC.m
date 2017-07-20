@@ -13,16 +13,18 @@
  
  */
 #import "TestTwoVC.h"
+#import "AxcXmlUtil.h"
 
 
 #import "AxcUI_BadgeInteractionView.h"
 
-@interface TestTwoVC ()<AxcPlayerViewDelegate>
+@interface TestTwoVC ()<AxcPlayerViewDelegate,AxcPlayerViewBarrageDataSource>
 {
     UIView *view;
     UIImageView *imageV;
 }
 @property (nonatomic, strong) AxcUI_PlayerVideo *player;
+@property (strong, nonatomic) NSDictionary *barrageDic;
 
 
 @end
@@ -42,6 +44,8 @@
     [self.view addSubview:self.player.axcUI_playerView];
     
     self.player.axcUI_playerView.axcUI_playerViewDelegate = self;
+    self.player.axcUI_playerView.axcUI_playerViewBarrageDataSource = self;
+    
     self.player.axcUI_playerView.translatesAutoresizingMaskIntoConstraints = NO;
 
     [self.player.axcUI_playerView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -68,9 +72,16 @@
     AxcPlayerControlBarrageButton *barrageButton = [[AxcPlayerControlBarrageButton alloc] initWithMask:topMask mainBlock:nil];
     topMask.rightButtons = @[ barrageButton];
     
+    
     [self.player.axcUI_playerView.axcUI_barrageEngine AxcUI_BarrageStart];
     
 }
+
+- (NSArray <__kindof AxcUI_BarrageModelBase*>*)AxcUI_playeBarrageScrollEngine:(AxcUI_BarrageScrollEngine *)barrageEngine
+                                                         didSendBarrageAtTime:(NSUInteger)time{
+    return self.barrageDic[@(time)];
+}
+
 
 - (BOOL)AxcUI_navigationShouldPopOnBackButton{
     [self.player AxcUI_emptyPlayer];
@@ -119,4 +130,14 @@
     }
     return YES;
 }
+
+
+// 解析假的弹幕数据
+- (NSDictionary *)barrageDic {
+    if(_barrageDic == nil) {
+        _barrageDic = [AxcXmlUtil dicWithObj:[[NSData alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"test" ofType:@"json"]]];
+    }
+    return _barrageDic;
+}
+
 @end

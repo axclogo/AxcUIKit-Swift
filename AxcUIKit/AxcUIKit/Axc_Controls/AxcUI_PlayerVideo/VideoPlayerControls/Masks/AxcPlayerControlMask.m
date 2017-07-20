@@ -107,6 +107,10 @@ typedef NS_ENUM(NSUInteger, AxcGestureOperateType) {
         } else {
             [player.axcUI_playerView AxcUI_addMask:player.axcUI_bottomMask animated:YES];
         }
+        // 移除弹幕设置面板
+        if ([player.axcUI_playerView containsMask:player.axcUI_barrageMask]) {
+            [player.axcUI_playerView AxcUI_removeMask:player.axcUI_barrageMask animated:YES];
+        }
     }
 }
 

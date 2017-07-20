@@ -8,6 +8,16 @@
 
 #import "AxcPlayerViewMask.h"
 
+#import "AxcUI_Label.h"
+
 @interface AxcPlayerBarrageMask : AxcPlayerViewMask
+
+@property(nonatomic, strong)AxcUI_Label *barrageTextFontSliderLabel;
+@property(nonatomic, strong)UISlider *barrageTextFontSlider;
+@property(nonatomic, strong)AxcUI_Label *barrageSpeedSliderLabel;
+@property(nonatomic, strong)UISlider *barrageSpeedSlider;
+
+
+@property(nonatomic, strong)UISegmentedControl *barrageSwitchSegmented;
 
 @end
