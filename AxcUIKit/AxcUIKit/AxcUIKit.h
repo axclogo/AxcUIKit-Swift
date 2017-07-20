@@ -52,7 +52,6 @@
 
 
 
-
 /***********************************工具类***************************************/
 // MARK: NSString+
 #import "NSString+AxcTextCalculation.h"       // 工具类，计算文字宽和高
@@ -69,7 +68,8 @@
 #import "UIColor+AxcColor.h"                  // COLOR扩展颜色类
 // MARK: UITableViewCell+
 #import "UITableViewCell+AxcAnimation.h"      // UITableViewCell预设动画
-
+// MARK: UIViewController+
+#import "UIViewController+AxcVCBackButtonEvent.h" //获取返回按钮的点击事件
 
 
 
@@ -96,6 +96,7 @@
 #import "AxcUI_BadgeInteractionView.h"  // 可交互气泡控件
 #import "AxcUI_BadgeView.h"             // 消息展示型气泡
 #import "AxcUI_BannerView.h"            // 横幅控件
+#import "AxcUI_PlayerVideo.h"           // 视频播放器
 
 
 

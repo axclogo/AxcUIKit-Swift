@@ -17,11 +17,12 @@
 
 #import "AxcUI_BadgeInteractionView.h"
 
-@interface TestTwoVC ()
+@interface TestTwoVC ()<AxcPlayerViewDelegate>
 {
     UIView *view;
     UIImageView *imageV;
 }
+@property (nonatomic, strong) AxcUI_PlayerVideo *player;
 
 
 @end
@@ -32,35 +33,89 @@
     [super viewDidLoad];
     
  
+    self.edgesForExtendedLayout = UIRectEdgeNone;
     
-//    view = [[UIView alloc] initWithFrame:CGRectMake(100, 100, 100, 100)];
-//    view.backgroundColor = [UIColor lightGrayColor];
-//    [self.view addSubview:view];
-//    view.axcUI_rectCornerRadii = 10;
-//    view.axcUI_rectCorner = UIRectCornerTopRight | UIRectCornerTopLeft;
-//    view.axcUI_rectCorner = UIRectCornerTopLeft | UIRectCornerBottomRight | UIRectCornerBottomLeft;
-//    view.axcUI_rectCornerRadii = 50;
-//
-//    AxcUI_BadgeInteractionView *dragView = [[AxcUI_BadgeInteractionView alloc] init];
-//    dragView.center = self.view.center;
-//    dragView.axcUI_Size = CGSizeMake(30, 30);
-//    dragView.axcUI_text = @"3";
-//    dragView.axcUI_font = [UIFont systemFontOfSize:10];
-//    [self.view addSubview:dragView];
+    NSString *url = @"http://data.vod.itc.cn/?key=BWsfsIs1q9pPTVWz2ieDWJ2MpVq6Ygar&prod=flash&pt=1&new=/225/180/3r3bfP49ClrLVaOCNJJ3S4.mp4&rb=1";
     
-    imageV = [[UIImageView alloc] initWithFrame:CGRectMake(10, 150, 300, 300)];
-    imageV.image = [UIImage imageNamed:@"test_4"];
-    imageV.backgroundColor = [UIColor AxcUI_CloudColor];
-    imageV.axcUI_badgeInteractionText = @"10";
-    imageV.userInteractionEnabled = YES;
-    [self.view addSubview:imageV];
+    self.player = [[AxcUI_PlayerVideo alloc] init];
+    //self.player.view.axcUI_ignoreScreenSystemLock = YES;
+    [self.view addSubview:self.player.axcUI_playerView];
+    
+    self.player.axcUI_playerView.axcUI_playerViewDelegate = self;
+    self.player.axcUI_playerView.translatesAutoresizingMaskIntoConstraints = NO;
+
+    [self.player.axcUI_playerView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.mas_equalTo(0);
+        make.top.mas_equalTo(100);
+        make.height.mas_equalTo(200);
+        make.width.mas_equalTo(350);
+    }];
+    
+    
+    AxcPlayerItem *item = [[AxcPlayerItem alloc] init];
+    item.title = @"某科学的超电磁炮";
+    item.assetTitle = @"清晰";
+    
+    AxcPlayerItemAsset *itemAsset1 = [[AxcPlayerItemAsset alloc] initWithType:@"清晰" URL:[NSURL URLWithString:url]];
+    AxcPlayerItemAsset *itemAsset2 = [[AxcPlayerItemAsset alloc] initWithType: @"高清" URL:[NSURL URLWithString:url]];
+    
+    item.assets = @[itemAsset1, itemAsset2];
+    
+    [self.player AxcUI_replaceCurrentItemWithPlayerItem:item];
+    [self.player AxcUI_playWithItemAsset:itemAsset1];
+    
+    AxcPlayerTopMask *topMask = (AxcPlayerTopMask *)_player.axcUI_topMask;
+    AxcPlayerControlBarrageButton *barrageButton = [[AxcPlayerControlBarrageButton alloc] initWithMask:topMask mainBlock:nil];
+    topMask.rightButtons = @[ barrageButton];
     
     
 }
 
-
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-//    [imageV AxcUI_drawingWithMosaic];
+- (BOOL)AxcUI_navigationShouldPopOnBackButton{
+    [self.player AxcUI_emptyPlayer];
+    return YES;
 }
 
+
+#pragma mark - AxcPlayerViewDelegate
+
+- (BOOL)playerView:(AxcUI_PlayerView *)playerView willOrientationChange:(UIInterfaceOrientation)orientation {
+    
+    UIInterfaceOrientation statusBarOrientation = [[UIApplication sharedApplication] statusBarOrientation];
+    
+    if (orientation != UIInterfaceOrientationUnknown) {
+        [[UIApplication sharedApplication] setStatusBarOrientation:orientation animated:NO];
+        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:YES];
+        
+        if (UIInterfaceOrientationIsLandscape(statusBarOrientation) && [playerView containsMask:self.player.axcUI_topMask]) {
+            [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationNone];
+        } else {
+            [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationNone];
+        }
+    } else {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [[UIApplication sharedApplication] setStatusBarOrientation:UIInterfaceOrientationPortrait animated:NO];
+            [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:YES];
+            [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationNone];
+        });
+    }
+    return YES;
+}
+
+- (BOOL)playerView:(AxcUI_PlayerView *)playerView willAxcUI_addMask:(AxcPlayerViewMask *)mask animated:(BOOL)animated {
+    if ([mask isEqual:self.player.axcUI_topMask]) {
+        UIInterfaceOrientation statusBarOrientation = [[UIApplication sharedApplication] statusBarOrientation];
+        if (UIInterfaceOrientationIsLandscape(statusBarOrientation)) {
+            [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:animated ? UIStatusBarAnimationFade : UIStatusBarAnimationNone];
+        }
+    }
+    return YES;
+}
+
+- (BOOL)playerView:(AxcUI_PlayerView *)playerView willRemoveMask:(AxcPlayerViewMask *)mask animated:(BOOL)animated {
+    if ([mask isEqual:self.player.axcUI_topMask] && playerView.axcUI_isFullScreen) {
+        [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:animated ? UIStatusBarAnimationFade : UIStatusBarAnimationNone];
+    }
+    return YES;
+}
 @end
