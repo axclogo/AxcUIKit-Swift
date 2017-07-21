@@ -50,6 +50,7 @@
     // 3、开始滚动弹幕
     [self.playerVideo.axcUI_playerView.axcUI_barrageEngine AxcUI_BarrageStart];
 
+    // 原作者GitHub：https://github.com/itribs
     self.instructionsLabel.text = @"播放器+弹幕引擎的使用Demo，支持类B站弹幕解析滚动等功能\n此演示为视频播放+弹幕引擎部分的功能\n详细弹幕设置请参见“弹幕渲染引擎”演示Demo";
 
     // Q：如何获得视频播放器中弹幕引擎的指针/对象呢？

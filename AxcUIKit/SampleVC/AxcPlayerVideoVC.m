@@ -33,6 +33,7 @@
     // 设置播放的相关参数
     [self settingPlayerItem];
     
+    // 原作者GitHub：https://github.com/itribs
     self.instructionsLabel.text = @"根据作者ribs项目RBPlayer改制\n新加入融合了弹幕引擎，支持类B站弹幕解析滚动等功能\n此演示仅演示视频播放的基础功能\n详细使用请研究演示Demo代码部分";
     
 }
