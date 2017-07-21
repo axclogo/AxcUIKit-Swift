@@ -2,7 +2,8 @@
 正在施工
 以UI构建为主框架，其中部分融合框架已经过MIT授权改造和使用
 
-
+![控件名称自动补全](https://github.com/axclogo/AxcUIKit-Sample/blob/master/Images/AxcUI_Controls_Completion.png)
+![主界面UI展示](https://github.com/axclogo/AxcUIKit-Sample/blob/master/Images/AxcUI_MainUI.jpeg)
 
 ## AxcUI_Kit命名规范
 
