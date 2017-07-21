@@ -10,7 +10,7 @@
 ![AxcUIKit](https://github.com/axclogo/AxcUIKit-Sample/blob/master/Images/AxcUI_Title.png)<br>
 
 
-## AxcUI_Kit简要说明
+## AxcUIKit简要说明
 以UI构建为主框架，其中部分融合框架已经过MIT授权改造和使用<br><br>
 AxcUIKit是一个针对UI控件做出整合的一个框架，将部分作者优秀的开源作品融合进来，相互结合，衍生出新的使用方法，并且将较为使用频繁的功能（例如小气泡、图片简单处理等）从控件层面扩展到类方法层面，不需要人为进行关联（如果不满足需求可以自己手动关联），通过调用类方法的Set函数或者点语法即可快速调用。<br><br>
 框架中为了搭建演示环境而从Pod库中导入了[Masonry](https://github.com/SnapKit/Masonry) 和[MLeaksFinder](https://github.com/Zepo/MLeaksFinder) 两个辅助库：<br><br>
@@ -29,13 +29,13 @@ MLeaksFinder是针对性检测内存泄漏的断言工具，防止内存泄漏�
 - [x] 支持部分控件Xib使用（详细请看演示文件注释）
 - [x] 支持适配框架进行布局使用
 
-## AxcUI_Kit图示
+## AxcUIKit图示
 ![控件名称自动补全](https://github.com/axclogo/AxcUIKit-Sample/blob/master/Images/AxcUI_Controls_Completion.png)
 ![主界面UI展示](https://github.com/axclogo/AxcUIKit-Sample/blob/master/Images/AxcUI_MainUI.jpeg)<br>
 左：控件名称可使用自动补全来查找；                      右：主演示界面说明
 
 
-## AxcUI_Kit命名规范
+## AxcUIKit命名规范
 
 =======枚举=======<br>
 
