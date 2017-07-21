@@ -69,8 +69,9 @@
 }
 
 // 因为交互原因，有部分代码被循环引用，因此需要手动置空一部分指针
-- (void)dealloc{
+- (BOOL)AxcUI_navigationShouldPopOnBackButton{
     [self.badgeInteractionView empty];
+    return YES;
 }
 
 

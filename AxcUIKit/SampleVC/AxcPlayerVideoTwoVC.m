@@ -42,7 +42,8 @@
     // 2.1、获取播放器的topMask
     AxcPlayerTopMask *topMask = (AxcPlayerTopMask *)self.playerVideo.axcUI_topMask;
     // 2.2、实例化一个弹幕设置按钮，注：如果手动设置MainBlock则不会执行按钮预设的功能
-    AxcPlayerControlBarrageButton *barrageButton = [[AxcPlayerControlBarrageButton alloc] initWithMask:topMask mainBlock:nil];
+    AxcPlayerControlBarrageButton *barrageButton = [[AxcPlayerControlBarrageButton alloc] initWithMask:topMask
+                                                                                             mainBlock:nil];
     // 2.3、添加到右边的按钮组
     topMask.rightButtons = @[ barrageButton];
     
@@ -81,7 +82,7 @@
     item.assetTitle = @"清晰";
     AxcPlayerItemAsset *itemAsset1 = [[AxcPlayerItemAsset alloc] initWithType:@"清晰"
                                                                           URL:[NSURL URLWithString:SDURL]];
-    AxcPlayerItemAsset *itemAsset2 = [[AxcPlayerItemAsset alloc] initWithType: @"高清"
+    AxcPlayerItemAsset *itemAsset2 = [[AxcPlayerItemAsset alloc] initWithType: @"高清"// 这里可以换填高清或者其对应的URL
                                                                           URL:[NSURL URLWithString:SDURL]];
     item.assets = @[itemAsset1, itemAsset2];
     // 添加进播放器
