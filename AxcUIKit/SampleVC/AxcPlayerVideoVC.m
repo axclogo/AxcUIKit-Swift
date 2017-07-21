@@ -29,7 +29,7 @@
         make.height.mas_equalTo(200);
         make.width.mas_equalTo(350);
     }];
-    
+
     // 设置播放的相关参数
     [self settingPlayerItem];
     
