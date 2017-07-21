@@ -91,3 +91,5 @@ MLeaksFinder是针对性[检测内存泄漏的断言工具](https://) ，防止�
 >>>（注：如果控件名称中包含扩展类型则省略扩展类型。如：UILabel+AxcShimmering）<br>
 >>>控件类：AxcUI_开头大写的控件名（如果太长则省略部分单词）<br>
 
+## Licenses
+All source code is licensed under the MIT License.
