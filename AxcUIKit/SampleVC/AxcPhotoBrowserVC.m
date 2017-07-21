@@ -41,7 +41,7 @@
     [self.view addSubview:self.segmentedLabel];
     [self.view addSubview:self.clearCacheButton];
     
-    self.instructionsLabel.text = @"上方分栏控制器可控制加载指示器风格，与扩展类第3个演示相同。\n具体设置参数请参照‘AxcUI_PhotoBrowser.h’\nProgress相关扩展也在其中，与类方法相同的设置即可使用";
+    self.instructionsLabel.text = @"上方分栏控制器可控制加载指示器风格，与扩展类添加进度指示器演示相同。\n具体设置参数请参照‘AxcUI_PhotoBrowser.h’\nProgress相关扩展也在其中，与类方法相同的设置即可使用";
 }
 
 #pragma mark - 业务逻辑

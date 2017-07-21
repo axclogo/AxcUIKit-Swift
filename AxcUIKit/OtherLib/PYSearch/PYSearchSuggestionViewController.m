@@ -106,6 +106,8 @@
     cell.textLabel.numberOfLines = 0;
     if (indexPath.row % 2) {
         cell.backgroundColor = [UIColor AxcUI_CloudColor];
+    }else{
+        cell.backgroundColor = [UIColor whiteColor];
     }
     if (self.searchKeyWord) {
         cell.textLabel.attributedText = [cell.textLabel.text AxcUI_markWords:self.searchKeyWord
