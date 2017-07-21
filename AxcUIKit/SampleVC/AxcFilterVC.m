@@ -154,6 +154,12 @@ UIImagePickerControllerDelegate
     }
 }
 
+// 防止imagePickerController循环引用
+- (BOOL)AxcUI_navigationShouldPopOnBackButton{
+    self.imagePickerController = nil;
+    return YES;
+}
+
 #pragma mark - 懒加载
 - (UIImagePickerController *)imagePickerController{
     if (!_imagePickerController) {

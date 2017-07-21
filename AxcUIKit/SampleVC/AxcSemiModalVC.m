@@ -97,6 +97,14 @@ UITableViewDelegate
     }
 }
 
+// 防止循环引用
+- (BOOL)AxcUI_navigationShouldPopOnBackButton{
+    [self.presentView removeFromSuperview];
+    self.presentView = nil;
+    return YES;
+}
+
+
 #pragma mark - 代理区
 - (NSInteger )tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     NSArray *Arr = self.dataArray[section];
