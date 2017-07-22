@@ -28,7 +28,9 @@
 }
 - (void)setAxcUI_textEdgeInsets:(UIEdgeInsets)axcUI_textEdgeInsets{
     _axcUI_textEdgeInsets = axcUI_textEdgeInsets;
+    
     //    [self setNeedsLayout];  如果位置大小变换，则会调用此函数
+    
     [self setNeedsDisplay];// 重新绘制
 }
 
