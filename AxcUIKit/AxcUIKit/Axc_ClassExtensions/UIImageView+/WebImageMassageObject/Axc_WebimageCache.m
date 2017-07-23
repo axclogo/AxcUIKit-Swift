@@ -59,6 +59,7 @@ static NSString     *_imageCachePath;
     return data;
 }
 
+
 #pragma mark 清除数据缓存
 + (BOOL)AxcUI_webimageCacheClearCache{
     BOOL Clear;
