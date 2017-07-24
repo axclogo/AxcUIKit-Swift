@@ -32,7 +32,7 @@ static NSString *const kCompletedCallbackKey = @"completed";
 @implementation Axc_WebimageDownloader
 
 + (void)initialize {
-    // 绑定Key
+    // 绑定Key 此处借鉴SDWebImage
     if (NSClassFromString(@"SDNetworkActivityIndicator")) {
 
         id activityIndicator = [NSClassFromString(@"AxcNetworkActivityIndicator") performSelector:NSSelectorFromString(@"sharedActivityIndicator")];

@@ -69,6 +69,8 @@
  */
 @property (nonatomic) CGFloat axcUI_Right;
 
+
+/** 以下为未开放测试的API，以后可能修改名称等参数，不推荐使用  */
 /**
  *  13.设置镂空中间的视图
  *

@@ -8,6 +8,12 @@
 
 ///  预设滤镜色值
 
+
+/**
+ 
+ 此处为设置颜色矩阵
+ 
+ */
 // 1、LOMO
 const float colormatrix_lomo[] = {
     1.7f,  0.1f, 0.1f, 0, -73.1f,

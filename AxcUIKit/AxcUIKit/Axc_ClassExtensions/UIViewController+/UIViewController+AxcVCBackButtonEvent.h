@@ -10,7 +10,7 @@
 
 @protocol AxcVCBackButtonEventProtocol <NSObject>
 @optional
-// 重写这个方法在VC类来处理“返回”按钮点击
+// 实现这个协议在VC类来处理“返回”按钮点击
 - (BOOL)AxcUI_navigationShouldPopOnBackButton;
 @end
 
