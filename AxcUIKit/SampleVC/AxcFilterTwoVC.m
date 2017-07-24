@@ -152,6 +152,7 @@ UICollectionViewDelegateFlowLayout
 
 // 防止imagePickerController循环引用
 - (BOOL)AxcUI_navigationShouldPopOnBackButton{
+    self.imagePickerController.delegate = nil;
     self.imagePickerController = nil;
     return YES;
 }
