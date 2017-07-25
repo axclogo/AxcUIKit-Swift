@@ -97,6 +97,7 @@
 #import "AxcUI_BadgeView.h"             // 消息展示型气泡
 #import "AxcUI_BannerView.h"            // 横幅控件
 #import "AxcUI_PlayerVideo.h"           // 视频播放器
+#import "AxcUI_UserInteractionControl.h"// 交互动画控制器
 
 
 
