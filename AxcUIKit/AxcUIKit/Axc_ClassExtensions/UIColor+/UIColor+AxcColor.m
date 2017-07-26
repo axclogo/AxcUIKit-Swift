@@ -203,6 +203,13 @@
                             blue:141.0f/255.0f
                            alpha:1.0f];
 }
+
++ (UIColor*)AxcUI_R:(int )r G:(int )g B:(int )b{
+    return [UIColor colorWithRed:r/255.f
+                           green:g/255.f
+                            blue:b/255.f alpha:1];
+}
+
 + (UIColor *)AxcUI_InverseColorFor:(UIColor *)color {
     CGFloat r,g,b,a;
     [color getRed:&r green:&g blue:&b alpha:&a];

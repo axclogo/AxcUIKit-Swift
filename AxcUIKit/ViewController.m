@@ -166,11 +166,11 @@ didSelectSearchHistoryAtIndex:(NSInteger)index
     NSArray *Arr = self.dataArray[indexPath.section];
     NSDictionary *dic = Arr[indexPath.row];
     cell.textLabel.text = [NSString stringWithFormat:@"(%zi)\t%@",indexPath.row + 1,dic[@"controlsName"]];
-    cell.textLabel.font = [UIFont systemFontOfSize:15];
+    cell.textLabel.font = [UIFont systemFontOfSize:14];
     cell.textLabel.textColor = [UIColor AxcUI_colorWithHexCode:@"1296db"];
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     cell.detailTextLabel.text = dic[@"describeName"];
-    cell.detailTextLabel.font = [UIFont systemFontOfSize:14];
+    cell.detailTextLabel.font = [UIFont systemFontOfSize:13];
     cell.detailTextLabel.textColor = [UIColor AxcUI_colorWithHexCode:@"b0a4e3"];
     
     return cell;
@@ -238,6 +238,7 @@ didSelectSearchHistoryAtIndex:(NSInteger)index
         [Group2 addObject:@{@"controlsName":@"AxcUI_BadgeInteractionView",@"describeName":@"可交互气泡",@"VCName":@"AxcBadgeInteractionViewVC"}];
         
         [Group2 addObject:@{@"controlsName":@"AxcUI_Label",@"describeName":@"动态设置文字边距",@"VCName":@"AxcLabelVC"}];
+        [Group2 addObject:@{@"controlsName":@"AxcUI_Label",@"describeName":@"动态设置背景渐变",@"VCName":@"AxcLabelTwoVC"}];
         
         [Group2 addObject:@{@"controlsName":@"AxcUI_NumberScrollView",@"describeName":@"数字滚动控件",@"VCName":@"AxcNumberScrollViewVC"}];
         [Group2 addObject:@{@"controlsName":@"AxcUI_NumberUnitField",@"describeName":@"数字输入控件",@"VCName":@"AxcNumberUnitFieldVC"}];
@@ -253,7 +254,7 @@ didSelectSearchHistoryAtIndex:(NSInteger)index
         [Group2 addObject:@{@"controlsName":@"AxcUI_Toast",@"describeName":@"弹出式提醒",@"VCName":@"AxcToastVC"}];
         [Group2 addObject:@{@"controlsName":@"AxcUI_PlayerVideo",@"describeName":@"视频播放器简单使用",@"VCName":@"AxcPlayerVideoVC"}];
         [Group2 addObject:@{@"controlsName":@"AxcUI_PlayerVideo",@"describeName":@"视频+弹幕结合使用",@"VCName":@"AxcPlayerVideoTwoVC"}];
-        [Group2 addObject:@{@"controlsName":@"AxcUI_UserInteractionControl",@"describeName":@"交互动画控制器",@"VCName":@"AxcUserInteractionControlVC"}];
+        [Group2 addObject:@{@"controlsName":@"AxcUI_UserInteractionControl",@"describeName":@"交互动画",@"VCName":@"AxcUserInteractionControlVC"}];
         
         
         

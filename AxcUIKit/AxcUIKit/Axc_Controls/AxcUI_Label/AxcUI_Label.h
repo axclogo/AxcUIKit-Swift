@@ -9,9 +9,25 @@
 #import <UIKit/UIKit.h>
 
 
+/** 背景颜色渐变的渲染方向 */
+typedef NS_ENUM(NSUInteger, AxcDrawDirectionStyle) {
+    /** 水平 */
+    AxcDrawDirectionStyleHorizontal,
+    /** 纵向 */
+    AxcDrawDirectionStyleVertical
+};
+
 /** 支持自定义文字内边距的Label */
 @interface AxcUI_Label : UILabel
 
+/** 自定义文字内边距 */
 @property(nonatomic, assign) UIEdgeInsets axcUI_textEdgeInsets;
+
+/** 背景梯度渲染色组 */
+@property (nonatomic, strong) NSArray *axcUI_backGroundGradientColors;
+
+/** 背景颜色渐变的渲染方向 */
+@property(nonatomic, assign)AxcDrawDirectionStyle axcUI_backGroundDrawDirectionStyle;
+
 
 @end

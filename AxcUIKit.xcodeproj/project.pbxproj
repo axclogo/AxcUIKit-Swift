@@ -260,6 +260,7 @@
 		EADDB0EB1F25E0C50098090B /* UIColor+AxcColor.m in Sources */ = {isa = PBXBuildFile; fileRef = EADDB0EA1F25E0C50098090B /* UIColor+AxcColor.m */; };
 		EADDB0F21F26F2810098090B /* AxcUI_UserInteractionControl.m in Sources */ = {isa = PBXBuildFile; fileRef = EADDB0F11F26F2810098090B /* AxcUI_UserInteractionControl.m */; };
 		EADDB0F51F26F2CF0098090B /* AxcUserInteractionControlVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EADDB0F41F26F2CF0098090B /* AxcUserInteractionControlVC.m */; };
+		EADDB0FB1F2877E90098090B /* AxcLabelTwoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EADDB0FA1F2877E90098090B /* AxcLabelTwoVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -709,6 +710,8 @@
 		EADDB0F11F26F2810098090B /* AxcUI_UserInteractionControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcUI_UserInteractionControl.m; sourceTree = "<group>"; };
 		EADDB0F31F26F2CF0098090B /* AxcUserInteractionControlVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcUserInteractionControlVC.h; sourceTree = "<group>"; };
 		EADDB0F41F26F2CF0098090B /* AxcUserInteractionControlVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcUserInteractionControlVC.m; sourceTree = "<group>"; };
+		EADDB0F91F2877E90098090B /* AxcLabelTwoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcLabelTwoVC.h; sourceTree = "<group>"; };
+		EADDB0FA1F2877E90098090B /* AxcLabelTwoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcLabelTwoVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -913,6 +916,8 @@
 				EA439CEC1EE3D1CB00D992E7 /* AxcToastVC.m */,
 				EA439D0B1EE4417C00D992E7 /* AxcLabelVC.h */,
 				EA439D0C1EE4417C00D992E7 /* AxcLabelVC.m */,
+				EADDB0F91F2877E90098090B /* AxcLabelTwoVC.h */,
+				EADDB0FA1F2877E90098090B /* AxcLabelTwoVC.m */,
 				EA43A07A1EE8055100D992E7 /* AxcProgressViewVC.h */,
 				EA43A07B1EE8055100D992E7 /* AxcProgressViewVC.m */,
 				EA43A0611EE7DE9E00D992E7 /* AxcPhotoBrowserVC.h */,
@@ -2098,6 +2103,7 @@
 				EA43A0631EE7DE9E00D992E7 /* AxcPhotoBrowserVC.m in Sources */,
 				EA6A3BBE1F09DE3800E0FAAA /* AxcUIKit.m in Sources */,
 				EA6A3B9A1F09DE3800E0FAAA /* UILabel+AxcShimmering.m in Sources */,
+				EADDB0FB1F2877E90098090B /* AxcLabelTwoVC.m in Sources */,
 				EA5D4F2C1F1C50590002E9E9 /* AxcQuickBadgeInteractionVC.m in Sources */,
 				EADDB0971F2091B50098090B /* AxcPlayerTopMask.m in Sources */,
 				EA439CB71EE29E3100D992E7 /* AxcCellRearrangeVC.m in Sources */,

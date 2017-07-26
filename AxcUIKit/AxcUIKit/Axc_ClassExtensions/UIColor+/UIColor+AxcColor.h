@@ -94,6 +94,10 @@
 + (UIColor*)AxcUI_ConcreteColor;
 + (UIColor*)AxcUI_AsbestosColor;
 
+/**
+ *  RGB
+ */
++ (UIColor*)AxcUI_R:(int )r G:(int )g B:(int )b;
 
 + (UIColor *)AxcUI_colorWithHexCode:(NSString *)hexCode;
 + (UIColor *)AxcUI_colorWithHexColor: (NSString *) AxcColor;
