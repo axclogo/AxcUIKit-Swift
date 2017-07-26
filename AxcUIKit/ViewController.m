@@ -239,6 +239,7 @@ didSelectSearchHistoryAtIndex:(NSInteger)index
         
         [Group2 addObject:@{@"controlsName":@"AxcUI_Label",@"describeName":@"动态设置文字边距",@"VCName":@"AxcLabelVC"}];
         [Group2 addObject:@{@"controlsName":@"AxcUI_Label",@"describeName":@"动态设置背景渐变",@"VCName":@"AxcLabelTwoVC"}];
+//        [Group2 addObject:@{@"controlsName":@"AxcUI_Label",@"describeName":@"测试渐变",@"VCName":@"AxcLabelThreeVC"}];
         
         [Group2 addObject:@{@"controlsName":@"AxcUI_NumberScrollView",@"describeName":@"数字滚动控件",@"VCName":@"AxcNumberScrollViewVC"}];
         [Group2 addObject:@{@"controlsName":@"AxcUI_NumberUnitField",@"describeName":@"数字输入控件",@"VCName":@"AxcNumberUnitFieldVC"}];
