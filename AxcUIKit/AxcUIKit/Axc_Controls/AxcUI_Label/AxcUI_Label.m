@@ -19,45 +19,22 @@
 
 - (void)drawRect:(CGRect)rect{
     if (self.axcUI_backGroundGradientColors.count) {
-        CGContextRef context = UIGraphicsGetCurrentContext();
-        NSMutableArray *colors = [NSMutableArray arrayWithCapacity:[self.axcUI_backGroundGradientColors count]];
-        [self.axcUI_backGroundGradientColors enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-            if ([obj isKindOfClass:[UIColor class]]) {
-                [colors addObject:(__bridge id)[obj CGColor]];
-            } else if (CFGetTypeID((__bridge void *)obj) == CGColorGetTypeID()) {
-                [colors addObject:obj];
-            } else {
-                @throw [NSException exceptionWithName:@"CRGradientLabelError"
-                                               reason:@"对象数组gradientColors不是一个用户界面颜色或CGColorRef"
-                                             userInfo:NULL];
-            }
-        }];
-        
-        CGContextSaveGState(context);
-        CGContextScaleCTM(context, 1.0, -1.0);
-        CGContextTranslateCTM(context, 0, -rect.size.height);
-        
-        CGGradientRef gradient = CGGradientCreateWithColors(NULL, (__bridge CFArrayRef)colors, NULL);
-        CGPoint startPoint;
-        CGPoint endPoint;
-        if (self.axcUI_backGroundDrawDirectionStyle == AxcDrawDirectionStyleHorizontal) { // 水平梯度
-             startPoint = CGPointMake(0, 0);
-             endPoint = CGPointMake(rect.size.width, 0);
-        }else{
-            startPoint = CGPointMake(0, 0);
-            endPoint = CGPointMake(0, rect.size.height );
-        }
-        
-        CGContextDrawLinearGradient(context, gradient, startPoint, endPoint,
-                                    kCGGradientDrawsBeforeStartLocation | kCGGradientDrawsAfterEndLocation );
-        
-        CGGradientRelease(gradient);
-        CGContextRestoreGState(context);
+        [self backGroundRect:rect];
     }
     [super drawRect: rect];
 }
 
-- (void)setAxcUI_backGroundDrawDirectionStyle:(AxcDrawDirectionStyle )axcUI_backGroundDrawDirectionStyle{
+
+
+
+
+
+
+
+
+
+
+- (void)setAxcUI_backGroundDrawDirectionStyle:(AxcBackGroundGradientStyle )axcUI_backGroundDrawDirectionStyle{
     if (_axcUI_backGroundDrawDirectionStyle != axcUI_backGroundDrawDirectionStyle) {
         _axcUI_backGroundDrawDirectionStyle = axcUI_backGroundDrawDirectionStyle;
         [self setNeedsDisplay]; // 动态重绘
@@ -71,7 +48,41 @@
     }
 }
 
-
+- (void)backGroundRect:(CGRect)rect{
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    NSMutableArray *colors = [NSMutableArray arrayWithCapacity:[self.axcUI_backGroundGradientColors count]];
+    [self.axcUI_backGroundGradientColors enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        if ([obj isKindOfClass:[UIColor class]]) {
+            [colors addObject:(__bridge id)[obj CGColor]];
+        } else if (CFGetTypeID((__bridge void *)obj) == CGColorGetTypeID()) {
+            [colors addObject:obj];
+        } else {
+            @throw [NSException exceptionWithName:@"CRGradientLabelError"
+                                           reason:@"对象数组gradientColors不是一个用户界面颜色或CGColorRef"
+                                         userInfo:NULL];
+        }
+    }];
+    CGContextSaveGState(context);
+    CGContextScaleCTM(context, 1.0, -1.0);
+    CGContextTranslateCTM(context, 0, -rect.size.height);
+    
+    CGGradientRef gradient = CGGradientCreateWithColors(NULL, (__bridge CFArrayRef)colors, NULL);
+    CGPoint startPoint;
+    CGPoint endPoint;
+    if (self.axcUI_backGroundDrawDirectionStyle == AxcBackGroundGradientStyleHorizontal) { // 水平梯度
+        startPoint = CGPointMake(0, 0);
+        endPoint = CGPointMake(rect.size.width, 0);
+    }else{
+        startPoint = CGPointMake(0, 0);
+        endPoint = CGPointMake(0, rect.size.height );
+    }
+    
+    CGContextDrawLinearGradient(context, gradient, startPoint, endPoint,
+                                kCGGradientDrawsBeforeStartLocation | kCGGradientDrawsAfterEndLocation );
+    
+    CGGradientRelease(gradient);
+    CGContextRestoreGState(context);
+}
 
 
 
@@ -103,6 +114,15 @@
     
     [self setNeedsDisplay];// 重新绘制
 }
+
+
+
+
+
+
+
+
+
 
 
 @end

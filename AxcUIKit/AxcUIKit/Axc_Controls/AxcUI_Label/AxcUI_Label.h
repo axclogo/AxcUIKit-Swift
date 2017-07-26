@@ -10,11 +10,19 @@
 
 
 /** 背景颜色渐变的渲染方向 */
-typedef NS_ENUM(NSUInteger, AxcDrawDirectionStyle) {
+typedef NS_ENUM(NSUInteger, AxcBackGroundGradientStyle) {
     /** 水平 */
-    AxcDrawDirectionStyleHorizontal,
+    AxcBackGroundGradientStyleHorizontal,
     /** 纵向 */
-    AxcDrawDirectionStyleVertical
+    AxcBackGroundGradientStyleVertical
+};
+
+/** 文字颜色渐变的渲染方向 */
+typedef NS_ENUM(NSUInteger, AxcTextGradientStyle) {
+    /** 水平 */
+    AxcTextGradientStyleHorizontal,
+    /** 纵向 */
+    AxcTextGradientStyleVertical
 };
 
 /** 支持自定义文字内边距的Label */
@@ -27,7 +35,14 @@ typedef NS_ENUM(NSUInteger, AxcDrawDirectionStyle) {
 @property (nonatomic, strong) NSArray *axcUI_backGroundGradientColors;
 
 /** 背景颜色渐变的渲染方向 */
-@property(nonatomic, assign)AxcDrawDirectionStyle axcUI_backGroundDrawDirectionStyle;
+@property(nonatomic, assign)AxcBackGroundGradientStyle axcUI_backGroundDrawDirectionStyle;
+
+
+/** 背景梯度渲染色组 */
+@property (nonatomic, strong) NSArray *axcUI_textGradientColors;
+
+/** 背景颜色渐变的渲染方向 */
+@property(nonatomic, assign)AxcTextGradientStyle axcUI_textDrawDirectionStyle;
 
 
 @end

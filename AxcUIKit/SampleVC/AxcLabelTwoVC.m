@@ -57,7 +57,7 @@
     // 设置渐变色组
     VerticalLabel.axcUI_backGroundGradientColors = VerticalColors;
     // 默认水平，可设置成纵向
-    VerticalLabel.axcUI_backGroundDrawDirectionStyle = AxcDrawDirectionStyleVertical;
+    VerticalLabel.axcUI_backGroundDrawDirectionStyle = AxcBackGroundGradientStyleVertical;
     
     /**
      其实渐变色很简单，如果有需求只需要按照我的drawRect逻辑重写一遍给View就能使用，
