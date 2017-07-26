@@ -17,13 +17,6 @@ typedef NS_ENUM(NSUInteger, AxcBackGroundGradientStyle) {
     AxcBackGroundGradientStyleVertical
 };
 
-/** 文字颜色渐变的渲染方向 */
-typedef NS_ENUM(NSUInteger, AxcTextGradientStyle) {
-    /** 水平 */
-    AxcTextGradientStyleHorizontal,
-    /** 纵向 */
-    AxcTextGradientStyleVertical
-};
 
 /** 支持自定义文字内边距的Label */
 @interface AxcUI_Label : UILabel
@@ -38,11 +31,6 @@ typedef NS_ENUM(NSUInteger, AxcTextGradientStyle) {
 @property(nonatomic, assign)AxcBackGroundGradientStyle axcUI_backGroundDrawDirectionStyle;
 
 
-/** 背景梯度渲染色组 */
-@property (nonatomic, strong) NSArray *axcUI_textGradientColors;
-
-/** 背景颜色渐变的渲染方向 */
-@property(nonatomic, assign)AxcTextGradientStyle axcUI_textDrawDirectionStyle;
 
 
 @end
