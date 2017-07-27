@@ -10,7 +10,7 @@
 
 
 /** 数字滚动展示控件 */
-@interface AxcUI_NumberScrollView : UIView
+@interface AxcUI_NumberScrollView : UIControl
 // 内容相关
 /**
  *  展示的数字
