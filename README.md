@@ -16,7 +16,7 @@ AxcUIKit是一个针对UI控件做出整合的一个框架，将部分作者优�
 框架中为了搭建演示环境而从Pod库中导入了[Masonry](https://github.com/SnapKit/Masonry) 和[MLeaksFinder](https://github.com/Zepo/MLeaksFinder) 两个辅助库：<br><br>
 [Masonry](https://github.com/SnapKit/Masonry)只是[针对示例中的UI布局](https://)而使用，AxcUIKit框架本身中并[未关联任何其他三方库](https://) ，所有功能均调用框架内部函数；<br><br>
 MLeaksFinder是针对性[检测内存泄漏的断言工具](https://) ，防止内存泄漏，用于检测AxcUIKit每个对象函数调用是否严谨，目前未查出内存泄漏问题；<br><br>
-[MLeaksFinder](https://github.com/Zepo/MLeaksFinder)  的使用请自行研究<br><br>
+[MLeaksFinder](https://github.com/Zepo/MLeaksFinder)  的使用点击左边的关键字可传送至项目地址<br><br>
 
 这个库会不断的更新和融合更多功能，有什么好的修改意见或者是更优秀的代码欢迎加入。<br><br>
 ### 一直在接受大家的意见和修改，所以可能更新会较为频繁，可以点个Star，方便以后有需求了能快速找到需要的示例。。O(∩_∩)O谢谢
