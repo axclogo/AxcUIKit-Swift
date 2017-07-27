@@ -13,10 +13,6 @@
  
  */
 #import "TestTwoVC.h"
-#import "AxcXmlUtil.h"
-
-
-#import "AxcUI_BadgeInteractionView.h"
 
 @interface TestTwoVC ()
 
@@ -24,7 +20,6 @@
     UIView *view;
     UIImageView *imageV;
 }
-@property (nonatomic, strong) AxcUI_PlayerVideo *player;
 @property (strong, nonatomic) NSDictionary *barrageDic;
 
 

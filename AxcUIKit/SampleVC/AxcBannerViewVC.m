@@ -47,6 +47,11 @@
     }
 }
 
+// 如果有自动轮播，则退出时需要销毁计时器，防止内存泄漏
+- (BOOL)AxcUI_navigationShouldPopOnBackButton{
+    [self.bannerView AxcUI_stopTimer];
+    return YES;
+}
 
 #pragma mark - 代理区
 #pragma mark AxcBannerViewDataSource

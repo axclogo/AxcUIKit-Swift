@@ -48,6 +48,7 @@
         _userInteractionControl.center = self.view.center;
         _userInteractionControl.axcUI_Y = 130;
         _userInteractionControl.backgroundColor = [UIColor AxcUI_EmeraldColor];
+        _userInteractionControl.axcUI_currentState = AxcUserInteractionControlStyleMenu;
         
 // 重写Set函数达到能实时修改的效果，但是并不支持动画效果的实时展示，推荐预设好  ************************************************
 //        _userInteractionControl.axcUI_lineHeight = 5;
