@@ -24,7 +24,7 @@
     [super viewDidLoad];
     //    self.edgesForExtendedLayout = UIRectEdgeNone;
     
-    // 重写layoutSubviews
+    // 使用三方框架对播放器进行布局
     [self.playerVideo.axcUI_playerView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.mas_equalTo(0);
         make.centerY.mas_equalTo(0);

@@ -29,8 +29,9 @@
     [self createControl];
     
     // 原作者GitHub：https://github.com/zzyspace
-    self.instructionsLabel.text = @"原作者：zzyspace，相关方法未任何修改，只是将命名全部统一并融合进来而已";
+    self.instructionsLabel.text = @"原作者：zzyspace，大部分方法/函数未任何修改，将命名全部统一并融合进来，添加修正自动轮播情况下退出页面可能会造成的Timer内存泄漏问题";
 }
+
 // 重写SET方法，设置即可调用，无先后顺序，设置即可动态调整  ************************************************
 - (void)clickInsSwitch:(UISwitch *)sender{
     switch (sender.tag - 100) {
