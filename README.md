@@ -24,7 +24,7 @@ MLeaksFinder是针对性[检测内存泄漏的断言工具](https://) ，防止�
 
 
 ## AxcUIKit图示
-### 所有控件类型的继承链结构图示:<br>
+### 框架的继承链结构图示:<br>
 ![继承架构图示](https://github.com/axclogo/AxcUIKit-Sample/blob/master/Images/AxcUIKit_Inherit%20architecture%20diagram.png)<br><br><br>
 ### 工程UI图示:<br>
 ![控件名称自动补全](https://github.com/axclogo/AxcUIKit-Sample/blob/master/Images/AxcUI_Controls_Completion.png)
