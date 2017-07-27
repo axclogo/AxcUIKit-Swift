@@ -217,8 +217,6 @@
 		EAD085D81EEAFFDC007DE2C4 /* HUD_9.png in Resources */ = {isa = PBXBuildFile; fileRef = EAD085AF1EEAFFDC007DE2C4 /* HUD_9.png */; };
 		EAD085DD1EEB000C007DE2C4 /* AxcActivityHUDVCCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD085DB1EEB000C007DE2C4 /* AxcActivityHUDVCCollectionViewCell.m */; };
 		EAD085DE1EEB000C007DE2C4 /* AxcActivityHUDVCCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAD085DC1EEB000C007DE2C4 /* AxcActivityHUDVCCollectionViewCell.xib */; };
-		EAD085E21EEB03E4007DE2C4 /* AxcActivityHUDEffectVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD085E01EEB03E4007DE2C4 /* AxcActivityHUDEffectVC.m */; };
-		EAD085E31EEB03E4007DE2C4 /* AxcActivityHUDEffectVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAD085E11EEB03E4007DE2C4 /* AxcActivityHUDEffectVC.xib */; };
 		EAD085E71EEB11BC007DE2C4 /* test.gif in Resources */ = {isa = PBXBuildFile; fileRef = EAD085E61EEB11BC007DE2C4 /* test.gif */; };
 		EAD086261EED09B7007DE2C4 /* AxcShimmeringViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD086251EED09B7007DE2C4 /* AxcShimmeringViewVC.m */; };
 		EAD0875C1EED4DAD007DE2C4 /* test_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EAD0875B1EED4DAD007DE2C4 /* test_1.jpg */; };
@@ -630,9 +628,6 @@
 		EAD085DA1EEB000C007DE2C4 /* AxcActivityHUDVCCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcActivityHUDVCCollectionViewCell.h; sourceTree = "<group>"; };
 		EAD085DB1EEB000C007DE2C4 /* AxcActivityHUDVCCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcActivityHUDVCCollectionViewCell.m; sourceTree = "<group>"; };
 		EAD085DC1EEB000C007DE2C4 /* AxcActivityHUDVCCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AxcActivityHUDVCCollectionViewCell.xib; sourceTree = "<group>"; };
-		EAD085DF1EEB03E4007DE2C4 /* AxcActivityHUDEffectVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcActivityHUDEffectVC.h; sourceTree = "<group>"; };
-		EAD085E01EEB03E4007DE2C4 /* AxcActivityHUDEffectVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcActivityHUDEffectVC.m; sourceTree = "<group>"; };
-		EAD085E11EEB03E4007DE2C4 /* AxcActivityHUDEffectVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AxcActivityHUDEffectVC.xib; sourceTree = "<group>"; };
 		EAD085E61EEB11BC007DE2C4 /* test.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = test.gif; sourceTree = "<group>"; };
 		EAD086241EED09B7007DE2C4 /* AxcShimmeringViewVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcShimmeringViewVC.h; sourceTree = "<group>"; };
 		EAD086251EED09B7007DE2C4 /* AxcShimmeringViewVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcShimmeringViewVC.m; sourceTree = "<group>"; };
@@ -1608,9 +1603,6 @@
 				EAD085DA1EEB000C007DE2C4 /* AxcActivityHUDVCCollectionViewCell.h */,
 				EAD085DB1EEB000C007DE2C4 /* AxcActivityHUDVCCollectionViewCell.m */,
 				EAD085DC1EEB000C007DE2C4 /* AxcActivityHUDVCCollectionViewCell.xib */,
-				EAD085DF1EEB03E4007DE2C4 /* AxcActivityHUDEffectVC.h */,
-				EAD085E01EEB03E4007DE2C4 /* AxcActivityHUDEffectVC.m */,
-				EAD085E11EEB03E4007DE2C4 /* AxcActivityHUDEffectVC.xib */,
 			);
 			path = AxcActivityHUDViews;
 			sourceTree = "<group>";
@@ -1949,7 +1941,6 @@
 				EAD085D51EEAFFDC007DE2C4 /* HUD_6.png in Resources */,
 				EAD085BB1EEAFFDC007DE2C4 /* HUD_19.png in Resources */,
 				EAAFBFDC1F0E3E9D00881A62 /* PYSearch.bundle in Resources */,
-				EAD085E31EEB03E4007DE2C4 /* AxcActivityHUDEffectVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2088,7 +2079,6 @@
 				EA6A3B951F09DE3800E0FAAA /* UIImage+AxcLoadGIF.m in Sources */,
 				EA6A3B961F09DE3800E0FAAA /* UIImage+MultiFormat.m in Sources */,
 				EADDB0951F2091B50098090B /* AxcPlayerLoadingMask.m in Sources */,
-				EAD085E21EEB03E4007DE2C4 /* AxcActivityHUDEffectVC.m in Sources */,
 				EA6A3B931F09DE3800E0FAAA /* Axc_WebImageManager.m in Sources */,
 				EADC7D461F15BCB1004AF7D8 /* UIView+AxcRectCorner.m in Sources */,
 				EA5D4F0A1F18C5A20002E9E9 /* AxcUI_BadgeInteractionView.m in Sources */,

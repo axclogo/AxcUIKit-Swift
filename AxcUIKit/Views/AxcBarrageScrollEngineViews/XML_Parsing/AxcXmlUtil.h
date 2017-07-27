@@ -12,7 +12,7 @@
 
 
 
-
+// 其实最开始打算使用XML的，但是弹幕多了后解析会卡顿，，，可能那个XML三方库优化的不大好
 @interface AxcXmlUtil : NSObject
 
 /**

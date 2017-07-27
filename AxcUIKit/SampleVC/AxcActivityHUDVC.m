@@ -10,7 +10,6 @@
 
 #import "AxcActivityHUDVCCollectionViewCell.h"
 
-#import "AxcActivityHUDEffectVC.h"
 
 
 @interface AxcActivityHUDVC ()<
