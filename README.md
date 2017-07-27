@@ -19,6 +19,7 @@ MLeaksFinder是针对性[检测内存泄漏的断言工具](https://) ，防止�
 [MLeaksFinder](https://github.com/Zepo/MLeaksFinder)  的使用请自行研究<br><br>
 
 这个库会不断的更新和融合更多功能，有什么好的修改意见或者是更优秀的代码欢迎加入哦。
+一直在接受大家的意见和修改，所以可能更新会较为频繁，可以点个Star，方便以后有需求了能快速找到哟。。O(∩_∩)O谢谢
 
 ## Features
 - [x] 支持控件全Set入参设置属性
