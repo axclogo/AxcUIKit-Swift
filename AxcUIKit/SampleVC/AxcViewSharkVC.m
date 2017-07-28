@@ -93,7 +93,7 @@
 - (UIImageView *)imageView{
     if (!_imageView) {
         _imageView = [[UIImageView alloc] initWithFrame:CGRectMake(130, 198 + _Nav_Height, 114, 94)];
-        _imageView.image = [UIImage AxcUI_setImageNamed:@"test_0.jpg"];
+        _imageView.image = [UIImage AxcUI_setImageNamed:@"test_0"];
     }
     return _imageView;
 }

@@ -63,7 +63,7 @@
 
 - (void)click_loadButton{
     // 加载本地图片资源，如果图片资源大于500K则不缓存在内存，如果小于500K则缓存到内存
-    self.localLoadImageView.image = [UIImage AxcUI_setImageNamed:@"test_0.jpg"];
+    self.localLoadImageView.image = [UIImage AxcUI_setImageNamed:@"test_0"];
     
     // 加载网络图片，以Data方式缓存到磁盘中，下次加载不会从网络获取
     

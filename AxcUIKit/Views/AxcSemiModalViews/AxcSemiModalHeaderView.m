@@ -179,7 +179,7 @@
                                                                           [UIScreen mainScreen].bounds.size.height - 200,
                                                                           [UIScreen mainScreen].bounds.size.width, 200)];
         _presentBackgroundView.backgroundColor = [UIColor AxcUI_OrangeColor];
-        _presentBackgroundView.image = [UIImage AxcUI_setImageNamed:@"test_2.jpg"];
+        _presentBackgroundView.image = [UIImage AxcUI_setImageNamed:@"test_2"];
     }
     return _presentBackgroundView;
 }

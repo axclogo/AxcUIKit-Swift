@@ -123,7 +123,7 @@
     if (!_imageView) {
         _imageView = [[UIImageView alloc] initWithFrame:CGRectMake(50, 100, self.view.axcUI_Width - 100, 250)];
         _imageView.backgroundColor = [UIColor AxcUI_SilverColor];
-        self.imageView.image = [UIImage AxcUI_setImageNamed:@"test_2.jpg"];
+        self.imageView.image = [UIImage AxcUI_setImageNamed:@"test_2"];
     }
     return _imageView;
 }
