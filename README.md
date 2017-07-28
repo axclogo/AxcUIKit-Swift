@@ -99,16 +99,16 @@ MLeaksFinder是针对性[检测内存泄漏的断言工具](https://) ，防止�
 >>>（注：如果控件名称中包含扩展类型则省略扩展类型。如：UILabel+AxcShimmering）<br>
 >>>控件类：AxcUI_开头大写的控件名（如果太长则省略部分单词）<br><br>
 ## 感谢原作者
-ribs:https://github.com/itribs<br>
-zzyspace:https://github.com/zzyspace<br>
-Marxon13:https://github.com/Marxon13<br>
-smallmuou:https://github.com/smallmuou<br>
-zekunyan:https://github.com/zekunyan<br>
-zhwayne:https://github.com/zhwayne<br>
-hsousa:https://github.com/hsousa<br>
-sunsx9316:https://github.com/sunsx9316<br>
-gsdios:https://github.com/gsdios<br>
-Vinh Nguyen:https://github.com/gontovnik/DGActivityIndicatorView<br>
+ribs:https://github.com/itribs<br><br>
+zzyspace:https://github.com/zzyspace<br><br>
+Marxon13:https://github.com/Marxon13<br><br>
+smallmuou:https://github.com/smallmuou<br><br>
+zekunyan:https://github.com/zekunyan<br><br>
+zhwayne:https://github.com/zhwayne<br><br>
+hsousa:https://github.com/hsousa<br><br>
+sunsx9316:https://github.com/sunsx9316<br><br>
+gsdios:https://github.com/gsdios<br><br>
+Vinh Nguyen:https://github.com/gontovnik/DGActivityIndicatorView<br><br>
 
 
 ## Licenses
