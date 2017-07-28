@@ -258,6 +258,7 @@
 		EADDB0F21F26F2810098090B /* AxcUI_UserInteractionControl.m in Sources */ = {isa = PBXBuildFile; fileRef = EADDB0F11F26F2810098090B /* AxcUI_UserInteractionControl.m */; };
 		EADDB0F51F26F2CF0098090B /* AxcUserInteractionControlVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EADDB0F41F26F2CF0098090B /* AxcUserInteractionControlVC.m */; };
 		EADDB0FB1F2877E90098090B /* AxcLabelTwoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EADDB0FA1F2877E90098090B /* AxcLabelTwoVC.m */; };
+		EADDB10F1F2ADAEF0098090B /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = EADDB10E1F2ADAEF0098090B /* icon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -704,6 +705,7 @@
 		EADDB0F41F26F2CF0098090B /* AxcUserInteractionControlVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcUserInteractionControlVC.m; sourceTree = "<group>"; };
 		EADDB0F91F2877E90098090B /* AxcLabelTwoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcLabelTwoVC.h; sourceTree = "<group>"; };
 		EADDB0FA1F2877E90098090B /* AxcLabelTwoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcLabelTwoVC.m; sourceTree = "<group>"; };
+		EADDB10E1F2ADAEF0098090B /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -802,6 +804,7 @@
 		093C62591EA6F86100ADAC42 /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				EADDB10E1F2ADAEF0098090B /* icon.png */,
 				093C62291EA6F85800ADAC42 /* AppDelegate.h */,
 				093C622A1EA6F85800ADAC42 /* AppDelegate.m */,
 				093C622F1EA6F85800ADAC42 /* Main.storyboard */,
@@ -1936,6 +1939,7 @@
 				EAD085D51EEAFFDC007DE2C4 /* HUD_6.png in Resources */,
 				EAD085BB1EEAFFDC007DE2C4 /* HUD_19.png in Resources */,
 				EAAFBFDC1F0E3E9D00881A62 /* PYSearch.bundle in Resources */,
+				EADDB10F1F2ADAEF0098090B /* icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
