@@ -108,7 +108,7 @@ zhwayne:https://github.com/zhwayne<br><br>
 hsousa:https://github.com/hsousa<br><br>
 sunsx9316:https://github.com/sunsx9316<br><br>
 gsdios:https://github.com/gsdios<br><br>
-Vinh Nguyen:https://github.com/gontovnik/DGActivityIndicatorView<br><br>
+Vinh Nguyen:https://github.com/gontovnik/DGActivityIndicatorView<br><br><br>
 
 
 ## Licenses
