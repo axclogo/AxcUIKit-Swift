@@ -2344,6 +2344,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.532432339.www.AxcUIKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Debug;
@@ -2376,6 +2377,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.532432339.www.AxcUIKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Release;
