@@ -9,12 +9,16 @@
 #import "AxcEmptyDataVC.h"
 #import "AxcEmptyDataPlaceholderView.h"
 
+#import "AxcEmptyDataTableView.h"
+#import "AxcEmptyDataTableView+AxcEmptyData.h"
+
+
 @interface AxcEmptyDataVC ()<UITableViewDelegate,UITableViewDataSource>
 
 
 @property(nonatomic,strong)NSArray *dataArray;
 @property(nonatomic,strong)NSMutableArray *strDataArray;
-@property(nonatomic,strong)UITableView *tableView;
+@property(nonatomic,strong)AxcEmptyDataTableView *tableView;
 // 占位View
 @property(nonatomic, strong)AxcEmptyDataPlaceholderView *placeholderView;
 @end
@@ -45,6 +49,8 @@
         [WeakSelf.tableView reloadData];
     };
 
+    self.instructionsLabel.text = @"此示例实现修改为继承一个TableView类，然后添加类函数，防止因为重写系统TableView函数造成的隐患问题\n另外考虑到框架的全局性，此实现方案已排除在框架之外，仅算是实现示例";
+    
 }
 
 - (void)AxcBase_clickRightItems:(UIBarButtonItem *)sender{
@@ -121,9 +127,9 @@
     return _strDataArray;
 }
 
-- (UITableView *)tableView{
+- (AxcEmptyDataTableView *)tableView{
     if (!_tableView) {
-        _tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
+        _tableView = [[AxcEmptyDataTableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
         _tableView.delegate = self;
         _tableView.dataSource = self;
         _tableView.tableFooterView = [UIView new];

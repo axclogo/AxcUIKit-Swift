@@ -8,7 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UITableView (AxcEmptyData)
+#import "AxcEmptyDataTableView.h"
+
+
+@interface AxcEmptyDataTableView (AxcEmptyData)
 
 
 /**

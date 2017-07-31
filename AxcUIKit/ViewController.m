@@ -217,7 +217,7 @@ didSelectSearchHistoryAtIndex:(NSInteger)index
         
         [Group1 addObject:@{@"controlsName":@"Label+",@"describeName":@"Label长按复制剪贴板",@"VCName":@"AxcCopyableVC"}];
         [Group1 addObject:@{@"controlsName":@"CollectionView+",@"describeName":@"长摁拖动排序",@"VCName":@"AxcCellRearrangeVC"}];
-        [Group1 addObject:@{@"controlsName":@"TableView+",@"describeName":@"空集的占位View",@"VCName":@"AxcEmptyDataVC"}];
+//        [Group1 addObject:@{@"controlsName":@"TableView+",@"describeName":@"空集的占位View",@"VCName":@"AxcEmptyDataVC"}];
         [Group1 addObject:@{@"controlsName":@"TextField+",@"describeName":@"占位符参数修改",@"VCName":@"AxcModifyPlaceholderVC"}];
         [Group1 addObject:@{@"controlsName":@"ViewController+",@"describeName":@"动画推出View/VC",@"VCName":@"AxcSemiModalVC"}];
 
@@ -256,10 +256,12 @@ didSelectSearchHistoryAtIndex:(NSInteger)index
         [Group2 addObject:@{@"controlsName":@"AxcUI_PlayerVideo",@"describeName":@"视频+弹幕结合使用",@"VCName":@"AxcPlayerVideoTwoVC"}];
         [Group2 addObject:@{@"controlsName":@"AxcUI_UserInteractionControl",@"describeName":@"交互动画",@"VCName":@"AxcUserInteractionControlVC"}];
         
-        
+        NSMutableArray *Group3 = [NSMutableArray array];
+        [Group3 addObject:@{@"controlsName":@"其他示例",@"describeName":@"空集的占位View",@"VCName":@"AxcEmptyDataVC"}];
         
         [_dataArray addObject:Group1];
         [_dataArray addObject:Group2];
+        [_dataArray addObject:Group3];
     }
     return _dataArray;
 }
@@ -273,7 +275,7 @@ didSelectSearchHistoryAtIndex:(NSInteger)index
 
 - (NSArray *)sectionTitleArray{
     if (!_sectionTitleArray) {
-        _sectionTitleArray = @[@"扩展类",@"控件类"];
+        _sectionTitleArray = @[@"扩展类",@"控件类",@"其他框架之外的示例"];
     }
     return _sectionTitleArray;
 }

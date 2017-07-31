@@ -41,8 +41,9 @@
 #import "UIButton+AxcButtonContentLayout.h"   // Button按钮布局的扩展
 #import "UIButton+AxcButtonCountDown.h"       // Button快速设置倒计时扩展
 
+// 因为其中涉及到类方法修改系统函数的特性，所以决定删除这个Api，增加一种示例来解决
 // MARK: UITableView+
-#import "UITableView+AxcEmptyData.h"          // TableView无数据时添加占位View
+//#import "UITableView+AxcEmptyData.h"          // TableView无数据时添加占位View
 
 // MARK: UICollectionView+
 #import "UICollectionView+AxcCellRearrange.h" // UICollectionView可长摁拖动的扩展 iOS9以后可以调用系统方案

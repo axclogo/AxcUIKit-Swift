@@ -6,13 +6,15 @@
 //  Copyright © 2017年 Axc_5324. All rights reserved.
 //
 
-#import "UITableView+AxcEmptyData.h"
+#import "AxcEmptyDataTableView+AxcEmptyData.h"
 #import <objc/runtime.h>
+
+
 
 static NSString * const kplaceHolderViewAnimations = @"axcUI_placeHolderViewAnimations";
 
 
-@implementation UITableView (AxcEmptyData)
+@implementation AxcEmptyDataTableView (AxcEmptyData)
 
 -(void)setAxcUI_placeHolderViewAnimations:(BOOL)axcUI_placeHolderViewAnimations{
     [self willChangeValueForKey:kplaceHolderViewAnimations];
@@ -36,7 +38,7 @@ static NSString * const kplaceHolderViewAnimations = @"axcUI_placeHolderViewAnim
         //防止手动调用load出现多次调用的情况：
         static dispatch_once_t onceToken;
         dispatch_once(&onceToken, ^{
-            [UITableView swizzleOriginMethod:@selector(reloadData)
+            [AxcEmptyDataTableView swizzleOriginMethod:@selector(reloadData)
                                       Method:@selector(customReloadData)];
         });
     }
@@ -48,6 +50,7 @@ static NSString * const kplaceHolderViewAnimations = @"axcUI_placeHolderViewAnim
 
 
 #pragma mark 自定义刷新方法：
+// 实现改为只对继承TableView的对象有用，并不会对系统原有的TableView造成影响
 -(void)customReloadData{
     [self checkIsEmpty];
     [self customReloadData];
