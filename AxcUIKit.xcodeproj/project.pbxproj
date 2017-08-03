@@ -260,6 +260,7 @@
 		EADDB15E1F2F15D10098090B /* AxcEmptyDataTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = EADDB15D1F2F15D10098090B /* AxcEmptyDataTableView.m */; };
 		EADDB1611F2F15F30098090B /* AxcEmptyDataTableView+AxcEmptyData.m in Sources */ = {isa = PBXBuildFile; fileRef = EADDB1601F2F15F30098090B /* AxcEmptyDataTableView+AxcEmptyData.m */; };
 		EADDB1651F2F19560098090B /* AxcEmptyDataVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EADDB1641F2F19560098090B /* AxcEmptyDataVC.m */; };
+		EADDB16B1F3052DF0098090B /* UIImage+AxcImageRotating.m in Sources */ = {isa = PBXBuildFile; fileRef = EADDB16A1F3052DF0098090B /* UIImage+AxcImageRotating.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -709,6 +710,8 @@
 		EADDB1601F2F15F30098090B /* AxcEmptyDataTableView+AxcEmptyData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AxcEmptyDataTableView+AxcEmptyData.m"; sourceTree = "<group>"; };
 		EADDB1631F2F19560098090B /* AxcEmptyDataVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcEmptyDataVC.h; sourceTree = "<group>"; };
 		EADDB1641F2F19560098090B /* AxcEmptyDataVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcEmptyDataVC.m; sourceTree = "<group>"; };
+		EADDB1691F3052DF0098090B /* UIImage+AxcImageRotating.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+AxcImageRotating.h"; sourceTree = "<group>"; };
+		EADDB16A1F3052DF0098090B /* UIImage+AxcImageRotating.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+AxcImageRotating.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1142,6 +1145,8 @@
 				EADC7D421F14D705004AF7D8 /* UIImage+AxcTransfromZoom.m */,
 				EA5D4EE91F1756860002E9E9 /* UIImage+AxcSpecialEffectsDrawing.h */,
 				EA5D4EEA1F1756860002E9E9 /* UIImage+AxcSpecialEffectsDrawing.m */,
+				EADDB1691F3052DF0098090B /* UIImage+AxcImageRotating.h */,
+				EADDB16A1F3052DF0098090B /* UIImage+AxcImageRotating.m */,
 			);
 			path = "UIImage+";
 			sourceTree = "<group>";
@@ -2149,6 +2154,7 @@
 				EAAFBFDF1F0E3E9D00881A62 /* PYSearchViewController.m in Sources */,
 				093C622B1EA6F85800ADAC42 /* AppDelegate.m in Sources */,
 				EA439D0D1EE4417C00D992E7 /* AxcLabelVC.m in Sources */,
+				EADDB16B1F3052DF0098090B /* UIImage+AxcImageRotating.m in Sources */,
 				EA6A3BBB1F09DE3800E0FAAA /* AxcUI_ProgressTranPieView.m in Sources */,
 				EA530A5D1F0CBC3100F562FD /* AxcTagViewVC.m in Sources */,
 				EA439CFE1EE3ECCD00D992E7 /* AxcSemiModalPresentView.m in Sources */,
