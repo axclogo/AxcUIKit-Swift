@@ -59,10 +59,6 @@ typedef void(^callBackBlock)(BarrageDataModel *model);
         model.mode = [strArr[1] intValue];
         model.color = [strArr[3] intValue];
         model.message = [ele objectForKey:@"#text"];
-        if([model.message rangeOfString:@"出去"].location !=NSNotFound){
-            // 刷信仰 =。=
-            model.message = @"你指尖跃动的电光，是我此生不灭的信仰!";
-        }
         if (block) block(model);
     }
 }
