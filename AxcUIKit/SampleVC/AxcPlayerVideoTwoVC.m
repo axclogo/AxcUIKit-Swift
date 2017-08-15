@@ -84,7 +84,7 @@
     AxcPlayerItemAsset *itemAsset1 = [[AxcPlayerItemAsset alloc] initWithType:@"清晰"
                                                                           URL:[NSURL URLWithString:SDURL]];
     AxcPlayerItemAsset *itemAsset2 = [[AxcPlayerItemAsset alloc] initWithType: @"高清"// 这里可以换填高清或者其对应的URL
-                                                                          URL:[NSURL URLWithString:SDURL]];
+                                                                          URL:[NSURL URLWithString:HDURL]];
     item.assets = @[itemAsset1, itemAsset2];
     // 添加进播放器
     [self.playerVideo AxcUI_replaceCurrentItemWithPlayerItem:item];
