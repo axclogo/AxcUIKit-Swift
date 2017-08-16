@@ -47,6 +47,7 @@ typedef void(^callBackBlock)(BarrageDataModel *model);
 #pragma mark - 私有方法
 
 //b站解析方式
+// 本来是XML的，但是作为示例不大想用三方库解析，所以就改成json了
 + (void)danMuWithBilibiliData:(NSData*)data block:(callBackBlock)block{
     NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
     NSDictionary *iDic = [dic objectForKey:@"i"];
