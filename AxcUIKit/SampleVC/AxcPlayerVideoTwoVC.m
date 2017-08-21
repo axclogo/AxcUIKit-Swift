@@ -66,6 +66,12 @@
      return self.barrageDic[@(time)];
 }
 
+/** 是否发射某种弹幕，NO则不发送，一般多用于屏蔽某种关键字弹幕 */
+- (BOOL)AxcUI_playeBarrageScrollEngine:(AxcUI_BarrageScrollEngine *)barrageEngine
+                     shouldSendBarrage:(__kindof AxcUI_BarrageModelBase *)barrage{
+    return YES;
+}
+
 // 解析B站格式的弹幕数据（与“弹幕引擎”使用相同）
 - (NSDictionary *)barrageDic {
     if(_barrageDic == nil) {
