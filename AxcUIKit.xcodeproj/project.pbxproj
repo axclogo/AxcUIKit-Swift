@@ -261,6 +261,7 @@
 		EADDB1611F2F15F30098090B /* AxcEmptyDataTableView+AxcEmptyData.m in Sources */ = {isa = PBXBuildFile; fileRef = EADDB1601F2F15F30098090B /* AxcEmptyDataTableView+AxcEmptyData.m */; };
 		EADDB1651F2F19560098090B /* AxcEmptyDataVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EADDB1641F2F19560098090B /* AxcEmptyDataVC.m */; };
 		EADDB16B1F3052DF0098090B /* UIImage+AxcImageRotating.m in Sources */ = {isa = PBXBuildFile; fileRef = EADDB16A1F3052DF0098090B /* UIImage+AxcImageRotating.m */; };
+		EAF18AC81F5D4CD4004D8B7B /* AxcUI_ArrangeLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = EAF18AC71F5D4CD4004D8B7B /* AxcUI_ArrangeLayout.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -712,6 +713,8 @@
 		EADDB1641F2F19560098090B /* AxcEmptyDataVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcEmptyDataVC.m; sourceTree = "<group>"; };
 		EADDB1691F3052DF0098090B /* UIImage+AxcImageRotating.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+AxcImageRotating.h"; sourceTree = "<group>"; };
 		EADDB16A1F3052DF0098090B /* UIImage+AxcImageRotating.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+AxcImageRotating.m"; sourceTree = "<group>"; };
+		EAF18AC61F5D4CD4004D8B7B /* AxcUI_ArrangeLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcUI_ArrangeLayout.h; sourceTree = "<group>"; };
+		EAF18AC71F5D4CD4004D8B7B /* AxcUI_ArrangeLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcUI_ArrangeLayout.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1280,6 +1283,7 @@
 		EA6A3B411F09DE3800E0FAAA /* Axc_Controls */ = {
 			isa = PBXGroup;
 			children = (
+				EAF18AC51F5D4CC9004D8B7B /* AxcUI_CollectionLayout */,
 				EADDB0EF1F26F2810098090B /* AxcUI_UserInteractionControl */,
 				EADDB03A1F2091B50098090B /* AxcUI_PlayerVideo */,
 				EA5D503F1F1C947B0002E9E9 /* AxcUI_BannerView */,
@@ -1745,6 +1749,15 @@
 			name = Other;
 			sourceTree = "<group>";
 		};
+		EAF18AC51F5D4CC9004D8B7B /* AxcUI_CollectionLayout */ = {
+			isa = PBXGroup;
+			children = (
+				EAF18AC61F5D4CD4004D8B7B /* AxcUI_ArrangeLayout.h */,
+				EAF18AC71F5D4CD4004D8B7B /* AxcUI_ArrangeLayout.m */,
+			);
+			path = AxcUI_CollectionLayout;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -2169,6 +2182,7 @@
 				EAD086261EED09B7007DE2C4 /* AxcShimmeringViewVC.m in Sources */,
 				EA6A3B8B1F09DE3800E0FAAA /* UIImageView+AxcImageLoader.m in Sources */,
 				EADDB09D1F2091B50098090B /* AxcPlayerOrientationDmonitor.m in Sources */,
+				EAF18AC81F5D4CD4004D8B7B /* AxcUI_ArrangeLayout.m in Sources */,
 				EADC7D431F14D705004AF7D8 /* UIImage+AxcTransfromZoom.m in Sources */,
 				EA5D4EF31F1863610002E9E9 /* UIView+BadgeInteractionView.m in Sources */,
 				EA6A3B911F09DE3800E0FAAA /* Axc_WebImageDownloader.m in Sources */,
