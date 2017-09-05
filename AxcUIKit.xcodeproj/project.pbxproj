@@ -261,9 +261,10 @@
 		EADDB1611F2F15F30098090B /* AxcEmptyDataTableView+AxcEmptyData.m in Sources */ = {isa = PBXBuildFile; fileRef = EADDB1601F2F15F30098090B /* AxcEmptyDataTableView+AxcEmptyData.m */; };
 		EADDB1651F2F19560098090B /* AxcEmptyDataVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EADDB1641F2F19560098090B /* AxcEmptyDataVC.m */; };
 		EADDB16B1F3052DF0098090B /* UIImage+AxcImageRotating.m in Sources */ = {isa = PBXBuildFile; fileRef = EADDB16A1F3052DF0098090B /* UIImage+AxcImageRotating.m */; };
-		EAF18AC81F5D4CD4004D8B7B /* AxcUI_ArrangeLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = EAF18AC71F5D4CD4004D8B7B /* AxcUI_ArrangeLayout.m */; };
-		EAF18ACB1F5E8312004D8B7B /* AxcUI_BaseCollectionLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = EAF18ACA1F5E8312004D8B7B /* AxcUI_BaseCollectionLayout.m */; };
-		EAF18ACE1F5E88F5004D8B7B /* AxcUI_MultipleBaseLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = EAF18ACD1F5E88F5004D8B7B /* AxcUI_MultipleBaseLayout.m */; };
+		EAF18ADD1F5E8C19004D8B7B /* AxcUI_BaseCollectionLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = EAF18AD41F5E8C19004D8B7B /* AxcUI_BaseCollectionLayout.m */; };
+		EAF18ADE1F5E8C19004D8B7B /* AxcUI_ArrangeLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = EAF18AD71F5E8C19004D8B7B /* AxcUI_ArrangeLayout.m */; };
+		EAF18ADF1F5E8C19004D8B7B /* AxcUI_MultipleBaseLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = EAF18AD91F5E8C19004D8B7B /* AxcUI_MultipleBaseLayout.m */; };
+		EAF18AE01F5E8C19004D8B7B /* AxcUI_SingleBaseLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = EAF18ADC1F5E8C19004D8B7B /* AxcUI_SingleBaseLayout.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -715,12 +716,14 @@
 		EADDB1641F2F19560098090B /* AxcEmptyDataVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcEmptyDataVC.m; sourceTree = "<group>"; };
 		EADDB1691F3052DF0098090B /* UIImage+AxcImageRotating.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+AxcImageRotating.h"; sourceTree = "<group>"; };
 		EADDB16A1F3052DF0098090B /* UIImage+AxcImageRotating.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+AxcImageRotating.m"; sourceTree = "<group>"; };
-		EAF18AC61F5D4CD4004D8B7B /* AxcUI_ArrangeLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcUI_ArrangeLayout.h; sourceTree = "<group>"; };
-		EAF18AC71F5D4CD4004D8B7B /* AxcUI_ArrangeLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcUI_ArrangeLayout.m; sourceTree = "<group>"; };
-		EAF18AC91F5E8312004D8B7B /* AxcUI_BaseCollectionLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcUI_BaseCollectionLayout.h; sourceTree = "<group>"; };
-		EAF18ACA1F5E8312004D8B7B /* AxcUI_BaseCollectionLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcUI_BaseCollectionLayout.m; sourceTree = "<group>"; };
-		EAF18ACC1F5E88F5004D8B7B /* AxcUI_MultipleBaseLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcUI_MultipleBaseLayout.h; sourceTree = "<group>"; };
-		EAF18ACD1F5E88F5004D8B7B /* AxcUI_MultipleBaseLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcUI_MultipleBaseLayout.m; sourceTree = "<group>"; };
+		EAF18AD31F5E8C19004D8B7B /* AxcUI_BaseCollectionLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcUI_BaseCollectionLayout.h; sourceTree = "<group>"; };
+		EAF18AD41F5E8C19004D8B7B /* AxcUI_BaseCollectionLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcUI_BaseCollectionLayout.m; sourceTree = "<group>"; };
+		EAF18AD61F5E8C19004D8B7B /* AxcUI_ArrangeLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcUI_ArrangeLayout.h; sourceTree = "<group>"; };
+		EAF18AD71F5E8C19004D8B7B /* AxcUI_ArrangeLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcUI_ArrangeLayout.m; sourceTree = "<group>"; };
+		EAF18AD81F5E8C19004D8B7B /* AxcUI_MultipleBaseLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcUI_MultipleBaseLayout.h; sourceTree = "<group>"; };
+		EAF18AD91F5E8C19004D8B7B /* AxcUI_MultipleBaseLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcUI_MultipleBaseLayout.m; sourceTree = "<group>"; };
+		EAF18ADB1F5E8C19004D8B7B /* AxcUI_SingleBaseLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcUI_SingleBaseLayout.h; sourceTree = "<group>"; };
+		EAF18ADC1F5E8C19004D8B7B /* AxcUI_SingleBaseLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcUI_SingleBaseLayout.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1289,7 +1292,7 @@
 		EA6A3B411F09DE3800E0FAAA /* Axc_Controls */ = {
 			isa = PBXGroup;
 			children = (
-				EAF18AC51F5D4CC9004D8B7B /* AxcUI_CollectionLayout */,
+				EAF18AD21F5E8C19004D8B7B /* AxcUI_CollectionLayout */,
 				EADDB0EF1F26F2810098090B /* AxcUI_UserInteractionControl */,
 				EADDB03A1F2091B50098090B /* AxcUI_PlayerVideo */,
 				EA5D503F1F1C947B0002E9E9 /* AxcUI_BannerView */,
@@ -1755,17 +1758,35 @@
 			name = Other;
 			sourceTree = "<group>";
 		};
-		EAF18AC51F5D4CC9004D8B7B /* AxcUI_CollectionLayout */ = {
+		EAF18AD21F5E8C19004D8B7B /* AxcUI_CollectionLayout */ = {
 			isa = PBXGroup;
 			children = (
-				EAF18AC61F5D4CD4004D8B7B /* AxcUI_ArrangeLayout.h */,
-				EAF18AC71F5D4CD4004D8B7B /* AxcUI_ArrangeLayout.m */,
-				EAF18AC91F5E8312004D8B7B /* AxcUI_BaseCollectionLayout.h */,
-				EAF18ACA1F5E8312004D8B7B /* AxcUI_BaseCollectionLayout.m */,
-				EAF18ACC1F5E88F5004D8B7B /* AxcUI_MultipleBaseLayout.h */,
-				EAF18ACD1F5E88F5004D8B7B /* AxcUI_MultipleBaseLayout.m */,
+				EAF18AD31F5E8C19004D8B7B /* AxcUI_BaseCollectionLayout.h */,
+				EAF18AD41F5E8C19004D8B7B /* AxcUI_BaseCollectionLayout.m */,
+				EAF18AD51F5E8C19004D8B7B /* AxcUI_MultipleBaseLayout */,
+				EAF18ADA1F5E8C19004D8B7B /* AxcUI_SingleBaseLayout */,
 			);
 			path = AxcUI_CollectionLayout;
+			sourceTree = "<group>";
+		};
+		EAF18AD51F5E8C19004D8B7B /* AxcUI_MultipleBaseLayout */ = {
+			isa = PBXGroup;
+			children = (
+				EAF18AD61F5E8C19004D8B7B /* AxcUI_ArrangeLayout.h */,
+				EAF18AD71F5E8C19004D8B7B /* AxcUI_ArrangeLayout.m */,
+				EAF18AD81F5E8C19004D8B7B /* AxcUI_MultipleBaseLayout.h */,
+				EAF18AD91F5E8C19004D8B7B /* AxcUI_MultipleBaseLayout.m */,
+			);
+			path = AxcUI_MultipleBaseLayout;
+			sourceTree = "<group>";
+		};
+		EAF18ADA1F5E8C19004D8B7B /* AxcUI_SingleBaseLayout */ = {
+			isa = PBXGroup;
+			children = (
+				EAF18ADB1F5E8C19004D8B7B /* AxcUI_SingleBaseLayout.h */,
+				EAF18ADC1F5E8C19004D8B7B /* AxcUI_SingleBaseLayout.m */,
+			);
+			path = AxcUI_SingleBaseLayout;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -2068,7 +2089,6 @@
 				EADC7D271F1370E4004AF7D8 /* AxcCopyableVC.m in Sources */,
 				EA6A3B941F09DE3800E0FAAA /* NSData+ImageContentType.m in Sources */,
 				EA6A3B821F09DE3800E0FAAA /* UICollectionView+AxcCellRearrange.m in Sources */,
-				EAF18ACB1F5E8312004D8B7B /* AxcUI_BaseCollectionLayout.m in Sources */,
 				EAAFBFE51F0F2B8800881A62 /* UIButton+AxcButtonContentLayout.m in Sources */,
 				EA6A3BB01F09DE3800E0FAAA /* AxcUI_BarrageScrollModel.m in Sources */,
 				EA6A3B9E1F09DE3800E0FAAA /* UIView+AxcAutoresizingMask.m in Sources */,
@@ -2077,6 +2097,7 @@
 				EA87DAE21F073D8000452D2D /* AxcBarrageScrollEngineVC.m in Sources */,
 				EA6A3B9D1F09DE3800E0FAAA /* UITextField+AxcModifyPlaceholder.m in Sources */,
 				EA6A3BBA1F09DE3800E0FAAA /* AxcUI_ProgressPieView.m in Sources */,
+				EAF18AE01F5E8C19004D8B7B /* AxcUI_SingleBaseLayout.m in Sources */,
 				EADDB08E1F2091B50098090B /* AxcPlayerControlItemAssetMenuButton.m in Sources */,
 				EADDB07B1F2091B50098090B /* AxcUI_PlayerVideo.m in Sources */,
 				0917729C1F20EB920065426B /* AxcPlayerVideoTwoVC.m in Sources */,
@@ -2096,6 +2117,7 @@
 				EADDB09B1F2091B50098090B /* AxcPlayerContainerView.m in Sources */,
 				EA6A3BD01F0A20B400E0FAAA /* AxcUI_StarRatingView.m in Sources */,
 				EA6A3BAF1F09DE3800E0FAAA /* AxcUI_BarrageFloatModel.m in Sources */,
+				EAF18ADD1F5E8C19004D8B7B /* AxcUI_BaseCollectionLayout.m in Sources */,
 				EA439D051EE415C900D992E7 /* AxcSemiModalPresentVC.m in Sources */,
 				EA6A3BA81F09DE3800E0FAAA /* AxcUI_ActivityIndicatorView.m in Sources */,
 				EADDB0F21F26F2810098090B /* AxcUI_UserInteractionControl.m in Sources */,
@@ -2121,7 +2143,7 @@
 				EADDB0FB1F2877E90098090B /* AxcLabelTwoVC.m in Sources */,
 				EA5D4F2C1F1C50590002E9E9 /* AxcQuickBadgeInteractionVC.m in Sources */,
 				EADDB0971F2091B50098090B /* AxcPlayerTopMask.m in Sources */,
-				EAF18ACE1F5E88F5004D8B7B /* AxcUI_MultipleBaseLayout.m in Sources */,
+				EAF18ADF1F5E8C19004D8B7B /* AxcUI_MultipleBaseLayout.m in Sources */,
 				EA439CB71EE29E3100D992E7 /* AxcCellRearrangeVC.m in Sources */,
 				EA6A3BB81F09DE3800E0FAAA /* AxcUI_ProgressLoopView.m in Sources */,
 				EA6A3BA11F09DE3800E0FAAA /* UIView+AxcShaking.m in Sources */,
@@ -2155,6 +2177,7 @@
 				EA6A3B9C1F09DE3800E0FAAA /* UITableViewCell+AxcAnimation.m in Sources */,
 				EA6A3BD31F0A20DB00E0FAAA /* StarRatingViewVC.m in Sources */,
 				EADDB0A31F2096ED0098090B /* UIViewController+AxcVCBackButtonEvent.m in Sources */,
+				EAF18ADE1F5E8C19004D8B7B /* AxcUI_ArrangeLayout.m in Sources */,
 				EA87DB0C1F0749E100452D2D /* AxcUI_BarrageScrollEngine+Tools.m in Sources */,
 				EA6A3B8A1F09DE3800E0FAAA /* UIImageView+AxcFilter.m in Sources */,
 				EADDB08C1F2091B50098090B /* AxcPlayerControlButton.m in Sources */,
@@ -2194,7 +2217,6 @@
 				EAD086261EED09B7007DE2C4 /* AxcShimmeringViewVC.m in Sources */,
 				EA6A3B8B1F09DE3800E0FAAA /* UIImageView+AxcImageLoader.m in Sources */,
 				EADDB09D1F2091B50098090B /* AxcPlayerOrientationDmonitor.m in Sources */,
-				EAF18AC81F5D4CD4004D8B7B /* AxcUI_ArrangeLayout.m in Sources */,
 				EADC7D431F14D705004AF7D8 /* UIImage+AxcTransfromZoom.m in Sources */,
 				EA5D4EF31F1863610002E9E9 /* UIView+BadgeInteractionView.m in Sources */,
 				EA6A3B911F09DE3800E0FAAA /* Axc_WebImageDownloader.m in Sources */,
