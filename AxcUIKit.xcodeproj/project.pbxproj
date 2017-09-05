@@ -262,6 +262,7 @@
 		EADDB1651F2F19560098090B /* AxcEmptyDataVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EADDB1641F2F19560098090B /* AxcEmptyDataVC.m */; };
 		EADDB16B1F3052DF0098090B /* UIImage+AxcImageRotating.m in Sources */ = {isa = PBXBuildFile; fileRef = EADDB16A1F3052DF0098090B /* UIImage+AxcImageRotating.m */; };
 		EAF18AC81F5D4CD4004D8B7B /* AxcUI_ArrangeLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = EAF18AC71F5D4CD4004D8B7B /* AxcUI_ArrangeLayout.m */; };
+		EAF18ACB1F5E8312004D8B7B /* AxcUI_BaseCollectionLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = EAF18ACA1F5E8312004D8B7B /* AxcUI_BaseCollectionLayout.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -715,6 +716,8 @@
 		EADDB16A1F3052DF0098090B /* UIImage+AxcImageRotating.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+AxcImageRotating.m"; sourceTree = "<group>"; };
 		EAF18AC61F5D4CD4004D8B7B /* AxcUI_ArrangeLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcUI_ArrangeLayout.h; sourceTree = "<group>"; };
 		EAF18AC71F5D4CD4004D8B7B /* AxcUI_ArrangeLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcUI_ArrangeLayout.m; sourceTree = "<group>"; };
+		EAF18AC91F5E8312004D8B7B /* AxcUI_BaseCollectionLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcUI_BaseCollectionLayout.h; sourceTree = "<group>"; };
+		EAF18ACA1F5E8312004D8B7B /* AxcUI_BaseCollectionLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcUI_BaseCollectionLayout.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1754,6 +1757,8 @@
 			children = (
 				EAF18AC61F5D4CD4004D8B7B /* AxcUI_ArrangeLayout.h */,
 				EAF18AC71F5D4CD4004D8B7B /* AxcUI_ArrangeLayout.m */,
+				EAF18AC91F5E8312004D8B7B /* AxcUI_BaseCollectionLayout.h */,
+				EAF18ACA1F5E8312004D8B7B /* AxcUI_BaseCollectionLayout.m */,
 			);
 			path = AxcUI_CollectionLayout;
 			sourceTree = "<group>";
@@ -2058,6 +2063,7 @@
 				EADC7D271F1370E4004AF7D8 /* AxcCopyableVC.m in Sources */,
 				EA6A3B941F09DE3800E0FAAA /* NSData+ImageContentType.m in Sources */,
 				EA6A3B821F09DE3800E0FAAA /* UICollectionView+AxcCellRearrange.m in Sources */,
+				EAF18ACB1F5E8312004D8B7B /* AxcUI_BaseCollectionLayout.m in Sources */,
 				EAAFBFE51F0F2B8800881A62 /* UIButton+AxcButtonContentLayout.m in Sources */,
 				EA6A3BB01F09DE3800E0FAAA /* AxcUI_BarrageScrollModel.m in Sources */,
 				EA6A3B9E1F09DE3800E0FAAA /* UIView+AxcAutoresizingMask.m in Sources */,

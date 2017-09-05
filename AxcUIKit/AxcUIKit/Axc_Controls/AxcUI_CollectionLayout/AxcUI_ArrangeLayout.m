@@ -1,6 +1,6 @@
 //
 //  AxcUI_ArrangeLayout.m
-//  UICollectionViewDemo
+//  AxcUIKit
 //
 //  Created by Axc on 2017/8/26.
 //  Copyright © 2017年 Axc. All rights reserved.

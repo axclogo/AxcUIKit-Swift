@@ -1,12 +1,12 @@
 //
 //  AxcUI_ArrangeLayout.h
-//  UICollectionViewDemo
+//  AxcUIKit
 //
 //  Created by Axc on 2017/8/26.
 //  Copyright © 2017年 Axc. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "AxcUI_BaseCollectionLayout.h"
 
 // 左中右布局
 typedef NS_ENUM(NSInteger,AxcArrangeLayoutAlignStyle){
@@ -16,7 +16,7 @@ typedef NS_ENUM(NSInteger,AxcArrangeLayoutAlignStyle){
 };
 
 
-@interface AxcUI_ArrangeLayout : UICollectionViewFlowLayout
+@interface AxcUI_ArrangeLayout : AxcUI_BaseCollectionLayout
 //两个Cell之间的距离
 @property (nonatomic,assign)CGFloat axcUI_betweenOfCell;
 //cell对齐方式
