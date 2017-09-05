@@ -101,7 +101,7 @@
 #import "AxcUI_BannerView.h"            // 横幅控件
 #import "AxcUI_PlayerVideo.h"           // 视频播放器
 #import "AxcUI_UserInteractionControl.h"// 交互动画控制器
-
+#import "AxcUI_CollectionLayout.h"      // 预设布局库
 
 
 

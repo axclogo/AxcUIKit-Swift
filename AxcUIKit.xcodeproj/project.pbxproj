@@ -724,6 +724,7 @@
 		EAF18AD91F5E8C19004D8B7B /* AxcUI_MultipleBaseLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcUI_MultipleBaseLayout.m; sourceTree = "<group>"; };
 		EAF18ADB1F5E8C19004D8B7B /* AxcUI_SingleBaseLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcUI_SingleBaseLayout.h; sourceTree = "<group>"; };
 		EAF18ADC1F5E8C19004D8B7B /* AxcUI_SingleBaseLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcUI_SingleBaseLayout.m; sourceTree = "<group>"; };
+		EAF18AE11F5E8C9C004D8B7B /* AxcUI_CollectionLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AxcUI_CollectionLayout.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1763,6 +1764,7 @@
 			children = (
 				EAF18AD31F5E8C19004D8B7B /* AxcUI_BaseCollectionLayout.h */,
 				EAF18AD41F5E8C19004D8B7B /* AxcUI_BaseCollectionLayout.m */,
+				EAF18AE11F5E8C9C004D8B7B /* AxcUI_CollectionLayout.h */,
 				EAF18AD51F5E8C19004D8B7B /* AxcUI_MultipleBaseLayout */,
 				EAF18ADA1F5E8C19004D8B7B /* AxcUI_SingleBaseLayout */,
 			);
