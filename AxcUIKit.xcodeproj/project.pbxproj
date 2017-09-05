@@ -263,6 +263,7 @@
 		EADDB16B1F3052DF0098090B /* UIImage+AxcImageRotating.m in Sources */ = {isa = PBXBuildFile; fileRef = EADDB16A1F3052DF0098090B /* UIImage+AxcImageRotating.m */; };
 		EAF18AC81F5D4CD4004D8B7B /* AxcUI_ArrangeLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = EAF18AC71F5D4CD4004D8B7B /* AxcUI_ArrangeLayout.m */; };
 		EAF18ACB1F5E8312004D8B7B /* AxcUI_BaseCollectionLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = EAF18ACA1F5E8312004D8B7B /* AxcUI_BaseCollectionLayout.m */; };
+		EAF18ACE1F5E88F5004D8B7B /* AxcUI_MultipleBaseLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = EAF18ACD1F5E88F5004D8B7B /* AxcUI_MultipleBaseLayout.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -718,6 +719,8 @@
 		EAF18AC71F5D4CD4004D8B7B /* AxcUI_ArrangeLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcUI_ArrangeLayout.m; sourceTree = "<group>"; };
 		EAF18AC91F5E8312004D8B7B /* AxcUI_BaseCollectionLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcUI_BaseCollectionLayout.h; sourceTree = "<group>"; };
 		EAF18ACA1F5E8312004D8B7B /* AxcUI_BaseCollectionLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcUI_BaseCollectionLayout.m; sourceTree = "<group>"; };
+		EAF18ACC1F5E88F5004D8B7B /* AxcUI_MultipleBaseLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcUI_MultipleBaseLayout.h; sourceTree = "<group>"; };
+		EAF18ACD1F5E88F5004D8B7B /* AxcUI_MultipleBaseLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcUI_MultipleBaseLayout.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1759,6 +1762,8 @@
 				EAF18AC71F5D4CD4004D8B7B /* AxcUI_ArrangeLayout.m */,
 				EAF18AC91F5E8312004D8B7B /* AxcUI_BaseCollectionLayout.h */,
 				EAF18ACA1F5E8312004D8B7B /* AxcUI_BaseCollectionLayout.m */,
+				EAF18ACC1F5E88F5004D8B7B /* AxcUI_MultipleBaseLayout.h */,
+				EAF18ACD1F5E88F5004D8B7B /* AxcUI_MultipleBaseLayout.m */,
 			);
 			path = AxcUI_CollectionLayout;
 			sourceTree = "<group>";
@@ -2116,6 +2121,7 @@
 				EADDB0FB1F2877E90098090B /* AxcLabelTwoVC.m in Sources */,
 				EA5D4F2C1F1C50590002E9E9 /* AxcQuickBadgeInteractionVC.m in Sources */,
 				EADDB0971F2091B50098090B /* AxcPlayerTopMask.m in Sources */,
+				EAF18ACE1F5E88F5004D8B7B /* AxcUI_MultipleBaseLayout.m in Sources */,
 				EA439CB71EE29E3100D992E7 /* AxcCellRearrangeVC.m in Sources */,
 				EA6A3BB81F09DE3800E0FAAA /* AxcUI_ProgressLoopView.m in Sources */,
 				EA6A3BA11F09DE3800E0FAAA /* UIView+AxcShaking.m in Sources */,
