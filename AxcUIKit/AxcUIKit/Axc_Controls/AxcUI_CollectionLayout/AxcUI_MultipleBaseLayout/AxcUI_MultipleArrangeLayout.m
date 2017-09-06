@@ -6,15 +6,15 @@
 //  Copyright © 2017年 Axc. All rights reserved.
 //
 
-#import "AxcUI_ArrangeLayout.h"
+#import "AxcUI_MultipleArrangeLayout.h"
 
-@interface AxcUI_ArrangeLayout(){
+@interface AxcUI_MultipleArrangeLayout(){
     //在居中对齐的时候需要知道这行所有cell的宽度总和
     CGFloat _sumWidth ;
 }
 @end
 
-@implementation AxcUI_ArrangeLayout
+@implementation AxcUI_MultipleArrangeLayout
 
 -(instancetype)init{
     self = [super init];
@@ -24,7 +24,7 @@
         self.minimumInteritemSpacing = 5;
         self.sectionInset = UIEdgeInsetsMake(5, 5, 5, 5);
         _axcUI_betweenOfCell = 5.0;
-        _axcUI_layoutAlignStyle = AxcArrangeLayoutAlignStyleAlignLeft;
+        _axcUI_layoutAlignStyle = AxcMultipleArrangeLayoutAlignStyleAlignLeft;
     }
     return self;
 }
@@ -75,7 +75,7 @@
 - (void)setCellFrameWith:(NSMutableArray*)layoutAttributes{
     CGFloat nowWidth = 0.0;
     switch (_axcUI_layoutAlignStyle) {
-        case AxcArrangeLayoutAlignStyleAlignLeft:
+        case AxcMultipleArrangeLayoutAlignStyleAlignLeft:
             nowWidth = self.sectionInset.left;
             for (UICollectionViewLayoutAttributes * attributes in layoutAttributes) {
                 CGRect nowFrame = attributes.frame;
@@ -86,7 +86,7 @@
             _sumWidth = 0.0;
             [layoutAttributes removeAllObjects];
             break;
-        case AxcArrangeLayoutAlignStyleAlignCenter:
+        case AxcMultipleArrangeLayoutAlignStyleAlignCenter:
             nowWidth = (self.collectionView.frame.size.width - _sumWidth - ((layoutAttributes.count - 1) * _axcUI_betweenOfCell)) / 2;
             for (UICollectionViewLayoutAttributes * attributes in layoutAttributes) {
                 CGRect nowFrame = attributes.frame;
@@ -98,7 +98,7 @@
             [layoutAttributes removeAllObjects];
             break;
             
-        case AxcArrangeLayoutAlignStyleAlignRight:
+        case AxcMultipleArrangeLayoutAlignStyleAlignRight:
             nowWidth = self.collectionView.frame.size.width - self.sectionInset.right;
             for (NSInteger index = layoutAttributes.count - 1 ; index >= 0 ; index-- ) {
                 UICollectionViewLayoutAttributes * attributes = layoutAttributes[index];

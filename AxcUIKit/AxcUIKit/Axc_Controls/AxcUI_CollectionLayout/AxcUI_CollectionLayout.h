@@ -9,7 +9,10 @@
 #ifndef AxcUI_CollectionLayout_h
 #define AxcUI_CollectionLayout_h
 
-#import "AxcUI_ArrangeLayout.h"
+// 左中右布局
+#import "AxcUI_MultipleArrangeLayout.h"
+// 流水布局
+#import "AxcUI_MultipleWaterLayout.h"
 
 
 #endif /* AxcUI_CollectionLayout_h */
