@@ -6,8 +6,8 @@
 //  Copyright © 2017年 Axc. All rights reserved.
 //
 
-#import "AxcUI_MultipleBaseLayout.h"
+#import "AxcUI_SingleBaseLayout.h"
 
-@interface AxcUI_MultipleWaterLayout : AxcUI_MultipleBaseLayout
+@interface AxcUI_SingleLineLayout : AxcUI_SingleBaseLayout
 
 @end

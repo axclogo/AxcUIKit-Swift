@@ -18,7 +18,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="148" height="148"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fengwo.png" translatesAutoresizingMaskIntoConstraints="NO" id="YPh-j8-UjO">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YPh-j8-UjO">
                         <rect key="frame" x="0.0" y="0.0" width="148" height="148"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     </imageView>
@@ -28,7 +28,4 @@
             <point key="canvasLocation" x="74" y="101"/>
         </collectionViewCell>
     </objects>
-    <resources>
-        <image name="fengwo.png" width="192" height="166"/>
-    </resources>
 </document>

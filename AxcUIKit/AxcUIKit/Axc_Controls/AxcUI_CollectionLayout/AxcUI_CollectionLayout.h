@@ -12,7 +12,7 @@
 // 左中右布局
 #import "AxcUI_MultipleArrangeLayout.h"
 // 流水布局
-#import "AxcUI_MultipleWaterLayout.h"
+#import "AxcUI_SingleLineLayout.h"
 
 
 #endif /* AxcUI_CollectionLayout_h */

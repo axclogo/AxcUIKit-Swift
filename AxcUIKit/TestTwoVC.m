@@ -43,15 +43,15 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     CollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"axc" forIndexPath:indexPath];
-    cell.backgroundColor = [UIColor whiteColor];
+    cell.backgroundColor = [UIColor AxcUI_ArcColor];
     return cell;
 }
 
-- (CGSize)collectionView:(UICollectionView *)collectionView
-                  layout:(UICollectionViewLayout *)collectionViewLayout
-  sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    return CGSizeMake(100,100);
-}
+//- (CGSize)collectionView:(UICollectionView *)collectionView
+//                  layout:(UICollectionViewLayout *)collectionViewLayout
+//  sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+//    return CGSizeMake([UIScreen mainScreen].bounds.size.width - 100,300);
+//}
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     //    self.axc.axcUI_layoutAlignStyle = indexPath.row;
@@ -60,11 +60,22 @@
 }
 
 
+
+
 - (UICollectionView *)collectionView{
     if (!_collectionView) {
         
-        AxcUI_MultipleWaterLayout *layout = [[AxcUI_MultipleWaterLayout alloc] init];
-//        layout.itemSize = CGSizeMake(200, 200);
+        AxcUI_SingleLineLayout *layout = [[AxcUI_SingleLineLayout alloc] init];
+        
+//        layout.itemSize = CGSizeMake(100, 100);
+//        layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+//        layout.minimumLineSpacing = 0;
+//        layout.sectionInset = UIEdgeInsetsMake(64, 0, 0, 0);
+        
+        layout.itemSize = CGSizeMake(100, 100);
+        layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+        layout.minimumLineSpacing = 0;
+        
         
         _collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 100, [UIScreen mainScreen].bounds.size.width, 500)
                                              collectionViewLayout:layout];

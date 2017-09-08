@@ -198,6 +198,8 @@ didSelectSearchHistoryAtIndex:(NSInteger)index
         _dataArray = [NSMutableArray array];
         NSMutableArray *Group1 = [NSMutableArray array];
         
+        [Group1 addObject:@{@"controlsName":@"测试",@"describeName":@"测试",@"VCName":@"TestTwoVC"}];
+
         [Group1 addObject:@{@"controlsName":@"View+",@"describeName":@"添加晃动动画",@"VCName":@"AxcViewSharkVC"}];
         [Group1 addObject:@{@"controlsName":@"View+",@"describeName":@"添加文字闪动效果",@"VCName":@"AxcShimmeringViewVC"}];
         [Group1 addObject:@{@"controlsName":@"View+",@"describeName":@"快速切圆角",@"VCName":@"AxcRectCornerVC"}];
@@ -221,7 +223,6 @@ didSelectSearchHistoryAtIndex:(NSInteger)index
         [Group1 addObject:@{@"controlsName":@"TextField+",@"describeName":@"占位符参数修改",@"VCName":@"AxcModifyPlaceholderVC"}];
         [Group1 addObject:@{@"controlsName":@"ViewController+",@"describeName":@"动画推出View/VC",@"VCName":@"AxcSemiModalVC"}];
 
-        [Group1 addObject:@{@"controlsName":@"测试",@"describeName":@"测试",@"VCName":@"TestTwoVC"}];
 
         NSMutableArray *Group2 = [NSMutableArray array];
 
