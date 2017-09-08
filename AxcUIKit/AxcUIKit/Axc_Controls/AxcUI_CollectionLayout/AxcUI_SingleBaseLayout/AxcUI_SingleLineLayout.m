@@ -40,11 +40,7 @@
         
         // 利用差距计算出缩放比例（成反比）
         CGFloat scale = 1 - delta / (self.collectionView.frame.size.width + self.itemSize.width);
-//        attrs.transform = CGAffineTransformMakeScale(scale, scale);
-        attrs.transform = CGAffineTransformMakeScale(0.5, 0.5);
-        if (scale == 0 || scale == 1) {
-            NSLog(@"%f === %ld",scale,array.count);
-        }
+        attrs.transform = CGAffineTransformMakeScale(scale, scale);
     }
     
     return array;
@@ -53,8 +49,7 @@
 /**
  * 当uicollectionView的bounds发生改变时，是否要刷新布局
  */
-- (BOOL)shouldInvalidateLayoutForBoundsChange:(CGRect)newBounds
-{
+- (BOOL)shouldInvalidateLayoutForBoundsChange:(CGRect)newBounds{
     return YES;
 }
 

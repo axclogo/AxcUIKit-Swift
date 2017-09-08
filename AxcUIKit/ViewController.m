@@ -238,6 +238,8 @@ didSelectSearchHistoryAtIndex:(NSInteger)index
         [Group2 addObject:@{@"controlsName":@"AxcUI_BadgeView",@"describeName":@"消息数量气泡",@"VCName":@"AxcBadgeViewVC"}];
         [Group2 addObject:@{@"controlsName":@"AxcUI_BadgeInteractionView",@"describeName":@"可交互气泡",@"VCName":@"AxcBadgeInteractionViewVC"}];
         
+        [Group2 addObject:@{@"controlsName":@"AxcUI_CollectionLayout",@"describeName":@"预设快速布局",@"VCName":@"AxcCollectionLayoutVC"}];
+
         [Group2 addObject:@{@"controlsName":@"AxcUI_Label",@"describeName":@"动态设置文字边距",@"VCName":@"AxcLabelVC"}];
         [Group2 addObject:@{@"controlsName":@"AxcUI_Label",@"describeName":@"动态设置背景渐变",@"VCName":@"AxcLabelTwoVC"}];
         

@@ -72,13 +72,15 @@
 //        layout.minimumLineSpacing = 0;
 //        layout.sectionInset = UIEdgeInsetsMake(64, 0, 0, 0);
         
-        layout.itemSize = CGSizeMake(100, 100);
+        layout.itemSize = CGSizeMake(300, 200);
         layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
-        layout.minimumLineSpacing = 0;
+        layout.minimumLineSpacing = -30;
         
         
-        _collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 100, [UIScreen mainScreen].bounds.size.width, 500)
+        _collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 100,
+                                                                             [UIScreen mainScreen].bounds.size.width + 100, 300)
                                              collectionViewLayout:layout];
+        _collectionView.axcUI_CenterX = self.view.axcUI_CenterX;
         [_collectionView.collectionViewLayout invalidateLayout];
 //        _collectionView.pagingEnabled = YES;
         _collectionView.backgroundColor = [UIColor lightGrayColor];
