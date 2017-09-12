@@ -11,9 +11,7 @@
 
 @interface AxcArrangeLayoutVC ()
 
-
-@property(nonatomic,strong)NSArray *dataArray;
-
+@property(nonatomic,strong)AxcUI_MultipleArrangeLayout *layout;
 
 @end
 
@@ -23,16 +21,24 @@
     [super viewDidLoad];
     
     
-    AxcUI_MultipleArrangeLayout *layout = [[AxcUI_MultipleArrangeLayout alloc] init];
+    self.layout = [[AxcUI_MultipleArrangeLayout alloc] init];
     
-//    layout.itemSize = CGSizeMake(300, 200);
-//    layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
-//    layout.minimumLineSpacing = -30;
+    self.segmentedArray = @[@"右对齐",@"居中",@"左对齐"];
     
+    self.segmented.selectedSegmentIndex = 0;
+    [self.segmented addTarget:self action:@selector(clickSegmented:) forControlEvents:UIControlEventValueChanged];
     
-    self.collectionViewFlowLayout = layout;
-    
+    [self clickSegmented:self.segmented];
+
 }
+
+- (void)clickSegmented:(UISegmentedControl *)sender{
+    self.layout.axcUI_layoutAlignStyle = sender.selectedSegmentIndex;
+    self.collectionViewFlowLayout = self.layout;
+}
+
+
+
 
 - (CGSize )AxcLayoutBase_CollectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
     return CGSizeMake(arc4random()%100+50, 40);

@@ -24,6 +24,10 @@
 
 @property(nonatomic, weak)id <AxcLayoutBaseVC_Delegate> delegate;
 
+@property(nonatomic, strong)UISegmentedControl *segmented;
+@property(nonatomic, strong)NSArray *segmentedArray;
+
+
 // 移接函数
 - (UICollectionViewCell *)AxcLayoutBase_CollectionView:(UICollectionView *)collectionView
                                 cellForItemAtIndexPath:(NSIndexPath *)indexPath;

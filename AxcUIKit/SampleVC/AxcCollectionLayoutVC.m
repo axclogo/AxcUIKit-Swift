@@ -88,13 +88,17 @@
     NSArray *rowArr = [sectionDic objectForKey:@"data"];
     NSDictionary *rowDic = rowArr[indexPath.row];
     NSString *VC_Name = rowDic[@"VCName"];
-    Class class = NSClassFromString(VC_Name);
-    self.viewController = [[class alloc]init];
-    self.viewController.delegate = self;
-    self.viewController.title = rowDic[@"title"];
-    self.viewController.navigationItem.prompt = [NSString stringWithFormat:@"示例文件名称: %@",rowDic[@"VCName"]];
-    [self.navigationController pushViewController:self.viewController animated:YES];
-    self.title = @""; // 这样看起来舒服
+    if (VC_Name.length) {
+        Class class = NSClassFromString(VC_Name);
+        self.viewController = [[class alloc]init];
+        self.viewController.delegate = self;
+        self.viewController.title = rowDic[@"title"];
+        self.viewController.navigationItem.prompt = [NSString stringWithFormat:@"示例文件名称: %@",VC_Name];
+        [self.navigationController pushViewController:self.viewController animated:YES];
+        self.title = @""; // 这样看起来舒服
+    }else{  // 嘤嘤嘤做不完了
+        [AxcUI_Toast AxcUI_showCenterWithText:@"还在制作，敬请期待._(:зゝ∠)_"];
+    }
 }
 
 // 从上一级回来
@@ -141,7 +145,8 @@
                                                      @{@"VCName":@"",@"title":@"瀑布流排布"},
                                                      @{@"VCName":@"",@"title":@"奇偶排布"},
                                                      @{@"VCName":@"",@"title":@"环形排布"},
-                                                     @{@"VCName":@"",@"title":@"蜂窝排布"}
+                                                     @{@"VCName":@"",@"title":@"蜂窝排布"},
+                                                     @{@"VCName":@"",@"title":@"3D球形排布"}
                                                      
                                                      ]}];
     }

@@ -25,7 +25,6 @@
     
     self.itemSize = CGSizeMake(300, 200);
     
-
 }
 
 
@@ -79,6 +78,24 @@
     return YES;
 }
 
+- (void)setSegmentedArray:(NSArray *)segmentedArray{
+    _segmentedArray = segmentedArray;
+    [self.segmented removeAllSegments];
+    for (NSString *str in _segmentedArray) {
+        [self.segmented insertSegmentWithTitle:str atIndex:0 animated:YES];
+    }
+    [self.view addSubview:self.segmented];
+}
+
+- (UISegmentedControl *)segmented{
+    if (!_segmented) {
+        _segmented = [[UISegmentedControl alloc] init];
+        _segmented.frame = CGRectMake(10, 130, self.view.axcUI_Width - 20, 30);
+        _segmented.axcUI_Y = self.collectionView.axcUI_Y + self.collectionView.axcUI_Height + 50;
+        _segmented.selectedSegmentIndex = 0;
+    }
+    return _segmented;
+}
 
 - (UICollectionView *)collectionView{
     if (!_collectionView) {
