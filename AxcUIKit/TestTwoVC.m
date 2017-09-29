@@ -6,6 +6,7 @@
 //  Copyright © 2017年 Axc_5324. All rights reserved.
 //
 
+// 有个别示例的动画效果因为XCode 9原因无法正常运行，正在修复中
 
 /**
  
