@@ -69,7 +69,6 @@
     _collectionViewFlowLayout = collectionViewFlowLayout;
     [self.collectionView setCollectionViewLayout:_collectionViewFlowLayout animated:YES];
     [self.collectionView reloadData];
-    [self.view addSubview:self.collectionView];
 
 }
 

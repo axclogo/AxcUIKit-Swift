@@ -65,6 +65,7 @@
         default: break;
     }
 }
+
 - (void)slidingSlider:(UISlider *)sender{
     switch (sender.tag - 100) {
         case 2: // 设置行数
