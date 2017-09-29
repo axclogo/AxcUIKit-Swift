@@ -97,7 +97,7 @@
         [self.navigationController pushViewController:self.viewController animated:YES];
         self.title = @""; // 这样看起来舒服
     }else{  // 嘤嘤嘤做不完了
-        [AxcUI_Toast AxcUI_showCenterWithText:@"还在制作，敬请期待._(:зゝ∠)_"];
+        [AxcUI_Toast AxcUI_showCenterWithText:@"asdasda"];
     }
 }
 

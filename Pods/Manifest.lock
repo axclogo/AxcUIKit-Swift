@@ -5,7 +5,7 @@ PODS:
     - FBRetainCycleDetector
 
 DEPENDENCIES:
-  - Masonry (~> 1.0.2)
+  - Masonry
   - MLeaksFinder
 
 SPEC CHECKSUMS:
@@ -13,6 +13,6 @@ SPEC CHECKSUMS:
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   MLeaksFinder: 0850e2f2abc7227adc4d4e2d1992b431264eb4d5
 
-PODFILE CHECKSUM: 32b2d17fb36ddfb5c25fef8031f0e45fd2d4eccc
+PODFILE CHECKSUM: cb9e98b66948dba7cb802dc5757d64747ed1119c
 
 COCOAPODS: 1.2.1
