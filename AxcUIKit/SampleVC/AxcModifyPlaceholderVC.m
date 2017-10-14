@@ -85,6 +85,7 @@
         _textField.layer.borderWidth = 1;
         _textField.layer.borderColor = [[UIColor AxcUI_PumpkinColor] CGColor];
         
+        // 注意，没有这一步系统不会执行懒加载里的实例化操作，扩展也不会正常执行
         _textField.placeholder = @"我是占位符"; // 系统设置占位符
 
         // KVC参数修改，无先后顺序，设置即可动态调整 ************************************************

@@ -26,7 +26,8 @@ static NSString * const ksystemPlaceholderLabel = @"_placeholderLabel";
 
 
 - (UILabel *)axcUI_PlaceholderLabel{
-    return (UILabel *)[self valueForKeyPath:ksystemPlaceholderLabel];
+    UILabel *label = (UILabel *)[self valueForKeyPath:ksystemPlaceholderLabel];
+    return label;
 }
 
 
