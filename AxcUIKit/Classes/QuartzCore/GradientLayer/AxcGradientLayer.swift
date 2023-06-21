@@ -139,7 +139,7 @@ open class AxcGradientLayer: AxcLayer {
     }
 
     /// 样式
-    var _gradientStyle: AxcGradientLayerStyle = .axis(.leftToRight)
+    var _gradientStyle: Style = .axis(.leftToRight)
     /// 梯度颜色
     var _gradientColors: [GradientColor]?
 

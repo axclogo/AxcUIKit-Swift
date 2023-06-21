@@ -8,9 +8,6 @@
 import QuartzCore
 import AxcBedrock
 
-/// 渐变色的样式枚举
-public typealias AxcGradientLayerStyle = AxcGradientLayer.Style
-
 // MARK: - [AxcGradientLayer.Style]
 
 public extension AxcGradientLayer {
