@@ -1,9 +1,19 @@
+Copyright (c) 2023 AxcLogo <axclogo@163.com>
 
-## AxcUIKit
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-AxcUIKit将按照统一的规格进行封装，计划未来将支持Dart、Swift、kotlin等一系列前端语言
-并且语法会做到尽量统一，尽可能的做到跨平台开发的流畅性和熟悉性
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
 
-## 说明
-
-目前该库正在进行重构中，所有控件都将改为子组件按需导入，并且做细化颗粒度解耦。
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
