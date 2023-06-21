@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-               BuildableName = "AxcUIKit-Swift_Example.app"
-               BlueprintName = "AxcUIKit-Swift_Example"
-               ReferencedContainer = "container:AxcUIKit-Swift.xcodeproj">
+               BuildableName = "AxcUIKit_Example.app"
+               BlueprintName = "AxcUIKit_Example"
+               ReferencedContainer = "container:AxcUIKit.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "607FACE41AFB9204008FA782"
-               BuildableName = "AxcUIKit-Swift_Tests.xctest"
-               BlueprintName = "AxcUIKit-Swift_Tests"
-               ReferencedContainer = "container:AxcUIKit-Swift.xcodeproj">
+               BuildableName = "AxcUIKit_Tests.xctest"
+               BlueprintName = "AxcUIKit_Tests"
+               ReferencedContainer = "container:AxcUIKit.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -48,9 +48,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "607FACE41AFB9204008FA782"
-               BuildableName = "AxcUIKit-Swift_Tests.xctest"
-               BlueprintName = "AxcUIKit-Swift_Tests"
-               ReferencedContainer = "container:AxcUIKit-Swift.xcodeproj">
+               BuildableName = "AxcUIKit_Tests.xctest"
+               BlueprintName = "AxcUIKit_Tests"
+               ReferencedContainer = "container:AxcUIKit.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -58,9 +58,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-            BuildableName = "AxcUIKit-Swift_Example.app"
-            BlueprintName = "AxcUIKit-Swift_Example"
-            ReferencedContainer = "container:AxcUIKit-Swift.xcodeproj">
+            BuildableName = "AxcUIKit_Example.app"
+            BlueprintName = "AxcUIKit_Example"
+            ReferencedContainer = "container:AxcUIKit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -82,9 +82,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-            BuildableName = "AxcUIKit-Swift_Example.app"
-            BlueprintName = "AxcUIKit-Swift_Example"
-            ReferencedContainer = "container:AxcUIKit-Swift.xcodeproj">
+            BuildableName = "AxcUIKit_Example.app"
+            BlueprintName = "AxcUIKit_Example"
+            ReferencedContainer = "container:AxcUIKit.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -101,9 +101,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-            BuildableName = "AxcUIKit-Swift_Example.app"
-            BlueprintName = "AxcUIKit-Swift_Example"
-            ReferencedContainer = "container:AxcUIKit-Swift.xcodeproj">
+            BuildableName = "AxcUIKit_Example.app"
+            BlueprintName = "AxcUIKit_Example"
+            ReferencedContainer = "container:AxcUIKit.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

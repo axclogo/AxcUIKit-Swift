@@ -2,7 +2,7 @@
 
 import Quick
 import Nimble
-import AxcUIKit-Swift
+import AxcUIKit
 
 class TableOfContentsSpec: QuickSpec {
     override func spec() {
