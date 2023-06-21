@@ -5,13 +5,11 @@
 //  Created by 赵新 on 2023/6/21.
 //
 
+import AxcBedrock
 
-import YPBedrock
+// MARK: - [AxcUIKitLib]
 
-// MARK: - [YPUIKit]
-
-open class AxcUIKitLib: NSObject, YPLibraryTarget {
-    
+open class AxcUIKitLib: NSObject, AxcLibraryTarget {
     public var moduleName: String {
         return "AxcUIKit"
     }
