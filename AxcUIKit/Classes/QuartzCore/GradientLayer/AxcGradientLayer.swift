@@ -156,7 +156,7 @@ extension AxcGradientLayer {
             var colors: [CGColor] = []
             var locations: [CGFloat] = []
             for item in gradientColors {
-                if let color = UIColor.Axc.CreateOptional(item.color)?.cgColor {
+                if let color = AxcBedrockColor.Axc.CreateOptional(item.color)?.cgColor {
                     colors.append(color)
                 }
                 if let location = item.location {

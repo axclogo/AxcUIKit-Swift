@@ -1,9 +1,26 @@
-use_frameworks!
+source 'https://github.com/CocoaPods/Specs.git'
 
-platform :ios, '11.0'
+# iOS平台iPhone、iPad
+# iOS单元测试
+# iOS扩展小组件
+["iOS", "iOSTests", "iOS_WidgetExtension"].each do |t|
+  target t do
+    platform :ios, '11.0'
+    use_frameworks!
+    pod 'AxcUIKit', :path => '../'
+    pod 'AxcBedrock', :path => '/Users/zhaoxin/Axc组件/AxcBedrock-Swift'
+  end
+end
 
-target 'AxcUIKit_Example' do
-  pod 'AxcUIKit', :path => '../'
 
+# macOS平台Mac
+# macOS单元测试
+["macOS", "macOSTests"].each do |t|
+  target t do
+    platform :osx, '11.0'
+    use_frameworks!
+    pod 'AxcUIKit', :path => '../'
+    pod 'AxcBedrock', :path => '/Users/zhaoxin/Axc组件/AxcBedrock-Swift'
+  end
 end
 
