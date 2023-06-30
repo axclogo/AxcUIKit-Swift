@@ -37,6 +37,6 @@ open class AxcGradientView: AxcView {
     }
 
     var _gradientLayer: AxcGradientLayer {
-        return layer as! AxcGradientLayer
+        return axc_layer as! AxcGradientLayer
     }
 }

@@ -10,17 +10,12 @@ import AxcBedrock
 #if os(macOS)
 import AppKit
 
-public extension AxcUIKitLib {
-    typealias SystemBaseView = NSView
-}
+public typealias AxcSystemBaseView = NSView
 
 #elseif os(iOS) || os(tvOS) || os(watchOS)
-
 import UIKit
 
-public extension AxcUIKitLib {
-    typealias SystemBaseView = UIView
-}
+public typealias AxcSystemBaseView = UIView
 
 #endif
 
@@ -36,7 +31,7 @@ extension AxcView: AxcViewApi {
         #if os(macOS)
         return layer?.backgroundColor?.axc.nsColor
         #elseif os(iOS) || os(tvOS) || os(watchOS)
-        return backgroundColor
+        return super.backgroundColor
         #endif
     }
 
@@ -47,19 +42,48 @@ extension AxcView: AxcViewApi {
 }
 
 extension AxcView {
-    /// （💈跨平台标识）设置颜色
-    func _set(backgroundColor: AxcBedrockColor?) {
+    func _set(backgroundColor: AxcUnifiedColor?) {
+        let color = AxcBedrockColor.Axc.CreateOptional(backgroundColor) ?? .white
         #if os(macOS)
-        layer?.backgroundColor = backgroundColor?.cgColor
+        layer?.backgroundColor = color.cgColor
         #elseif os(iOS) || os(tvOS) || os(watchOS)
-        self.backgroundColor = backgroundColor
+        super.backgroundColor = color
         #endif
+    }
+    
+    func _isLayoutEqualConstant(firstAttribute: NSLayoutConstraint.Attribute) -> Bool {
+        guard !translatesAutoresizingMaskIntoConstraints else { return true } // frame 固定的情况
+        // Auto Layout 约束固定的情况
+        let constraints = self.constraints
+        for constraint in constraints {
+            if constraint.firstAttribute == firstAttribute,
+               constraint.relation == .equal,
+               constraint.constant > 0 {
+                return true
+            }
+        }
+        return false // 没有固定的约束
+    }
+    
+    func _isLayoutFixedSize() -> Bool {
+        print(translatesAutoresizingMaskIntoConstraints)
+        guard !translatesAutoresizingMaskIntoConstraints else { return true } // frame 固定的情况
+        // Auto Layout 约束固定的情况
+        let constraints = self.constraints
+        for constraint in constraints {
+            if (constraint.firstAttribute == .width || constraint.firstAttribute == .height),
+               constraint.relation == .equal,
+               constraint.constant > 0 {
+                return true
+            }
+        }
+        return false // 没有固定的约束
     }
 }
 
 // MARK: - [AxcView]
 
-open class AxcView: AxcUIKitLib.SystemBaseView {
+open class AxcView: AxcSystemBaseView {
     public required convenience init() {
         self.init(frame: .zero)
     }
@@ -107,11 +131,21 @@ open class AxcView: AxcUIKitLib.SystemBaseView {
 
     /// 已经移动到父视图
     open func axc_didMoveToSuperview() {
+        #if os(macOS)
+        super.viewDidMoveToSuperview()
+        #elseif os(iOS) || os(tvOS) || os(watchOS)
+        super.didMoveToSuperview()
+        #endif
         performDataChannel()
     }
 
     /// 布局子视图回调
     open func axc_layoutSubviews() {
+        #if os(macOS)
+        super.layout()
+        #elseif os(iOS) || os(tvOS) || os(watchOS)
+        super.layoutSubviews()
+        #endif
         _layoutSubviewsBlock?()
     }
 
@@ -119,12 +153,10 @@ open class AxcView: AxcUIKitLib.SystemBaseView {
     #if os(macOS)
 
     public final override func viewDidMoveToSuperview() {
-        super.viewDidMoveToSuperview()
         axc_didMoveToSuperview()
     }
 
     public final override func layout() {
-        super.layout()
         axc_layoutSubviews()
     }
 
@@ -135,12 +167,10 @@ open class AxcView: AxcUIKitLib.SystemBaseView {
     }
 
     public final override func didMoveToSuperview() {
-        super.didMoveToSuperview()
         axc_didMoveToSuperview()
     }
 
     public final override func layoutSubviews() {
-        super.layoutSubviews()
         axc_layoutSubviews()
     }
     #endif
@@ -157,6 +187,7 @@ open class AxcView: AxcUIKitLib.SystemBaseView {
     }
 
     /// 禁用重写
+    @available(*, unavailable)
     public final override var backgroundColor: UIColor? {
         set { }
         get { return axc_backgroundColor }
@@ -179,7 +210,7 @@ open class AxcView: AxcUIKitLib.SystemBaseView {
         layer = Self.Axc_layerClass.init()
         layer?.backgroundColor = NSColor.white.cgColor
         #elseif os(iOS) || os(tvOS) || os(watchOS)
-        backgroundColor = UIColor.white
+        super.backgroundColor = UIColor.white
         #endif
     }
 

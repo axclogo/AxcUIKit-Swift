@@ -8,11 +8,25 @@
 
 import Cocoa
 
+import AxcUIKit
+import SnapKit
+
 class ViewController: NSViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        let label = AxcLabel()
+        label.set(text: "Hello World")
+        label.set(textBackgroundColor: "FF0000")
+        view.addSubview(label)
+        
+        label.snp.makeConstraints { make in
+            make.center.equalToSuperview()
+//            make.size.equalTo(100)
+        }
+        
         // Do any additional setup after loading the view.
     }
 

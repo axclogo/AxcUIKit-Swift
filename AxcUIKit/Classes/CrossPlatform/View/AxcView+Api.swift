@@ -18,8 +18,30 @@ public protocol AxcViewApi {
 
 public extension AxcViewApi where Self: AxcView {
     /// （💈跨平台标识）设置颜色
-    func set(backgroundColor: AxcBedrockColor?) {
+    func set(backgroundColor: AxcUnifiedColor?) {
         _set(backgroundColor: backgroundColor)
+    }
+
+    /// （💈跨平台标识）检查视图的布局或约束是否固定了某个属性
+    /// - Parameter firstAttribute: 检查固定的属性
+    /// - Returns: 结果
+    func isLayoutEqualConstant(firstAttribute: NSLayoutConstraint.Attribute) -> Bool {
+        _isLayoutEqualConstant(firstAttribute: firstAttribute)
+    }
+
+    /// （💈跨平台标识）检查视图的布局或约束是否固定了大小
+    func isLayoutFixedSize() -> Bool {
+        _isLayoutFixedSize()
+    }
+
+    /// （💈跨平台标识）检查视图的布局或约束是否固定了宽度
+    func isLayoutFixedWidth() -> Bool {
+        _isLayoutEqualConstant(firstAttribute: .width)
+    }
+
+    /// （💈跨平台标识）检查视图的布局或约束是否固定了高度
+    func isLayoutFixedHeight() -> Bool {
+        _isLayoutEqualConstant(firstAttribute: .height)
     }
 }
 

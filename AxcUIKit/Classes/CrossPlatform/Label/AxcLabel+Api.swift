@@ -1,24 +1,21 @@
 //
-//  AxcUILabel+Api.swift
+//  AxcLabel+Api.swift
 //  AxcKit
 //
 //  Created by 赵新 on 2022/11/24.
 //
 
-#if canImport(UIKit)
-
-import UIKit
 import AxcBedrock
 
-// MARK: - 扩展AxcUILabel + AxcCallbackTarget
+// MARK: - 扩展AxcLabel + AxcCallbackTarget
 
-public extension AxcUILabel {}
+public extension AxcLabel { }
 
-public extension AxcUICallback where Base: AxcUILabel {}
+public extension AxcUICallback where Base: AxcLabel { }
 
 // MARK: - 内部对象以及选项
 
-public extension AxcUILabel.MarkLineConfig {
+public extension AxcLabel.MarkLineConfig {
     /// 边缘位置
     enum EdgePosition {
         /// 上
@@ -50,33 +47,16 @@ public extension AxcUILabel.MarkLineConfig {
     }
 }
 
-public extension AxcUILabel {
+// MARK: - [AxcLabel.MarkLineConfig]
+
+public extension AxcLabel {
     /// 标线配置对象
     struct MarkLineConfig {
-        // Lifecycle
-
-        public init(edgePosition: EdgePosition,
-                    color: UIColor,
-                    width: CGFloat = 1,
-                    style: Style = .solid,
-                    cap: CGLineCap = .round,
-                    identifier: String? = nil)
-        {
-            self.edgePosition = edgePosition
-            self.color = color
-            self.width = width
-            self.style = style
-            self.cap = cap
-            self.identifier = identifier
-        }
-
-        // Public
-
         /// 线点位
         public var edgePosition: EdgePosition
 
         /// 线颜色
-        public var color: UIColor
+        public var color: AxcBedrockColor
 
         /// 线宽
         public var width: CGFloat = 1
@@ -89,12 +69,26 @@ public extension AxcUILabel {
 
         /// 唯一标识符
         public var identifier: String?
+
+        public init(edgePosition: EdgePosition,
+                    color: AxcBedrockColor,
+                    width: CGFloat = 1,
+                    style: Style = .solid,
+                    cap: CGLineCap = .round,
+                    identifier: String? = nil) {
+            self.edgePosition = edgePosition
+            self.color = color
+            self.width = width
+            self.style = style
+            self.cap = cap
+            self.identifier = identifier
+        }
     }
 }
 
-// MARK: - [AxcUILabelApi]
+// MARK: - [AxcLabelApi]
 
-public protocol AxcUILabelApi {
+public protocol AxcLabelApi {
     // MARK: 内容
 
     /// 内容边距
@@ -103,21 +97,21 @@ public protocol AxcUILabelApi {
     // MARK: 对齐
 
     /// 文字水平对齐
-    var alignmentHorizontal: AxcPositionHorizontal { get }
+    var textPositionHorizontal: AxcPositionHorizontal { get }
 
     /// 文字垂直对齐
-    var alignmentVertical: AxcPositionVertical { get }
+    var textPositionVertical: AxcPositionVertical { get }
 
     /// 文字换行对齐模式
-    var alignmentHorizontalNewLine: AxcPositionVertical { get }
+    var textPositionHorizontalNewLine: AxcPositionVertical { get }
 
     // MARK: 文字边框
 
     /// 文字边框线样式
-    var textBorderStyle: AxcUILabel.MarkLineConfig.Style { get }
+    var textBorderStyle: AxcLabel.MarkLineConfig.Style { get }
 
     /// 文字边框颜色
-    var textBorderColor: UIColor? { get }
+    var textBorderColor: AxcBedrockColor? { get }
 
     /// 文字边框宽度
     var textBorderWidth: CGFloat { get }
@@ -128,7 +122,7 @@ public protocol AxcUILabelApi {
     // MARK: 标线
 
     /// 标线组
-    var markLines: [AxcUILabel.MarkLineConfig]? { get }
+    var markLines: [AxcLabel.MarkLineConfig]? { get }
 
     /// 标线距离文本的边距
     var markLineTextEdgeSpacing: AxcBedrockEdgeInsets { get }
@@ -136,7 +130,7 @@ public protocol AxcUILabelApi {
 
 // MARK: - 属性设置
 
-public extension AxcUILabelApi where Self: AxcUILabel {
+public extension AxcLabelApi where Self: AxcLabel {
     // MARK: 内容
 
     /// 设置内容边距
@@ -145,24 +139,42 @@ public extension AxcUILabelApi where Self: AxcUILabel {
         _set(contentEdgeInsets: contentEdgeInsets)
     }
 
+    /// 设置文字
+    /// - Parameter text: 文字
+    func set(text: AxcUnifiedString) {
+        _set(text: text)
+    }
+
+    /// 设置字号
+    /// - Parameter textFont: 字号
+    func set(textFont: AxcUnifiedFont) {
+        _set(textFont: textFont)
+    }
+
+    /// 设置字色
+    /// - Parameter textColor: 字色
+    func set(textColor: AxcUnifiedColor) {
+        _set(textColor: textColor)
+    }
+
+    /// 设置文字背景色
+    /// - Parameter textBackgroundColor: 文字背景色
+    func set(textBackgroundColor: AxcUnifiedColor) {
+        _set(textBackgroundColor: textBackgroundColor)
+    }
+
     // MARK: 对齐
 
     /// 设置文字水平轴向对齐方式
-    /// - Parameter alignmentVertical: 文字水平轴向对齐方式
-    func set(alignmentHorizontal: AxcPositionHorizontal) {
-        _set(alignmentHorizontal: alignmentHorizontal)
+    /// - Parameter textPositionVertical: 文字水平轴向对齐方式
+    func set(textPositionHorizontal: AxcPositionHorizontal) {
+        _set(textPositionHorizontal: textPositionHorizontal)
     }
 
     /// 设置文字垂直轴向对齐方式
-    /// - Parameter alignmentVertical: 文字垂直轴向对齐方式
-    func set(alignmentVertical: AxcPositionVertical) {
-        _set(alignmentVertical: alignmentVertical)
-    }
-
-    /// 设置文字是否换行对齐
-    /// - Parameter alignmentVertical: 文字文字是否换行对齐
-    func set(alignmentHorizontalNewLine: AxcPositionHorizontal) {
-        _set(alignmentHorizontalNewLine: alignmentHorizontalNewLine)
+    /// - Parameter textPositionVertical: 文字垂直轴向对齐方式
+    func set(textPositionVertical: AxcPositionVertical) {
+        _set(textPositionVertical: textPositionVertical)
     }
 
     // MARK: 文字边框
@@ -195,7 +207,7 @@ public extension AxcUILabelApi where Self: AxcUILabel {
 
     /// 设置标线
     /// - Parameter markLines: 标线集合，nil即无标线
-    func set(markLines: [AxcUILabel.MarkLineConfig]?) {
+    func set(markLines: [AxcLabel.MarkLineConfig]?) {
         _set(markLines: markLines)
     }
 
@@ -205,5 +217,3 @@ public extension AxcUILabelApi where Self: AxcUILabel {
         _set(markLineTextEdgeSpacing: markLineTextEdgeSpacing)
     }
 }
-
-#endif

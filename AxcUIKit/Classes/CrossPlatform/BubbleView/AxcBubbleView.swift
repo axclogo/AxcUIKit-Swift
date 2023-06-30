@@ -96,7 +96,7 @@ open class AxcBubbleView: AxcGradientView {
 
     open override func makeUI() {
         super.makeUI()
-        set(backgroundColor: .black)
+        set(backgroundColor: "000000")
 
         addSubview(contentView)
         _updateContentView()
@@ -229,8 +229,8 @@ open class AxcBubbleView: AxcGradientView {
         }
 
         // 内容框
-        let contentRect: CGRect = bounds.axc.inset(edgeInsets: _contentEdgeInsets)
-        let roundedRect: CGRect = contentRect.axc.inset(edgeInsets: contentRectInsetEdge)
+        let contentRect: CGRect = bounds.axc.inside(edge: _contentEdgeInsets)
+        let roundedRect: CGRect = contentRect.axc.inside(edge: contentRectInsetEdge)
         let maskBezier: AxcBedrockBezierPath = .Axc.Create(roundedRect: roundedRect,
                                                            byRoundingCorners: _bubbleCorners,
                                                            cornerRadii: _bubbleCornerRadius.axc.cgSize)
