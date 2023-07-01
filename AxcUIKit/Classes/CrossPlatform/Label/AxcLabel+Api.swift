@@ -174,7 +174,13 @@ public extension AxcLabelApi where Self: AxcLabel {
     func set(textLineBreakMode: NSLineBreakMode) {
         _set(textLineBreakMode: textLineBreakMode)
     }
-
+    
+    /// 设置行间距
+    /// - Parameter lineSpacing: 行间距
+    func set(lineSpacing: AxcUnifiedNumber) {
+        _set(lineSpacing: lineSpacing)
+    }
+    
     // MARK: 对齐
 
     /// 设置文字水平轴向对齐方式

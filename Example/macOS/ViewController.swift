@@ -9,6 +9,7 @@
 import Cocoa
 
 import AxcUIKit
+import AxcBedrock
 import SnapKit
 
 class ViewController: NSViewController {
@@ -27,8 +28,17 @@ class ViewController: NSViewController {
         
         label.snp.makeConstraints { make in
             make.center.equalToSuperview()
-//            make.width.equalTo(80)
-            make.height.equalTo(80)
+            make.width.equalTo(80)
+//            make.height.equalTo(80)
+        }
+        
+        AxcGCD.Delay(delay: 2) {
+            label.set(lineSpacing: 25)
+            print("延迟结束")
+        }
+        AxcGCD.Delay(delay: 3) {
+            label.set(textBackgroundColor: NSColor.green)
+            print("延迟结束")
         }
         
         // Do any additional setup after loading the view.

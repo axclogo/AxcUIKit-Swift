@@ -59,19 +59,19 @@ extension AxcLabel {
 
     func _set(text: AxcUnifiedString) {
         _text = NSAttributedString.Axc.Create(text) // 统一使用富文本
-        _textLayer.string = _text
+        _setTextAttributed()
+        _updateLayout()
     }
 
     func _set(textFont: AxcUnifiedFont) {
         _textFont = textFont
-        let font = AxcBedrockFont.Axc.Create(textFont)
-        _textLayer.font = font
-        _textLayer.fontSize = font.pointSize
+        _makeTextAttributed { $0.set(font: textFont) }
+        _updateLayout()
     }
 
     func _set(textColor: AxcUnifiedColor) {
         _textColor = textColor
-        _textLayer.foregroundColor = CGColor.Axc.Create(textColor)
+        _makeTextAttributed { $0.set(foregroundColor: textColor) }
     }
 
     func _set(textBackgroundColor: AxcUnifiedColor) {
@@ -81,12 +81,21 @@ extension AxcLabel {
 
     func _set(textAlignment: NSTextAlignment) {
         _textAlignment = textAlignment
-        _textLayer.alignmentMode = textAlignment.axc.caTextLayerAlignmentMode ?? .left
+        _makeParagraphStyle { $0.set(alignment: textAlignment) }
+        _updateLayout()
     }
 
     func _set(textLineBreakMode: NSLineBreakMode) {
         _textLineBreakMode = textLineBreakMode
         _textLayer.truncationMode = _textLineBreakMode.axc.caTextLayerTruncationMode ?? .none
+//        _makeParagraphStyle{ $0.set(alignment: textAlignment) } // 这里不能设置，否则计算大小会出问题
+        _updateLayout()
+    }
+
+    func _set(lineSpacing: AxcUnifiedNumber) {
+        _lineSpacing = lineSpacing
+        _makeParagraphStyle { $0.set(lineSpacing: lineSpacing) }
+        _updateLayout()
     }
 
     func _set(textPositionHorizontal: AxcPositionHorizontal) {
@@ -135,8 +144,6 @@ open class AxcLabel: AxcGradientView {
     open override func axc_layoutSubviews() {
         super.axc_layoutSubviews()
         _updateLayout()
-        // 告诉系统view应该根据内容调整大小
-        invalidateIntrinsicContentSize()
     }
 
     /// 自适应大小
@@ -154,13 +161,9 @@ open class AxcLabel: AxcGradientView {
         super.config()
         axc_layer?.addSublayer(_contentLayer)
         _contentLayer.addSublayer(_textLayer)
-        // 设置默认值
-        _set(textFont: _textFont)
-        _set(textColor: _textColor)
-        _set(textBackgroundColor: _textBackgroundColor)
-        _set(textAlignment: _textAlignment)
-        _set(textLineBreakMode: _textLineBreakMode)
+        _setTextAttributed()
     }
+
 
     func _updateLayout() {
         // 内容视图边距
@@ -200,6 +203,9 @@ open class AxcLabel: AxcGradientView {
         textFrame.size.width = textFrame.size.width.axc.limitMinZero(max: textRect.width)
         textFrame.size.height = textFrame.size.height.axc.limitMinZero(max: textRect.height)
         _textLayer.frame = textFrame
+        
+        // 告诉系统view应该根据内容调整大小
+        invalidateIntrinsicContentSize()
     }
 
     func _textRect() -> CGRect {
@@ -210,6 +216,7 @@ open class AxcLabel: AxcGradientView {
     func _textSize() -> CGSize {
         var maxSize: CGSize = _textRect().size // ⚠️这里需要处理标线问题
         if isLayoutFixedSize() { // 是否有固定大小
+            print("固定大小r")
             // 无需处理
         } else if isLayoutFixedWidth() { // 固定了宽度
             maxSize.height = .Axc.Max
@@ -218,6 +225,7 @@ open class AxcLabel: AxcGradientView {
         } else { // 没有固定大小
             maxSize.width = .Axc.Max // 宽度无限大
         }
+        maxSize.height = 0
         var textSize: CGSize = .zero
         if let attStr = _text {
             textSize = attStr.axc.textSize(maxSize: maxSize)
@@ -237,6 +245,30 @@ open class AxcLabel: AxcGradientView {
         return textSize
     }
 
+    /// 设置默认值/存储值
+    func _setTextAttributed() {
+        _set(textFont: _textFont)
+        _set(textColor: _textColor)
+        _set(textBackgroundColor: _textBackgroundColor)
+        _set(textAlignment: _textAlignment)
+        _set(textLineBreakMode: _textLineBreakMode)
+        _set(lineSpacing: _lineSpacing)
+    }
+    
+    /// 设置富文本属性
+    func _makeTextAttributed(_ makeBlock: AxcBlock.Maker<AxcMaker.AttributedString>) {
+        _text = _text?.axc.makeAttributed(makeBlock)
+        _textLayer.string = _text
+    }
+
+    /// 设置段落
+    func _makeParagraphStyle(_ makeBlock: AxcBlock.Maker<AxcMaker.ParagraphStyle>) {
+        _paragraphStyle = _paragraphStyle.axc.makeParagraphStyle(makeBlock)
+        _makeTextAttributed { make in
+            make.set(paragraphStyle: _paragraphStyle)
+        }
+    }
+
     /// ----内容----
     /// 内容边距
     var _contentEdgeInsets: AxcBedrockEdgeInsets = .Axc.Create(0)
@@ -252,6 +284,8 @@ open class AxcLabel: AxcGradientView {
     var _textAlignment: NSTextAlignment = .left
     /// 文字截断模式
     var _textLineBreakMode: NSLineBreakMode = .byTruncatingTail
+    /// 文字行间距
+    var _lineSpacing: AxcUnifiedNumber = 2
 
     /// ----文字----
     /// 文字水平对齐模式
@@ -288,7 +322,14 @@ open class AxcLabel: AxcGradientView {
         textLayer.contentsScale = UIScreen.main.scale
         #endif
         textLayer.isWrapped = true
+        textLayer.delegate = self
         return textLayer
+    }()
+
+    /// 文字段落样式
+    lazy var _paragraphStyle: NSMutableParagraphStyle = {
+        let paragraphStyle = NSMutableParagraphStyle()
+        return paragraphStyle
     }()
 
     /// 内容图层
@@ -296,4 +337,11 @@ open class AxcLabel: AxcGradientView {
         let layer = CALayer()
         return layer
     }()
+}
+
+extension AxcLabel: CALayerDelegate {
+    /// 关闭隐式动画
+    public func action(for layer: CALayer, forKey event: String) -> CAAction? {
+        return NSNull()
+    }
 }
