@@ -163,6 +163,18 @@ public extension AxcLabelApi where Self: AxcLabel {
         _set(textBackgroundColor: textBackgroundColor)
     }
 
+    /// 设置文字对齐模式
+    /// - Parameter textAlignment: 文字对齐模式
+    func set(textAlignment: NSTextAlignment) {
+        _set(textAlignment: textAlignment)
+    }
+
+    /// 设置文字截断模式
+    /// - Parameter textLineBreakMode: 文字截断模式
+    func set(textLineBreakMode: NSLineBreakMode) {
+        _set(textLineBreakMode: textLineBreakMode)
+    }
+
     // MARK: 对齐
 
     /// 设置文字水平轴向对齐方式

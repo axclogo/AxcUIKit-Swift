@@ -58,12 +58,8 @@ extension AxcLabel {
     }
 
     func _set(text: AxcUnifiedString) {
-        _text = text
-        if let attString = text as? NSAttributedString {
-            _textLayer.string = attString
-        } else {
-            _textLayer.string = String.Axc.Create(text)
-        }
+        _text = NSAttributedString.Axc.Create(text) // 统一使用富文本
+        _textLayer.string = _text
     }
 
     func _set(textFont: AxcUnifiedFont) {
@@ -81,6 +77,16 @@ extension AxcLabel {
     func _set(textBackgroundColor: AxcUnifiedColor) {
         _textBackgroundColor = textBackgroundColor
         _textLayer.backgroundColor = CGColor.Axc.Create(textBackgroundColor)
+    }
+
+    func _set(textAlignment: NSTextAlignment) {
+        _textAlignment = textAlignment
+        _textLayer.alignmentMode = textAlignment.axc.caTextLayerAlignmentMode ?? .left
+    }
+
+    func _set(textLineBreakMode: NSLineBreakMode) {
+        _textLineBreakMode = textLineBreakMode
+        _textLayer.truncationMode = _textLineBreakMode.axc.caTextLayerTruncationMode ?? .none
     }
 
     func _set(textPositionHorizontal: AxcPositionHorizontal) {
@@ -129,6 +135,8 @@ open class AxcLabel: AxcGradientView {
     open override func axc_layoutSubviews() {
         super.axc_layoutSubviews()
         _updateLayout()
+        // 告诉系统view应该根据内容调整大小
+        invalidateIntrinsicContentSize()
     }
 
     /// 自适应大小
@@ -150,37 +158,51 @@ open class AxcLabel: AxcGradientView {
         _set(textFont: _textFont)
         _set(textColor: _textColor)
         _set(textBackgroundColor: _textBackgroundColor)
+        _set(textAlignment: _textAlignment)
+        _set(textLineBreakMode: _textLineBreakMode)
     }
 
     func _updateLayout() {
         // 内容视图边距
         _contentLayer.frame = bounds.axc.inside(edge: _contentEdgeInsets)
-//        var textFrame =
-        let size = _textSize()
-        _textLayer.frame = _contentLayer.bounds
-        _textLayer.frame.size = size
+        var textFrame: CGRect = .zero
+        let textSize = _textSize()
+        let textRect = _textRect()
+        textFrame.size = textSize
         // 文字水平对齐
         switch _textPositionHorizontal {
         case .left:
-            _textLayer.alignmentMode = .left
+            textFrame.origin.x = textRect.origin.x
         case .center:
-            _textLayer.alignmentMode = .center
+            textFrame.origin.x = (textRect.width - textSize.width) / 2
         case .right:
-            _textLayer.alignmentMode = .right
+            textFrame.origin.x = textRect.width - textSize.width
         }
         // 文字垂直对齐
-//        var textLayerFrame: CGRect = .zero
-//        switch _textPositionVertical {
-//        case .top: textLayerFrame.origin.y = 0
-//        case .center:
-//            <#code#>
-//        case .bottom:
-//            <#code#>
-//        }
+        switch _textPositionVertical {
+        case .center:
+            textFrame.origin.y = (textRect.height - textSize.height) / 2
+        #if os(macOS) // MacOS的Y轴和iOS是相反的
+        case .top:
+            textFrame.origin.y = textRect.height - textSize.height
+        case .bottom:
+            textFrame.origin.y = textRect.origin.y
+        #elseif os(iOS) || os(tvOS) || os(watchOS)
+        case .top:
+            textFrame.origin.y = textRect.origin.y
+        case .bottom:
+            textFrame.origin.y = textRect.height - textSize.height
+        #endif
+        }
+        // 设置极限值
+        textFrame.origin.x = textFrame.origin.x.axc.limitMinZero(max: textRect.maxX)
+        textFrame.origin.y = textFrame.origin.y.axc.limitMinZero(max: textRect.maxY)
+        textFrame.size.width = textFrame.size.width.axc.limitMinZero(max: textRect.width)
+        textFrame.size.height = textFrame.size.height.axc.limitMinZero(max: textRect.height)
+        _textLayer.frame = textFrame
     }
 
     func _textRect() -> CGRect {
-        print(_contentLayer.frame)
         return _contentLayer.frame.axc.inside(edge: _markLineTextEdgeSpacing)
     }
 
@@ -188,7 +210,6 @@ open class AxcLabel: AxcGradientView {
     func _textSize() -> CGSize {
         var maxSize: CGSize = _textRect().size // ⚠️这里需要处理标线问题
         if isLayoutFixedSize() { // 是否有固定大小
-            print("固定大小")
             // 无需处理
         } else if isLayoutFixedWidth() { // 固定了宽度
             maxSize.height = .Axc.Max
@@ -198,11 +219,21 @@ open class AxcLabel: AxcGradientView {
             maxSize.width = .Axc.Max // 宽度无限大
         }
         var textSize: CGSize = .zero
-        if let attStr = _text as? NSAttributedString {
+        if let attStr = _text {
             textSize = attStr.axc.textSize(maxSize: maxSize)
-        } else if let string = String.Axc.CreateOptional(_text) {
-            textSize = string.axc.textSize(maxSize: maxSize, font: _textFont)
         }
+//        else if let string = String.Axc.CreateOptional(_text) { // 普通字符串
+//            // 同步计算格式
+//            let paragraphStyle = NSMutableParagraphStyle.Axc.CreateParagraphStyle { make in
+//                if let nsTextAlignment = _textLayer.alignmentMode.axc.nsTextAlignment { // 对齐模式
+//                    make.set(alignment: nsTextAlignment)
+//                }
+        ////                if let lineBreakMode = _textLayer.truncationMode.axc.nsLineBreakMode { // 截断模式
+        ////                    make.set(lineBreakMode: lineBreakMode)
+        ////                }
+//            }
+//            textSize = string.axc.textSize(maxSize: maxSize, font: _textFont, paragraphStyle: paragraphStyle)
+//        }
         return textSize
     }
 
@@ -210,17 +241,21 @@ open class AxcLabel: AxcGradientView {
     /// 内容边距
     var _contentEdgeInsets: AxcBedrockEdgeInsets = .Axc.Create(0)
     /// 文字
-    var _text: AxcUnifiedString?
+    var _text: NSAttributedString?
     /// 文字大小
     var _textFont: AxcUnifiedFont = 18
     /// 文字颜色
     var _textColor: AxcUnifiedColor = "000000"
     /// 文字背景色
     var _textBackgroundColor: AxcUnifiedColor = AxcBedrockColor.clear
+    /// 文字对齐模式
+    var _textAlignment: NSTextAlignment = .left
+    /// 文字截断模式
+    var _textLineBreakMode: NSLineBreakMode = .byTruncatingTail
 
     /// ----文字----
     /// 文字水平对齐模式
-    var _textPositionHorizontal: AxcPositionHorizontal = .left
+    var _textPositionHorizontal: AxcPositionHorizontal = .center
     /// 文字垂直对齐模式
     var _textPositionVertical: AxcPositionVertical = .center
 
@@ -249,8 +284,10 @@ open class AxcLabel: AxcGradientView {
             textLayer.contentsScale = screen.backingScaleFactor
         }
         #elseif os(iOS) || os(tvOS) || os(watchOS)
+        // 根据屏幕缩放比率调整
         textLayer.contentsScale = UIScreen.main.scale
         #endif
+        textLayer.isWrapped = true
         return textLayer
     }()
 

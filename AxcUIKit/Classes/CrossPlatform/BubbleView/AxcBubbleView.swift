@@ -163,11 +163,11 @@ open class AxcBubbleView: AxcGradientView {
             // 设限阈值
             let less = _contentEdgeInsets.left + _bubbleCornerRadius + halfArrowSize.width
             let greater = frame.width - _contentEdgeInsets.right - _bubbleCornerRadius - halfArrowSize.width
-            arrowRoundCenterX = arrowRoundCenterX.axc.limitThan(less: less,
-                                                                greater: greater)
+            arrowRoundCenterX = arrowRoundCenterX.axc.limitThan(min: less,
+                                                                max: greater)
             switch vertical {
             case .top:
-                contentRectInsetEdge = _arrowSize.height.axc.uiEdgeTop
+                contentRectInsetEdge = _arrowSize.height.axc.edgeTop
                 arrowRoundCenter = .init(x: arrowRoundCenterX, y: _arrowRadius + _contentEdgeInsets.top)
                 startAngleRadian = (-90 - arrowInteriorAngle).axc.angleToRadian
                 endAngleRadian = (-90 + arrowInteriorAngle).axc.angleToRadian
@@ -176,7 +176,7 @@ open class AxcBubbleView: AxcGradientView {
                                      y: _arrowSize.height + _contentEdgeInsets.top)
 
             case .bottom:
-                contentRectInsetEdge = _arrowSize.height.axc.uiEdgeBottom
+                contentRectInsetEdge = _arrowSize.height.axc.edgeBottom
                 arrowRoundCenter = .init(x: arrowRoundCenterX, y: frame.height - _arrowRadius - _contentEdgeInsets.bottom)
                 startAngleRadian = (-270 + arrowInteriorAngle).axc.angleToRadian
                 endAngleRadian = (-270 - arrowInteriorAngle).axc.angleToRadian
@@ -186,10 +186,10 @@ open class AxcBubbleView: AxcGradientView {
             }
             endPoint = CGPoint(x: offsetX, y: startPoint.y)
             // 设置水平限位
-            startPoint.x = startPoint.x.axc.limitThan(less: arrowOffsetEdgeLimit.left + _arrowSize.width,
-                                                      greater: frame.width - arrowOffsetEdgeLimit.right)
-            endPoint.x = endPoint.x.axc.limitThan(less: arrowOffsetEdgeLimit.left,
-                                                  greater: frame.width - arrowOffsetEdgeLimit.right - _arrowSize.width)
+            startPoint.x = startPoint.x.axc.limitThan(min: arrowOffsetEdgeLimit.left + _arrowSize.width,
+                                                      max: frame.width - arrowOffsetEdgeLimit.right)
+            endPoint.x = endPoint.x.axc.limitThan(min: arrowOffsetEdgeLimit.left,
+                                                  max: frame.width - arrowOffsetEdgeLimit.right - _arrowSize.width)
         }
 
         // 构建水平参数
@@ -200,11 +200,11 @@ open class AxcBubbleView: AxcGradientView {
             // 设限阈值
             let less = _contentEdgeInsets.top + _bubbleCornerRadius + halfArrowSize.height
             let greater = frame.width - _contentEdgeInsets.bottom - _bubbleCornerRadius - halfArrowSize.height
-            arrowRoundCenterY = arrowRoundCenterY.axc.limitThan(less: less,
-                                                                greater: greater)
+            arrowRoundCenterY = arrowRoundCenterY.axc.limitThan(min: less,
+                                                                max: greater)
             switch horizontal {
             case .left:
-                contentRectInsetEdge = _arrowSize.width.axc.uiEdgeLeft
+                contentRectInsetEdge = _arrowSize.width.axc.edgeLeft
                 arrowRoundCenter = .init(x: _arrowRadius + _contentEdgeInsets.left, y: arrowRoundCenterY)
                 startAngleRadian = (180 - arrowInteriorAngle).axc.angleToRadian
                 endAngleRadian = (180 + arrowInteriorAngle).axc.angleToRadian
@@ -212,7 +212,7 @@ open class AxcBubbleView: AxcGradientView {
                 startPoint = CGPoint(x: _arrowSize.width + _contentEdgeInsets.left, y: offsetY)
 
             case .right:
-                contentRectInsetEdge = _arrowSize.width.axc.uiEdgeRight
+                contentRectInsetEdge = _arrowSize.width.axc.edgeRight
                 arrowRoundCenter = .init(x: frame.width - _arrowRadius - _contentEdgeInsets.right, y: arrowRoundCenterY)
                 let arrowRoundRadian = arrowInteriorAngle.axc.angleToRadian
                 startAngleRadian = arrowRoundRadian
@@ -222,10 +222,10 @@ open class AxcBubbleView: AxcGradientView {
             }
             endPoint = CGPoint(x: startPoint.x, y: offsetY + _arrowSize.height)
             // 设置垂直限位
-            endPoint.y = endPoint.y.axc.limitThan(less: arrowOffsetEdgeLimit.top + _arrowSize.height,
-                                                  greater: frame.height - arrowOffsetEdgeLimit.bottom)
-            startPoint.y = startPoint.y.axc.limitThan(less: arrowOffsetEdgeLimit.top,
-                                                      greater: frame.width - arrowOffsetEdgeLimit.bottom - _arrowSize.height)
+            endPoint.y = endPoint.y.axc.limitThan(min: arrowOffsetEdgeLimit.top + _arrowSize.height,
+                                                  max: frame.height - arrowOffsetEdgeLimit.bottom)
+            startPoint.y = startPoint.y.axc.limitThan(min: arrowOffsetEdgeLimit.top,
+                                                      max: frame.width - arrowOffsetEdgeLimit.bottom - _arrowSize.height)
         }
 
         // 内容框
@@ -262,7 +262,7 @@ open class AxcBubbleView: AxcGradientView {
     var _arrowRadius: CGFloat = 2
 
     /// 气泡内容间距
-    var _bubbleContentEdgeInsets: AxcBedrockEdgeInsets = 4.axc.uiEdge
+    var _bubbleContentEdgeInsets: AxcBedrockEdgeInsets = 4.axc.edge
     /// 气泡圆角组
     var _bubbleCorners: AxcCorner = .all
     /// 气泡圆角半径

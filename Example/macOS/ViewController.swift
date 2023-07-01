@@ -18,13 +18,17 @@ class ViewController: NSViewController {
 
         
         let label = AxcLabel()
-        label.set(text: "Hello World")
+        label.set(text: "Hello WorldHello WorldHello World")
+        label.set(textFont: 20.axc.nsFont(weight: .bold))
         label.set(textBackgroundColor: "FF0000")
+        label.set(contentEdgeInsets: 8.axc.edge)
+//        label.set(textLineBreakMode: .byTruncatingTail)
         view.addSubview(label)
         
         label.snp.makeConstraints { make in
             make.center.equalToSuperview()
-//            make.size.equalTo(100)
+//            make.width.equalTo(80)
+            make.height.equalTo(80)
         }
         
         // Do any additional setup after loading the view.

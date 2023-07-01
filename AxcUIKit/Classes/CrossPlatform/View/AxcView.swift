@@ -52,13 +52,12 @@ extension AxcView {
     }
     
     func _isLayoutEqualConstant(firstAttribute: NSLayoutConstraint.Attribute) -> Bool {
-        guard !translatesAutoresizingMaskIntoConstraints else { return true } // frame 固定的情况
         // Auto Layout 约束固定的情况
-        let constraints = self.constraints
         for constraint in constraints {
-            if constraint.firstAttribute == firstAttribute,
-               constraint.relation == .equal,
-               constraint.constant > 0 {
+            if constraint.priority == .required, // 必须满足的约束
+               constraint.firstAttribute == firstAttribute, // 条件
+               constraint.relation == .equal, // 匹配
+               constraint.constant > 0 { // 比零大
                 return true
             }
         }
@@ -66,18 +65,9 @@ extension AxcView {
     }
     
     func _isLayoutFixedSize() -> Bool {
-        print(translatesAutoresizingMaskIntoConstraints)
-        guard !translatesAutoresizingMaskIntoConstraints else { return true } // frame 固定的情况
-        // Auto Layout 约束固定的情况
-        let constraints = self.constraints
-        for constraint in constraints {
-            if (constraint.firstAttribute == .width || constraint.firstAttribute == .height),
-               constraint.relation == .equal,
-               constraint.constant > 0 {
-                return true
-            }
-        }
-        return false // 没有固定的约束
+        let isFixedWidth = _isLayoutEqualConstant(firstAttribute: .width)
+        let isFixedHeight = _isLayoutEqualConstant(firstAttribute: .height)
+        return isFixedWidth && isFixedHeight
     }
 }
 
@@ -212,6 +202,7 @@ open class AxcView: AxcSystemBaseView {
         #elseif os(iOS) || os(tvOS) || os(watchOS)
         super.backgroundColor = UIColor.white
         #endif
+        translatesAutoresizingMaskIntoConstraints = false
     }
 
     /// 创建UI的方法放在这里。按照，从上至下，从左至右依次添加视图
