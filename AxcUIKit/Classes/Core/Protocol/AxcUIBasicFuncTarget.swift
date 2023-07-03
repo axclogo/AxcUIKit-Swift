@@ -41,13 +41,13 @@ public extension AxcUIBasicFuncTarget {
     /// 执行基础方法
     func performBasic() {
         config()
+        makeUI() // 布局
     }
 
     /// 执行数据通道方法
     func performDataChannel() {
         guard !axc_isFirstMoveTouperview else { return }
         axc_isFirstMoveTouperview = true // 标记为只执行一次
-        makeUI() // 先进行布局
         bindViewModel() // 反向数据流绑定
         bindViewAction() // 正向数据流绑定
         bindNotice() // 协议通知数据流绑定

@@ -13,7 +13,19 @@ public extension AxcLabel { }
 
 public extension AxcUICallback where Base: AxcLabel { }
 
-// MARK: - 内部对象以及选项
+// MARK: - [AxcLabel.NumberOfLineType]
+
+public extension AxcLabel {
+    /// 行数类型
+    enum NumberOfLineType {
+        /// 单行
+        case single
+        /// 多行
+        case mutable(lineCount: Int)
+        /// 无限行数
+        case infinite
+    }
+}
 
 public extension AxcLabel.MarkLineConfig {
     /// 边缘位置
@@ -169,18 +181,24 @@ public extension AxcLabelApi where Self: AxcLabel {
         _set(textAlignment: textAlignment)
     }
 
+    /// 设置换行类型
+    /// - Parameter numberOfLineType: 换行类型
+    func set(numberOfLineType: NumberOfLineType) {
+        _set(numberOfLineType: numberOfLineType)
+    }
+
     /// 设置文字截断模式
     /// - Parameter textLineBreakMode: 文字截断模式
     func set(textLineBreakMode: NSLineBreakMode) {
         _set(textLineBreakMode: textLineBreakMode)
     }
-    
+
     /// 设置行间距
     /// - Parameter lineSpacing: 行间距
     func set(lineSpacing: AxcUnifiedNumber) {
         _set(lineSpacing: lineSpacing)
     }
-    
+
     // MARK: 对齐
 
     /// 设置文字水平轴向对齐方式
