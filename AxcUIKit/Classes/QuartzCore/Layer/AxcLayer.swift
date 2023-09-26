@@ -5,6 +5,7 @@
 //  Created by 赵新 on 2023/6/22.
 //
 
+import AxcBedrock
 import QuartzCore
 
 // MARK: - AxcLayer + AxcUIBasicFuncTarget
@@ -34,7 +35,9 @@ open class AxcLayer: CALayer {
     // Open
 
     /// 配置数据的地方
-    open func config() { }
+    open func config() {
+        backgroundColor = AxcBedrockColor.white.cgColor
+    }
 
     /// 创建UI的方法放在这里。按照，从上至下，从左至右依次添加视图
     open func makeUI() { }

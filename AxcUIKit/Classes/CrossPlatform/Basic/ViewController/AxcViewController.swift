@@ -29,7 +29,7 @@ extension AxcViewController: AxcViewControllerApi {
     /// （💈跨平台标识）获取View颜色
     public var viewBackgroundColor: AxcBedrockColor? {
         if let axcView { // is AxcView
-            return axcView.axc_backgroundColor
+            return axcView.currentBackgroundColor
         } else { // no AxcView
             return view._axc_backgroundColor
         }
@@ -77,6 +77,11 @@ open class AxcViewController: AxcSystemBaseViewController {
         performDataChannel()
     }
 
+    /// 添加视图
+    open func addSubview(_ view: AxcBedrockView) {
+        self.view.addSubview(view)
+    }
+    
     // MARK: 子类重写
 
     /// 配置数据的地方

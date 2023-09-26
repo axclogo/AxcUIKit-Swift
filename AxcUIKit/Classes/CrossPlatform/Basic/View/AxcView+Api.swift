@@ -11,10 +11,10 @@ import AxcBedrock
 
 public protocol AxcViewApi {
     /// （💈跨平台标识）获取颜色
-    var axc_backgroundColor: AxcBedrockColor? { get }
-    
-    /// （💈跨平台标识）获取图层
-    var axc_layer: CALayer? { get }
+    var currentBackgroundColor: AxcBedrockColor? { get }
+
+    /// （💈跨平台标识）当前图层
+    var currentLayer: CALayer? { get }
 }
 
 public extension AxcViewApi where Self: AxcView {

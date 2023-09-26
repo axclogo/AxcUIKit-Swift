@@ -133,7 +133,7 @@ open class AxcBubbleView: AxcGradientView {
         // 箭头偏移限位边距
         let arrowOffsetEdgeLimit: AxcBedrockEdgeInsets = _contentEdgeInsets.axc.add(size: _bubbleCornerRadius.axc.cgSize)
         // 根据方向留出空位
-        var contentRectInsetEdge: AxcBedrockEdgeInsets = .Axc.Create(0) // 箭头的空位
+        var contentRectInsetEdge: AxcBedrockEdgeInsets = .Axc.Create(all: 0) // 箭头的空位
         var arrowRoundCenter: CGPoint = .zero // 箭头顶部圆的中心点
         var startAngleRadian: CGFloat = 0 // 箭头顶部圆的起始角度
         var endAngleRadian: CGFloat = 0 // 箭头顶部圆的终止角度
@@ -248,7 +248,7 @@ open class AxcBubbleView: AxcGradientView {
         // 两个贝塞尔合并
         maskBezier.append(arrowRoundBezier)
         _shapeLayer.path = maskBezier.axc.cgPath // 赋值图案
-        axc_layer?.mask = _shapeLayer
+        currentLayer?.mask = _shapeLayer
     }
 
     /// 内容间距

@@ -27,14 +27,14 @@ extension AxcSystemBaseView {
             #if os(macOS)
             layer?.backgroundColor = color.cgColor
             #elseif os(iOS) || os(tvOS) || os(watchOS)
-            super.backgroundColor = color
+            backgroundColor = color
             #endif
         }
         get {
             #if os(macOS)
             return layer?.backgroundColor?.axc.nsColor
             #elseif os(iOS) || os(tvOS) || os(watchOS)
-            return super.backgroundColor
+            return backgroundColor
             #endif
         }
     }
@@ -48,12 +48,12 @@ extension AxcView: AxcUIBasicFuncTarget { }
 
 extension AxcView: AxcViewApi {
     /// （💈跨平台标识）获取颜色
-    public var axc_backgroundColor: AxcBedrockColor? {
+    public var currentBackgroundColor: AxcBedrockColor? {
         return _axc_backgroundColor
     }
 
     /// （💈跨平台标识）获取图层
-    public var axc_layer: CALayer? {
+    public var currentLayer: CALayer? {
         return layer
     }
 }
@@ -129,7 +129,7 @@ open class AxcView: AxcSystemBaseView {
 
     /// 设置图层类型
     open class var Axc_layerClass: CALayer.Type {
-        return CALayer.self
+        return AxcLayer.self
     }
 
     /// 已经移动到父视图
@@ -193,7 +193,7 @@ open class AxcView: AxcSystemBaseView {
     @available(*, unavailable)
     public final override var backgroundColor: UIColor? {
         set { }
-        get { return axc_backgroundColor }
+        get { return currentBackgroundColor }
     }
 
     #endif
@@ -220,7 +220,6 @@ open class AxcView: AxcSystemBaseView {
          */
         wantsLayer = true
         layer = Self.Axc_layerClass.init()
-        layer?.backgroundColor = NSColor.white.cgColor
         #elseif os(iOS) || os(tvOS) || os(watchOS)
         super.backgroundColor = UIColor.white
         #endif

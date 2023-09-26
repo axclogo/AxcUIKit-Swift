@@ -7,6 +7,6 @@
 
 import Cocoa
 
-class asd: NSObject {
+class AxcSplitViewController: NSSplitViewController {
 
 }
