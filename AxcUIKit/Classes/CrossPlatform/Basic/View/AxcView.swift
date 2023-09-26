@@ -19,6 +19,27 @@ public typealias AxcSystemBaseView = UIView
 
 #endif
 
+extension AxcSystemBaseView {
+    /// 跨平台系统基类设置背景颜色
+    var _axc_backgroundColor: AxcBedrockColor? {
+        set {
+            let color = AxcBedrockColor.Axc.CreateOptional(newValue) ?? .white
+            #if os(macOS)
+            layer?.backgroundColor = color.cgColor
+            #elseif os(iOS) || os(tvOS) || os(watchOS)
+            super.backgroundColor = color
+            #endif
+        }
+        get {
+            #if os(macOS)
+            return layer?.backgroundColor?.axc.nsColor
+            #elseif os(iOS) || os(tvOS) || os(watchOS)
+            return super.backgroundColor
+            #endif
+        }
+    }
+}
+
 // MARK: - AxcView + AxcUIBasicFuncTarget
 
 extension AxcView: AxcUIBasicFuncTarget { }
@@ -28,11 +49,7 @@ extension AxcView: AxcUIBasicFuncTarget { }
 extension AxcView: AxcViewApi {
     /// （💈跨平台标识）获取颜色
     public var axc_backgroundColor: AxcBedrockColor? {
-        #if os(macOS)
-        return layer?.backgroundColor?.axc.nsColor
-        #elseif os(iOS) || os(tvOS) || os(watchOS)
-        return super.backgroundColor
-        #endif
+        return _axc_backgroundColor
     }
 
     /// （💈跨平台标识）获取图层
@@ -44,11 +61,7 @@ extension AxcView: AxcViewApi {
 extension AxcView {
     func _set(backgroundColor: AxcUnifiedColor?) {
         let color = AxcBedrockColor.Axc.CreateOptional(backgroundColor) ?? .white
-        #if os(macOS)
-        layer?.backgroundColor = color.cgColor
-        #elseif os(iOS) || os(tvOS) || os(watchOS)
-        super.backgroundColor = color
-        #endif
+        _axc_backgroundColor = color
     }
 
     func _isLayoutEqualConstant(firstAttribute: NSLayoutConstraint.Attribute) -> Bool {

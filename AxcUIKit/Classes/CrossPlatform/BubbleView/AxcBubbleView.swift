@@ -167,7 +167,7 @@ open class AxcBubbleView: AxcGradientView {
                                                                 max: greater)
             switch vertical {
             case .top:
-                contentRectInsetEdge = _arrowSize.height.axc.edgeTop
+                contentRectInsetEdge = _arrowSize.height.axc.edgeInsetsTop
                 arrowRoundCenter = .init(x: arrowRoundCenterX, y: _arrowRadius + _contentEdgeInsets.top)
                 startAngleRadian = (-90 - arrowInteriorAngle).axc.angleToRadian
                 endAngleRadian = (-90 + arrowInteriorAngle).axc.angleToRadian

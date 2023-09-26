@@ -25,7 +25,33 @@ extension AxcViewController: AxcUIBasicFuncTarget { }
 
 // MARK: - AxcViewController + AxcViewControllerApi
 
-extension AxcViewController: AxcViewControllerApi { }
+extension AxcViewController: AxcViewControllerApi {
+    /// （💈跨平台标识）获取View颜色
+    public var viewBackgroundColor: AxcBedrockColor? {
+        if let axcView { // 如果是AxcView
+            return axcView.axc_backgroundColor
+        } else { // 不是的话
+            return view._axc_backgroundColor
+        }
+    }
+
+    /// （💈跨平台标识）获取AxcView
+    public var axcView: AxcView? {
+        return view as? AxcView
+    }
+}
+
+extension AxcViewController {
+    /// 设置背景颜色
+    func _setView(backgroundColor: AxcUnifiedColor?) {
+        if let axcView { // 如果是AxcView
+            axcView.set(backgroundColor: backgroundColor)
+        } else { // 不是的话
+            let color = AxcBedrockColor.Axc.CreateOptional(backgroundColor) ?? .white
+            view._axc_backgroundColor = color
+        }
+    }
+}
 
 // MARK: - [AxcViewController]
 

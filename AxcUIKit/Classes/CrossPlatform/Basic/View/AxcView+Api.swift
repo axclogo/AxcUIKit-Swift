@@ -12,6 +12,7 @@ import AxcBedrock
 public protocol AxcViewApi {
     /// （💈跨平台标识）获取颜色
     var axc_backgroundColor: AxcBedrockColor? { get }
+    
     /// （💈跨平台标识）获取图层
     var axc_layer: CALayer? { get }
 }
