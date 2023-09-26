@@ -35,6 +35,10 @@ public protocol AxcUIBasicFuncTarget: NSObjectProtocol {
     /// 通知数据流，主要用于接口暴露和复用
     @objc
     func bindNotice()
+
+    /// 驱动数据流，主要用于外部驱动
+    @objc
+    func bindDriving()
 }
 
 public extension AxcUIBasicFuncTarget {
@@ -55,9 +59,9 @@ public extension AxcUIBasicFuncTarget {
     }
 }
 
-private var k_isFirstMoveTouperview = "k_isFirstMoveTouperview"
+private var k_isFirstMoveTouperview = "k_isFirstPerformDataChannel"
 
-public extension AxcUIBasicFuncTarget {
+private extension AxcUIBasicFuncTarget {
     /// 用于记录是否是第一次添加进视图
     var axc_isFirstMoveTouperview: Bool {
         set { AxcRuntime.Set(object: self, key: &k_isFirstMoveTouperview, value: newValue, policy: .OBJC_ASSOCIATION_ASSIGN) }

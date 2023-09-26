@@ -50,4 +50,7 @@ open class AxcLayer: CALayer {
 
     /// 通知数据流，主要用于接口暴露和复用
     open func bindNotice() { }
+
+    /// 驱动数据流，主要用于外部驱动
+    open func bindDriving() { }
 }

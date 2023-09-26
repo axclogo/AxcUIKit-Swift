@@ -81,7 +81,7 @@ Pod::Spec.new do |s|
     # 核心
     s.subspec 'Core' do |c|
         c.source_files = Core_files
-        c.dependency 'AxcBedrock', '1.0.0'
+        c.dependency 'AxcBedrock'
         c.dependency 'SnapKit'
     end
 

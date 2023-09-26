@@ -176,7 +176,7 @@ open class AxcBubbleView: AxcGradientView {
                                      y: _arrowSize.height + _contentEdgeInsets.top)
 
             case .bottom:
-                contentRectInsetEdge = _arrowSize.height.axc.edgeBottom
+                contentRectInsetEdge = _arrowSize.height.axc.edgeInsetsBottom
                 arrowRoundCenter = .init(x: arrowRoundCenterX, y: frame.height - _arrowRadius - _contentEdgeInsets.bottom)
                 startAngleRadian = (-270 + arrowInteriorAngle).axc.angleToRadian
                 endAngleRadian = (-270 - arrowInteriorAngle).axc.angleToRadian
@@ -204,7 +204,7 @@ open class AxcBubbleView: AxcGradientView {
                                                                 max: greater)
             switch horizontal {
             case .left:
-                contentRectInsetEdge = _arrowSize.width.axc.edgeLeft
+                contentRectInsetEdge = _arrowSize.width.axc.edgeInsetsLeft
                 arrowRoundCenter = .init(x: _arrowRadius + _contentEdgeInsets.left, y: arrowRoundCenterY)
                 startAngleRadian = (180 - arrowInteriorAngle).axc.angleToRadian
                 endAngleRadian = (180 + arrowInteriorAngle).axc.angleToRadian
@@ -212,7 +212,7 @@ open class AxcBubbleView: AxcGradientView {
                 startPoint = CGPoint(x: _arrowSize.width + _contentEdgeInsets.left, y: offsetY)
 
             case .right:
-                contentRectInsetEdge = _arrowSize.width.axc.edgeRight
+                contentRectInsetEdge = _arrowSize.width.axc.edgeInsetsRight
                 arrowRoundCenter = .init(x: frame.width - _arrowRadius - _contentEdgeInsets.right, y: arrowRoundCenterY)
                 let arrowRoundRadian = arrowInteriorAngle.axc.angleToRadian
                 startAngleRadian = arrowRoundRadian
@@ -252,7 +252,7 @@ open class AxcBubbleView: AxcGradientView {
     }
 
     /// 内容间距
-    var _contentEdgeInsets: AxcBedrockEdgeInsets = .Axc.Create(0)
+    var _contentEdgeInsets: AxcBedrockEdgeInsets = .Axc.Create(all: 0)
 
     /// 箭头位置
     var _arrowDirection: ArrowDirection = .rightCenter
@@ -262,7 +262,7 @@ open class AxcBubbleView: AxcGradientView {
     var _arrowRadius: CGFloat = 2
 
     /// 气泡内容间距
-    var _bubbleContentEdgeInsets: AxcBedrockEdgeInsets = 4.axc.edge
+    var _bubbleContentEdgeInsets: AxcBedrockEdgeInsets = 4.axc.edgeInsets
     /// 气泡圆角组
     var _bubbleCorners: AxcCorner = .all
     /// 气泡圆角半径

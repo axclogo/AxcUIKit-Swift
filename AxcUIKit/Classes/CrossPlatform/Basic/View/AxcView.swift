@@ -50,7 +50,7 @@ extension AxcView {
         super.backgroundColor = color
         #endif
     }
-    
+
     func _isLayoutEqualConstant(firstAttribute: NSLayoutConstraint.Attribute) -> Bool {
         // Auto Layout 约束固定的情况
         for constraint in constraints {
@@ -63,7 +63,7 @@ extension AxcView {
         }
         return false // 没有固定的约束
     }
-    
+
     func _isLayoutFixedSize() -> Bool {
         let isFixedWidth = _isLayoutEqualConstant(firstAttribute: .width)
         let isFixedHeight = _isLayoutEqualConstant(firstAttribute: .height)
@@ -195,7 +195,16 @@ open class AxcView: AxcSystemBaseView {
     /// 配置数据的地方
     open func config() {
         #if os(macOS)
-        // MacOS需要设置图层
+        /*
+         在Cocoa框架中，wantsLayer是NSView类中的一个布尔属性。
+         如果将NSView的wantsLayer属性设置为YES，那么这个NSView就会有一个CALayer实例作为其backing layer。
+
+         简单来说，wantsLayer是用来开启Core Animation的支持的
+         Core Animation是一种动画渲染方式，通过OpenGL渲染引擎来让应用程序中的层进行动画渲染。
+         如果在Mac应用程序中需要使用动画效果，就需要开启wantsLayer属性，然后在layer中设置动画效果，这样就能够实现高效的动态界面渲染了。
+
+         在使用wantsLayer属性时，一定要确保在视图层级中的所有视图wantsLayer属性都被设置为YES，这样才能在整个视图层级中启用Core Animation渲染引擎。
+         */
         wantsLayer = true
         layer = Self.Axc_layerClass.init()
         layer?.backgroundColor = NSColor.white.cgColor
@@ -219,4 +228,7 @@ open class AxcView: AxcSystemBaseView {
 
     /// 通知数据流，主要用于接口暴露和复用
     open func bindNotice() { }
+
+    /// 驱动数据流，主要用于外部驱动
+    open func bindDriving() { }
 }
