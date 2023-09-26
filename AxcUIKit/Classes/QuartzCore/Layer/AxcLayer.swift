@@ -52,5 +52,5 @@ open class AxcLayer: CALayer {
     open func bindNotice() { }
 
     /// 驱动数据流，主要用于外部驱动
-    open func bindDriving() { }
+    open func bindDrive() { }
 }

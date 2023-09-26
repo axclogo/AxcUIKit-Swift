@@ -28,9 +28,9 @@ extension AxcViewController: AxcUIBasicFuncTarget { }
 extension AxcViewController: AxcViewControllerApi {
     /// （💈跨平台标识）获取View颜色
     public var viewBackgroundColor: AxcBedrockColor? {
-        if let axcView { // 如果是AxcView
+        if let axcView { // is AxcView
             return axcView.axc_backgroundColor
-        } else { // 不是的话
+        } else { // no AxcView
             return view._axc_backgroundColor
         }
     }
@@ -44,9 +44,9 @@ extension AxcViewController: AxcViewControllerApi {
 extension AxcViewController {
     /// 设置背景颜色
     func _setView(backgroundColor: AxcUnifiedColor?) {
-        if let axcView { // 如果是AxcView
+        if let axcView { // is AxcView
             axcView.set(backgroundColor: backgroundColor)
-        } else { // 不是的话
+        } else { // no AxcView
             let color = AxcBedrockColor.Axc.CreateOptional(backgroundColor) ?? .white
             view._axc_backgroundColor = color
         }
@@ -98,5 +98,5 @@ open class AxcViewController: AxcSystemBaseViewController {
     open func bindNotice() { }
 
     /// 驱动数据流，主要用于外部驱动
-    open func bindDriving() { }
+    open func bindDrive() { }
 }
