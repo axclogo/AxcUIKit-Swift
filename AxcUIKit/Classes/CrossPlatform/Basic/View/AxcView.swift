@@ -110,7 +110,11 @@ open class AxcView: AxcSystemBaseView {
 
     open override func hitTest(_ point: NSPoint) -> NSView? {
         let superView = super.hitTest(point)
-        return _hitTestBlock?(self, superView, point)
+        if let _hitTestBlock {
+            return _hitTestBlock(self, superView, point)
+        } else {
+            return superView
+        }
     }
 
     #elseif os(iOS) || os(tvOS) || os(watchOS)

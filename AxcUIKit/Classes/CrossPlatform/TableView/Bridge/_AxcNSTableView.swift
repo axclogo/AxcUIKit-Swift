@@ -8,15 +8,33 @@
 #if canImport(AppKit)
 import AxcBedrock
 
-protocol AxcNSTableViewDelegate {
+public protocol AxcNSTableViewDelegate {
     func tableView(tableView: _AxcNSTableView, heightForHeaderInSection section: Int) -> CGFloat
     func tableView(tableView: _AxcNSTableView, viewForHeaderInSection section: Int) -> NSView?
+    func tableView(tableView: _AxcNSTableView, shouldSelectHeaderInSection section: Int) -> Bool
+
+    func tableView(tableView: _AxcNSTableView, heightForRowAt indexPath: IndexPath) -> CGFloat
+    func tableView(tableView: _AxcNSTableView, shouldSelectCellAtIndexPath indexPath: IndexPath) -> Bool
 
     func tableView(tableView: _AxcNSTableView, heightForFooterInSection section: Int) -> CGFloat
     func tableView(tableView: _AxcNSTableView, viewForFooterInSection section: Int) -> NSView?
+    func tableView(tableView: _AxcNSTableView, shouldSelectFooterInSection section: Int) -> Bool
 }
 
-protocol AxcNSTableViewDataSource {
+public extension AxcNSTableViewDelegate {
+    func tableView(tableView: _AxcNSTableView, heightForHeaderInSection section: Int) -> CGFloat { return .Axc.Min }
+    func tableView(tableView: _AxcNSTableView, viewForHeaderInSection section: Int) -> NSView? { return nil }
+    func tableView(tableView: _AxcNSTableView, shouldSelectHeaderInSection section: Int) -> Bool { return false }
+
+    func tableView(tableView: _AxcNSTableView, heightForRowAt indexPath: IndexPath) -> CGFloat { return 44 }
+    func tableView(tableView: _AxcNSTableView, shouldSelectCellAtIndexPath indexPath: IndexPath) -> Bool { return true }
+
+    func tableView(tableView: _AxcNSTableView, heightForFooterInSection section: Int) -> CGFloat { return .Axc.Min }
+    func tableView(tableView: _AxcNSTableView, viewForFooterInSection section: Int) -> NSView? { return nil }
+    func tableView(tableView: _AxcNSTableView, shouldSelectFooterInSection section: Int) -> Bool { return false }
+}
+
+public protocol AxcNSTableViewDataSource {
     /// 组数量
     func numberOfSectionsInTableView(tableView: _AxcNSTableView) -> Int
     /// 每组行数量
@@ -25,13 +43,17 @@ protocol AxcNSTableViewDataSource {
     func tableView(tableView: _AxcNSTableView, cellForRowAt indexPath: IndexPath) -> AxcTableViewCell
 }
 
-extension _AxcNSTableView {
+public extension AxcNSTableViewDataSource {
+    func numberOfSectionsInTableView(tableView: _AxcNSTableView) -> Int { return 1 }
+}
+
+public extension _AxcNSTableView {
     func reloadData() {
         _tableView.reloadData()
     }
 }
 
-extension _AxcNSTableView {
+public extension _AxcNSTableView {
     /// 每行元素的类型
     enum RowItemType {
         case tableHeaderView(view: NSView)
@@ -42,21 +64,23 @@ extension _AxcNSTableView {
     }
 }
 
-class _AxcNSTableView: AxcView {
-    override func axc_layoutSubviews() {
+open class _AxcNSTableView: AxcView {
+    open override func axc_layoutSubviews() {
         super.axc_layoutSubviews()
         _tableView.frame = bounds
     }
 
-    override func makeUI() {
+    open override func makeUI() {
         super.makeUI()
+
+        addSubview(_tableView)
     }
 
-    var delegate: AxcNSTableViewDelegate?
-    var dataSource: AxcNSTableViewDataSource?
+    open var delegate: AxcNSTableViewDelegate?
+    open var dataSource: AxcNSTableViewDataSource?
 
-    var tableHeaderView: NSView?
-    var tableFooterView: NSView?
+    open var tableHeaderView: NSView?
+    open var tableFooterView: NSView?
 
     /// 组表
     private var _rowItemTypeList: [RowItemType] = []
@@ -112,52 +136,86 @@ extension _AxcNSTableView {
 }
 
 extension _AxcNSTableView: NSTableViewDelegate {
-    func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
-        guard let cellView = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "CellView"),
-                                                owner: self) as? NSTableCellView
-        else { return nil }
-        guard let dataSource = dataSource,
+    public func tableView(_ tableView: NSTableView, setObjectValue object: Any?, for tableColumn: NSTableColumn?, row: Int) { }
+
+    public func tableView(_ tableView: NSTableView, objectValueFor tableColumn: NSTableColumn?, row: Int) -> Any? {
+        guard let rowItemType = _rowItemTypeList.axc.object(at: row) else { return nil }
+        return rowItemType
+    }
+
+//    public func tableView(_ tableView: NSTableView, dataCellFor tableColumn: NSTableColumn?, row: Int) -> NSCell? {
+//        if let cellView = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "CellView"),
+//                                             owner: self) {
+//            return cellView
+//        } else {
+//            guard let dataSource = dataSource,
+//                  let rowItemType = _rowItemTypeList.axc.object(at: row)
+//            else { return nil }
+//            var cellView: NSView?
+//            switch rowItemType {
+//            case let .tableHeaderView(view: view):
+//                cellView = view
+//            case let .sectionHeaderView(section: section):
+//                if let headerView = delegate?.tableView(tableView: self, viewForHeaderInSection: section) {
+//                    cellView = headerView
+//                }
+//            case let .cell(indexPath: indexPath):
+//                let cell = dataSource.tableView(tableView: self, cellForRowAt: indexPath)
+//                cellView = cell
+//            case let .sectionFooterView(section: section):
+//                if let footerView = delegate?.tableView(tableView: self, viewForFooterInSection: section) {
+//                    cellView = footerView
+//                }
+//            case let .tableFooterView(view: view):
+//                cellView = view
+//            }
+//            return cellView
+//        }
+//    }
+
+    public func tableView(_ tableView: NSTableView, shouldSelectRow row: Int) -> Bool {
+        guard let delegate = delegate,
               let rowItemType = _rowItemTypeList.axc.object(at: row)
-        else { return nil }
+        else { return false }
+        // 获取索引
+        switch rowItemType {
+        case .tableHeaderView:
+            return false
+        case let .sectionHeaderView(section: section):
+            return delegate.tableView(tableView: self, shouldSelectHeaderInSection: section)
+        case let .cell(indexPath: indexPath):
+            return delegate.tableView(tableView: self, shouldSelectCellAtIndexPath: indexPath)
+        case let .sectionFooterView(section: section):
+            return delegate.tableView(tableView: self, shouldSelectFooterInSection: section)
+        case .tableFooterView:
+            return false
+        }
+    }
+
+    public func tableView(_ tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
+        guard let delegate = delegate,
+              let rowItemType = _rowItemTypeList.axc.object(at: row)
+        else { return .Axc.Min }
         // 获取索引
         switch rowItemType {
         case let .tableHeaderView(view: view):
-            return view
+            return view.frame.height
         case let .sectionHeaderView(section: section):
-            if let headerView = delegate?.tableView(tableView: self, viewForHeaderInSection: section) {
-                return headerView
-            }
+            return delegate.tableView(tableView: self, heightForHeaderInSection: section)
         case let .cell(indexPath: indexPath):
-            let cell = dataSource.tableView(tableView: self, cellForRowAt: indexPath)
-            return cell
+            return delegate.tableView(tableView: self, heightForRowAt: indexPath)
         case let .sectionFooterView(section: section):
-            if let footerView = delegate?.tableView(tableView: self, viewForFooterInSection: section) {
-                return footerView
-            }
+            return delegate.tableView(tableView: self, heightForFooterInSection: section)
         case let .tableFooterView(view: view):
-            return view
+            return view.frame.height
         }
-        return nil
-    }
-
-    func tableView(_ tableView: NSTableView, shouldSelectRow row: Int) -> Bool {
-        if let dataSource = tableView.dataSource as? NSTableViewSectionDataSource {
-            let (_, sectionRow) = dataSource.tableView(tableView: tableView, sectionForRow: row)
-
-            if sectionRow == 0 {
-                return false
-            }
-
-            return true
-        }
-        return false
     }
 }
 
 extension _AxcNSTableView: NSTableViewDataSource {
     /// All counts of rows
     /// 所有行数
-    func numberOfRows(in tableView: NSTableView) -> Int {
+    public func numberOfRows(in tableView: NSTableView) -> Int {
         _rowItemTypeList = _constructSectionModelList() // 统计
         return _rowItemTypeList.count
     }
