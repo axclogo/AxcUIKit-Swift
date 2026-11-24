@@ -29,6 +29,7 @@ jobs:
       - name: Run iOS tests with coverage
         run: |
           xcodebuild \
+            -workspace . \
             -scheme AxcUIKit-Package \
             -destination 'platform=iOS Simulator,name=iPhone 16,OS=latest' \
             -enableCodeCoverage YES \

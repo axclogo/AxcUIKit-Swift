@@ -15,7 +15,6 @@ profile
 DerivedData
 .build/
 .swiftpm/
-Package.resolved
 .idea/
 *.hmap
 *.xccheckout

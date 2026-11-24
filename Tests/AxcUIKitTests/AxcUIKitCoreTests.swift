@@ -190,7 +190,7 @@ final class AxcUIKitCoreTests: XCTestCase {
         view.set(gradientColors: source.gradientColors)
         XCTAssertTrue(view.currentLayer is AxcGradientLayer)
         XCTAssertEqual(view.gradientColors?.count, 2)
-        XCTAssertEqual(view._gradientLayer.type, .radial)
+        XCTAssertEqual(view._gradientLayer._gradientLayer.type, .radial)
         view.set(gradientColors: nil)
         XCTAssertNil(view.gradientColors)
     }
