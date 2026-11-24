@@ -5,42 +5,93 @@
 //  Created by 赵新 on 26/9/2023.
 //
 
+#if canImport(AppKit)
+
+import AppKit
+#if canImport(AxcBedrock)
 import AxcBedrock
+#else
+import AxcBedrockCore
+#endif
+#if canImport(AxcUIKitCore)
+import AxcUIKitCore
+#endif
+import SnapKit
 
 public extension AxcConsoleView {
-    func _append(log: String) {
-        let operation = BlockOperation { [weak self] in // 创建一个Operation任务
-            guard let weakSelf = self else { return }
-            let textView = weakSelf._textView
-            // 是否滑动
-            let isSmartScroll = textView.visibleRect.maxY == textView.bounds.maxY
-            // 拼接
-            let attributedString = NSAttributedString(string: "\(log)\n",
-                                                      attributes: weakSelf._textAttributed)
-            textView.textStorage?.append(attributedString)
-            // 如果在最底部则继续滚动
-            if isSmartScroll {
-                textView.scrollToEndOfDocument(self)
-            }
-            // 更新日志进度
-            weakSelf.updateLogProgressIndicator()
+    /// 追加日志。多线程连续调用会在下一次主线程刷新时合并写入。
+    func append(log: String) {
+        _logLock.lock()
+        _pendingLogs.append(log)
+        _totalLogCount += 1
+        let shouldSchedule = !_isFlushScheduled
+        _isFlushScheduled = true
+        _logLock.unlock()
+
+        guard shouldSchedule else { return }
+        DispatchQueue.main.async { [weak self] in
+            self?._flushPendingLogs()
         }
-        _logOperationQueue.addOperation(operation)
-        _logOperationQueue.progress.totalUnitCount += 1
     }
 
-    func updateLogProgressIndicator() {
-        let totalUnitCount = Double(_logOperationQueue.progress.totalUnitCount)
-        guard totalUnitCount > 0 else { return }
-        let completedUnitCount = Double(_logOperationQueue.progress.completedUnitCount)
-        _logProgressIndicator.maxValue = totalUnitCount
-        _logProgressIndicator.doubleValue = completedUnitCount
+    /// 清空控制台。
+    func clear() {
+        _logLock.lock()
+        _pendingLogs.removeAll(keepingCapacity: true)
+        _totalLogCount = 0
+        _logLock.unlock()
+        DispatchQueue.main.async { [weak self] in
+            self?._textView.textStorage?.setAttributedString(NSAttributedString())
+            self?._logProgressIndicator.doubleValue = 0
+        }
+    }
+
+    @available(*, deprecated, renamed: "append(log:)")
+    func _append(log: String) {
+        append(log: log)
+    }
+}
+
+private extension AxcConsoleView {
+    func _flushPendingLogs() {
+        _logLock.lock()
+        let logs = _pendingLogs
+        _pendingLogs.removeAll(keepingCapacity: true)
+        _isFlushScheduled = false
+        let totalLogCount = _totalLogCount
+        _logLock.unlock()
+
+        guard !logs.isEmpty, let textStorage = _textView.textStorage else { return }
+        let shouldScrollToEnd = _textView.visibleRect.maxY >= _textView.bounds.maxY
+        let content = logs.joined(separator: "\n") + "\n"
+        textStorage.append(NSAttributedString(string: content, attributes: _textAttributed))
+        _trimTextStorageIfNeeded(textStorage)
+
+        _logProgressIndicator.maxValue = Double(max(1, totalLogCount))
+        _logProgressIndicator.doubleValue = Double(totalLogCount)
+        if shouldScrollToEnd {
+            _textView.scrollToEndOfDocument(self)
+        }
+    }
+
+    func _trimTextStorageIfNeeded(_ textStorage: NSTextStorage) {
+        guard maximumCharacterCount > 0,
+              textStorage.length > maximumCharacterCount else { return }
+        let overflow = textStorage.length - maximumCharacterCount
+        let source = textStorage.string as NSString
+        let searchRange = NSRange(location: overflow, length: source.length - overflow)
+        let lineBreak = source.range(of: "\n", options: [], range: searchRange)
+        let deleteLength = lineBreak.location == NSNotFound ? overflow : NSMaxRange(lineBreak)
+        textStorage.deleteCharacters(in: NSRange(location: 0, length: deleteLength))
     }
 }
 
 // MARK: - [AxcConsoleView]
 
 open class AxcConsoleView: AxcView {
+    /// 控制台最多保留的字符数；设置为 0 表示不限制。
+    open var maximumCharacterCount = 1_000_000
+
     open override func makeUI() {
         super.makeUI()
         set(backgroundColor: NSColor.black)
@@ -57,12 +108,10 @@ open class AxcConsoleView: AxcView {
         }
     }
 
-    
-    private lazy var _logOperationQueue: OperationQueue = {
-        let queue = OperationQueue.main
-        queue.maxConcurrentOperationCount = 1
-        return queue
-    }()
+    private let _logLock = NSLock()
+    private var _pendingLogs: [String] = []
+    private var _isFlushScheduled = false
+    private var _totalLogCount: Int64 = 0
 
     private lazy var _scrollView: NSScrollView = {
         let scrollView = NSScrollView()
@@ -110,3 +159,5 @@ open class AxcConsoleView: AxcView {
         return textView
     }()
 }
+
+#endif

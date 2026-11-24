@@ -5,18 +5,32 @@
 //  Created by 赵新 on 26/9/2023.
 //
 
-import Cocoa
+#if canImport(AppKit)
+
+import AppKit
+#if canImport(AxcBedrock)
 import AxcBedrock
+#else
+import AxcBedrockCore
+#endif
+#if canImport(AxcUIKitCore)
+import AxcUIKitCore
+#endif
+import SnapKit
 
 extension AxcTargetDragView {
+    public var focusView: NSView? {
+        return _focusView
+    }
+
     /// set focus view, and set hidden is true, add view, make constraints edge is fill
     /// 设置焦点视图
-    func _set(focusView: NSView) {
+    func _set(focusView: NSView?) {
         _focusView?.removeFromSuperview() // remove
         _focusView = focusView // set
         _focusView?.isHidden = true // hidden
         if let _focusView { // unpack is no optional
-            addSubview(focusView) // add
+            addSubview(_focusView) // add
             _focusView.snp.makeConstraints { $0.edges.equalToSuperview() }
         }
     }
@@ -97,3 +111,5 @@ open class AxcTargetDragView: AxcView {
     /// 焦点
     private var _focusView: NSView?
 }
+
+#endif

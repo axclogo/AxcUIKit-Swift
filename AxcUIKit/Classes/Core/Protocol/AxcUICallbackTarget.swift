@@ -11,8 +11,7 @@ public protocol AxcUICallbackTarget { }
 public extension AxcUICallbackTarget {
     /// 命名空间， 实例类型
     var callback: AxcUICallback<Self> {
-        set { }
-        get { return AxcUICallback(self) }
+        return AxcUICallback(self)
     }
 }
 
@@ -23,5 +22,5 @@ open class AxcUICallback<Base> {
         self.base = base
     }
 
-    public var base: Base
+    public let base: Base
 }

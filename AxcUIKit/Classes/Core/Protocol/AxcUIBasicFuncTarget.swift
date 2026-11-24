@@ -5,7 +5,12 @@
 //  Created by 赵新 on 2023/6/22.
 //
 
+#if canImport(AxcBedrock)
 import AxcBedrock
+#else
+import AxcBedrockCore
+#endif
+import Foundation
 
 // MARK: - [AxcUIBasicFuncTarget]
 
@@ -91,13 +96,13 @@ public extension AxcUIBasicFuncTarget {
     }
 }
 
-private var k_isFirstPerformDataChannel = "k_isFirstPerformDataChannel"
+private var k_isFirstPerformDataChannel: UInt8 = 0
 
 private extension AxcUIBasicFuncTarget {
     /// Records whether the view was added for the first time
     /// 用于记录是否是第一次添加进视图
     var axc_isFirstPerformDataChannel: Bool {
-        set { AxcRuntime.Set(object: self, key: &k_isFirstPerformDataChannel, value: newValue, policy: .OBJC_ASSOCIATION_ASSIGN) }
+        set { AxcRuntime.Set(object: self, key: &k_isFirstPerformDataChannel, value: newValue, policy: .OBJC_ASSOCIATION_RETAIN_NONATOMIC) }
         get {
             guard let value: Bool = AxcRuntime.GetObject(self, key: &k_isFirstPerformDataChannel) else {
                 let value: Bool = false

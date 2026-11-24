@@ -7,7 +7,9 @@
 //
 
 import XCTest
+import UIKit
 @testable import iOS
+import AxcUIKit
 
 final class iOSTests: XCTestCase {
 
@@ -19,18 +21,43 @@ final class iOSTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    func testAxcViewKeepsUIKitBackgroundAndHitTesting() throws {
+        let parent = AxcView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+        let child = UIView(frame: CGRect(x: 10, y: 10, width: 40, height: 40))
+        parent.addSubview(child)
+        parent.set(backgroundColor: UIColor.red)
+
+        XCTAssertEqual(parent.backgroundColor, .red)
+        XCTAssertEqual(parent.currentBackgroundColor, .red)
+        XCTAssertTrue(parent.hitTest(CGPoint(x: 20, y: 20), with: nil) === child)
+    }
+
+    func testStandardComponentsKeepUIKitBehavior() throws {
+        let button = AxcButton()
+        button.set(title: "确认")
+
+        let image = UIImage()
+        let imageView = AxcImageView()
+        imageView.set(image: image)
+
+        let stack = AxcStackView()
+        let child = UIView()
+        stack.addArrangedSubview(child)
+        stack.removeArrangedSubviewCompletely(child)
+
+        let scrollView = AxcScrollView(axis: .vertical)
+
+        XCTAssertEqual(button.title(for: .normal), "确认")
+        XCTAssertTrue(imageView.image === image)
+        XCTAssertNil(child.superview)
+        XCTAssertTrue(scrollView.documentContentView.superview === scrollView)
     }
 
     func testPerformanceExample() throws {
-        // This is an example of a performance test case.
         self.measure {
-            // Put the code you want to measure the time of here.
+            for _ in 0 ..< 1_000 {
+                _ = AxcView()
+            }
         }
     }
 

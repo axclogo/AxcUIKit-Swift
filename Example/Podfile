@@ -5,10 +5,9 @@ source 'https://github.com/CocoaPods/Specs.git'
 # iOS扩展小组件
 ["iOS", "iOSTests", "iOS_WidgetExtension"].each do |t|
   target t do
-    platform :ios, '11.0'
+    platform :ios, '12.0'
     use_frameworks!
     pod 'AxcUIKit', :path => '../'
-    pod 'AxcBedrock', :path => '/Users/zhaoxin/Axc组件/AxcBedrock-Swift'
   end
 end
 
@@ -20,7 +19,6 @@ end
     platform :osx, '11.0'
     use_frameworks!
     pod 'AxcUIKit', :path => '../'
-    pod 'AxcBedrock', :path => '/Users/zhaoxin/Axc组件/AxcBedrock-Swift'
   end
 end
 

@@ -27,11 +27,11 @@ class ViewController: UIViewController {
 //        label.set(textLineBreakMode: .byTruncatingTail)
         view.addSubview(label)
         
-        label.snp.makeConstraints { make in
-            make.center.equalToSuperview()
-            make.width.equalTo(120)
-//            make.height.equalTo(120)
-        }
+        NSLayoutConstraint.activate([
+            label.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            label.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            label.widthAnchor.constraint(equalToConstant: 120),
+        ])
         
         AxcGCD.Delay(delay: 2) {
             label.set(lineSpacing: 20)

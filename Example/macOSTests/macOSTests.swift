@@ -7,7 +7,9 @@
 //
 
 import XCTest
+import AppKit
 @testable import macOS
+import AxcUIKit
 
 final class macOSTests: XCTestCase {
 
@@ -19,18 +21,43 @@ final class macOSTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    func testGradientKeepsLastValidConfiguration() throws {
+        let layer = AxcGradientLayer()
+        let validColors = [
+            AxcGradientLayer.GradientColor(color: NSColor.red, location: 0),
+            AxcGradientLayer.GradientColor(color: NSColor.green, location: 1),
+        ]
+        layer.set(gradientColors: validColors)
+        layer.set(gradientColors: [
+            AxcGradientLayer.GradientColor(color: NSColor.black, location: 0),
+            AxcGradientLayer.GradientColor(color: NSColor.white),
+        ])
+
+        XCTAssertEqual(layer.gradientColors?.compactMap(\.location), [0, 1])
+    }
+
+    func testStandardComponentsKeepAppKitBehavior() throws {
+        let button = AxcButton()
+        button.set(title: "确认")
+
+        let stack = AxcStackView()
+        let child = NSView()
+        stack.addArrangedSubview(child)
+        stack.removeArrangedSubviewCompletely(child)
+
+        let scrollView = AxcScrollView(axis: .vertical)
+
+        XCTAssertEqual(button.title, "确认")
+        XCTAssertNil(child.superview)
+        XCTAssertTrue(scrollView.documentView === scrollView.documentContentView)
+        XCTAssertTrue(scrollView.hasVerticalScroller)
     }
 
     func testPerformanceExample() throws {
-        // This is an example of a performance test case.
         self.measure {
-            // Put the code you want to measure the time of here.
+            for _ in 0 ..< 1_000 {
+                _ = AxcGradientLayer()
+            }
         }
     }
 

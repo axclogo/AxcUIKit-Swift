@@ -13,6 +13,9 @@ xcuserdata
 profile
 *.moved-aside
 DerivedData
+.build/
+.swiftpm/
+Package.resolved
 .idea/
 *.hmap
 *.xccheckout

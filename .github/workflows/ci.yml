@@ -1,0 +1,29 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [master]
+    tags: ['*']
+
+jobs:
+  swift-package:
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build all SwiftPM products
+        run: swift build
+      - name: Run unit tests
+        run: swift test
+
+  ios-package:
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build the umbrella product for iOS
+        run: >-
+          xcodebuild
+          -scheme AxcUIKit
+          -destination 'generic/platform=iOS'
+          CODE_SIGNING_ALLOWED=NO
+          build
