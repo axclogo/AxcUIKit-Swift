@@ -143,7 +143,7 @@ open class AxcBubbleView: AxcGradientView {
     }
 
     func _updateMaskLayer() {
-        guard !bounds.isEmpty else {
+        guard !bounds.isEmpty, bounds.axc.isFinite else {
             _shapeLayer.path = nil
             return
         }
@@ -163,6 +163,12 @@ open class AxcBubbleView: AxcGradientView {
 
         var startPoint: CGPoint = .zero
         var endPoint: CGPoint = .zero
+
+        func clamped(_ value: CGFloat, lowerBound: CGFloat, upperBound: CGFloat) -> CGFloat {
+            guard lowerBound <= upperBound else { return (lowerBound + upperBound) / 2 }
+            return value.axc.clamped(to: lowerBound ... upperBound)
+        }
+
         switch _arrowDirection {
         case let .top(offsetX: offsetX): createVertical(offsetX: offsetX, vertical: .top)
         case .topCenter: createVertical(offsetX: (width - _arrowSize.width) / 2, vertical: .top)
@@ -185,8 +191,7 @@ open class AxcBubbleView: AxcGradientView {
             // 设限阈值
             let less = _contentEdgeInsets.left + _bubbleCornerRadius + halfArrowSize.width
             let greater = width - _contentEdgeInsets.right - _bubbleCornerRadius - halfArrowSize.width
-            arrowRoundCenterX = arrowRoundCenterX.axc.limitThan(min: less,
-                                                                max: greater)
+            arrowRoundCenterX = clamped(arrowRoundCenterX, lowerBound: less, upperBound: greater)
             switch vertical {
             case .top:
                 contentRectInsetEdge = _arrowSize.height.axc.edgeInsetsTop
@@ -208,10 +213,12 @@ open class AxcBubbleView: AxcGradientView {
             }
             endPoint = CGPoint(x: offsetX, y: startPoint.y)
             // 设置水平限位
-            startPoint.x = startPoint.x.axc.limitThan(min: arrowOffsetEdgeLimit.left + _arrowSize.width,
-                                                      max: width - arrowOffsetEdgeLimit.right)
-            endPoint.x = endPoint.x.axc.limitThan(min: arrowOffsetEdgeLimit.left,
-                                                  max: width - arrowOffsetEdgeLimit.right - _arrowSize.width)
+            startPoint.x = clamped(startPoint.x,
+                                   lowerBound: arrowOffsetEdgeLimit.left + _arrowSize.width,
+                                   upperBound: width - arrowOffsetEdgeLimit.right)
+            endPoint.x = clamped(endPoint.x,
+                                 lowerBound: arrowOffsetEdgeLimit.left,
+                                 upperBound: width - arrowOffsetEdgeLimit.right - _arrowSize.width)
         }
 
         // 构建水平参数
@@ -222,8 +229,7 @@ open class AxcBubbleView: AxcGradientView {
             // 设限阈值
             let less = _contentEdgeInsets.top + _bubbleCornerRadius + halfArrowSize.height
             let greater = height - _contentEdgeInsets.bottom - _bubbleCornerRadius - halfArrowSize.height
-            arrowRoundCenterY = arrowRoundCenterY.axc.limitThan(min: less,
-                                                                max: greater)
+            arrowRoundCenterY = clamped(arrowRoundCenterY, lowerBound: less, upperBound: greater)
             switch horizontal {
             case .left:
                 contentRectInsetEdge = _arrowSize.width.axc.edgeInsetsLeft
@@ -244,10 +250,12 @@ open class AxcBubbleView: AxcGradientView {
             }
             endPoint = CGPoint(x: startPoint.x, y: offsetY + _arrowSize.height)
             // 设置垂直限位
-            endPoint.y = endPoint.y.axc.limitThan(min: arrowOffsetEdgeLimit.top + _arrowSize.height,
-                                                  max: height - arrowOffsetEdgeLimit.bottom)
-            startPoint.y = startPoint.y.axc.limitThan(min: arrowOffsetEdgeLimit.top,
-                                                      max: height - arrowOffsetEdgeLimit.bottom - _arrowSize.height)
+            endPoint.y = clamped(endPoint.y,
+                                 lowerBound: arrowOffsetEdgeLimit.top + _arrowSize.height,
+                                 upperBound: height - arrowOffsetEdgeLimit.bottom)
+            startPoint.y = clamped(startPoint.y,
+                                   lowerBound: arrowOffsetEdgeLimit.top,
+                                   upperBound: height - arrowOffsetEdgeLimit.bottom - _arrowSize.height)
         }
 
         // 内容框

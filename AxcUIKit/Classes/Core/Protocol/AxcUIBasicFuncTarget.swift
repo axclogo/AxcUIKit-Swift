@@ -80,36 +80,33 @@ public extension AxcUIBasicFuncTarget {
         makeUI()
     }
 
-    /// Perform data flow function(all prefix is `bind` and `dataWillLoad` function)
-    /// 执行数据通道方法
+}
+
+public extension AxcUIBasicFuncTarget where Self: NSObject {
+    /// 执行所有数据通道。每个对象实例只执行一次。
     func performDataChannel() {
-        // Filter
-        guard !axc_isFirstPerformDataChannel else { return }
-        // Just perform onice
-        // 标记为只执行一次
-        axc_isFirstPerformDataChannel = true
-        bindViewModel() // 反向数据流绑定
-        bindViewAction() // 正向数据流绑定
-        bindNotice() // 协议通知数据流绑定
-        bindDrive() // 协议通知数据流绑定
-        dataWillLoad() // 绑定完后再执行数据加载
+        axc_dataChannelOnce.run {
+            bindViewModel() // 反向数据流绑定
+            bindViewAction() // 正向数据流绑定
+            bindNotice() // 协议通知数据流绑定
+            bindDrive() // 外部驱动数据流绑定
+            dataWillLoad() // 绑定完成后执行数据加载
+        }
     }
 }
 
-private var k_isFirstPerformDataChannel: UInt8 = 0
+private enum AxcUIBasicAssociationKeys {
+    static let dataChannelOnce = AxcAssociationKey<AxcOnce>()
+}
 
-private extension AxcUIBasicFuncTarget {
-    /// Records whether the view was added for the first time
-    /// 用于记录是否是第一次添加进视图
-    var axc_isFirstPerformDataChannel: Bool {
-        set { AxcRuntime.Set(object: self, key: &k_isFirstPerformDataChannel, value: newValue, policy: .OBJC_ASSOCIATION_RETAIN_NONATOMIC) }
-        get {
-            guard let value: Bool = AxcRuntime.GetObject(self, key: &k_isFirstPerformDataChannel) else {
-                let value: Bool = false
-                self.axc_isFirstPerformDataChannel = value
-                return value
-            }
-            return value
+private extension AxcUIBasicFuncTarget where Self: NSObject {
+    /// UI 生命周期在主线程访问；令牌由宿主对象关联持有。
+    var axc_dataChannelOnce: AxcOnce {
+        if let once = AxcRuntime.GetObject(self, key: AxcUIBasicAssociationKeys.dataChannelOnce) {
+            return once
         }
+        let once = AxcOnce()
+        AxcRuntime.Set(object: self, key: AxcUIBasicAssociationKeys.dataChannelOnce, value: once)
+        return once
     }
 }

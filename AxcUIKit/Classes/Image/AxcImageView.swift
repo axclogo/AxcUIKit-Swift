@@ -1,8 +1,14 @@
+#if canImport(AxcBedrock)
+import AxcBedrock
+#else
+import AxcBedrockCore
+#endif
+
+/// 当前平台的系统图片类型，复用 AxcBedrock 的跨平台定义。
+public typealias AxcSystemImage = AxcBedrockImage
+
 #if canImport(UIKit)
 import UIKit
-
-/// 当前平台的系统图片类型。
-public typealias AxcSystemImage = UIImage
 
 /// 基于 UIImageView 的标准图片组件。
 open class AxcImageView: UIImageView, AxcImageViewApi {
@@ -31,9 +37,6 @@ open class AxcImageView: UIImageView, AxcImageViewApi {
 
 #elseif canImport(AppKit)
 import AppKit
-
-/// 当前平台的系统图片类型。
-public typealias AxcSystemImage = NSImage
 
 /// 基于 NSImageView 的标准图片组件。
 open class AxcImageView: NSImageView, AxcImageViewApi {

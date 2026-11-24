@@ -26,7 +26,7 @@ let package = Package(
     dependencies: [
         .package(
             url: "https://github.com/axclogo/AxcBedrock-Swift.git",
-            revision: "e011887f4b83cb8259cc3bcb8efbd8a560299bf2"
+            revision: "8a8e1c5e906e30770425102632c7dfa718744bd0"
         ),
         .package(
             url: "https://github.com/SnapKit/SnapKit.git",
@@ -94,6 +94,9 @@ let package = Package(
         ),
         .target(
             name: "AxcUIKitImage",
+            dependencies: [
+                .product(name: "AxcBedrock", package: "AxcBedrock-Swift")
+            ],
             path: "AxcUIKit/Classes/Image",
             exclude: ["README.md"]
         ),

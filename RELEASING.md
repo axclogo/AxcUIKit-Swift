@@ -6,4 +6,6 @@
 4. 创建与 Podspec 完全一致的语义化版本标签，例如 `1.1.0`，并推送标签。
 5. Swift Package Manager 会直接使用该 Git 标签；CocoaPods 使用 `pod trunk push AxcUIKit.podspec` 发布。
 
-SwiftPM 中的 AxcBedrock 当前固定到包含 Package.swift 的明确提交，因为其已发布的 `1.1.4` 标签中还没有 SwiftPM 清单。AxcBedrock 发布包含清单的新标签后，再切换为语义化版本依赖。
+SwiftPM 中的 AxcBedrock 当前固定到包含新基础能力的明确提交。AxcBedrock 发布正式的 `2.0.0` 标签后，应切换为语义化版本依赖。
+
+CocoaPods 依赖已经要求 `AxcBedrock ~> 2.0`。发布 AxcUIKit 前必须先更新并发布 AxcBedrock 2.0 的 Podspec，否则 `pod lib lint` 无法解析该依赖。

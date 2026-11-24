@@ -27,7 +27,7 @@ Pod::Spec.new do |s|
 
   s.subspec 'Core' do |core|
     core.source_files = 'AxcUIKit/Classes/Core/**/*.swift'
-    core.dependency 'AxcBedrock', '~> 1.1.4'
+    core.dependency 'AxcBedrock', '~> 2.0'
   end
 
   s.subspec 'Gradient' do |gradient|
@@ -62,6 +62,7 @@ Pod::Spec.new do |s|
 
   s.subspec 'Image' do |image|
     image.source_files = 'AxcUIKit/Classes/Image/**/*.swift'
+    image.dependency 'AxcBedrock', '~> 2.0'
   end
 
   s.subspec 'Scroll' do |scroll|

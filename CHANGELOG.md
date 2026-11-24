@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- 对接 AxcBedrock 的类型化关联对象、AxcOnce、几何有效性、Insets 运算和跨平台图片类型。
 - 新增 Button、Image、Scroll、Stack 四个系统对称组件及跨平台行为测试。
 
 - 修复 AxcView 背景色、命中测试和数据通道状态问题。

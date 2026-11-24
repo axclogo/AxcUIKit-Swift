@@ -224,26 +224,18 @@ open class AxcLabel: AxcGradientView {
 
     /// 根据文本内容和边距提供动态尺寸，支持 Auto Layout 自适应。
     open override var intrinsicContentSize: CGSize {
-        let textSize = _label.intrinsicContentSize
-        return CGSize(
-            width: textSize.width + _contentEdgeInsets.left + _contentEdgeInsets.right
-                + _markLineTextEdgeSpacing.left + _markLineTextEdgeSpacing.right,
-            height: textSize.height + _contentEdgeInsets.top + _contentEdgeInsets.bottom
-                + _markLineTextEdgeSpacing.top + _markLineTextEdgeSpacing.bottom
-        )
+        let totalInsets = _contentEdgeInsets.axc.add(edge: _markLineTextEdgeSpacing)
+        return _label.intrinsicContentSize.axc.add(edge: totalInsets)
     }
 
     #if os(iOS) || os(tvOS)
     open override func sizeThatFits(_ size: CGSize) -> CGSize {
-        let horizontalInsets = _contentEdgeInsets.left + _contentEdgeInsets.right
-            + _markLineTextEdgeSpacing.left + _markLineTextEdgeSpacing.right
-        let verticalInsets = _contentEdgeInsets.top + _contentEdgeInsets.bottom
-            + _markLineTextEdgeSpacing.top + _markLineTextEdgeSpacing.bottom
+        let totalInsets = _contentEdgeInsets.axc.add(edge: _markLineTextEdgeSpacing)
         let textSize = _label.sizeThatFits(CGSize(
-            width: max(0, size.width - horizontalInsets),
-            height: max(0, size.height - verticalInsets)
+            width: max(0, size.width - totalInsets.axc.horizontal),
+            height: max(0, size.height - totalInsets.axc.vertical)
         ))
-        return CGSize(width: textSize.width + horizontalInsets, height: textSize.height + verticalInsets)
+        return textSize.axc.add(edge: totalInsets)
     }
     #endif
 

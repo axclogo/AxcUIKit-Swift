@@ -1,6 +1,7 @@
 # AxcImageView
 
 直接继承 UIImageView/NSImageView，保留系统图片渲染和动画能力，默认使用等比例适配模式。
+跨平台图片类型复用 AxcBedrock 的 `AxcBedrockImage`，并通过 `AxcSystemImage` 保持组件 API 兼容。
 
 SwiftPM 使用 `import AxcUIKitImage`；CocoaPods 使用 `pod 'AxcUIKit/Image'`。
 
