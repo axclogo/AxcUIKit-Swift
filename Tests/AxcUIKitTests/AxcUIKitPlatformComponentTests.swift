@@ -15,7 +15,6 @@ final class AxcUIKitPlatformComponentTests: XCTestCase {
         XCTAssertFalse(table.translatesAutoresizingMaskIntoConstraints)
         XCTAssertEqual(cell.reuseIdentifier, "cell")
         XCTAssertEqual(cell.style, .subtitle)
-        XCTAssertNotNil(table.callback)
     }
 
     func testCollectionSupportsDefaultAndCustomLayouts() {

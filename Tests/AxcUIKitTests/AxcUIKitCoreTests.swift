@@ -1,4 +1,5 @@
 import XCTest
+import QuartzCore
 @testable import AxcUIKitCore
 @testable import AxcUIKitGradient
 
