@@ -145,6 +145,8 @@ open class AxcGradientLayer: AxcLayer {
         if let copiedLayer = sublayers?.compactMap({ $0 as? CAGradientLayer }).first {
             _gradientLayer = copiedLayer
         }
+        _set(gradientStyle: _gradientStyle)
+        _ = _setGradientColorsParams(_gradientColors)
     }
 
     public required init?(coder: NSCoder) {
