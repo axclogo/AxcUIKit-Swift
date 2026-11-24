@@ -24,7 +24,7 @@ jobs:
               tail -n 120 /tmp/AxcUIKit-macOS-test.log
               echo '```'
             } >> "$GITHUB_STEP_SUMMARY"
-            ruby -e 'text = File.readlines(ARGV[0]).last(120).join.gsub("%", "%25").gsub("\r", "%0D").gsub("\n", "%0A"); puts "::error title=macOS 测试失败::#{text}"' /tmp/AxcUIKit-macOS-test.log
+            ruby -e 'lines = File.readlines(ARGV[0]); text = lines.grep(/error:|failed|Test Case|Test Suite|Executed|fatal error/).last(120).join.gsub("%", "%25").gsub("\r", "%0D").gsub("\n", "%0A"); puts "::error title=macOS 测试失败::#{text}"' /tmp/AxcUIKit-macOS-test.log
             exit 1
           fi
       - name: Enforce macOS coverage
@@ -33,7 +33,7 @@ jobs:
           ruby Scripts/check_coverage.rb "$COVERAGE_JSON" 90
 
   ios-package:
-    runs-on: macos-15-intel
+    runs-on: macos-14
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
@@ -43,7 +43,7 @@ jobs:
           if ! xcodebuild \
             -workspace . \
             -scheme AxcUIKit-Package \
-            -destination 'platform=iOS Simulator,name=iPhone 16,OS=latest' \
+            -destination 'platform=iOS Simulator,name=iPhone 15,OS=latest' \
             -enableCodeCoverage YES \
             -resultBundlePath /tmp/AxcUIKit-iOS.xcresult \
             CODE_SIGNING_ALLOWED=NO \
@@ -54,7 +54,7 @@ jobs:
               tail -n 120 /tmp/AxcUIKit-iOS-xcodebuild.log
               echo '```'
             } >> "$GITHUB_STEP_SUMMARY"
-            ruby -e 'text = File.readlines(ARGV[0]).last(120).join.gsub("%", "%25").gsub("\r", "%0D").gsub("\n", "%0A"); puts "::error title=iOS 测试失败::#{text}"' /tmp/AxcUIKit-iOS-xcodebuild.log
+            ruby -e 'text = File.readlines(ARGV[0]).last(80).join.gsub("%", "%25").gsub("\r", "%0D").gsub("\n", "%0A"); puts "::error title=iOS 测试失败::#{text}"' /tmp/AxcUIKit-iOS-xcodebuild.log
             exit 1
           fi
           xcrun xccov view --report --json /tmp/AxcUIKit-iOS.xcresult > /tmp/AxcUIKit-iOS-coverage.json

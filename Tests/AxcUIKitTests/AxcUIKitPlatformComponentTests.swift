@@ -81,7 +81,7 @@ final class AxcUIKitPlatformComponentTests: XCTestCase {
         XCTAssertEqual(table.numberOfRows(in: nativeTable), 0)
         XCTAssertFalse(table.tableView(nativeTable, shouldSelectRow: 0))
         XCTAssertLessThan(table.tableView(nativeTable, heightOfRow: 0), 0.001)
-        XCTAssertTrue(AxcTableViewCell() is AxcView)
+        XCTAssertFalse(AxcTableViewCell().translatesAutoresizingMaskIntoConstraints)
     }
 
     func testConsoleAppendsTrimsAndClears() {

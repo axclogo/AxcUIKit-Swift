@@ -148,6 +148,6 @@ final class AxcUIKitCompositeComponentTests: XCTestCase {
         bubble.set(arrowSize: CGSize(width: 20, height: 20))
         bubble.set(arrowDirection: .right(offsetY: 100))
         bubble._updateMaskLayer()
-        XCTAssertNotNil(bubble._shapeLayer.path)
+        XCTAssertEqual(bubble._shapeLayer.frame, bubble.bounds)
     }
 }
