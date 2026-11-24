@@ -43,8 +43,12 @@ end
 line_count = source_files.sum { |_path, count, _covered| count }
 covered_count = source_files.sum { |_path, _count, covered| covered }
 coverage = covered_count * 100.0 / line_count
+summary = format('AxcUIKit 行覆盖率：%.2f%%（%d/%d）', coverage, covered_count, line_count)
 
-puts format('AxcUIKit 行覆盖率：%.2f%%（%d/%d）', coverage, covered_count, line_count)
+puts summary
+if ENV['GITHUB_STEP_SUMMARY']
+  File.open(ENV['GITHUB_STEP_SUMMARY'], 'a') { |file| file.puts("## #{summary}") }
+end
 exit 0 if coverage >= threshold
 
 warn format('覆盖率 %.2f%% 低于门禁 %.2f%%', coverage, threshold)
