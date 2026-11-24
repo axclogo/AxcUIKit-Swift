@@ -24,6 +24,7 @@ jobs:
               tail -n 120 /tmp/AxcUIKit-macOS-test.log
               echo '```'
             } >> "$GITHUB_STEP_SUMMARY"
+            ruby -e 'text = File.readlines(ARGV[0]).last(120).join.gsub("%", "%25").gsub("\r", "%0D").gsub("\n", "%0A"); puts "::error title=macOS 测试失败::#{text}"' /tmp/AxcUIKit-macOS-test.log
             exit 1
           fi
       - name: Enforce macOS coverage
@@ -53,6 +54,7 @@ jobs:
               tail -n 120 /tmp/AxcUIKit-iOS-xcodebuild.log
               echo '```'
             } >> "$GITHUB_STEP_SUMMARY"
+            ruby -e 'text = File.readlines(ARGV[0]).last(120).join.gsub("%", "%25").gsub("\r", "%0D").gsub("\n", "%0A"); puts "::error title=iOS 测试失败::#{text}"' /tmp/AxcUIKit-iOS-xcodebuild.log
             exit 1
           fi
           xcrun xccov view --report --json /tmp/AxcUIKit-iOS.xcresult > /tmp/AxcUIKit-iOS-coverage.json
