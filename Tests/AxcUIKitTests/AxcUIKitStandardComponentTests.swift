@@ -17,6 +17,14 @@ final class AxcUIKitStandardComponentTests: XCTestCase {
         button.set(title: "确认")
 
         XCTAssertEqual(button.buttonTitle, "确认")
+        XCTAssertFalse(button.translatesAutoresizingMaskIntoConstraints)
+
+        button.set(title: nil)
+        #if canImport(AppKit)
+        XCTAssertEqual(button.buttonTitle, "")
+        #else
+        XCTAssertNil(button.buttonTitle)
+        #endif
     }
 
     func testImageViewUsesSystemImage() {
@@ -30,6 +38,10 @@ final class AxcUIKitStandardComponentTests: XCTestCase {
         imageView.set(image: image)
 
         XCTAssertTrue(imageView.currentImage === image)
+        XCTAssertFalse(imageView.translatesAutoresizingMaskIntoConstraints)
+
+        imageView.set(image: nil)
+        XCTAssertNil(imageView.currentImage)
     }
 
     func testStackRemovesArrangedSubviewAndHierarchy() {
@@ -48,6 +60,9 @@ final class AxcUIKitStandardComponentTests: XCTestCase {
         XCTAssertEqual(stack.stackAxis, .vertical)
         XCTAssertFalse(stack.arrangedSubviews.contains(child))
         XCTAssertNil(child.superview)
+
+        stack.set(axis: .horizontal)
+        XCTAssertEqual(stack.stackAxis, .horizontal)
     }
 
     func testScrollViewSwitchesDynamicAxis() {
@@ -67,6 +82,13 @@ final class AxcUIKitStandardComponentTests: XCTestCase {
         XCTAssertEqual(scrollView.scrollAxis, .horizontal)
         #if canImport(AppKit)
         XCTAssertFalse(scrollView.hasVerticalScroller)
+        XCTAssertTrue(scrollView.hasHorizontalScroller)
+        #endif
+
+        scrollView.set(axis: .both)
+        XCTAssertEqual(scrollView.scrollAxis, .both)
+        #if canImport(AppKit)
+        XCTAssertTrue(scrollView.hasVerticalScroller)
         XCTAssertTrue(scrollView.hasHorizontalScroller)
         #endif
     }

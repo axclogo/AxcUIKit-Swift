@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- 扩充 Core、Gradient、Label、Bubble、Table、Collection、AppKit 和标准组件测试，并增加双平台 90% 行覆盖率门禁。
 - 对接 AxcBedrock 的类型化关联对象、AxcOnce、几何有效性、Insets 运算和跨平台图片类型。
 - 新增 Button、Image、Scroll、Stack 四个系统对称组件及跨平台行为测试。
 

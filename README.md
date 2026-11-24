@@ -76,3 +76,4 @@ Stack（直接基于 UIStackView/NSStackView）
 - 对外布局使用 Auto Layout；内部绘制以 `bounds` 为准，不依赖写死坐标。
 - setter 只更新状态并触发布局，连续配置在下一次布局统一绘制。
 - 新组件必须有中文公开注释、组件 README，以及覆盖核心行为的测试。
+- CI 分别执行 macOS 与 iOS Simulator 测试，仅统计 AxcUIKit 自身源码，行覆盖率不得低于 90%。

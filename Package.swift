@@ -143,10 +143,15 @@ let package = Package(
             dependencies: [
                 "AxcUIKitCore",
                 "AxcUIKitGradient",
+                "AxcUIKitLabel",
+                "AxcUIKitBubble",
+                "AxcUIKitTable",
+                "AxcUIKitCollection",
                 "AxcUIKitButton",
                 "AxcUIKitImage",
                 "AxcUIKitScroll",
-                "AxcUIKitStack"
+                "AxcUIKitStack",
+                "AxcUIKitAppKit"
             ],
             path: "Tests/AxcUIKitTests"
         )
